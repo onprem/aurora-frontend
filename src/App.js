@@ -1,10 +1,12 @@
 import React from 'react';
+import Home from './views/Home/Home';
 import styles from './App.module.css';
+import './assets/styles/variables.css';
 
 function App() {
   return (
     <div className={styles.App}>
-      <img src="/assets/logo.svg" className={styles.logo} alt="Aurora logo" />
+      <Home />
     </div>
   );
 }
