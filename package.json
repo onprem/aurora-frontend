@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lottie-web": "^5.5.9",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
@@ -13,8 +14,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix", 
-    "precommit": "lint-staged"
+    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix"
   },
   "husky": {
     "hooks": {
@@ -23,8 +23,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
-        "eslint --fix",
-        "git add"
+      "eslint --fix",
+      "git add"
     ]
   },
   "browserslist": {
