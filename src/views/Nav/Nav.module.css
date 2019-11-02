@@ -26,8 +26,9 @@
   height: 100vh;
 }
 .nav_li {
-  font-size: 36px;
-  font-weight: 800;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
   letter-spacing: 10px;
   padding-top: 1.5vh;
   padding-bottom: 1.5vh;
