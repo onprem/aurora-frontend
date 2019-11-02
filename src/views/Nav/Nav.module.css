@@ -1,28 +1,17 @@
-.nav_container {
-  height: 100vh;
-  width: 100vw;
+.nav {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 1;
-}
-.nav {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-items: center;
+  align-items: center;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
-}
-.nav_bg_image {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 2;
-  opacity: 0.7;
+  background: url('../../assets/images/nav_background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .nav_ul {
   margin: 0px;

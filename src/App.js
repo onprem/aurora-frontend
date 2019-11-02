@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './App.module.css';
 
-import Nav from './views/nav/Nav';
+import Nav from './views/Nav/Nav';
 
 function App() {
   return (
