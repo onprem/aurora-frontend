@@ -1,26 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 
 import styles from './Nav.module.css';
 
 const Nav = () => {
+  const [isNavOpen, setNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setNavOpen(!isNavOpen);
+  };
   const pages = [
-    'Home',
-    'About',
-    'Events',
-    'Pronites',
-    'Accomodation',
-    'Login/Register',
-    'Team',
-    'Sponsors',
-    'Contact Us',
+    {
+      title: 'Home',
+      path: '/',
+    },
+    {
+      title: 'About',
+      path: '/about',
+    },
+    {
+      title: 'Events',
+      path: '/events',
+    },
+    {
+      title: 'Pronites',
+      path: '/pronites',
+    },
+    {
+      title: 'Accomodation',
+      path: '/accomodation',
+    },
+    {
+      title: 'Login/Register',
+      path: '/login',
+    },
+    {
+      title: 'Team',
+      path: '/team',
+    },
+    {
+      title: 'Sponsors',
+      path: '/sponsors',
+    },
+    {
+      title: 'Contact Us',
+      path: '/contact',
+    },
   ];
 
-  const navList = pages.map(page => <li className={styles.nav_li}>{page}</li>);
+  const navList = pages.map(page => (
+    <li className={styles.nav_li}>
+      <NavLink to={page.path} onClick={toggleNav}>
+        {page.title}
+      </NavLink>
+    </li>
+  ));
 
   return (
-    <nav className={styles.nav}>
-      <ul className={styles.nav_ul}>{navList}</ul>
-    </nav>
+    <>
+      <button
+        className={classNames(styles.burger, { [styles.open]: isNavOpen })}
+        onClick={toggleNav}
+        type="button"
+        aria-label="open menu"
+      />
+      <nav className={classNames(styles.nav, { [styles.open]: isNavOpen })}>
+        <ul className={styles.nav_ul}>{navList}</ul>
+      </nav>
+    </>
   );
 };
 

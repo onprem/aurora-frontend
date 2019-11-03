@@ -9,7 +9,7 @@ const Graveyard = () => {
   useEffect(() => {
     const lottieOptions = {
       container: document.getElementById('grave'),
-      loop: true,
+      loop: false,
       autoplay: true,
       animationData,
       rendererSettings: {
@@ -21,7 +21,7 @@ const Graveyard = () => {
     return () => {
       graveAnim.destroy();
     };
-  });
+  }, []);
 
   return (
     <>
