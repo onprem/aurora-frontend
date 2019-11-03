@@ -8,6 +8,7 @@ import Nav from './views/Nav/Nav';
 function App() {
   return (
     <div className={styles.App}>
+      <Nav />
       <Home />
     </div>
   );
