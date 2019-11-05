@@ -6,6 +6,7 @@ import './assets/styles/variables.css';
 
 import Home from './views/Home/Home';
 import Nav from './views/Nav/Nav';
+import About from './views/about/About';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
         </Route>
         <Route>
           <h1>You Lost?</h1>
