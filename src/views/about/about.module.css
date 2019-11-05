@@ -3,6 +3,12 @@
   src: local('Variane Script'), url('../../assets/fonts/variane-script.ttf');
 }
 .about_container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -10,7 +16,9 @@
   align-items: center;
 }
 .about_logo_dark {
-  width: 75px;
+  width: 5vw;
+  min-width: 60px;
+  height: auto;
   position: absolute;
   left: 20px;
   top: 20px;
@@ -23,7 +31,7 @@
   align-content: center;
 }
 .about_logo {
-  width: 190px;
+  width: 9vw;
   height: auto;
   margin: 0px;
   margin-left: -50px;
@@ -32,7 +40,7 @@
   margin: 0px;
   padding: 0px;
   font-weight: 500;
-  font-size: 182px;
+  font-size: 10vw;
   font-family: 'Variane Script';
   margin-top: -40px;
 }
@@ -41,9 +49,40 @@
 }
 .about_para {
   text-align: left;
-  font-size: 26px;
+  font-size: 1.6vw;
   font-weight: 400;
   font-family: 'Nunito Sans';
   line-height: 50px;
-  /* letter-spacing: 6px; */
+}
+@media (max-width: 1366px) {
+  .about_para {
+    line-height: 40px;
+  }
+  .about_logo {
+    width: 140px;
+    margin-left: -40px;
+  }
+  .about_heading {
+    font-size: 140px;
+    margin-top: -25px;
+  }
+  .about_para {
+    font-size: 22px;
+  }
+}
+@media (max-width: 600px) {
+  .about_para {
+    line-height: 25px;
+  }
+  .about_logo {
+    width: 100px;
+    margin-left: -30px;
+  }
+  .about_heading {
+    font-size: 80px;
+    margin-top: -10px;
+  }
+  .about_para {
+    font-size: 18px;
+  }
 }
