@@ -1,4 +1,5 @@
 .Home {
+  width: 100%;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -23,17 +24,18 @@
   align-items: center;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 450px) {
   .Home {
-    min-height: 0;
+    min-height: unset;
     height: 90vh;
   }
   .Logo {
-    margin-top: 70px;
-    margin-bottom: 15px;
     width: 40vw;
   }
   .Text {
     width: 60vw;
+  }
+  .Footer {
+    min-height: 40vh;
   }
 }
