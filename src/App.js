@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import styles from './App.module.css';
 import './assets/styles/variables.css';
@@ -13,7 +14,9 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <ParallaxProvider>
+            <Home />
+          </ParallaxProvider>
         </Route>
         <Route>
           <h1>You Lost?</h1>

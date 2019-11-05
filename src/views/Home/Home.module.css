@@ -7,4 +7,33 @@
 }
 .Logo {
   margin-top: 15vh;
+  margin-bottom: 5vh;
+  width: 25vh;
+}
+.Text {
+  width: 30vh;
+}
+.Footer {
+  color: white;
+  background: black;
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 990px) {
+  .Home {
+    min-height: 0;
+    height: 90vh;
+  }
+  .Logo {
+    margin-top: 70px;
+    margin-bottom: 15px;
+    width: 40vw;
+  }
+  .Text {
+    width: 60vw;
+  }
 }
