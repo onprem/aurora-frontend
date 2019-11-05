@@ -1,12 +1,12 @@
 import React from 'react';
 import Graveyard from '../../components/graveyard/Graveyard';
-import AuroraMonoIcon from '../../assets/icons/AuroraMono';
+import { ReactComponent as AuroraMonoIcon } from '../../assets/icons/auroraMono.svg';
 import styles from './Home.module.css';
 
 const Home = () => {
   return (
     <div className={styles.Home}>
-      <AuroraMonoIcon width="20vh" />
+      <AuroraMonoIcon width="25vh" />
       <Graveyard />
     </div>
   );
