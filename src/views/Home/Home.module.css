@@ -94,4 +94,26 @@
   .Footer {
     min-height: 40vh;
   }
+  .Bat3 {
+    right: 40%;
+  }
+  .Bat4 {
+    right: 15%;
+  }
+  .Bat5 {
+    right: 65%;
+  }
+  .Bat6 {
+    top: 75%;
+    right: 90%;
+    /* width: 200px; */
+  }
+  .Bat7 {
+    top: 40%;
+    /* width: 200px; */
+  }
+  .Bat9 {
+    right: 78%;
+    /* width: 250px; */
+  }
 }

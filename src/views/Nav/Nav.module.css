@@ -88,8 +88,8 @@
 @media only screen and (max-width: 500px) {
   .nav_li {
     font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 0px;
+    font-weight: 800;
+    letter-spacing: 5px;
   }
   .burger {
     top: 35px;
