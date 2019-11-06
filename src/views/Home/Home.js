@@ -5,6 +5,7 @@ import Bat from '../../components/bat/Bat';
 import useMediaQuery from '../../utils/useMediaQuery';
 import { ReactComponent as AuroraCircleIcon } from '../../assets/icons/auroraCircle.svg';
 import { ReactComponent as AuroraTextIcon } from '../../assets/icons/auroraText.svg';
+import Particles from '../../components/particles/Particle';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -33,6 +34,7 @@ const Home = () => {
           </>
         )}
         <Graveyard />
+        <Particles />
         {bats}
       </div>
       <div className={styles.Footer}>

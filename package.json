@@ -7,6 +7,7 @@
     "lottie-web": "^5.5.9",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-particles-js": "^2.7.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-scroll-parallax": "^2.2.0"
