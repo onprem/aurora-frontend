@@ -1,20 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Particles from '../../components/particles/Particle';
 
 import style from './about.module.css';
 
-import logo from '../../assets/images/Aurora_Logo.png';
-import logoDark from '../../assets/images/Aurora_Logo(Dark).png';
-
-import Particles from '../../components/particles/Particle';
+import logo from '../../assets/icons/auroraLogo.svg';
+import logoDark from '../../assets/icons/auroraMono.svg';
+import auroraText from '../../assets/icons/auroraText.svg';
 
 const About = () => {
   return (
     <>
       <div className={style.about_container}>
-        <img src={logoDark} alt="Aurora_logo_dark" className={style.about_logo_dark} />
+        <Link to="/">
+          <img src={logoDark} alt="Aurora logo dark" className={style.about_logo_dark} />
+        </Link>
         <div className={style.about_logo_container}>
-          <img className={style.about_logo} alt="Aurora_logo" src={logo} />
-          <h1 className={style.about_heading}>Aurora&#39;20</h1>
+          <img className={style.about_logo} alt="Aurora logo" src={logo} />
+          <img className={style.about_heading} alt="Aurora title" src={auroraText} />
         </div>
         <div className={style.about_para_container}>
           <p className={style.about_para}>
