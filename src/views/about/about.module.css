@@ -1,7 +1,3 @@
-@font-face {
-  font-family: 'Variane Script';
-  src: local('Variane Script'), url('../../assets/fonts/variane-script.ttf');
-}
 .about_container {
   position: absolute;
   top: 0px;
