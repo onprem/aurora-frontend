@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-import { ReactComponent as BijliIcon } from '../../assets/icons/thunder.svg';
+import useMediaQuery from '../../utils/useMediaQuery';
+import BijliIcon from '../../assets/icons/thunder';
 
 import style from './bijli.module.css';
 
@@ -10,6 +11,8 @@ import bijliData from '../../assets/data/eventData/eventdata';
 
 const Bijli = ({ activate }) => {
   const [isBijliOpen, setBijliOpen] = useState(false);
+
+  const isMobile = useMediaQuery('(max-width: 500px)');
 
   const toggleBijli = () => {
     setBijliOpen(!isBijliOpen);
@@ -39,7 +42,7 @@ const Bijli = ({ activate }) => {
         type="button"
         aria-label="open menu"
       >
-        <BijliIcon />
+        <BijliIcon width={isMobile ? '20px' : '30px'} height={isMobile ? '30px' : '40px'} />
       </button>
     </>
   );
