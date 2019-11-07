@@ -3,19 +3,20 @@
   src: local('SkullAndVoid'), url('../../assets/fonts/SkullAndVoid-Ywg2.ttf');
 }
 .card_container {
-  width: 80vw;
-  height: 38vw;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  border: 5px solid black;
+  border: 3.5px solid black;
+  overflow: hidden;
 }
 .card_img {
   width: 35%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .card_desc_container {
   width: 65%;
@@ -29,7 +30,7 @@
 .card_heading {
   margin: 0px;
   color: white;
-  font-size: 150px;
+  font-size: 110px;
   font-weight: 100;
   font-family: 'SkullAndVoid';
 }
@@ -38,19 +39,82 @@
   color: white;
   text-align: left;
   width: 90%;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 400;
   font-family: 'Nunito Sans';
   /* line-height: 50px; */
 }
 .card_button {
   width: 30%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background: white;
   border-radius: 80px;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 300;
   font-family: 'SkullAndVoid';
   cursor: pointer;
+}
+@media (max-width: 1366px) {
+  .card_heading {
+    font-size: 70px;
+  }
+  .card_para {
+    font-size: 20px;
+  }
+  .card_button {
+    font-size: 26px;
+  }
+  .card_img {
+    width: 40%;
+  }
+  .card_desc_container {
+    width: 60%;
+  }
+}
+@media (max-width: 1100px) {
+  .card_container {
+    flex-direction: column;
+  }
+  .card_img {
+    width: 100%;
+    height: 70%;
+  }
+  .card_desc_container {
+    width: 100%;
+  }
+  .card_heading {
+    font-size: 55px;
+  }
+  .card_para {
+    font-size: 14px;
+  }
+  .card_button {
+    font-size: 20px;
+    font-weight: 100;
+  }
+}
+@media (max-width: 500px) {
+  .card_container {
+    flex-direction: column;
+    border: 3px solid black;
+  }
+  .card_img {
+    width: 100%;
+    height: 60%;
+  }
+  .card_desc_container {
+    width: 100%;
+  }
+  .card_heading {
+    font-size: 25px;
+  }
+  .card_para {
+    font-size: 14px;
+  }
+  .card_button {
+    font-size: 15px;
+    font-weight: 100;
+    width: 40%;
+  }
 }

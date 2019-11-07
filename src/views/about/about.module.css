@@ -66,6 +66,9 @@
   }
 }
 @media (max-width: 600px) {
+  .about_logo_container {
+    margin-top: 100px;
+  }
   .about_para {
     line-height: 25px;
   }
