@@ -13,7 +13,7 @@ import { ReactComponent as AuroraTextIcon } from '../../assets/icons/auroraText.
 import styles from './Home.module.css';
 
 const Home = () => {
-  const isMobile = useMediaQuery('(min-width: 450px)');
+  const isDesktop = useMediaQuery('(min-width: 450px)');
   const bats = ['Bat1', 'Bat2', 'Bat3', 'Bat4', 'Bat5', 'Bat6', 'Bat7', 'Bat8', 'Bat9'].map(
     style => {
       return <Bat className={styles[style]} speed={Math.random() * 0.4 + 0.6} />;
@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <>
       <div className={styles.Home}>
-        {isMobile ? (
+        {isDesktop ? (
           <>
             <Parallax y={[-110, 75]}>
               <AuroraCircleIcon className={styles.Logo} />
@@ -45,7 +45,7 @@ const Home = () => {
         <h1 style={{ fontSize: '52px' }}>フッター</h1>
         <div>FOOTER</div>
       </div>
-      <Social />
+      {isDesktop && <Social />}
     </>
   );
 };
