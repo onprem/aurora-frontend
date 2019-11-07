@@ -1,11 +1,15 @@
 import React from 'react';
 import { Parallax } from 'react-scroll-parallax';
+import useMediaQuery from '../../utils/useMediaQuery';
+
 import Graveyard from '../../components/graveyard/Graveyard';
 import Bat from '../../components/bat/Bat';
-import useMediaQuery from '../../utils/useMediaQuery';
+import Social from '../../components/Social/Social';
+import Particles from '../../components/particles/Particle';
+
 import { ReactComponent as AuroraCircleIcon } from '../../assets/icons/auroraCircle.svg';
 import { ReactComponent as AuroraTextIcon } from '../../assets/icons/auroraText.svg';
-import Particles from '../../components/particles/Particle';
+
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -41,6 +45,7 @@ const Home = () => {
         <h1 style={{ fontSize: '52px' }}>フッター</h1>
         <div>FOOTER</div>
       </div>
+      <Social />
     </>
   );
 };

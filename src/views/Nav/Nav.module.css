@@ -97,5 +97,6 @@
   .burger {
     top: 35px;
     right: 25px;
+    width: 40px;
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Particles from '../../components/particles/Particle';
+import Social from '../../components/Social/Social';
 
 import style from './about.module.css';
 
@@ -35,6 +36,7 @@ const About = () => {
         </div>
       </div>
       <Particles />
+      <Social fill="#000000" />
     </>
   );
 };
