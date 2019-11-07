@@ -1,52 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
+import Bijli from '../bijli/Bijli';
 // import { DebounceInput } from 'react-debounce-input';
 
 import style from './carousel.module.css';
 
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    const { children } = this.props;
-    this.state = {
-      active: 1,
-      childs: children,
-      length: children.length,
-      xDown: null,
-      yDown: null,
-    };
-  }
+const Carousel = ({ children }) => {
+  const [active, setActive] = useState(1);
+  let xDown = null;
+  let yDown = null;
 
-  componentDidMount() {
-    const carousel = document.getElementById('carouselTouch');
-    carousel.addEventListener('touchstart', this.handleTouchStart);
-    carousel.addEventListener('touchmove', this.handleTouchMove);
-    document.addEventListener('keydown', this.handleKey);
-  }
-
-  componentWillUnmount() {
-    const carousel = document.getElementById('carouselTouch');
-    carousel.removeEventListener('touchstart', this.handleTouchStart);
-    carousel.removeEventListener('touchmove', this.handleTouchMove);
-    document.removeEventListener('keydown', this.handleKey);
-  }
-
-  handleLeftClick = () => {
-    this.setState(prevState => {
-      if (prevState.active - 1 === 0) return { active: prevState.length };
-      return { active: prevState.active - 1 };
-    });
+  const toggleActive = num => {
+    setActive(num);
   };
 
-  handleRightClick = () => {
-    this.setState(prevState => {
-      if (prevState.active + 1 === prevState.length + 1) return { active: 1 };
-      return { active: prevState.active + 1 };
-    });
+  const handleLeftClick = () => {
+    if (active - 1 === 0) setActive(children.length);
+    else setActive(active - 1);
   };
 
-  classNameResolver = num => {
-    const { active } = this.state;
+  const handleRightClick = () => {
+    if (active + 1 === children.length + 1) setActive(1);
+    else setActive(active + 1);
+  };
+
+  const classNameResolver = num => {
     let className;
     if (num === active + 1) className = `${style.dummy_card} ${style.right}`;
     else if (num >= active + 2) className = `${style.dummy_card} ${style.right_right}`;
@@ -57,23 +35,22 @@ class Carousel extends React.Component {
     return className;
   };
 
-  handleSliderChange = event => {
-    const { active } = this.state;
-    if (event.target.value > active) this.handleRightClick();
-    else if (event.target.value < active) this.handleLeftClick();
+  const handleSliderChange = event => {
+    if (event.target.value > active) handleRightClick();
+    else if (event.target.value < active) handleLeftClick();
   };
 
-  getTouches = evt => {
+  const getTouches = evt => {
     return evt.touches;
   };
 
-  handleTouchStart = evt => {
-    const firstTouch = this.getTouches(evt)[0];
-    this.setState({ xDown: firstTouch.clientX, yDown: firstTouch.clientY });
+  const handleTouchStart = evt => {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
   };
 
-  handleTouchMove = evt => {
-    const { xDown, yDown } = this.state;
+  const handleTouchMove = evt => {
     if (!xDown || !yDown) {
       return;
     }
@@ -85,58 +62,61 @@ class Carousel extends React.Component {
     const yDiff = yDown - yUp;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-      if (xDiff > 5) this.handleRightClick();
-      else if (xDiff < -5) this.handleLeftClick();
+      if (xDiff > 5) handleRightClick();
+      else if (xDiff < -5) handleLeftClick();
     }
 
-    this.setState({ xDown: null, yDown: null });
+    xDown = null;
+    yDown = null;
   };
 
-  handleKey = e => {
-    if (e.keyCode === 37) this.handleLeftClick();
-    else if (e.keyCode === 39) this.handleRightClick();
+  const handleKey = e => {
+    if (e.keyCode === 37) handleLeftClick();
+    else if (e.keyCode === 39) handleRightClick();
   };
 
-  render() {
-    const { childs, length, active } = this.state;
-    return (
-      <div className={style.carousel_parent_container}>
-        <div className={style.carousel_container} id="carouselTouch">
-          <div className={style.carousel_card_container}>
-            {childs.map((Card, index) => (
-              <div className={this.classNameResolver(index + 1)}>{Card}</div>
-            ))}
-          </div>
-        </div>
-        <div className={style.slider_container}>
-          <input
-            type="range"
-            min="1"
-            max={length}
-            value={active}
-            className={style.slider}
-            id="myRange"
-            onChange={this.handleSliderChange}
-          />
-        </div>
-        <div className={style.buttons_container}>
-          <button
-            className={style.carousel_button_left}
-            type="button"
-            onClick={this.handleLeftClick}
-          >
-            &lt;
-          </button>
-          <button
-            className={style.carousel_button_right}
-            type="button"
-            onClick={this.handleRightClick}
-          >
-            &gt;
-          </button>
+  useEffect(() => {
+    const carousel = document.getElementById('carouselTouch');
+    carousel.addEventListener('touchstart', handleTouchStart);
+    carousel.addEventListener('touchmove', handleTouchMove);
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      carousel.removeEventListener('touchstart', handleTouchStart);
+      carousel.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('keydown', handleKey);
+    };
+  });
+
+  return (
+    <div className={style.carousel_parent_container}>
+      <div className={style.carousel_container} id="carouselTouch">
+        <div className={style.carousel_card_container}>
+          {children.map((Card, index) => (
+            <div className={classNameResolver(index + 1)}>{Card}</div>
+          ))}
         </div>
       </div>
-    );
-  }
-}
+      <div className={style.slider_container}>
+        <input
+          type="range"
+          min="1"
+          max={children.length}
+          value={active}
+          className={style.slider}
+          id="myRange"
+          onChange={handleSliderChange}
+        />
+      </div>
+      <div className={style.buttons_container}>
+        <button className={style.carousel_button_left} type="button" onClick={handleLeftClick}>
+          &lt;
+        </button>
+        <button className={style.carousel_button_right} type="button" onClick={handleRightClick}>
+          &gt;
+        </button>
+      </div>
+      <Bijli activate={toggleActive} />
+    </div>
+  );
+};
 export default Carousel;
