@@ -19,12 +19,6 @@ jobs:
         with:
           node-version: '13.x'
 
-      - name: Install dependencies
-        run: yarn
-
-      - name: Build
-        run: yarn build
-
       - name: Cache dependencies
         uses: actions/cache@v1
         with:
@@ -34,6 +28,12 @@ jobs:
             ${{ runner.OS }}-build-dev-${{ env.cache-name }}-
             ${{ runner.OS }}-build-dev-
             ${{ runner.OS }}-
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build
+        run: yarn build
 
       - name: Upload build
         uses: actions/upload-artifact@v1
