@@ -6,7 +6,6 @@ import style from './particles.module.css';
 
 import config from '../../assets/configs/particlesjs-config.json';
 
-// console.log(JSON.parse(config));
 const Particle = () => {
   return <Particles params={config} className={style.canvas_wrapper} />;
 };

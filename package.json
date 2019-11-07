@@ -6,6 +6,7 @@
     "classnames": "^2.2.6",
     "lottie-web": "^5.5.9",
     "react": "^16.11.0",
+    "react-debounce-input": "^3.2.2",
     "react-dom": "^16.11.0",
     "react-particles-js": "^2.7.0",
     "react-router-dom": "^5.1.2",

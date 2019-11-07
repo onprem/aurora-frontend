@@ -14,7 +14,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 3;
+  z-index: 10;
   transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
 }
 .nav.open {
@@ -57,19 +57,22 @@
   top: 40px;
   right: 50px;
   width: 60px;
-  z-index: 5;
+  z-index: 20;
   transition: border-bottom 0.8s ease-in-out;
 }
 .burger::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-.burger, .burger::before, .burger::after {
+.burger,
+.burger::before,
+.burger::after {
   border-bottom: 5px solid black;
 }
-.burger::before, .burger::after {
+.burger::before,
+.burger::after {
   display: block;
-  content: "";
+  content: '';
   margin-bottom: 10px;
   width: 100%;
   transition: transform 0.5s ease-in-out;
