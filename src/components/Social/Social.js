@@ -17,17 +17,17 @@ const Social = ({ className, fill }) => {
     },
     {
       title: 'Instagram',
-      url: 'https://instagram.com',
+      url: 'https://www.instagram.com/aurora_iiitm/',
       Icon: InstagramIcon,
     },
     {
       title: 'LinkedIn',
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/company/aurora-iiitm-gwalior/',
       Icon: LinkedInIcon,
     },
     {
       title: 'YouTube',
-      url: 'https://youtube.com',
+      url: 'https://www.youtube.com/channel/UCQmbFlStfjsCRkaBvy_jPMg',
       Icon: YouTubeIcon,
     },
   ].map(elem => (
