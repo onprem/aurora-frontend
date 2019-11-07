@@ -1,0 +1,14 @@
+.Social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+  position: fixed;
+  bottom: 20px;
+  left: 35px;
+}
+.Social svg {
+  height: 42px;
+  margin: 0 15px;
+}
