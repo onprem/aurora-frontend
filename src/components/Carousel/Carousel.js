@@ -10,10 +10,6 @@ const Carousel = ({ children }) => {
   let xDown = null;
   let yDown = null;
 
-  const toggleActive = num => {
-    setActive(num);
-  };
-
   const handleLeftClick = () => {
     if (active - 1 === 0) setActive(children.length);
     else setActive(active - 1);
@@ -115,7 +111,7 @@ const Carousel = ({ children }) => {
           &gt;
         </button>
       </div>
-      <Bijli activate={toggleActive} />
+      <Bijli activate={setActive} />
     </div>
   );
 };

@@ -17,7 +17,14 @@ const Bijli = ({ activate }) => {
 
   const BijliList = bijliData.map((bijli, index) => (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-    <li className={style.bijli_li} key={bijli.title} onClick={() => activate(index + 1)}>
+    <li
+      className={style.bijli_li}
+      key={bijli.title}
+      onClick={() => {
+        activate(index + 1);
+        toggleBijli();
+      }}
+    >
       {bijli.title}
     </li>
   ));
