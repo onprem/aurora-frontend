@@ -51,6 +51,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: build-dev
+          path: build
 
       - name: Setup key
         env:
