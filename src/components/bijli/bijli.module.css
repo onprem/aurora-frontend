@@ -1,0 +1,94 @@
+.bijli_container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 21;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-items: flex-end;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+}
+.bijli_container.open {
+  visibility: visible;
+  opacity: 1;
+}
+.bijli_ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  margin-right: 80px;
+  margin-bottom: 100px;
+}
+.bijli_li {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: transform 0.3s;
+  text-align: right;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+}
+.bijli_li:hover {
+  transform: scale(1.3);
+}
+.bijli_button {
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: black;
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  z-index: 22;
+  transition: transform 0.3s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.bijli_button:focus {
+  outline: none;
+}
+.bijli_button.open {
+  transform: rotateZ(630deg);
+}
+@media (max-width: 1366px) {
+  .bijli_button {
+    width: 50px;
+    height: 50px;
+  }
+  .bijli_li {
+    font-size: 22px;
+  }
+}
+@media (max-width: 500px) {
+  .bijli_button {
+    width: 40px;
+    height: 40px;
+    right: 40px;
+    bottom: 10px;
+  }
+  .bijli_li {
+    font-size: 18px;
+  }
+  .bijli_ul {
+    margin-right: 40px;
+    margin-bottom: 60px;
+  }
+}
