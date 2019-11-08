@@ -26,26 +26,26 @@ const Nav = () => {
       title: 'Events',
       path: '/events',
     },
-    {
-      title: 'Pronites',
-      path: '/pronites',
-    },
-    {
-      title: 'Accomodation',
-      path: '/accomodation',
-    },
-    {
-      title: 'Login/Register',
-      path: '/login',
-    },
-    {
-      title: 'Team',
-      path: '/team',
-    },
-    {
-      title: 'Sponsors',
-      path: '/sponsors',
-    },
+    // {
+    //   title: 'Pronites',
+    //   path: '/pronites',
+    // },
+    // {
+    //   title: 'Accomodation',
+    //   path: '/accomodation',
+    // },
+    // {
+    //   title: 'Login/Register',
+    //   path: '/login',
+    // },
+    // {
+    //   title: 'Team',
+    //   path: '/team',
+    // },
+    // {
+    //   title: 'Sponsors',
+    //   path: '/sponsors',
+    // },
     {
       title: 'Contact Us',
       path: '/contact',

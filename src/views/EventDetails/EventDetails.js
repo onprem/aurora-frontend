@@ -1,12 +1,33 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import eventData from '../../assets/data/eventData/eventData';
 import EventAccordion from '../../components/EventAccordion/EventAccordion';
 import Particles from '../../components/particles/Particle';
 import Bijli from '../../components/bijli/Bijli';
+import Social from '../../components/Social/Social';
+import useMediaQuery from '../../utils/useMediaQuery';
+
+import { ReactComponent as ArrowLeftIcon } from '../../assets/icons/arrowLeft.svg';
 
 import styles from './EventDetails.module.css';
+
+const EventWrapper = ({ children }) => {
+  const isDesktop = useMediaQuery('(min-width: 450px)');
+  const history = useHistory();
+
+  return (
+    <>
+      <div className={styles.eventDetail}>
+        <ArrowLeftIcon className={styles.backArrow} onClick={() => history.goBack()} />
+        <div className={styles.accordionContainer}>{children}</div>
+      </div>
+      <Particles />
+      {isDesktop && <Social fill="#000000" />}
+      <Bijli onPage="eventDetail" />
+    </>
+  );
+};
 
 const EventDetails = () => {
   const { eventId, subEventId } = useParams();
@@ -22,15 +43,9 @@ const EventDetails = () => {
 
   if (event.singleEvent) {
     return (
-      <>
-        <div className={styles.eventDetail}>
-          <div className={styles.accordionContainer}>
-            <EventAccordion event={event} isOpen openHeight="calc(100% - 5px)" />
-          </div>
-        </div>
-        <Particles />
-        <Bijli onPage="eventDetail" />
-      </>
+      <EventWrapper>
+        <EventAccordion event={event} isOpen openHeight="calc(100% - 5px)" />
+      </EventWrapper>
     );
   }
 
@@ -47,15 +62,7 @@ const EventDetails = () => {
     />
   ));
 
-  return (
-    <>
-      <div className={styles.eventDetail}>
-        <div className={styles.accordionContainer}>{accordions}</div>
-      </div>
-      <Particles />
-      <Bijli onPage="eventDetail" />
-    </>
-  );
+  return <EventWrapper>{accordions}</EventWrapper>;
 };
 
 export default EventDetails;

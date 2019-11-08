@@ -29,7 +29,7 @@
   background: white;
   font-family: 'SkullAndVoid';
   font-size: 1.7em;
-  width: 80%;
+  width: 90%;
   cursor: pointer;
   outline: none;
 }
@@ -41,7 +41,7 @@
 
 @media only screen and (max-width: 450px) {
   .eventAccordion.open .headSectionBtn {
-    font-size: 4em;
+    font-size: 3em;
     height: 50px;
   }
   .eventAccordion.open .bodySection {

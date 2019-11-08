@@ -16,7 +16,7 @@ const Home = () => {
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const bats = ['Bat1', 'Bat2', 'Bat3', 'Bat4', 'Bat5', 'Bat6', 'Bat7', 'Bat8', 'Bat9'].map(
     style => {
-      return <Bat className={styles[style]} speed={Math.random() * 0.4 + 0.6} />;
+      return <Bat className={styles[style]} speed={Math.random() * 0.4 + 0.6} key={style} />;
     }
   );
   return (
