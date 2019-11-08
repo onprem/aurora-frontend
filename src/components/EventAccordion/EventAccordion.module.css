@@ -4,10 +4,8 @@
   border-radius: 15px;
   background: white;
   margin-top: 5px;
+  transition: height 0.3s ease-in;
 }
-/* .eventAccordion:nth-child(1) {
-  margin-top: 12vh;
-} */
 .headSection, .bodySection {
   width: 100%;
   display: flex;
@@ -17,11 +15,14 @@
   overflow: hidden;
   height: calc(100% - 70px);
   visibility: visible;
+  opacity: 1;
 }
 .bodySection {
   visibility: hidden;
+  opacity: 0;
   height: 0;
   scrollbar-color: grey black;
+  transition: all 0.3s ease-in;
 }
 .headSectionBtn {
   border: 0;

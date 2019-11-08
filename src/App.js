@@ -30,6 +30,7 @@ function App() {
         </Route>
         <Route exact path={['/events/:eventId', '/events/:eventId/:subEventId']}>
           <EventDetails />
+        </Route>
         <Route exact path="/contact">
           <Contact />
         </Route>

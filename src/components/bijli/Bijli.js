@@ -7,7 +7,7 @@ import BijliIcon from '../../assets/icons/thunder';
 
 import style from './bijli.module.css';
 
-import bijliData from '../../assets/data/eventData/eventdata';
+import bijliData from '../../assets/data/eventData/cardData';
 
 const Bijli = ({ activate }) => {
   const [isBijliOpen, setBijliOpen] = useState(false);
