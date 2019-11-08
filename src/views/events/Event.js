@@ -5,7 +5,7 @@ import Carousel from '../../components/Carousel/Carousel';
 import Particles from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
 
-import cardData from '../../assets/data/eventData/eventdata';
+import cardData from '../../assets/data/eventData/cardData';
 
 const Event = () => {
   return (

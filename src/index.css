@@ -20,3 +20,7 @@ a {
   text-decoration: none;
   outline: none;
 }
+
+button::-moz-focus-inner {
+  border: 0;
+}

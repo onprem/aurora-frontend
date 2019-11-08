@@ -1,0 +1,38 @@
+.eventAccordion {
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 15px;
+  background: white;
+  margin-top: 5px;
+}
+/* .eventAccordion:nth-child(1) {
+  margin-top: 12vh;
+} */
+.headSection, .bodySection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.eventAccordion.open .bodySection {
+  overflow: hidden;
+  height: calc(100% - 70px);
+  visibility: visible;
+}
+.bodySection {
+  visibility: hidden;
+  height: 0;
+  scrollbar-color: grey black;
+}
+.headSectionBtn {
+  border: 0;
+  background: white;
+  font-family: 'SkullAndVoid';
+  font-size: 1.7em;
+  width: 80%;
+  cursor: pointer;
+}
+.eventAccordion.open .headSectionBtn {
+  font-size: 4em;
+  height: 70px;
+  cursor: default;
+}
