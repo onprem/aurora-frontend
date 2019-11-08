@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Particles from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
+import useMediaQuery from '../../utils/useMediaQuery';
 
 import style from './about.module.css';
 
@@ -10,6 +11,7 @@ import logoDark from '../../assets/icons/auroraMono.svg';
 import auroraText from '../../assets/icons/auroraText.svg';
 
 const About = () => {
+  const isDesktop = useMediaQuery('(min-width: 450px)');
   return (
     <>
       <div className={style.about_container}>
@@ -36,7 +38,7 @@ const About = () => {
         </div>
       </div>
       <Particles />
-      <Social fill="#000000" />
+      {isDesktop && <Social fill="#000000" />}
     </>
   );
 };
