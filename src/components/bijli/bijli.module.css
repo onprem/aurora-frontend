@@ -74,7 +74,9 @@
     height: 50px;
   }
   .bijli_li {
-    font-size: 22px;
+    font-size: 20px;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
   }
 }
 @media (max-width: 500px) {
