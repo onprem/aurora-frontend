@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .accordionContainer {
