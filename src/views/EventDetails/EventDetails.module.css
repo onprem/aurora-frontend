@@ -22,7 +22,19 @@
   flex-direction: column;
 }
 
+.backArrow {
+  position: absolute;
+  top: 25px;
+  left: 65px;
+  height: 45px;
+}
+
 @media only screen and (max-width: 450px) {
+  .backArrow {
+    top: 15px;
+    left: 25px;
+    height: 45px;
+  }
   .accordionContainer {
     width: 94%;
     height: 84%;
