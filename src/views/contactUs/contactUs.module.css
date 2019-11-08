@@ -87,8 +87,6 @@
   padding-bottom: 10px;
 
   padding-right: 25px;
-
-
 }
 .cordi {
   display: flex;
@@ -99,7 +97,6 @@
   align-content: center;
   align-items: center;
   height: 8.5vh;
-
 }
 .cordi_heading {
   color: white;
@@ -144,8 +141,9 @@
 }
 .single_line_input,
 .multiple_line_input {
-  width: 100%;
+  width: calc(100% - 10px);
   border: 3px solid black;
+  font-weight: 600;
   border-radius: 8px;
   height: 5vh;
   margin-top: 40px;
@@ -154,8 +152,7 @@
   flex-direction: column;
   justify-content: center;
   font-size: 26px;
-  /* padding-left: 10px; */
-  cursor: pointer;
+  padding-left: 10px;
   min-width: 10px;
 }
 .single_line_input:focus,
@@ -168,10 +165,22 @@
   font-size: 26px;
   color: black;
   font-weight: 600;
-  padding-left: 10px;
+}
+.single_line_input::-webkit-input-placeholder,
+.multiple_line_input::-webkit-input-placeholder {
+  font-size: 26px;
+  color: black;
+  font-weight: 600;
+}
+.single_line_input::-moz-placeholder,
+.multiple_line_input::-moz-placeholder {
+  font-size: 26px;
+  color: black;
+  font-weight: 600;
 }
 .multiple_line_input {
   height: 20vh;
+  padding-top: 10px;
 }
 .form_submit {
   width: 100%;
@@ -232,7 +241,6 @@
   }
   .single_line_input,
   .multiple_line_input {
-    width: 100%;
     margin-top: 10px;
     border: 2px solid black;
   }
@@ -244,7 +252,7 @@
     border: 2px solid black;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 1366px) {
   .contact_heading {
     font-size: 22px;
   }
@@ -259,6 +267,14 @@
   .multiple_line_input::placeholder {
     font-size: 18px;
   }
+  .single_line_input::-webkit-input-placeholder,
+  .multiple_line_input::-webkit-input-placeholder {
+    font-size: 18px;
+  }
+  .single_line_input::-moz-placeholder,
+  .multiple_line_input::-moz-placeholder {
+    font-size: 18px;
+  }
   .single_line_input,
   .multiple_line_input {
     font-size: 18px;
@@ -269,4 +285,3 @@
     left: 10px;
   }
 }
-

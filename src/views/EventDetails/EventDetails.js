@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import eventData from '../../assets/data/eventData/eventData';
 import EventAccordion from '../../components/EventAccordion/EventAccordion';
 import Particles from '../../components/particles/Particle';
+import Bijli from '../../components/bijli/Bijli';
 
 import styles from './EventDetails.module.css';
 
@@ -28,6 +29,7 @@ const EventDetails = () => {
           </div>
         </div>
         <Particles />
+        <Bijli onPage="eventDetail" />
       </>
     );
   }
@@ -51,6 +53,7 @@ const EventDetails = () => {
         <div className={styles.accordionContainer}>{accordions}</div>
       </div>
       <Particles />
+      <Bijli onPage="eventDetail" />
     </>
   );
 };

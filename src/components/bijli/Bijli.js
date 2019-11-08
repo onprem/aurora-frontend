@@ -1,6 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 import useMediaQuery from '../../utils/useMediaQuery';
 import BijliIcon from '../../assets/icons/thunder';
@@ -9,7 +12,7 @@ import style from './bijli.module.css';
 
 import bijliData from '../../assets/data/eventData/cardData';
 
-const Bijli = ({ activate }) => {
+const Bijli = ({ activate, onPage }) => {
   const [isBijliOpen, setBijliOpen] = useState(false);
 
   const isMobile = useMediaQuery('(max-width: 500px)');
@@ -18,22 +21,39 @@ const Bijli = ({ activate }) => {
     setBijliOpen(!isBijliOpen);
   };
 
-  const BijliList = bijliData.map((bijli, index) => (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-    <li
-      className={style.bijli_li}
-      key={bijli.title}
-      onClick={() => {
-        activate(index + 1);
-        toggleBijli();
-      }}
-    >
-      {bijli.title}
-    </li>
-  ));
+  let BijliList;
+
+  if (onPage === 'event') {
+    BijliList = bijliData.map((bijli, index) => (
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+      <li
+        className={style.bijli_li}
+        key={bijli.title}
+        onClick={() => {
+          activate(index + 1);
+          toggleBijli();
+        }}
+      >
+        {bijli.title}
+      </li>
+    ));
+  } else {
+    BijliList = bijliData.map(bijli => (
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+      <Link to={bijli.path}>
+        <li className={style.bijli_li} key={bijli.title}>
+          {bijli.title}
+        </li>
+      </Link>
+    ));
+  }
+
   return (
     <>
-      <div className={classNames(style.bijli_container, { [style.open]: isBijliOpen })}>
+      <div
+        className={classNames(style.bijli_container, { [style.open]: isBijliOpen })}
+        onClick={toggleBijli}
+      >
         <ul className={style.bijli_ul}>{BijliList}</ul>
       </div>
       <button
