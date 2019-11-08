@@ -5,9 +5,11 @@ import styles from './EventTabs.module.css';
 
 const EventTabs = ({ event }) => {
   const [activeTab, setActiveTab] = useState('about');
+
   const rules = useMemo(() => {
     const getRules = tempRules => {
       let partRules = [];
+
       tempRules.forEach(rule => {
         if (typeof rule === 'string') partRules.push(<li>{rule}</li>);
         else {
@@ -16,10 +18,17 @@ const EventTabs = ({ event }) => {
           partRules = partRules.concat(subRules);
         }
       });
-      return <ul>{partRules}</ul>;
+
+      return <ol>{partRules}</ol>;
     };
     return getRules(event.rules);
   }, [event]);
+
+  const evtHeads = event.eventHeads.map(head => <li key={head.name}>{head.name}</li>);
+
+  const evtOrganisers = event.eventOrganisers.map(organiser => (
+    <li key={organiser.name}>{organiser.name}</li>
+  ));
 
   return (
     <div className={styles.tabContainer}>
@@ -59,15 +68,11 @@ const EventTabs = ({ event }) => {
           <div className={styles.teamDiv}>
             <div>
               <h3>Event Heads</h3>
-              <ul>
-                <li>Dummy Singh</li>
-              </ul>
+              <ol>{evtHeads}</ol>
             </div>
             <div>
               <h3>Event Organisers</h3>
-              <ul>
-                <li>Dummy Singh</li>
-              </ul>
+              <ol>{evtOrganisers}</ol>
             </div>
           </div>
         </div>

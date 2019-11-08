@@ -79,4 +79,10 @@
   .tabBtn {
     font-size: 1em;
   }
+  .teamDiv {
+    flex-direction: column;
+  }
+  .teamDiv > div {
+    width: 80%;
+  }
 }
