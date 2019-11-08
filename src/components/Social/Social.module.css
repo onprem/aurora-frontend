@@ -12,3 +12,15 @@
   height: 42px;
   margin: 0 15px;
 }
+
+@media only screen and (max-width: 500px) {
+  .Social {
+    flex-direction: row;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .Social svg {
+    /* height: 35px; */
+    margin: 0 10px;
+  }
+}
