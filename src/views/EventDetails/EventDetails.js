@@ -9,7 +9,7 @@ import styles from './EventDetails.module.css';
 
 const EventDetails = () => {
   const { eventId, subEventId } = useParams();
-  const event = eventData[eventId.replace(/-/gi, '_')] || eventData.dummy;
+  const event = eventData[eventId.replace(/-/gi, '_')] || eventData.parivesh;
   let init = 0;
 
   if (!event.singleEvent && subEventId) {

@@ -53,7 +53,7 @@ const Nav = () => {
   ];
 
   const navList = pages.map(page => (
-    <li className={styles.nav_li}>
+    <li className={styles.nav_li} key={page.path}>
       <NavLink to={page.path} onClick={toggleNav}>
         {page.title}
       </NavLink>
