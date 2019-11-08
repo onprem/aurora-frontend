@@ -9,7 +9,12 @@ import style from './card.module.css';
 const Card = ({ params }) => {
   return (
     <>
-      <div className={style.card_container} style={{ background: `${params.color}` }}>
+      <div
+        className={style.card_container}
+        style={{
+          background: `${params.color}`,
+        }}
+      >
         <img className={style.card_img} src={params.img} alt="Event_art" />
         <div className={style.card_desc_container}>
           <h1 className={style.card_heading}>{params.title}</h1>
