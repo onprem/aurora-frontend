@@ -10,6 +10,7 @@ import Nav from './views/Nav/Nav';
 import About from './views/about/About';
 import Event from './views/events/Event';
 import EventDetails from './views/EventDetails/EventDetails';
+import Contact from './views/contactUs/ContactUs';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         </Route>
         <Route exact path={['/events/:eventId', '/events/:eventId/:subEventId']}>
           <EventDetails />
+        <Route exact path="/contact">
+          <Contact />
         </Route>
         <Route>
           <h1>You Lost?</h1>

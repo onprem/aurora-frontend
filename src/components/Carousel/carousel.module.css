@@ -1,5 +1,5 @@
 .carousel_parent_container {
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   position: absolute;
   top: 0px;
@@ -14,7 +14,7 @@
 }
 .carousel_container {
   width: 100vw;
-  height: 70vh;
+  height: 40vw;
   overflow: hidden;
 }
 .carousel_card_container {
@@ -30,7 +30,7 @@
 }
 .dummy_card {
   width: 65vw;
-  height: 80%;
+  height: 31.655vw;
   position: absolute;
   z-index: 2;
   transition: all 0.3s;
@@ -60,7 +60,7 @@
 }
 .slider_container {
   width: 40vw;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 .slider {
   -webkit-appearance: none;
@@ -105,8 +105,8 @@
 }
 .carousel_button_right,
 .carousel_button_left {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -133,5 +133,13 @@
     width: 30px;
     height: 30px;
     font-size: 20px;
+  }
+}
+@media (max-width: 1100px) {
+  .carousel_container {
+    height: 70vh;
+  }
+  .dummy_card {
+    height: 80%;
   }
 }
