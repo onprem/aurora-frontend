@@ -16,7 +16,7 @@ const Event = () => {
 
   return (
     <>
-      <Link to="/>">
+      <Link to="/">
         <img className={style.aurora_logo} src={Logo} alt="logo" />
       </Link>
       <Carousel>

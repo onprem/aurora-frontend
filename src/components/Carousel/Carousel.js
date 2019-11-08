@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import Bijli from '../bijli/Bijli';
+
+import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg';
 // import { DebounceInput } from 'react-debounce-input';
 
 import style from './carousel.module.css';
@@ -105,13 +107,13 @@ const Carousel = ({ children }) => {
       </div>
       <div className={style.buttons_container}>
         <button className={style.carousel_button_left} type="button" onClick={handleLeftClick}>
-          &lt;
+          <Arrow className={style.carousel_arrow_left} />
         </button>
         <button className={style.carousel_button_right} type="button" onClick={handleRightClick}>
-          &gt;
+          <Arrow className={style.carousel_arrow_right} />
         </button>
       </div>
-      <Bijli activate={setActive} />
+      <Bijli activate={setActive} onPage="event" />
     </div>
   );
 };

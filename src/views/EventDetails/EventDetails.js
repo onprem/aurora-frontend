@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import eventData from '../../assets/data/eventData/eventData';
 import EventAccordion from '../../components/EventAccordion/EventAccordion';
 import Particles from '../../components/particles/Particle';
+import Bijli from '../../components/bijli/Bijli';
 import Social from '../../components/Social/Social';
 import useMediaQuery from '../../utils/useMediaQuery';
 
@@ -23,6 +24,7 @@ const EventWrapper = ({ children }) => {
       </div>
       <Particles />
       {isDesktop && <Social fill="#000000" />}
+      <Bijli onPage="eventDetail" />
     </>
   );
 };

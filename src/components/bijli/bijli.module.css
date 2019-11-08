@@ -33,6 +33,7 @@
 .bijli_li {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 26px;
+  font-weight: 900;
   color: white;
   cursor: pointer;
   letter-spacing: 2px;
@@ -81,16 +82,16 @@
 }
 @media (max-width: 500px) {
   .bijli_button {
-    width: 40px;
-    height: 40px;
-    right: 40px;
+    width: 50px;
+    height: 50px;
+    right: 15px;
     bottom: 10px;
   }
   .bijli_li {
     font-size: 18px;
   }
   .bijli_ul {
-    margin-right: 40px;
-    margin-bottom: 60px;
+    margin-right: 15px;
+    margin-bottom: 120px;
   }
 }

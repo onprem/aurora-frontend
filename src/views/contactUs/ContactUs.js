@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 import style from './contactUs.module.css';
 
 import Particle from '../../components/particles/Particle';
+import Social from '../../components/Social/Social';
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
+import useMediaQuery from '../../utils/useMediaQuery';
 
 const cordiData = [
   {
@@ -105,10 +107,7 @@ const Contact = () => {
                 placeholder="Subject"
                 name="subject"
               />
-              <input
-                type="text"
-                rows="5"
-                column="40"
+              <textarea
                 className={style.multiple_line_input}
                 placeholder="Message"
                 name="message"
@@ -119,7 +118,9 @@ const Contact = () => {
             </form>
           </div>
         </div>
+        {useMediaQuery('(max-width:850px)') ? null : <Social fill="#000000" />}
       </div>
+
       <Particle />
     </>
   );
