@@ -21,3 +21,11 @@
   display: flex;
   flex-direction: column;
 }
+
+@media only screen and (max-width: 450px) {
+  .accordionContainer {
+    width: 94%;
+    height: 84%;
+    font-size: 0.7em;
+  }
+}

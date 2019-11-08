@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import classNames from 'classnames';
 
 import styles from './EventTabs.module.css';
 
 const EventTabs = ({ event }) => {
   const [activeTab, setActiveTab] = useState('about');
-  const rules = event.rules.map(rule => <li>{rule}</li>);
+  const rules = useMemo(() => {
+    const getRules = tempRules => {
+      let partRules = [];
+      tempRules.forEach(rule => {
+        if (typeof rule === 'string') partRules.push(<li>{rule}</li>);
+        else {
+          partRules.push(<li>{rule.headline}</li>);
+          const subRules = getRules(rule.rules);
+          partRules = partRules.concat(subRules);
+        }
+      });
+      return <ul>{partRules}</ul>;
+    };
+    return getRules(event.rules);
+  }, [event]);
 
   return (
     <div className={styles.tabContainer}>
@@ -58,7 +72,14 @@ const EventTabs = ({ event }) => {
           </div>
         </div>
         <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 'rules' })}>
-          <ul>{rules}</ul>
+          {rules}
+        </div>
+        <div
+          className={classNames(styles.tabContent, styles.registerTab, {
+            [styles.active]: activeTab === 'register',
+          })}
+        >
+          <h2>Registration will open soon.</h2>
         </div>
       </section>
     </div>
