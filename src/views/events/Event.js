@@ -8,7 +8,6 @@ import Carousel from '../../components/Carousel/Carousel';
 import Particles from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
 import useMediaQuery from '../../utils/useMediaQuery';
-
 import cardData from '../../assets/data/eventData/cardData';
 import Logo from '../../assets/icons/auroraLogo.svg';
 
