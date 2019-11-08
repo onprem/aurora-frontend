@@ -469,11 +469,10 @@ const eventData = {
   gaming: {
     name: 'Gaming',
     singleEvent: false,
-    fees: 150,
     subEvents: [
       {
         name: 'CS-GO',
-        description: '',
+        description: 'Showcase your talent in Counter Strike.',
         prizeMoney: '',
         fees: 249,
         maxTeamSize: 5,
@@ -555,6 +554,8 @@ const eventData = {
             ],
           },
         ],
+        eventHeads: [],
+        eventOrganisers: [],
       },
       {
         name: 'PUBG',
@@ -602,8 +603,6 @@ const eventData = {
         eventOrganisers: [],
       },
     ],
-    eventHeads: [],
-    eventOrganisers: [],
   },
   a_lit: {
     name: 'A-Lit',

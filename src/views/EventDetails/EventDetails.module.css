@@ -27,6 +27,7 @@
   top: 25px;
   left: 65px;
   height: 45px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 450px) {

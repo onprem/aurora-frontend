@@ -4,12 +4,15 @@ import { useParams, useHistory } from 'react-router-dom';
 import eventData from '../../assets/data/eventData/eventData';
 import EventAccordion from '../../components/EventAccordion/EventAccordion';
 import Particles from '../../components/particles/Particle';
+import Social from '../../components/Social/Social';
+import useMediaQuery from '../../utils/useMediaQuery';
 
 import { ReactComponent as ArrowLeftIcon } from '../../assets/icons/arrowLeft.svg';
 
 import styles from './EventDetails.module.css';
 
 const EventWrapper = ({ children }) => {
+  const isDesktop = useMediaQuery('(min-width: 450px)');
   const history = useHistory();
 
   return (
@@ -19,6 +22,7 @@ const EventWrapper = ({ children }) => {
         <div className={styles.accordionContainer}>{children}</div>
       </div>
       <Particles />
+      {isDesktop && <Social fill="#000000" />}
     </>
   );
 };
