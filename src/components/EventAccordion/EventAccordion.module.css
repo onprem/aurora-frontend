@@ -1,0 +1,39 @@
+.eventAccordion {
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 15px;
+  background: white;
+  margin-top: 5px;
+  transition: height 0.3s ease-in;
+}
+.headSection, .bodySection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.eventAccordion.open .bodySection {
+  overflow: hidden;
+  height: calc(100% - 70px);
+  visibility: visible;
+  opacity: 1;
+}
+.bodySection {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  scrollbar-color: grey black;
+  transition: all 0.3s ease-in;
+}
+.headSectionBtn {
+  border: 0;
+  background: white;
+  font-family: 'SkullAndVoid';
+  font-size: 1.7em;
+  width: 80%;
+  cursor: pointer;
+}
+.eventAccordion.open .headSectionBtn {
+  font-size: 4em;
+  height: 70px;
+  cursor: default;
+}

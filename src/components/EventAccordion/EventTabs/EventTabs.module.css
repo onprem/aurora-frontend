@@ -1,0 +1,63 @@
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 20px;
+  font-size: 1.4em;
+  line-height: 1.3em;
+}
+.tabHeads {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.tabBtn {
+  height: 60px;
+  width: calc(100% / 3);
+  background: white;
+  color: black;
+  border: none;
+  font-family: 'Nunito Sans';
+  font-size: 1.3em;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+.tabBtn.active {
+  background: black;
+  color: white;
+}
+.tabBodys {
+  width: 100%;
+  background: black;
+  color: white;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+}
+.tabContent {
+  position: absolute;
+  opacity: 0;
+  text-align: left;
+  margin: 60px;
+  max-height: 0;
+  transition: opacity 0.1s ease-in;
+}
+.tabContent.active {
+  position: relative;
+  opacity: 1;
+  max-height: 200vh;
+  transition: opacity 0.3s ease-in;
+}
+.tabContent h3 {
+  font-weight: 900;
+}
+.tabContent p {
+  text-align: justify;
+}
+.teamDiv {
+  display: flex;
+  flex-direction: row;
+}
+.teamDiv > div {
+  width: 40%;
+}
