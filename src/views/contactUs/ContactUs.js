@@ -30,35 +30,10 @@ const cordiData = [
     name: `Ruchika Agarwal`,
     tel: `+91-7470358637`,
     mail: `ruchika@aurorafest.org`,
-
-
-import style from './contactUs.module.css';
-
-const cordiData = [
-  {
-    name: `Ojaswa Sharma`,
-    tel: 999999999999,
-    mail: `dummy@dummy.com`,
-  },
-  {
-    name: `Chandan Kumar`,
-    tel: 999999999999,
-    mail: `dummy@dummy.com`,
-  },
-  {
-    name: `Arihant Jain`,
-    tel: 999999999999,
-    mail: `dummy@dummy.com`,
-  },
-  {
-    name: `Ruchika Agarwal`,
-    tel: 999999999999,
-    mail: `dummy@dummy.com`,
   },
 ];
 
 const Contact = () => {
-
   const handleSubmit = e => {
     e.preventDefault();
   };

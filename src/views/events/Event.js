@@ -9,10 +9,8 @@ import Particles from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
 import useMediaQuery from '../../utils/useMediaQuery';
 
-
-import cardData from '../../assets/data/eventData/eventdata';
+import cardData from '../../assets/data/eventData/cardData';
 import Logo from '../../assets/icons/auroraLogo.svg';
-
 
 const Event = () => {
   const isDesktop = useMediaQuery('(min-width: 450px)');
