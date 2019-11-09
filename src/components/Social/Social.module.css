@@ -5,8 +5,8 @@
   align-items: center;
   z-index: 2;
   position: fixed;
-  bottom: 20px;
-  left: 35px;
+  bottom: 10px;
+  left: 10px;
 }
 .Social svg {
   height: 42px;

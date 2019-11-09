@@ -6,6 +6,7 @@ import Graveyard from '../../components/graveyard/Graveyard';
 import Bat from '../../components/bat/Bat';
 import Social from '../../components/Social/Social';
 import Particles from '../../components/particles/Particle';
+import Footer from '../../components/footer/Footer';
 
 import { ReactComponent as AuroraCircleIcon } from '../../assets/icons/auroraCircle.svg';
 import { ReactComponent as AuroraTextIcon } from '../../assets/icons/auroraText.svg';
@@ -41,10 +42,7 @@ const Home = () => {
         <Particles />
         {bats}
       </div>
-      <div className={styles.Footer}>
-        <h1 style={{ fontSize: '52px' }}>フッター</h1>
-        <div>FOOTER</div>
-      </div>
+      <Footer />
       {isDesktop && <Social />}
     </>
   );

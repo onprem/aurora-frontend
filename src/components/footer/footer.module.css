@@ -1,0 +1,201 @@
+.footer_container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: black;
+  overflow: hidden;
+}
+.footer_content_container {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.footer_content_sitemap {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.footer_sitemap,
+.footer_support,
+.footer_social_cause {
+  text-align: left;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  width: 70%;
+}
+.footer_sitemap {
+  padding-left: 80%;
+}
+.footer_divider {
+  height: 80%;
+  width: 4px;
+  background-color: white;
+}
+.footer_support_social_container {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.footer_sitemap_li,
+.footer_support_li,
+.footer_social_li {
+  color: white;
+  font-size: 32px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  letter-spacing: 10px;
+  font-family: 'Nunito Sans';
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.footer_heading {
+  font-weight: 800;
+  color: white;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-family: 'Nunito Sans';
+}
+.footer_logo {
+  width: 300px;
+  margin-top: -90px;
+}
+.footer_date_logo_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.date_heading {
+  color: white;
+  margin-top: -25px;
+  font-family: 'Nunito Sans';
+  font-size: 30px;
+}
+@media (max-width: 1680px) {
+  .footer_sitemap_li,
+  .footer_support_li,
+  .footer_social_li {
+    font-size: 24px;
+  }
+  .footer_heading {
+    font-size: 28px;
+  }
+  .footer_logo {
+    width: 250px;
+  }
+  .date_heading {
+    font-size: 24px;
+  }
+  .footer_sitemap {
+    padding-left: 70%;
+  }
+}
+@media (max-width: 1540px) {
+  .footer_sitemap_li,
+  .footer_support_li,
+  .footer_social_li {
+    font-size: 22px;
+    letter-spacing: 5px;
+  }
+  .footer_content_container {
+    width: 75%;
+  }
+  .footer_heading {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+  .footer_logo {
+    width: 250px;
+  }
+  .date_heading {
+    font-size: 22px;
+  }
+  .footer_sitemap {
+    padding-left: 70%;
+  }
+}
+@media (max-width: 1150px) {
+  .footer_sitemap_li,
+  .footer_support_li,
+  .footer_social_li {
+    font-size: 16px;
+    letter-spacing: 5px;
+  }
+  .footer_heading {
+    font-size: 22px;
+    letter-spacing: 5px;
+  }
+  .footer_logo {
+    width: 200px;
+  }
+  .date_heading {
+    font-size: 16px;
+  }
+  .footer_sitemap {
+    padding-left: 110%;
+  }
+  .footer_sitemap,
+  .footer_support,
+  .footer_social_cause {
+    width: 90%;
+  }
+}
+@media (max-width: 1000px) {
+  .footer_sitemap_li,
+  .footer_support_li,
+  .footer_social_li {
+    font-size: 16px;
+    letter-spacing: 5px;
+  }
+  .footer_heading {
+    font-size: 22px;
+    letter-spacing: 5px;
+  }
+  .footer_date_logo_container {
+    display: none;
+  }
+  .footer_sitemap {
+    padding-left: 0%;
+  }
+  .footer_sitemap,
+  .footer_support,
+  .footer_social_cause {
+    width: 90%;
+  }
+  .footer_content_container {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .footer_divider {
+    display: none;
+  }
+}
+@media (max-width: 455px) {
+  .footer_sitemap_li,
+  .footer_support_li,
+  .footer_social_li {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  .footer_heading {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+  .footer_support_social_container {
+    margin-right: -10%;
+  }
+}
