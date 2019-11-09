@@ -191,17 +191,23 @@
   }
 }
 @media (max-width: 455px) {
+  .footer_container {
+    padding-top: 10vh;
+    padding-bottom: 10px;
+  }
   .footer_sitemap_li,
   .footer_support_li,
   .footer_social_li {
     font-size: 12px;
     letter-spacing: 3px;
+    padding: 5px 0;
+    margin: 5px 0;
   }
   .footer_heading {
     font-size: 18px;
     letter-spacing: 3px;
   }
   .footer_support_social_container {
-    margin-right: -10%;
+    margin-right: -5%;
   }
 }

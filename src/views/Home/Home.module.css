@@ -14,16 +14,6 @@
 .Text {
   width: 30vh;
 }
-.Footer {
-  color: white;
-  background: black;
-  width: 100%;
-  min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
 /* Bats */
 .Bat1 {
@@ -80,16 +70,23 @@
 }
 
 @media only screen and (max-width: 450px) {
+  .Home {
+    min-height: 82vh;
+  }
   .Logo {
     width: 40vw;
   }
   .Text {
     width: 60vw;
   }
-  .Footer {
-    min-height: 40vh;
+  .Bat1 {
+    top: 70%;
+  }
+  .Bat2 {
+    top: 65%;
   }
   .Bat3 {
+    top: 65%;
     right: 40%;
   }
   .Bat4 {
@@ -99,13 +96,16 @@
     right: 65%;
   }
   .Bat6 {
-    top: 75%;
+    top: 65%;
     right: 90%;
     /* width: 200px; */
   }
   .Bat7 {
     top: 40%;
     /* width: 200px; */
+  }
+  .Bat8 {
+    top: 70%;
   }
   .Bat9 {
     right: 78%;

@@ -95,8 +95,12 @@
     letter-spacing: 5px;
   }
   .burger {
-    top: 25px;
-    right: 25px;
+    top: 15px;
+    right: 10px;
     width: 50px;
+  }
+  .burger::before,
+  .burger::after {
+    margin-bottom: 8px;
   }
 }
