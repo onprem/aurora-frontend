@@ -3,7 +3,7 @@ const eventData = {
     name: 'Parivesh',
     singleEvent: true,
     description:
-      '"Beauty is worse than wine, it intoxicates both the holder and the beholder." PARIVESH the fashion exhibit of AURORA, where fashion is inspired by youth and nostalgia and draws inspiration from the best of the past portraying the 20’s extravaganza. This is your once in a lifetime opportunity to live your childhood dream and be the next Miss. India! Grab the opportunity to become the next Suman Rao or Anukreethy Vas and ensnare everyone’s senses! Glitterati is about to commence and cast its spell upon the streets of IIITM as young models sashay down the ramp with panache and allure the hearts of many. PARIVESH the most glamorous event of the festival is ready to captivate the audience with its mesmerizing charm. Fashion is an art and PARIVESH is the ultimate platform to express yourself. Boasting of a decade long legacy, the “gloss, glitz and glamour” is back with bigger and better stakes with PARIVESH. Parivesh gives you the golden opportunity to emerge as a trendsetter in front of the big guns of trade and a huge ecstatic audience. The curtains would slowly draw apart to spell-bound everyone by the angelic beauty stunning the stage. If you have got the beguiling looks and the perfect vogue, Parivesh is just the event for you! This is a competition tailor made for all of you whoever aspires to be the next glamorous DIVA or HUNK. Come set the stage on fire with your charm and charisma at Aurora!!!',
+      'Parivesh the most glamorous event of the festival is ready to captivate the audience with its mesmerizing charm. Fashion is an art and Parivesh is the ultimate platform to express yourself. Boasting of a decade long legacy, the “gloss, glitz and glamour” is back with bigger and better stakes with Parivesh. Parivesh gives you the golden opportunity to emerge as a trendsetter in front of the big guns of trade and a huge ecstatic audience. The curtains would slowly draw apart to spell-bound everyone by the angelic beauty stunning the stage. If you have got the beguiling looks and the perfect vogue, Parivesh is just the event for you! This is a competition tailor made for all of you whoever aspires to be the next glamorous DIVA or HUNK. Come set the stage on fire with your charm and charisma at Aurora!!!',
     prizeMoney: 'Worth Rs. 1,20,000',
     fees: 2500,
     maxTeamSize: 15,
@@ -81,10 +81,10 @@ const eventData = {
     singleEvent: false,
     subEvents: [
       {
-        name: 'On spot painting',
+        name: 'On Spot Painting',
         description:
           'This is an on-spot painting contest for all the artists who want to bring their imagination on a canvas. So grab your brushes and colours and bring your creativity live on the canvas.',
-        prizeMoney: '',
+        prizeMoney: 'Worth Rs. 7,500',
         fees: 150,
         maxTeamSize: 1,
         rules: [
@@ -98,14 +98,52 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design',
           'Decision of the judges will be final and binding',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anshita Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Piyush Raikwar',
+            mobile: '',
+          },
+          {
+            name: 'Harshit',
+            mobile: '',
+          },
+          {
+            name: 'Ayush Saini',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Pushkar',
+            mobile: '',
+          },
+          {
+            name: 'Tushar Neogi',
+            mobile: '',
+          },
+          {
+            name: 'Vedant Tripathi',
+            mobile: '',
+          },
+          {
+            name: 'Vaishnavi',
+            mobile: '',
+          },
+          {
+            name: 'Bhanu Putta',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Naqaab (Face Painting)',
         description:
           'Around the world, there are face painting festivals, conventions, and even competitions to celebrate this art form. The artist can do FACE PAINTING on his own face or face of any other person (model/friend/ relative). Face Painting on any subject or theme will be accepted.',
-        prizeMoney: '',
+        prizeMoney: 'Worth Rs. 2,000',
         fees: 0,
         maxTeamSize: 1,
         rules: [
@@ -117,14 +155,52 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design',
           'Decision of the judges will be final and binding',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anshita Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Piyush Raikwar',
+            mobile: '',
+          },
+          {
+            name: 'Harshit',
+            mobile: '',
+          },
+          {
+            name: 'Ayush Saini',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Pushkar',
+            mobile: '',
+          },
+          {
+            name: 'Tushar Neogi',
+            mobile: '',
+          },
+          {
+            name: 'Vedant Tripathi',
+            mobile: '',
+          },
+          {
+            name: 'Vaishnavi',
+            mobile: '',
+          },
+          {
+            name: 'Bhanu Putta',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Graffathon',
         description:
           'This competition is open to all graffiti artists, who are able to submit examples of their creative artwork. Just pick up your spray cans and brushes and display your creativity on our walls.',
-        prizeMoney: '',
+        prizeMoney: 'Worth Rs. 12,000',
         fees: 200,
         maxTeamSize: 4,
         rules: [
@@ -135,13 +211,51 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design',
           'Decision of the judges will be final and binding',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anshita Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Piyush Raikwar',
+            mobile: '',
+          },
+          {
+            name: 'Harshit',
+            mobile: '',
+          },
+          {
+            name: 'Ayush Saini',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Pushkar',
+            mobile: '',
+          },
+          {
+            name: 'Tushar Neogi',
+            mobile: '',
+          },
+          {
+            name: 'Vedant Tripathi',
+            mobile: '',
+          },
+          {
+            name: 'Vaishnavi',
+            mobile: '',
+          },
+          {
+            name: 'Bhanu Putta',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Best out of Waste',
         description: '',
-        prizeMoney: '',
+        prizeMoney: 'Worth Rs. 5,000',
         fees: 0,
         maxTeamSize: 1,
         rules: [
@@ -153,14 +267,52 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design.',
           'The decision of the judges will be final and binding.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anshita Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Piyush Raikwar',
+            mobile: '',
+          },
+          {
+            name: 'Harshit',
+            mobile: '',
+          },
+          {
+            name: 'Ayush Saini',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Pushkar',
+            mobile: '',
+          },
+          {
+            name: 'Tushar Neogi',
+            mobile: '',
+          },
+          {
+            name: 'Vedant Tripathi',
+            mobile: '',
+          },
+          {
+            name: 'Vaishnavi',
+            mobile: '',
+          },
+          {
+            name: 'Bhanu Putta',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'On-spot sketching',
         description:
           'This contest is open to all traditional artists that draw using lead pencils. The topic is BLACK & WHITE PENCIL DRAWING. Contestants can make drawing of any subject that they want with lead pencil(s). No color artwork will be accepted, only black/white/grayscale pencil artwork for this contest.',
-        prizeMoney: '',
+        prizeMoney: 'Worth Rs. 7,500',
         fees: 150,
         maxTeamSize: 1,
         rules: [
@@ -171,14 +323,52 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design',
           'Decision of the judges will be final and binding',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anshita Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Piyush Raikwar',
+            mobile: '',
+          },
+          {
+            name: 'Harshit',
+            mobile: '',
+          },
+          {
+            name: 'Ayush Saini',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Pushkar',
+            mobile: '',
+          },
+          {
+            name: 'Tushar Neogi',
+            mobile: '',
+          },
+          {
+            name: 'Vedant Tripathi',
+            mobile: '',
+          },
+          {
+            name: 'Vaishnavi',
+            mobile: '',
+          },
+          {
+            name: 'Bhanu Putta',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Doodly-doo(Online)',
         description:
           'Doodly-doo is a doodle art contest which gives a chance to use your imagination and share your doodling skills with the world.',
-        prizeMoney: '',
+        prizeMoney: 'Worth Rs. 2,000',
         fees: 200,
         maxTeamSize: 3,
         rules: [
@@ -189,8 +379,46 @@ const eventData = {
           'Creativity and originality, as well as the unique and novel approach to the doodle.',
           'Decisions​ of the judges are final and binding.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anshita Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Piyush Raikwar',
+            mobile: '',
+          },
+          {
+            name: 'Harshit',
+            mobile: '',
+          },
+          {
+            name: 'Ayush Saini',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Pushkar',
+            mobile: '',
+          },
+          {
+            name: 'Tushar Neogi',
+            mobile: '',
+          },
+          {
+            name: 'Vedant Tripathi',
+            mobile: '',
+          },
+          {
+            name: 'Vaishnavi',
+            mobile: '',
+          },
+          {
+            name: 'Bhanu Putta',
+            mobile: '',
+          },
+        ],
       },
     ],
   },
@@ -228,8 +456,58 @@ const eventData = {
         ],
       },
     ],
-    eventHeads: [],
-    eventOrganisers: [],
+    eventHeads: [
+      {
+        name: 'Yogesh',
+        mobile: '',
+      },
+      {
+        name: 'Arpit Chhabra',
+        mobile: '',
+      },
+      {
+        name: 'Yashvant Gond',
+        mobile: '',
+      },
+      {
+        name: 'Karan Singh',
+        mobile: '',
+      },
+      {
+        name: 'Prasoon',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Varsha Beniwal',
+        mobile: '',
+      },
+      {
+        name: 'Saniya Arora',
+        mobile: '',
+      },
+      {
+        name: 'Prince',
+        mobile: '',
+      },
+      {
+        name: 'Yogesh Kumar',
+        mobile: '',
+      },
+      {
+        name: 'Pruthvi',
+        mobile: '',
+      },
+      {
+        name: 'Kamal Garg',
+        mobile: '',
+      },
+      {
+        name: 'Divyansh Daushalya',
+        mobile: '',
+      },
+    ],
   },
   stepup: {
     name: 'Step Up',
@@ -243,6 +521,7 @@ const eventData = {
         description: 'Solo, Duet',
         fees: 249,
         maxTeamSize: 2,
+        prizeMoney: 'Worth Rs. 25,000',
         rules: [
           'Maximum time limit: ● Elimination round: 3 min. ● Final round: 5 min',
           'Only the participants decided by the judge will qualify for the final round.',
@@ -250,14 +529,73 @@ const eventData = {
           'It is not necessary for the participants to perform on different songs for elimination and final round.',
           'Costumes are not necessary for the round but marks will be given for costumes.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Gaurav Verma',
+            mobile: '',
+          },
+          {
+            name: 'Deepak Paliwal',
+            mobile: '',
+          },
+          {
+            name: 'Aditya Shankar Mishra',
+            mobile: '',
+          },
+          {
+            name: 'Suryadeepti',
+            mobile: '',
+          },
+          {
+            name: 'Anivesh',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Ashok Meena',
+            mobile: '',
+          },
+          {
+            name: 'Mohit Mochi',
+            mobile: '',
+          },
+          {
+            name: 'Vineet',
+            mobile: '',
+          },
+          {
+            name: 'Afroz',
+            mobile: '',
+          },
+          {
+            name: 'Amit Kumar',
+            mobile: '',
+          },
+          {
+            name: 'Deeksha',
+            mobile: '',
+          },
+          {
+            name: 'Aditi',
+            mobile: '',
+          },
+          {
+            name: 'Tamanna',
+            mobile: '',
+          },
+          {
+            name: 'Anshul Dubey',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Synchro Funk',
         description: 'Street Dancing',
         fees: 749,
         maxTeamSize: 15,
+        prizeMoney: 'Worth Rs. 32,500',
         rules: [
           'Minimum number of team member-3. Maximum number of team member-15',
           'Maximum time limits: Elimination round : 4 min. Final round : 6 min.',
@@ -266,14 +604,73 @@ const eventData = {
           'It is not necessary for the participants to perform on different songs for elimination and final round.',
           'Costumes are not necessary for the round but marks will be given for costumes.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Gaurav Verma',
+            mobile: '',
+          },
+          {
+            name: 'Deepak Paliwal',
+            mobile: '',
+          },
+          {
+            name: 'Aditya Shankar Mishra',
+            mobile: '',
+          },
+          {
+            name: 'Suryadeepti',
+            mobile: '',
+          },
+          {
+            name: 'Anivesh',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Ashok Meena',
+            mobile: '',
+          },
+          {
+            name: 'Mohit Mochi',
+            mobile: '',
+          },
+          {
+            name: 'Vineet',
+            mobile: '',
+          },
+          {
+            name: 'Afroz',
+            mobile: '',
+          },
+          {
+            name: 'Amit Kumar',
+            mobile: '',
+          },
+          {
+            name: 'Deeksha',
+            mobile: '',
+          },
+          {
+            name: 'Aditi',
+            mobile: '',
+          },
+          {
+            name: 'Tamanna',
+            mobile: '',
+          },
+          {
+            name: 'Anshul Dubey',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Crew Battle',
         description: 'Group Dancing',
         fees: 749,
         maxTeamSize: 15,
+        prizeMoney: 'Worth Rs. 32,500',
         rules: [
           'Group entries.',
           'Knockout round',
@@ -282,8 +679,66 @@ const eventData = {
           'No limitations on dance styles. Music provided by us and varies between different genres (for example hip hop, house, funk, dubstep).',
           'One battle of 8 minutes, divided into four performances one by one, one performance is of minimum 1 minute and maximum 2 minutes.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Gaurav Verma',
+            mobile: '',
+          },
+          {
+            name: 'Deepak Paliwal',
+            mobile: '',
+          },
+          {
+            name: 'Aditya Shankar Mishra',
+            mobile: '',
+          },
+          {
+            name: 'Suryadeepti',
+            mobile: '',
+          },
+          {
+            name: 'Anivesh',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Ashok Meena',
+            mobile: '',
+          },
+          {
+            name: 'Mohit Mochi',
+            mobile: '',
+          },
+          {
+            name: 'Vineet',
+            mobile: '',
+          },
+          {
+            name: 'Afroz',
+            mobile: '',
+          },
+          {
+            name: 'Amit Kumar',
+            mobile: '',
+          },
+          {
+            name: 'Deeksha',
+            mobile: '',
+          },
+          {
+            name: 'Aditi',
+            mobile: '',
+          },
+          {
+            name: 'Tamanna',
+            mobile: '',
+          },
+          {
+            name: 'Anshul Dubey',
+            mobile: '',
+          },
+        ],
       },
     ],
   },
@@ -320,8 +775,22 @@ const eventData = {
         ],
       },
     ],
-    eventHeads: [],
-    eventOrganisers: [],
+    eventHeads: [
+      {
+        name: 'Jaggadesh Suggula',
+        mobile: '',
+      },
+      {
+        name: 'Ankita Kumari',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Manchtantra (Dramatics Club)',
+        mobile: '',
+      },
+    ],
   },
   pikture: {
     name: 'The Pikture',
@@ -333,6 +802,7 @@ const eventData = {
         description:
           'The movie-making contest for several previous editions has been one of the premier events of the Aurora where students with interest and prowess in the movie-making domains come forwards with their short movies. This event will also bring out the talents of the participants or the students in domains like film editing, cinematography, etc.',
         fees: 249,
+        prizeMoney: 'Worth Rs. 17,000',
         rules: [
           'The participants will have to submit their videos in a Pen drive at the control tent. Aurora is not responsible for any technical problems arising out of the non-compatibility of the videos.',
           'The submissions would be taken on the last day of Aurora one hour before the start of the event. The participants must be present at the specified venue during the judging of their submission.',
@@ -341,14 +811,49 @@ const eventData = {
           'The Video must be shot in a resolution of 720p or greater. It can be shot on any device, a DSLR or a phone or a Point-and-Shoot camera.',
           'The duration of the film should be between 5 min-15 min.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Pragnya Tata',
+            mobile: '',
+          },
+          {
+            name: 'Ravuri Upendra',
+            mobile: '',
+          },
+          {
+            name: 'Pranay',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Jhanvi',
+            mobile: '',
+          },
+          {
+            name: 'Praveen',
+            mobile: '',
+          },
+          {
+            name: 'Ashray Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Bipin Pathak',
+            mobile: '',
+          },
+          {
+            name: 'Pranay',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Panorama',
         description:
           'The photography competition will be a one of a kind masterful event where the participants will be clicking snaps on various themes, including the three-day final show, and then finally those photographs will be judged on various trivial aspects of photography like exposure and light settings, etc.',
         fees: 0,
+        prizeMoney: 'Worth Rs. 2,000',
         rules: [
           'This is an individual Online competition.',
           'The event consists of two rounds. First an online qualifier for which a theme would be provided. Selected participants will then move to the second round and cover various events during Aurora’20',
@@ -363,14 +868,49 @@ const eventData = {
           "The judge's decision shall be final and binding.",
           'Aurora reserves the right to use the images on social media (suitable credits will be given to the photographer).',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Pragnya Tata',
+            mobile: '',
+          },
+          {
+            name: 'Ravuri Upendra',
+            mobile: '',
+          },
+          {
+            name: 'Pranay',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Jhanvi',
+            mobile: '',
+          },
+          {
+            name: 'Praveen',
+            mobile: '',
+          },
+          {
+            name: 'Ashray Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Bipin Pathak',
+            mobile: '',
+          },
+          {
+            name: 'Pranay',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Portray It',
         description:
           'Portray a story, an emotion or a feeling through a slideshow of 5-10 pictures and post it on Aurora’s FB page. The judgment will be based on the number of likes, comments, shares and the content of the story.',
         fees: 0,
+        prizeMoney: 'Worth Rs. 3,000',
         rules: [
           'This is an individual online competition.',
           'The slideshow must consist of at least 3 and at most 10 pictures.',
@@ -378,20 +918,55 @@ const eventData = {
           "The judge's decision shall be final and binding.",
           'Aurora reserves the right to use the images on social media (suitable credits will be given to the photographer).',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Pragnya Tata',
+            mobile: '',
+          },
+          {
+            name: 'Ravuri Upendra',
+            mobile: '',
+          },
+          {
+            name: 'Pranay',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Jhanvi',
+            mobile: '',
+          },
+          {
+            name: 'Praveen',
+            mobile: '',
+          },
+          {
+            name: 'Ashray Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Bipin Pathak',
+            mobile: '',
+          },
+          {
+            name: 'Pranay',
+            mobile: '',
+          },
+        ],
       },
     ],
   },
   informal: {
     name: 'Informal',
     singleEvent: false,
-    fees: 150,
     subEvents: [
       {
         name: 'Aptitude Quiz',
-        description: '',
-        prizeMoney: '',
+        description:
+          '"The best preparation for tomorrow is doing your best today." - H. Jackson Brown Jr. Ready to test your intellectual skills ? Come be a part of series of mind-boggling questions which will test your logical and analytical skills.',
+        prizeMoney: 'Worth Rs. 6,000',
+        fees: 150,
         maxTeamSize: 2,
         rules: [
           'There will be two rounds conducted. Both the qualifier and final round will be of pen and paper based.',
@@ -410,14 +985,57 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Abhishek Singh',
+            mobile: '',
+          },
+          {
+            name: 'Abhishek Garain',
+            mobile: '',
+          },
+          {
+            name: 'Vaibhav Jain',
+            mobile: '',
+          },
+          {
+            name: 'Ketan Gupta',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Rutviz Raut',
+            mobile: '',
+          },
+          {
+            name: 'Nakul Shahdadpuri',
+            mobile: '',
+          },
+          {
+            name: 'Himanshu Ruhela',
+            mobile: '',
+          },
+          {
+            name: 'Aadit Agrawal',
+            mobile: '',
+          },
+          {
+            name: 'Madhvik',
+            mobile: '',
+          },
+          {
+            name: 'Ishaan Kakkar',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'BIT Quiz',
-        description: '',
-
-        prizeMoney: '',
+        description:
+          "Do you have impulse? Do you have the knowledge? Do you wish to feel a rush of Adrenaline? Aurora'20 , IIITM Gwalior present it’s BIT Quiz competition. Lets' test your knowledge in the field of Business and the IT world.",
+        prizeMoney: 'Worth Rs. 6,000',
+        fees: 150,
         maxTeamSize: 2,
         rules: [
           'There will be two rounds conducted. Both the qualifier and final round will be conducted online.',
@@ -436,13 +1054,57 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Abhishek Singh',
+            mobile: '',
+          },
+          {
+            name: 'Abhishek Garain',
+            mobile: '',
+          },
+          {
+            name: 'Vaibhav Jain',
+            mobile: '',
+          },
+          {
+            name: 'Ketan Gupta',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Rutviz Raut',
+            mobile: '',
+          },
+          {
+            name: 'Nakul Shahdadpuri',
+            mobile: '',
+          },
+          {
+            name: 'Himanshu Ruhela',
+            mobile: '',
+          },
+          {
+            name: 'Aadit Agrawal',
+            mobile: '',
+          },
+          {
+            name: 'Madhvik',
+            mobile: '',
+          },
+          {
+            name: 'Ishaan Kakkar',
+            mobile: '',
+          },
+        ],
       },
       {
-        name: 'Anime Quiz',
-        description: '',
-        prizeMoney: '',
+        name: 'Cine Quiz',
+        description:
+          "Show off your binge watching skills in Cine Quiz which is going to be the next big thing during Aurora'20. This quiz will test your knowledge of Movies, Comics, and TV Series ranging from hollywood to bollywood. Let's see who conquers the throne.",
+        prizeMoney: 'Worth Rs. 6,000',
+        fees: 150,
         maxTeamSize: 2,
         rules: [
           'There will be two rounds conducted. Both the qualifier and final round will be conducted online.',
@@ -461,8 +1123,50 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Abhishek Singh',
+            mobile: '',
+          },
+          {
+            name: 'Abhishek Garain',
+            mobile: '',
+          },
+          {
+            name: 'Vaibhav Jain',
+            mobile: '',
+          },
+          {
+            name: 'Ketan Gupta',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Rutviz Raut',
+            mobile: '',
+          },
+          {
+            name: 'Nakul Shahdadpuri',
+            mobile: '',
+          },
+          {
+            name: 'Himanshu Ruhela',
+            mobile: '',
+          },
+          {
+            name: 'Aadit Agrawal',
+            mobile: '',
+          },
+          {
+            name: 'Madhvik',
+            mobile: '',
+          },
+          {
+            name: 'Ishaan Kakkar',
+            mobile: '',
+          },
+        ],
       },
     ],
   },
@@ -473,7 +1177,7 @@ const eventData = {
       {
         name: 'CS-GO',
         description: 'Showcase your talent in Counter Strike.',
-        prizeMoney: '',
+        prizeMoney: 'Worth Rs. 20,000',
         fees: 249,
         maxTeamSize: 5,
         rules: [
@@ -554,13 +1258,55 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Siddharth Verma',
+            mobile: '',
+          },
+          {
+            name: 'Saksham Tewari',
+            mobile: '',
+          },
+          {
+            name: 'Priyash Gupta',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Siddharth',
+            mobile: '',
+          },
+          {
+            name: 'Kapin Sangwan',
+            mobile: '',
+          },
+          {
+            name: 'Dushyant Pratap',
+            mobile: '',
+          },
+          {
+            name: 'Udit Singh',
+            mobile: '',
+          },
+          {
+            name: 'C. Dheena',
+            mobile: '',
+          },
+          {
+            name: 'Vidya Dubey',
+            mobile: '',
+          },
+          {
+            name: 'Jayant Gupta',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'PUBG',
         description: '',
-        prizeMoney: '',
+        prizeMoney: 'Worth Rs. 10,000',
         fees: 149,
         maxTeamSize: 4,
         rules: [
@@ -599,8 +1345,50 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Siddharth Verma',
+            mobile: '',
+          },
+          {
+            name: 'Saksham Tewari',
+            mobile: '',
+          },
+          {
+            name: 'Priyash Gupta',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Siddharth',
+            mobile: '',
+          },
+          {
+            name: 'Kapin Sangwan',
+            mobile: '',
+          },
+          {
+            name: 'Dushyant Pratap',
+            mobile: '',
+          },
+          {
+            name: 'Udit Singh',
+            mobile: '',
+          },
+          {
+            name: 'C. Dheena',
+            mobile: '',
+          },
+          {
+            name: 'Vidya Dubey',
+            mobile: '',
+          },
+          {
+            name: 'Jayant Gupta',
+            mobile: '',
+          },
+        ],
       },
     ],
   },
@@ -613,6 +1401,7 @@ const eventData = {
         name: 'Open Mic',
         description:
           'The Open Mic is an open stage for all talent like poetry, storytelling, stand-up comedy, Mimicry, Beat boxing; rapping or any other unique talent you have. You get the chance to perform in front of a live audience.',
+        prizeMoney: 'Worth Rs. 15,000',
         fees: 200,
         maxTeamSize: 1,
         rules: [
@@ -623,13 +1412,52 @@ const eventData = {
           'Selection of participants is solely based on their content.',
           'Decision of the judges will be final.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anuj Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Simran Kureel',
+            mobile: '',
+          },
+          {
+            name: 'Shivam Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Ashutosh Kumar',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Abhishek Pratap Singh',
+            mobile: '',
+          },
+          {
+            name: 'Anjali Bhagoria',
+            mobile: '',
+          },
+          {
+            name: 'Ashish Khatri',
+            mobile: '',
+          },
+          {
+            name: 'Lumbini',
+            mobile: '',
+          },
+          {
+            name: 'Manish',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Morning Radio',
         description:
           'If you’re spontaneous, confident & have a brilliant sense of humour, get set to be the next radio star. If you love music & stories, are fluent in Hindi & English, then you just could be the lucky one! This event gives you the chance to own your show with a live audience right by your side. Be an RJ, show off your voice and interaction skills, speak a lot and you have chance to win.',
+        prizeMoney: 'Worth Rs. 5,000',
         fees: 200,
         maxTeamSize: 1,
         rules: [
@@ -638,13 +1466,52 @@ const eventData = {
           'Participants will be judged on the basis of fluency, spontaneity, presentation, sense of humour, communication skills and interaction with the listeners.',
           'Decision of the judges will be final.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anuj Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Simran Kureel',
+            mobile: '',
+          },
+          {
+            name: 'Shivam Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Ashutosh Kumar',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Abhishek Pratap Singh',
+            mobile: '',
+          },
+          {
+            name: 'Anjali Bhagoria',
+            mobile: '',
+          },
+          {
+            name: 'Ashish Khatri',
+            mobile: '',
+          },
+          {
+            name: 'Lumbini',
+            mobile: '',
+          },
+          {
+            name: 'Manish',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Creative Writing (English)',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
+        prizeMoney: 'Worth Rs. 2,000',
         fees: 0,
         maxTeamSize: 1,
         rules: [
@@ -656,13 +1523,52 @@ const eventData = {
           'Name of document: Creative_Writing_English_(name and surname of the applicant)',
           'You have to write your ​ name, age, city, college/school (if any), phone number and email​ in your entry.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anuj Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Simran Kureel',
+            mobile: '',
+          },
+          {
+            name: 'Shivam Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Ashutosh Kumar',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Abhishek Pratap Singh',
+            mobile: '',
+          },
+          {
+            name: 'Anjali Bhagoria',
+            mobile: '',
+          },
+          {
+            name: 'Ashish Khatri',
+            mobile: '',
+          },
+          {
+            name: 'Lumbini',
+            mobile: '',
+          },
+          {
+            name: 'Manish',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Creative Writing (Hindi)',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
+        prizeMoney: 'Worth Rs. 2,000',
         fees: 0,
         maxTeamSize: 1,
         rules: [
@@ -674,8 +1580,46 @@ const eventData = {
           'Name of document: Creative_Writing_Hindi_(name and surname of the applicant)',
           'You have to write your ​ name, age, city, college/school (if any), phone number and email​ in your entry.',
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Anuj Sharma',
+            mobile: '',
+          },
+          {
+            name: 'Simran Kureel',
+            mobile: '',
+          },
+          {
+            name: 'Shivam Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Ashutosh Kumar',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Abhishek Pratap Singh',
+            mobile: '',
+          },
+          {
+            name: 'Anjali Bhagoria',
+            mobile: '',
+          },
+          {
+            name: 'Ashish Khatri',
+            mobile: '',
+          },
+          {
+            name: 'Lumbini',
+            mobile: '',
+          },
+          {
+            name: 'Manish',
+            mobile: '',
+          },
+        ],
       },
     ],
   },
@@ -717,8 +1661,70 @@ const eventData = {
         ],
       },
     ],
-    eventHeads: [],
-    eventOrganisers: [],
+    eventHeads: [
+      {
+        name: 'Ashish Kirti Singh',
+        mobile: '',
+      },
+      {
+        name: 'Aditya Singh',
+        mobile: '',
+      },
+      {
+        name: 'Poorva Khandare',
+        mobile: '',
+      },
+      {
+        name: 'Saksham Arjani',
+        mobile: '',
+      },
+      {
+        name: 'Utkarsh Agrawal',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Vatsal',
+        mobile: '',
+      },
+      {
+        name: 'Sikhar Goswami',
+        mobile: '',
+      },
+      {
+        name: 'Madhuri',
+        mobile: '',
+      },
+      {
+        name: 'Saurabh Prakash',
+        mobile: '',
+      },
+      {
+        name: 'Rutvij',
+        mobile: '',
+      },
+      {
+        name: 'Sakshi Kumar',
+        mobile: '',
+      },
+      {
+        name: 'Sahil Chopra',
+        mobile: '',
+      },
+      {
+        name: 'Harshal Chavan',
+        mobile: '',
+      },
+      {
+        name: 'Aditya Sharma',
+        mobile: '',
+      },
+      {
+        name: 'Navneet Singh',
+        mobile: '',
+      },
+    ],
   },
   eumelia: {
     name: 'Eumelia',
@@ -732,6 +1738,7 @@ const eventData = {
         description:
           'A-capella will focus on the various domains of Free Style Singing without instrumental accompaniment.',
         fees: 200,
+        prizeMoney: 'Worth Rs. 15,000',
         maxTeamSize: 2,
         rules: [
           'The participants may perform any composition(s) of his/her choice.',
@@ -747,13 +1754,64 @@ const eventData = {
             rules: ['Round(s): - Eliminations, Finals.'],
           },
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Devvrat Sahu',
+            mobile: '',
+          },
+          {
+            name: 'Saksham Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Mohit',
+            mobile: '',
+          },
+          {
+            name: 'Amit',
+            mobile: '',
+          },
+          {
+            name: 'Queen Saika',
+            mobile: '',
+          },
+          {
+            name: 'Vishal Shivhare',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Achyuth',
+            mobile: '',
+          },
+          {
+            name: 'Akshay Khatri',
+            mobile: '',
+          },
+          {
+            name: 'Nymika',
+            mobile: '',
+          },
+          {
+            name: 'Mansi',
+            mobile: '',
+          },
+          {
+            name: 'Rachit Garg',
+            mobile: '',
+          },
+          {
+            name: 'Shivangi Sachdeva',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Raag',
         description: 'Raag will be a dedicated event to appreciate singing with Instruments.',
         fees: 200,
+        prizeMoney: 'Worth Rs. 22,000',
         maxTeamSize: 4,
         rules: [
           'Team size : 1-4',
@@ -768,14 +1826,65 @@ const eventData = {
             rules: ['Round(s): - Eliminations, Finals.'],
           },
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Devvrat Sahu',
+            mobile: '',
+          },
+          {
+            name: 'Saksham Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Mohit',
+            mobile: '',
+          },
+          {
+            name: 'Amit',
+            mobile: '',
+          },
+          {
+            name: 'Queen Saika',
+            mobile: '',
+          },
+          {
+            name: 'Vishal Shivhare',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Achyuth',
+            mobile: '',
+          },
+          {
+            name: 'Akshay Khatri',
+            mobile: '',
+          },
+          {
+            name: 'Nymika',
+            mobile: '',
+          },
+          {
+            name: 'Mansi',
+            mobile: '',
+          },
+          {
+            name: 'Rachit Garg',
+            mobile: '',
+          },
+          {
+            name: 'Shivangi Sachdeva',
+            mobile: '',
+          },
+        ],
       },
       {
         name: 'Acoustic Corner',
         description:
           'Acoustic corner is a purely instrumental music fiesta which will be aimed to enthuse the audiences with raw music.',
         fees: 200,
+        prizeMoney: 'Worth Rs. 15,000',
         maxTeamSize: 4,
         rules: [
           'Team size : 1-4',
@@ -788,8 +1897,58 @@ const eventData = {
             rules: ['Round(s): - Eliminations, Finals.'],
           },
         ],
-        eventHeads: [],
-        eventOrganisers: [],
+        eventHeads: [
+          {
+            name: 'Devvrat Sahu',
+            mobile: '',
+          },
+          {
+            name: 'Saksham Gupta',
+            mobile: '',
+          },
+          {
+            name: 'Mohit',
+            mobile: '',
+          },
+          {
+            name: 'Amit',
+            mobile: '',
+          },
+          {
+            name: 'Queen Saika',
+            mobile: '',
+          },
+          {
+            name: 'Vishal Shivhare',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Achyuth',
+            mobile: '',
+          },
+          {
+            name: 'Akshay Khatri',
+            mobile: '',
+          },
+          {
+            name: 'Nymika',
+            mobile: '',
+          },
+          {
+            name: 'Mansi',
+            mobile: '',
+          },
+          {
+            name: 'Rachit Garg',
+            mobile: '',
+          },
+          {
+            name: 'Shivangi Sachdeva',
+            mobile: '',
+          },
+        ],
       },
     ],
   },
