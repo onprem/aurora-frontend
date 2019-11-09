@@ -84,14 +84,11 @@
   border-radius: 8px;
   background: black;
   padding-top: 10px;
-  padding-bottom: 10px;
-
-  padding-right: 25px;
 }
 .cordi {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
 
   justify-content: space-between;
   align-content: center;
@@ -102,7 +99,6 @@
   color: white;
   width: 65%;
   text-align: left;
-  padding-left: 25px;
   margin-top: 10px;
   margin-bottom: 10px;
 
