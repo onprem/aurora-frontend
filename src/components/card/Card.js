@@ -15,7 +15,8 @@ const Card = ({ params }) => {
           background: `${params.color}`,
         }}
       >
-        <img className={style.card_img} src={params.img} alt="Event_art" />
+        {/* <img className={style.card_img} src={params.img} alt="Event_art" /> */}
+        <div className={style.card_img} style={{ backgroundImage: `url(${params.img})` }} />
         <div className={style.card_desc_container}>
           <h1 className={style.card_heading}>{params.title}</h1>
           <p className={style.card_para}>

@@ -5,12 +5,19 @@
   align-items: center;
   z-index: 2;
   position: fixed;
-  bottom: 20px;
-  left: 35px;
+  bottom: 10px;
+  left: 10px;
 }
 .Social svg {
   height: 42px;
   margin: 0 15px;
+}
+
+@media only screen and (max-width: 1366px) {
+  .Social svg {
+    height: 32px;
+    margin: 0 12px;
+  }
 }
 
 @media only screen and (max-width: 500px) {

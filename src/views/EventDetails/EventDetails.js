@@ -19,7 +19,7 @@ const EventWrapper = ({ children }) => {
   return (
     <>
       <div className={styles.eventDetail}>
-        <ArrowLeftIcon className={styles.backArrow} onClick={() => history.goBack()} />
+        <ArrowLeftIcon className={styles.backArrow} onClick={() => history.push('/events')} />
         <div className={styles.accordionContainer}>{children}</div>
       </div>
       <Particles />

@@ -19,8 +19,10 @@
   .footer {
     width: 100%;
     height: 20%;
+    bottom: 9vh;
   }
   .hauntedHouse {
+    bottom: 9vh;
     width: 40%;
   }
 }

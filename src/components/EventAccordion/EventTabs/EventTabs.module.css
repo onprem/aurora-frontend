@@ -23,6 +23,7 @@
   letter-spacing: 0.2em;
   font-weight: 600;
   outline: none;
+  cursor: pointer;
 }
 .tabBtn.active {
   background: black;
@@ -67,6 +68,12 @@
 .registerTab {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 1366px) {
+  /* .tabBtn {
+    font-size: 1em;
+  } */
 }
 
 @media only screen and (max-width: 450px) {
