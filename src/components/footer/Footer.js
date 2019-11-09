@@ -1,11 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import style from './footer.module.css';
 
 import { ReactComponent as Logo } from '../../assets/icons/auroraCircle.svg';
 
-const sitemap = ['home', 'about', 'events', 'contact us'];
-const support = ['contact us', 'find us'];
+const sitemap = [
+  { title: 'home', path: '/' },
+  { title: 'about', path: '/about' },
+  { title: 'events', path: '/events' },
+  { title: 'contact us', path: '/contact' },
+];
+const support = [{ title: 'contact us', path: '/contact' }, { title: 'find us', path: '/contact' }];
 const social = ['waste management'];
 
 const Footer = () => {
@@ -20,7 +26,9 @@ const Footer = () => {
           <ul className={style.footer_sitemap}>
             <h2 className={style.footer_heading}>Sitemap</h2>
             {sitemap.map(map => (
-              <li className={style.footer_sitemap_li}>{map}</li>
+              <Link to={map.path}>
+                <li className={style.footer_sitemap_li}>{map.title}</li>
+              </Link>
             ))}
           </ul>
         </div>
@@ -29,7 +37,9 @@ const Footer = () => {
           <ul className={style.footer_support}>
             <h2 className={style.footer_heading}>Support</h2>
             {support.map(sup => (
-              <li className={style.footer_support_li}>{sup}</li>
+              <Link to={sup.path}>
+                <li className={style.footer_support_li}>{sup.title}</li>
+              </Link>
             ))}
           </ul>
           <ul className={style.footer_social_cause}>

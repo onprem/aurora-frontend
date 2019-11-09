@@ -59,6 +59,12 @@
   font-family: 'Nunito Sans';
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s;
+}
+.footer_sitemap_li:hover,
+.footer_support_li:hover,
+.footer_social_li:hover {
+  transform: scale(1.1);
 }
 .footer_heading {
   font-weight: 800;
