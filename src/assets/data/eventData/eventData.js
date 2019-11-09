@@ -1756,7 +1756,7 @@ const eventData = {
         ],
         eventHeads: [
           {
-            name: 'Devvrat Sahu',
+            name: 'Devwrat Sahu',
             mobile: '',
           },
           {
@@ -1764,11 +1764,7 @@ const eventData = {
             mobile: '',
           },
           {
-            name: 'Mohit',
-            mobile: '',
-          },
-          {
-            name: 'Amit',
+            name: 'Amit Kumar',
             mobile: '',
           },
           {
@@ -1828,7 +1824,7 @@ const eventData = {
         ],
         eventHeads: [
           {
-            name: 'Devvrat Sahu',
+            name: 'Devwrat Sahu',
             mobile: '',
           },
           {
@@ -1836,11 +1832,7 @@ const eventData = {
             mobile: '',
           },
           {
-            name: 'Mohit',
-            mobile: '',
-          },
-          {
-            name: 'Amit',
+            name: 'Amit Kumar',
             mobile: '',
           },
           {
@@ -1899,7 +1891,7 @@ const eventData = {
         ],
         eventHeads: [
           {
-            name: 'Devvrat Sahu',
+            name: 'Devwrat Sahu',
             mobile: '',
           },
           {
@@ -1907,11 +1899,7 @@ const eventData = {
             mobile: '',
           },
           {
-            name: 'Mohit',
-            mobile: '',
-          },
-          {
-            name: 'Amit',
+            name: 'Amit Kumar',
             mobile: '',
           },
           {
