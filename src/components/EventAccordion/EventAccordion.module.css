@@ -5,6 +5,7 @@
   background: white;
   margin-top: 5px;
   transition: height 0.3s ease-in;
+  height: 30px;
 }
 .headSection, .bodySection {
   width: 100%;
@@ -26,12 +27,13 @@
 }
 .headSectionBtn {
   border: 0;
-  background: white;
+  background: transparent;
   font-family: 'SkullAndVoid';
   font-size: 1.7em;
   width: 90%;
   cursor: pointer;
   outline: none;
+  color: black;
 }
 .eventAccordion.open .headSectionBtn {
   font-size: 4em;
@@ -40,6 +42,10 @@
 }
 
 @media only screen and (max-width: 1366px) {
+  .eventAccordion {
+    border: 2px solid black;
+    height: 22px;
+  }
   .eventAccordion.open .headSectionBtn {
     font-size: 3em;
     height: 50px;
@@ -48,11 +54,14 @@
     height: calc(100% - 50px);
   }
   .headSectionBtn {
-    font-size: 2.2em;
+    font-size: 1.7em;
   }
 }
 
 @media only screen and (max-width: 450px) {
+  .eventAccordion {
+    height: 30px;
+  }
   .eventAccordion.open .headSectionBtn {
     font-size: 3em;
     height: 50px;

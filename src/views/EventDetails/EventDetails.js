@@ -49,7 +49,7 @@ const EventDetails = () => {
     );
   }
 
-  const openHeight = `calc(100% - ${(event.subEvents.length - 1) * 45 + 5}px)`;
+  const openHeight = `calc(100% - ${(event.subEvents.length - 1) * 35 + 5}px)`;
 
   const accordions = event.subEvents.map((subEvent, index) => (
     <EventAccordion

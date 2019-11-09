@@ -53,3 +53,8 @@
     font-size: 0.7em;
   }
 }
+@media only screen and (max-width: 450px) and (min-aspect-ratio: 9/16) {
+  .accordionContainer {
+    font-size: 0.6em;
+  }
+}
