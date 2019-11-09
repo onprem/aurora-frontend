@@ -74,17 +74,21 @@
   /* .tabBtn {
     font-size: 1em;
   } */
+  .tabBtn {
+    font-size: 1em;
+    height: 40px;
+  }
+  .tabBodys {
+    height: calc(100% - 40px);
+  }
+  .tabContent {
+    margin: 20px;
+  }
 }
 
 @media only screen and (max-width: 450px) {
   .tabContainer {
     width: 94%;
-  }
-  .tabContent {
-    margin: 20px;
-  }
-  .tabBtn {
-    font-size: 1em;
   }
   .teamDiv {
     flex-direction: column;

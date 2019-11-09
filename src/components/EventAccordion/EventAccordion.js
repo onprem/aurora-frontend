@@ -16,7 +16,7 @@ const EventAccordion = ({ event, isOpen, onClick, openHeight, path }) => {
   return (
     <div
       className={classNames(styles.eventAccordion, { [styles.open]: isOpen })}
-      style={{ height: isOpen ? openHeight : `40px` }}
+      style={isOpen ? { height: openHeight } : {}}
     >
       <section className={styles.headSection}>
         <button className={styles.headSectionBtn} onClick={handleClick} type="button">
