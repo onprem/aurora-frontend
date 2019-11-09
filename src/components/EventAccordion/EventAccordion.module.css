@@ -39,6 +39,19 @@
   cursor: default;
 }
 
+@media only screen and (max-width: 1366px) {
+  .eventAccordion.open .headSectionBtn {
+    font-size: 3em;
+    height: 50px;
+  }
+  .eventAccordion.open .bodySection {
+    height: calc(100% - 50px);
+  }
+  .headSectionBtn {
+    font-size: 2.2em;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .eventAccordion.open .headSectionBtn {
     font-size: 3em;

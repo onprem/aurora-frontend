@@ -30,6 +30,17 @@
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1366px) {
+  .accordionContainer {
+    width: 94%;
+    font-size: 0.7em;
+  }
+  .backArrow {
+    top: 15px;
+    left: 45px;
+    height: 35px;
+  }
+}
 @media only screen and (max-width: 450px) {
   .backArrow {
     top: 15px;

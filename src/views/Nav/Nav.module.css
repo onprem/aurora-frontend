@@ -88,6 +88,23 @@
   transform: rotate(-405deg) translateY(-3px) translateX(3px);
 }
 
+@media only screen and (max-width: 1366px) {
+  .nav_li {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 5px;
+  }
+  .burger {
+    top: 15px;
+    right: 40px;
+    width: 50px;
+  }
+  .burger::before,
+  .burger::after {
+    margin-bottom: 8px;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .nav_li {
     font-size: 24px;

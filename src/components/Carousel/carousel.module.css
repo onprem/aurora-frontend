@@ -44,6 +44,7 @@
   transform: translateX(-50%);
   left: -15%;
   z-index: 2;
+  filter: blur(2px);
 }
 .left_left {
   transform: translateX(-50%);
@@ -53,6 +54,7 @@
   transform: translateX(50%);
   right: -15%;
   z-index: 2;
+  filter: blur(2px);
 }
 .right_right {
   transform: translateX(50%);
@@ -130,6 +132,9 @@
   transform: rotate(180deg);
 }
 @media (max-width: 500px) {
+  .left, .right {
+    filter: none;
+  }
   .slider_container {
     width: 80vw;
   }

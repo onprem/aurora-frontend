@@ -41,6 +41,7 @@
 }
 .about_para_container {
   width: 75vw;
+  margin-bottom: 50px;
 }
 .about_para {
   text-align: justify;
