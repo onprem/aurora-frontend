@@ -106,6 +106,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+  .nav_ul {
+    transform: translateY(-8vh);
+  }
   .nav_li {
     font-size: 24px;
     font-weight: 800;
