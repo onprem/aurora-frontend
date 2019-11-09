@@ -29,7 +29,7 @@ const cordiData = [
     mail: `arihant@aurorafest.org`,
   },
   {
-    name: `Ruchika Agarwal`,
+    name: `Ruchika Agrawal`,
     tel: `+91-7470358637`,
     mail: `ruchika@aurorafest.org`,
   },
