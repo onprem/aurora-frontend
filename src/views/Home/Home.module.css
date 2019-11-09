@@ -1,0 +1,114 @@
+.Home {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.Logo {
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+  width: 25vh;
+}
+.Text {
+  width: 30vh;
+}
+
+/* Bats */
+.Bat1 {
+  top: 80%;
+  right: 25%;
+  transform: rotate(20deg);
+  width: 70px;
+}
+.Bat2 {
+  top: 75%;
+  right: 48%;
+  width: 100px;
+}
+.Bat3 {
+  top: 75%;
+  right: 45%;
+  transform: rotate(25deg);
+  width: 40px;
+}
+.Bat4 {
+  top: 30%;
+  right: 40%;
+  transform: rotate(30deg);
+  width: 75px;
+}
+.Bat5 {
+  top: 22%;
+  right: 54%;
+  width: 120px;
+  transform: rotate(-10deg);
+}
+.Bat6 {
+  top: 80%;
+  right: 65%;
+  width: 50px;
+  transform: rotate(-5deg);
+}
+.Bat7 {
+  top: 45%;
+  right: 55%;
+  width: 60px;
+  transform: rotate(30deg);
+}
+.Bat8 {
+  top: 80%;
+  right: 7%;
+  width: 40px;
+  transform: rotate(-10deg);
+}
+.Bat9 {
+  top: 21%;
+  right: 57%;
+  width: 50px;
+}
+
+@media only screen and (max-width: 450px) {
+  .Home {
+    min-height: 82vh;
+  }
+  .Logo {
+    width: 40vw;
+  }
+  .Text {
+    width: 60vw;
+  }
+  .Bat1 {
+    top: 70%;
+  }
+  .Bat2 {
+    top: 65%;
+  }
+  .Bat3 {
+    top: 65%;
+    right: 40%;
+  }
+  .Bat4 {
+    right: 15%;
+  }
+  .Bat5 {
+    right: 65%;
+  }
+  .Bat6 {
+    top: 65%;
+    right: 90%;
+    /* width: 200px; */
+  }
+  .Bat7 {
+    top: 40%;
+    /* width: 200px; */
+  }
+  .Bat8 {
+    top: 70%;
+  }
+  .Bat9 {
+    right: 78%;
+    /* width: 250px; */
+  }
+}

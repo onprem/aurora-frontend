@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'SkullAndVoid';
+  src: local('SkullAndVoid'), url('../../assets/fonts/SkullAndVoid-Ywg2.ttf');
+}
+.eventDetail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.accordionContainer {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.backArrow {
+  position: absolute;
+  top: 25px;
+  left: 65px;
+  height: 45px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1366px) {
+  .accordionContainer {
+    width: 94%;
+    font-size: 0.7em;
+  }
+  .backArrow {
+    top: 15px;
+    left: 45px;
+    height: 35px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .backArrow {
+    top: 15px;
+    left: 25px;
+    height: 45px;
+  }
+  .accordionContainer {
+    width: 94%;
+    height: 84%;
+    font-size: 0.7em;
+  }
+}
+@media only screen and (max-width: 450px) and (min-aspect-ratio: 9/16) {
+  .accordionContainer {
+    font-size: 0.6em;
+  }
+}

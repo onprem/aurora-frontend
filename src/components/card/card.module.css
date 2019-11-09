@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'SkullAndVoid';
+  src: local('SkullAndVoid'), url('../../assets/fonts/SkullAndVoid-Ywg2.ttf');
+}
+.card_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  border: 3.5px solid black;
+  overflow: hidden;
+}
+.card_img {
+  width: 35%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.card_desc_container {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+.card_heading {
+  margin: 0px;
+  color: white;
+  font-size: 110px;
+  font-weight: 100;
+  font-family: 'SkullAndVoid';
+}
+.card_para {
+  margin: 0px;
+  color: white;
+  text-align: justify;
+  width: 90%;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: 'Nunito Sans';
+
+  /* line-height: 50px; */
+}
+.card_button {
+  width: 30%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: white;
+  border-radius: 80px;
+  font-size: 30px;
+  font-weight: 300;
+  font-family: 'SkullAndVoid';
+  cursor: pointer;
+}
+@media (max-width: 1366px) {
+  .card_heading {
+    font-size: 60px;
+  }
+  .card_para {
+    font-size: 15px;
+  }
+  .card_button {
+    font-size: 22px;
+  }
+  .card_img {
+    width: 40%;
+  }
+  .card_desc_container {
+    width: 60%;
+  }
+}
+@media (max-width: 1100px) {
+  .card_container {
+    flex-direction: column;
+  }
+  .card_img {
+    width: 100%;
+    height: 100%;
+  }
+  .card_desc_container {
+    width: 100%;
+  }
+  .card_heading {
+    font-size: 55px;
+  }
+  .card_para {
+    font-size: 14px;
+  }
+  .card_button {
+    font-size: 20px;
+    font-weight: 100;
+  }
+}
+@media (max-width: 500px) {
+  .card_container {
+    flex-direction: column;
+    border: 3px solid black;
+  }
+  .card_img {
+    width: 100%;
+    height: 120%;
+    background-position: top;
+  }
+  .card_desc_container {
+    width: 100%;
+  }
+  .card_heading {
+    font-size: 25px;
+  }
+  .card_para {
+    font-size: 14px;
+  }
+  .card_button {
+    font-size: 15px;
+    font-weight: 100;
+    width: 40%;
+  }
+}

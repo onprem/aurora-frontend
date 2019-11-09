@@ -1,0 +1,28 @@
+.footer {
+  position: absolute;
+  /* height: 330px; */
+  width: 80%;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.hauntedHouse {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 450px) {
+  .footer {
+    width: 100%;
+    height: 20%;
+    bottom: 8.5vh;
+  }
+  .hauntedHouse {
+    bottom: 8.5vh;
+    width: 40%;
+  }
+}
