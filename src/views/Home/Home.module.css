@@ -8,11 +8,11 @@
 }
 .Logo {
   margin-top: 15vh;
-  margin-bottom: 5vh;
+  margin-bottom: 0vh;
   width: 25vh;
 }
 .Text {
-  width: 45vh;
+  width: 55vh;
 }
 .homeDate {
   position: relative;
@@ -55,14 +55,14 @@
   width: 40px;
 }
 .Bat4 {
-  top: 30%;
+  top: 26%;
   right: 40%;
   transform: rotate(30deg);
   width: 75px;
 }
 .Bat5 {
-  top: 22%;
-  right: 54%;
+  top: 18%;
+  right: 56%;
   width: 120px;
   transform: rotate(-10deg);
 }
@@ -85,9 +85,17 @@
   transform: rotate(-10deg);
 }
 .Bat9 {
-  top: 21%;
-  right: 57%;
+  top: 18%;
+  right: 60%;
   width: 50px;
+}
+
+@media only screen and (max-width: 1366px) {
+  .homeDate {
+    margin-top: 55px;
+    font-size: 1.6em;
+    letter-spacing: 0.2em;
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -96,9 +104,15 @@
   }
   .Logo {
     width: 40vw;
+    margin-top: 10vh;
   }
   .Text {
     width: 60vw;
+  }
+  .homeDate {
+    margin-top: 25px;
+    font-size: 1.6em;
+    letter-spacing: 0.2em;
   }
   .Bat1 {
     top: 70%;
@@ -131,5 +145,22 @@
   .Bat9 {
     right: 78%;
     /* width: 250px; */
+  }
+}
+
+@media only screen and (max-width: 450px) and (min-aspect-ratio: 9/16) {
+  .Logo {
+    margin-top: 5vh;
+  }
+  .Text {
+    width: 60vw;
+  }
+  .homeDate {
+    margin-top: 10px;
+    font-size: 1.4em;
+    letter-spacing: 0.15em;
+  }
+  .Bats {
+    transform: scale(0.8);
   }
 }
