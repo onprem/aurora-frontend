@@ -57,4 +57,9 @@
   .accordionContainer {
     font-size: 0.6em;
   }
+  .backArrow {
+    top: 9px;
+    left: 15px;
+    height: 40px;
+  }
 }
