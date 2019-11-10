@@ -25,12 +25,16 @@ const Home = () => {
       <div className={styles.Home}>
         {isDesktop ? (
           <>
-            <Parallax y={[-110, 75]}>
+            <Parallax y={[-110, 75]} x={[200, -100]}>
               <AuroraCircleIcon className={styles.Logo} />
             </Parallax>
-            <Parallax y={[-160, 380]}>
+            <Parallax y={[30, 50]} x={[-80, 80]}>
               <AuroraTextIcon className={styles.Text} />
             </Parallax>
+            <div className={styles.homeDate}>
+              <span>14-16</span>
+              <span>FEB. 2020</span>
+            </div>
           </>
         ) : (
           <>
