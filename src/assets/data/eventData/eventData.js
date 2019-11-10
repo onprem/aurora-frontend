@@ -1685,7 +1685,7 @@ const eventData = {
     ],
     eventOrganisers: [
       {
-        name: 'Vatsal',
+        name: 'Vatsal Gupta',
         mobile: '',
       },
       {
@@ -1693,7 +1693,7 @@ const eventData = {
         mobile: '',
       },
       {
-        name: 'Madhuri',
+        name: 'Madhuri Raparthi',
         mobile: '',
       },
       {
@@ -1701,21 +1701,25 @@ const eventData = {
         mobile: '',
       },
       {
-        name: 'Rutvij',
+        name: 'Rutvij Raut',
+        mobile: '',
+      },
+      {
+        name: 'Pawan Kumar',
         mobile: '',
       },
       {
         name: 'Sakshi Kumar',
         mobile: '',
       },
-      {
-        name: 'Sahil Chopra',
-        mobile: '',
-      },
-      {
-        name: 'Harshal Chavan',
-        mobile: '',
-      },
+      // {
+      //   name: 'Sahil Chopra',
+      //   mobile: '',
+      // },
+      // {
+      //   name: 'Harshal Chavan',
+      //   mobile: '',
+      // },
       {
         name: 'Aditya Sharma',
         mobile: '',
@@ -1734,21 +1738,19 @@ const eventData = {
     prizeMoney: 'Worth Rs. 52,000',
     subEvents: [
       {
-        name: 'A-capella​',
-        description:
-          'A-capella will focus on the various domains of Free Style Singing without instrumental accompaniment.',
+        name: 'Raag',
+        description: 'Raag will be a dedicated event to appreciate singing with Instruments.',
         fees: 200,
-        prizeMoney: 'Worth Rs. 15,000',
-        maxTeamSize: 2,
+        prizeMoney: 'Worth Rs. 22,000',
+        maxTeamSize: 4,
         rules: [
-          'The participants may perform any composition(s) of his/her choice.',
-          'One additional accompaniment from the participants’ side is allowed (duet).',
-          'Participants must adhere to the prescribed time limit, else they will be penalized heavily.',
-          'Decisions of the judges are final and binding',
-          'Judging Criteria: Accuracy of Notes, Rhythm, Selection of Composition, Emotion and overall impact.',
-          'Time Limit : Elimination(5-7mins),Finals(13-15mins) (Tentative)',
+          'Team size : 1-4',
+          'Drum kits will be provided by ABV-IIITM; for all other instruments, it will be the responsibility of the participant and the accompanying instrumentalist to arrange and maintain the instrument.',
+          'Use of synthesizer tracks: Use of synthesizer tracks is STRICTLY FORBIDDEN . Any participant found violating this rule would be liable to immediate disqualification.',
+          'Song : The music should be chosen/composed along the lines of the theme announced one week prior to the event. The event is NOT genre-specific.',
+          'Time Limit: Elimination(6-8 mins),Finals(13-15 mins)(Tentative)',
+          'Maximum number of songs: Eliminations :- One Song. Finals:- Two Songs.',
           'Prizes: Cash prizes will be awarded for the first three positions.',
-          'Maximum number of songs: One Song.',
           {
             headline: 'Plan of Conduct:',
             rules: ['Round(s): - Eliminations, Finals.'],
@@ -1804,19 +1806,21 @@ const eventData = {
         ],
       },
       {
-        name: 'Raag',
-        description: 'Raag will be a dedicated event to appreciate singing with Instruments.',
+        name: 'A-capella​',
+        description:
+          'A-capella will focus on the various domains of Free Style Singing without instrumental accompaniment.',
         fees: 200,
-        prizeMoney: 'Worth Rs. 22,000',
-        maxTeamSize: 4,
+        prizeMoney: 'Worth Rs. 15,000',
+        maxTeamSize: 2,
         rules: [
-          'Team size : 1-4',
-          'Drum kits will be provided by ABV-IIITM; for all other instruments, it will be the responsibility of the participant and the accompanying instrumentalist to arrange and maintain the instrument.',
-          'Use of synthesizer tracks: Use of synthesizer tracks is STRICTLY FORBIDDEN . Any participant found violating this rule would be liable to immediate disqualification.',
-          'Song : The music should be chosen/composed along the lines of the theme announced one week prior to the event. The event is NOT genre-specific.',
-          'Time Limit: Elimination(6-8 mins),Finals(13-15 mins)(Tentative)',
-          'Maximum number of songs: Eliminations :- One Song. Finals:- Two Songs.',
+          'The participants may perform any composition(s) of his/her choice.',
+          'One additional accompaniment from the participants’ side is allowed (duet).',
+          'Participants must adhere to the prescribed time limit, else they will be penalized heavily.',
+          'Decisions of the judges are final and binding',
+          'Judging Criteria: Accuracy of Notes, Rhythm, Selection of Composition, Emotion and overall impact.',
+          'Time Limit : Elimination(5-7mins),Finals(13-15mins) (Tentative)',
           'Prizes: Cash prizes will be awarded for the first three positions.',
+          'Maximum number of songs: One Song.',
           {
             headline: 'Plan of Conduct:',
             rules: ['Round(s): - Eliminations, Finals.'],
