@@ -25,6 +25,17 @@
   scrollbar-color: grey black;
   transition: all 0.3s ease-in;
 }
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: black; 
+  /* border-radius: 10px; */
+}
+::-webkit-scrollbar-thumb {
+  background: grey; 
+}
+
 .headSectionBtn {
   border: 0;
   background: transparent;

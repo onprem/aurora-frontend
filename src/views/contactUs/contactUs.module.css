@@ -207,6 +207,12 @@
   height: 100%;
   width: 100%;
 }
+
+@media only screen and (max-width: 1600px) and (min-width: 1300px) {
+  .cordi_heading {
+    font-size: 22px;
+  }
+}
 @media (max-width: 850px) {
   .contact_container {
     width: 100%;

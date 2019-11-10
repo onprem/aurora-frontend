@@ -79,6 +79,46 @@ const eventData = {
   le_arte_fiesta: {
     name: 'Le Arte Fiesta',
     singleEvent: false,
+    eventHeads: [
+      {
+        name: 'Anshita Sharma',
+        mobile: '',
+      },
+      {
+        name: 'Piyush Raikwar',
+        mobile: '',
+      },
+      {
+        name: 'Harshit',
+        mobile: '',
+      },
+      {
+        name: 'Ayush Saini',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Pushkar',
+        mobile: '',
+      },
+      {
+        name: 'Tushar Neogi',
+        mobile: '',
+      },
+      {
+        name: 'Vedant Tripathi',
+        mobile: '',
+      },
+      {
+        name: 'Vaishnavi',
+        mobile: '',
+      },
+      {
+        name: 'Bhanu Putta',
+        mobile: '',
+      },
+    ],
     subEvents: [
       {
         name: 'On Spot Painting',
@@ -98,46 +138,6 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design',
           'Decision of the judges will be final and binding',
         ],
-        eventHeads: [
-          {
-            name: 'Anshita Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Piyush Raikwar',
-            mobile: '',
-          },
-          {
-            name: 'Harshit',
-            mobile: '',
-          },
-          {
-            name: 'Ayush Saini',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Pushkar',
-            mobile: '',
-          },
-          {
-            name: 'Tushar Neogi',
-            mobile: '',
-          },
-          {
-            name: 'Vedant Tripathi',
-            mobile: '',
-          },
-          {
-            name: 'Vaishnavi',
-            mobile: '',
-          },
-          {
-            name: 'Bhanu Putta',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'Naqaab (Face Painting)',
@@ -155,46 +155,6 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design',
           'Decision of the judges will be final and binding',
         ],
-        eventHeads: [
-          {
-            name: 'Anshita Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Piyush Raikwar',
-            mobile: '',
-          },
-          {
-            name: 'Harshit',
-            mobile: '',
-          },
-          {
-            name: 'Ayush Saini',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Pushkar',
-            mobile: '',
-          },
-          {
-            name: 'Tushar Neogi',
-            mobile: '',
-          },
-          {
-            name: 'Vedant Tripathi',
-            mobile: '',
-          },
-          {
-            name: 'Vaishnavi',
-            mobile: '',
-          },
-          {
-            name: 'Bhanu Putta',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'Graffathon',
@@ -210,46 +170,6 @@ const eventData = {
           'Materials will be provided',
           'Participants will be judged on the basis of creativity, innovation, and design',
           'Decision of the judges will be final and binding',
-        ],
-        eventHeads: [
-          {
-            name: 'Anshita Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Piyush Raikwar',
-            mobile: '',
-          },
-          {
-            name: 'Harshit',
-            mobile: '',
-          },
-          {
-            name: 'Ayush Saini',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Pushkar',
-            mobile: '',
-          },
-          {
-            name: 'Tushar Neogi',
-            mobile: '',
-          },
-          {
-            name: 'Vedant Tripathi',
-            mobile: '',
-          },
-          {
-            name: 'Vaishnavi',
-            mobile: '',
-          },
-          {
-            name: 'Bhanu Putta',
-            mobile: '',
-          },
         ],
       },
       {
@@ -267,46 +187,6 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design.',
           'The decision of the judges will be final and binding.',
         ],
-        eventHeads: [
-          {
-            name: 'Anshita Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Piyush Raikwar',
-            mobile: '',
-          },
-          {
-            name: 'Harshit',
-            mobile: '',
-          },
-          {
-            name: 'Ayush Saini',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Pushkar',
-            mobile: '',
-          },
-          {
-            name: 'Tushar Neogi',
-            mobile: '',
-          },
-          {
-            name: 'Vedant Tripathi',
-            mobile: '',
-          },
-          {
-            name: 'Vaishnavi',
-            mobile: '',
-          },
-          {
-            name: 'Bhanu Putta',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'On-spot sketching',
@@ -323,46 +203,6 @@ const eventData = {
           'Participants will be judged on the basis of creativity, innovation, and design',
           'Decision of the judges will be final and binding',
         ],
-        eventHeads: [
-          {
-            name: 'Anshita Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Piyush Raikwar',
-            mobile: '',
-          },
-          {
-            name: 'Harshit',
-            mobile: '',
-          },
-          {
-            name: 'Ayush Saini',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Pushkar',
-            mobile: '',
-          },
-          {
-            name: 'Tushar Neogi',
-            mobile: '',
-          },
-          {
-            name: 'Vedant Tripathi',
-            mobile: '',
-          },
-          {
-            name: 'Vaishnavi',
-            mobile: '',
-          },
-          {
-            name: 'Bhanu Putta',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'Doodly-doo(Online)',
@@ -378,46 +218,6 @@ const eventData = {
           'Use of Facebook Auto Liker is prohibited.',
           'Creativity and originality, as well as the unique and novel approach to the doodle.',
           'Decisions​ of the judges are final and binding.',
-        ],
-        eventHeads: [
-          {
-            name: 'Anshita Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Piyush Raikwar',
-            mobile: '',
-          },
-          {
-            name: 'Harshit',
-            mobile: '',
-          },
-          {
-            name: 'Ayush Saini',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Pushkar',
-            mobile: '',
-          },
-          {
-            name: 'Tushar Neogi',
-            mobile: '',
-          },
-          {
-            name: 'Vedant Tripathi',
-            mobile: '',
-          },
-          {
-            name: 'Vaishnavi',
-            mobile: '',
-          },
-          {
-            name: 'Bhanu Putta',
-            mobile: '',
-          },
         ],
       },
     ],
@@ -515,6 +315,66 @@ const eventData = {
     description:
       '“​ Great dancers are not great because of their technique; they are great because of their passion.” Opportunity dances with those already on the dance floor. So here comes the most awaiting dancing events –​ Step Up​ for you which will vibrate your feet and will throb your heartbeats. Be ready to rock n roll because Step Up is the heat of dance which will take you to the new level of passion to just dance and nothing else. So get ready to put the stage on fire and back the bugs.',
     prizeMoney: 'Worth Rs. 1,00,000',
+    eventHeads: [
+      {
+        name: 'Gaurav Verma',
+        mobile: '',
+      },
+      {
+        name: 'Deepak Paliwal',
+        mobile: '',
+      },
+      {
+        name: 'Aditya Shankar Mishra',
+        mobile: '',
+      },
+      {
+        name: 'Suryadeepti',
+        mobile: '',
+      },
+      {
+        name: 'Anivesh',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Ashok Meena',
+        mobile: '',
+      },
+      {
+        name: 'Mohit Mochi',
+        mobile: '',
+      },
+      {
+        name: 'Vineet',
+        mobile: '',
+      },
+      {
+        name: 'Afroz',
+        mobile: '',
+      },
+      {
+        name: 'Amit Kumar',
+        mobile: '',
+      },
+      {
+        name: 'Deeksha',
+        mobile: '',
+      },
+      {
+        name: 'Aditi',
+        mobile: '',
+      },
+      {
+        name: 'Tamanna',
+        mobile: '',
+      },
+      {
+        name: 'Anshul Dubey',
+        mobile: '',
+      },
+    ],
     subEvents: [
       {
         name: 'Dancing Mantra​',
@@ -529,66 +389,6 @@ const eventData = {
           'For the final round, the song will be provided to the team corresponding to the dance skills and next day have to perform.',
           'It is not necessary for the participants to perform on different songs for elimination and final round.',
           'Costumes are not necessary for the round but marks will be given for costumes.',
-        ],
-        eventHeads: [
-          {
-            name: 'Gaurav Verma',
-            mobile: '',
-          },
-          {
-            name: 'Deepak Paliwal',
-            mobile: '',
-          },
-          {
-            name: 'Aditya Shankar Mishra',
-            mobile: '',
-          },
-          {
-            name: 'Suryadeepti',
-            mobile: '',
-          },
-          {
-            name: 'Anivesh',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Ashok Meena',
-            mobile: '',
-          },
-          {
-            name: 'Mohit Mochi',
-            mobile: '',
-          },
-          {
-            name: 'Vineet',
-            mobile: '',
-          },
-          {
-            name: 'Afroz',
-            mobile: '',
-          },
-          {
-            name: 'Amit Kumar',
-            mobile: '',
-          },
-          {
-            name: 'Deeksha',
-            mobile: '',
-          },
-          {
-            name: 'Aditi',
-            mobile: '',
-          },
-          {
-            name: 'Tamanna',
-            mobile: '',
-          },
-          {
-            name: 'Anshul Dubey',
-            mobile: '',
-          },
         ],
       },
       {
@@ -606,69 +406,9 @@ const eventData = {
           'No limitations on dance styles. Music provided by us and varies between different genres (for example hip hop, house, funk, dubstep).',
           'One battle of 8 minutes, divided into four performances one by one, one performance is of minimum 1 minute and maximum 2 minutes.',
         ],
-        eventHeads: [
-          {
-            name: 'Gaurav Verma',
-            mobile: '',
-          },
-          {
-            name: 'Deepak Paliwal',
-            mobile: '',
-          },
-          {
-            name: 'Aditya Shankar Mishra',
-            mobile: '',
-          },
-          {
-            name: 'Suryadeepti',
-            mobile: '',
-          },
-          {
-            name: 'Anivesh',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Ashok Meena',
-            mobile: '',
-          },
-          {
-            name: 'Mohit Mochi',
-            mobile: '',
-          },
-          {
-            name: 'Vineet',
-            mobile: '',
-          },
-          {
-            name: 'Afroz',
-            mobile: '',
-          },
-          {
-            name: 'Amit Kumar',
-            mobile: '',
-          },
-          {
-            name: 'Deeksha',
-            mobile: '',
-          },
-          {
-            name: 'Aditi',
-            mobile: '',
-          },
-          {
-            name: 'Tamanna',
-            mobile: '',
-          },
-          {
-            name: 'Anshul Dubey',
-            mobile: '',
-          },
-        ],
       },
       {
-        name: 'Crew Battle',
+        name: 'Crew Battle (Street Dance)',
         description:
           'Paint the stage with talent as you put your best foot forward with moves that leave the audience stunned. This event glorifies the relationship of a dancer to the rhythm as they battle it out for the best of street dance.',
         fees: 749,
@@ -682,134 +422,19 @@ const eventData = {
           'It is not necessary for the participants to perform on different songs for elimination and final round.',
           'Costumes are not necessary for the round but marks will be given for costumes.',
         ],
-        eventHeads: [
-          {
-            name: 'Gaurav Verma',
-            mobile: '',
-          },
-          {
-            name: 'Deepak Paliwal',
-            mobile: '',
-          },
-          {
-            name: 'Aditya Shankar Mishra',
-            mobile: '',
-          },
-          {
-            name: 'Suryadeepti',
-            mobile: '',
-          },
-          {
-            name: 'Anivesh',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Ashok Meena',
-            mobile: '',
-          },
-          {
-            name: 'Mohit Mochi',
-            mobile: '',
-          },
-          {
-            name: 'Vineet',
-            mobile: '',
-          },
-          {
-            name: 'Afroz',
-            mobile: '',
-          },
-          {
-            name: 'Amit Kumar',
-            mobile: '',
-          },
-          {
-            name: 'Deeksha',
-            mobile: '',
-          },
-          {
-            name: 'Aditi',
-            mobile: '',
-          },
-          {
-            name: 'Tamanna',
-            mobile: '',
-          },
-          {
-            name: 'Anshul Dubey',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'Step Up Final Battle',
         description:
-          'Tear down the walls and unleash your passion for the ultimate battle. In this event, the winners and runner-ups of Dancing Mantra, Crew Battle and Raqs will battle for the final crown. ',
+          'Tear down the walls and unleash your passion for the ultimate battle. In this event, the winners and runner-ups of Dancing Mantra, Street Dance and Raqs will battle for the final crown. ',
         fees: 0,
         maxTeamSize: 15,
         prizeMoney: 'Worth Rs. 10,000',
-        rules: [],
-        eventHeads: [
-          {
-            name: 'Gaurav Verma',
-            mobile: '',
-          },
-          {
-            name: 'Deepak Paliwal',
-            mobile: '',
-          },
-          {
-            name: 'Aditya Shankar Mishra',
-            mobile: '',
-          },
-          {
-            name: 'Suryadeepti',
-            mobile: '',
-          },
-          {
-            name: 'Anivesh',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Ashok Meena',
-            mobile: '',
-          },
-          {
-            name: 'Mohit Mochi',
-            mobile: '',
-          },
-          {
-            name: 'Vineet',
-            mobile: '',
-          },
-          {
-            name: 'Afroz',
-            mobile: '',
-          },
-          {
-            name: 'Amit Kumar',
-            mobile: '',
-          },
-          {
-            name: 'Deeksha',
-            mobile: '',
-          },
-          {
-            name: 'Aditi',
-            mobile: '',
-          },
-          {
-            name: 'Tamanna',
-            mobile: '',
-          },
-          {
-            name: 'Anshul Dubey',
-            mobile: '',
-          },
+        rules: [
+          'Only the winners and runner-ups are eligible.',
+          'Maximum time limit:- 6 min.',
+          'It is not necessary for the participants to perform on different songs.',
+          'Costumes are not necessary for the round but marks will be given for costumes.',
         ],
       },
     ],
@@ -868,6 +493,42 @@ const eventData = {
     name: 'The Pikture',
     singleEvent: false,
     prizeMoney: 'Worth Rs. 22,000',
+    eventHeads: [
+      {
+        name: 'Pragnya Tata',
+        mobile: '',
+      },
+      {
+        name: 'Ravuri Upendra',
+        mobile: '',
+      },
+      {
+        name: 'Pranay',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Jhanvi',
+        mobile: '',
+      },
+      {
+        name: 'Praveen',
+        mobile: '',
+      },
+      {
+        name: 'Ashray Gupta',
+        mobile: '',
+      },
+      {
+        name: 'Bipin Pathak',
+        mobile: '',
+      },
+      {
+        name: 'Pranay',
+        mobile: '',
+      },
+    ],
     subEvents: [
       {
         name: 'Silverscreen',
@@ -882,42 +543,6 @@ const eventData = {
           'Aurora reserves the right to use the video entries on social media (suitable credits will be given to the people responsible for the creation of the content).',
           'The Video must be shot in a resolution of 720p or greater. It can be shot on any device, a DSLR or a phone or a Point-and-Shoot camera.',
           'The duration of the film should be between 5 min-15 min.',
-        ],
-        eventHeads: [
-          {
-            name: 'Pragnya Tata',
-            mobile: '',
-          },
-          {
-            name: 'Ravuri Upendra',
-            mobile: '',
-          },
-          {
-            name: 'Pranay',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Jhanvi',
-            mobile: '',
-          },
-          {
-            name: 'Praveen',
-            mobile: '',
-          },
-          {
-            name: 'Ashray Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Bipin Pathak',
-            mobile: '',
-          },
-          {
-            name: 'Pranay',
-            mobile: '',
-          },
         ],
       },
       {
@@ -940,42 +565,6 @@ const eventData = {
           "The judge's decision shall be final and binding.",
           'Aurora reserves the right to use the images on social media (suitable credits will be given to the photographer).',
         ],
-        eventHeads: [
-          {
-            name: 'Pragnya Tata',
-            mobile: '',
-          },
-          {
-            name: 'Ravuri Upendra',
-            mobile: '',
-          },
-          {
-            name: 'Pranay',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Jhanvi',
-            mobile: '',
-          },
-          {
-            name: 'Praveen',
-            mobile: '',
-          },
-          {
-            name: 'Ashray Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Bipin Pathak',
-            mobile: '',
-          },
-          {
-            name: 'Pranay',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'Portray It',
@@ -990,48 +579,56 @@ const eventData = {
           "The judge's decision shall be final and binding.",
           'Aurora reserves the right to use the images on social media (suitable credits will be given to the photographer).',
         ],
-        eventHeads: [
-          {
-            name: 'Pragnya Tata',
-            mobile: '',
-          },
-          {
-            name: 'Ravuri Upendra',
-            mobile: '',
-          },
-          {
-            name: 'Pranay',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Jhanvi',
-            mobile: '',
-          },
-          {
-            name: 'Praveen',
-            mobile: '',
-          },
-          {
-            name: 'Ashray Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Bipin Pathak',
-            mobile: '',
-          },
-          {
-            name: 'Pranay',
-            mobile: '',
-          },
-        ],
       },
     ],
   },
   informal: {
     name: 'Informal',
     singleEvent: false,
+    eventHeads: [
+      {
+        name: 'Abhishek Singh',
+        mobile: '',
+      },
+      {
+        name: 'Abhishek Garain',
+        mobile: '',
+      },
+      {
+        name: 'Vaibhav Jain',
+        mobile: '',
+      },
+      {
+        name: 'Ketan Gupta',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Nitya Chandra',
+        mobile: '',
+      },
+      {
+        name: 'Nakul Shahdadpuri',
+        mobile: '',
+      },
+      {
+        name: 'Himanshu Ruhela',
+        mobile: '',
+      },
+      {
+        name: 'Aadit Agrawal',
+        mobile: '',
+      },
+      {
+        name: 'Madhvik Agrawal',
+        mobile: '',
+      },
+      {
+        name: 'Ishaan Kakkar',
+        mobile: '',
+      },
+    ],
     subEvents: [
       {
         name: 'Aptitude Quiz',
@@ -1055,50 +652,6 @@ const eventData = {
               'There will be multiple choice questions out of which only one option will be correct.',
               'There will be negative marking of 25% for each incorrect response.',
             ],
-          },
-        ],
-        eventHeads: [
-          {
-            name: 'Abhishek Singh',
-            mobile: '',
-          },
-          {
-            name: 'Abhishek Garain',
-            mobile: '',
-          },
-          {
-            name: 'Vaibhav Jain',
-            mobile: '',
-          },
-          {
-            name: 'Ketan Gupta',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Nitya Chandra',
-            mobile: '',
-          },
-          {
-            name: 'Nakul Shahdadpuri',
-            mobile: '',
-          },
-          {
-            name: 'Himanshu Ruhela',
-            mobile: '',
-          },
-          {
-            name: 'Aadit Agrawal',
-            mobile: '',
-          },
-          {
-            name: 'Madhvik Agrawal',
-            mobile: '',
-          },
-          {
-            name: 'Ishaan Kakkar',
-            mobile: '',
           },
         ],
       },
@@ -1126,50 +679,6 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [
-          {
-            name: 'Abhishek Singh',
-            mobile: '',
-          },
-          {
-            name: 'Abhishek Garain',
-            mobile: '',
-          },
-          {
-            name: 'Vaibhav Jain',
-            mobile: '',
-          },
-          {
-            name: 'Ketan Gupta',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Nitya Chandra',
-            mobile: '',
-          },
-          {
-            name: 'Nakul Shahdadpuri',
-            mobile: '',
-          },
-          {
-            name: 'Himanshu Ruhela',
-            mobile: '',
-          },
-          {
-            name: 'Aadit Agrawal',
-            mobile: '',
-          },
-          {
-            name: 'Madhvik Agrawal',
-            mobile: '',
-          },
-          {
-            name: 'Ishaan Kakkar',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'Cine Quiz',
@@ -1195,56 +704,56 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [
-          {
-            name: 'Abhishek Singh',
-            mobile: '',
-          },
-          {
-            name: 'Abhishek Garain',
-            mobile: '',
-          },
-          {
-            name: 'Vaibhav Jain',
-            mobile: '',
-          },
-          {
-            name: 'Ketan Gupta',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Nitya Chandra',
-            mobile: '',
-          },
-          {
-            name: 'Nakul Shahdadpuri',
-            mobile: '',
-          },
-          {
-            name: 'Himanshu Ruhela',
-            mobile: '',
-          },
-          {
-            name: 'Aadit Agrawal',
-            mobile: '',
-          },
-          {
-            name: 'Madhvik Agrawal',
-            mobile: '',
-          },
-          {
-            name: 'Ishaan Kakkar',
-            mobile: '',
-          },
-        ],
       },
     ],
   },
   gaming: {
     name: 'Gaming',
     singleEvent: false,
+    eventHeads: [
+      {
+        name: 'Siddharth Verma',
+        mobile: '',
+      },
+      {
+        name: 'Saksham Tewari',
+        mobile: '',
+      },
+      {
+        name: 'Priyash Gupta',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Siddharth',
+        mobile: '',
+      },
+      {
+        name: 'Kapin Sangwan',
+        mobile: '',
+      },
+      {
+        name: 'Dushyant Pratap',
+        mobile: '',
+      },
+      {
+        name: 'Udit Singh',
+        mobile: '',
+      },
+      {
+        name: 'C. Dheena',
+        mobile: '',
+      },
+      {
+        name: 'Vidya Dubey',
+        mobile: '',
+      },
+      {
+        name: 'Jayant Gupta',
+        mobile: '',
+      },
+    ],
     subEvents: [
       {
         name: 'CS-GO',
@@ -1330,50 +839,6 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [
-          {
-            name: 'Siddharth Verma',
-            mobile: '',
-          },
-          {
-            name: 'Saksham Tewari',
-            mobile: '',
-          },
-          {
-            name: 'Priyash Gupta',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Siddharth',
-            mobile: '',
-          },
-          {
-            name: 'Kapin Sangwan',
-            mobile: '',
-          },
-          {
-            name: 'Dushyant Pratap',
-            mobile: '',
-          },
-          {
-            name: 'Udit Singh',
-            mobile: '',
-          },
-          {
-            name: 'C. Dheena',
-            mobile: '',
-          },
-          {
-            name: 'Vidya Dubey',
-            mobile: '',
-          },
-          {
-            name: 'Jayant Gupta',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'PUBG',
@@ -1417,50 +882,6 @@ const eventData = {
             ],
           },
         ],
-        eventHeads: [
-          {
-            name: 'Siddharth Verma',
-            mobile: '',
-          },
-          {
-            name: 'Saksham Tewari',
-            mobile: '',
-          },
-          {
-            name: 'Priyash Gupta',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Siddharth',
-            mobile: '',
-          },
-          {
-            name: 'Kapin Sangwan',
-            mobile: '',
-          },
-          {
-            name: 'Dushyant Pratap',
-            mobile: '',
-          },
-          {
-            name: 'Udit Singh',
-            mobile: '',
-          },
-          {
-            name: 'C. Dheena',
-            mobile: '',
-          },
-          {
-            name: 'Vidya Dubey',
-            mobile: '',
-          },
-          {
-            name: 'Jayant Gupta',
-            mobile: '',
-          },
-        ],
       },
     ],
   },
@@ -1468,6 +889,46 @@ const eventData = {
     name: 'A-Lit',
     singleEvent: false,
     prizeMoney: 'Worth Rs. 24,000',
+    eventHeads: [
+      {
+        name: 'Anuj Sharma',
+        mobile: '',
+      },
+      {
+        name: 'Simran Kureel',
+        mobile: '',
+      },
+      {
+        name: 'Shivam Gupta',
+        mobile: '',
+      },
+      {
+        name: 'Ashutosh Kumar',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Abhishek Pratap Singh',
+        mobile: '',
+      },
+      {
+        name: 'Anjali Bhagoria',
+        mobile: '',
+      },
+      {
+        name: 'Ashish Khatri',
+        mobile: '',
+      },
+      {
+        name: 'Lumbini',
+        mobile: '',
+      },
+      {
+        name: 'Manish',
+        mobile: '',
+      },
+    ],
     subEvents: [
       {
         name: 'Open Mic',
@@ -1484,46 +945,6 @@ const eventData = {
           'Selection of participants is solely based on their content.',
           'Decision of the judges will be final.',
         ],
-        eventHeads: [
-          {
-            name: 'Anuj Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Simran Kureel',
-            mobile: '',
-          },
-          {
-            name: 'Shivam Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Ashutosh Kumar',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Abhishek Pratap Singh',
-            mobile: '',
-          },
-          {
-            name: 'Anjali Bhagoria',
-            mobile: '',
-          },
-          {
-            name: 'Ashish Khatri',
-            mobile: '',
-          },
-          {
-            name: 'Lumbini',
-            mobile: '',
-          },
-          {
-            name: 'Manish',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'Morning Radio',
@@ -1537,46 +958,6 @@ const eventData = {
           'Time limit: 120 seconds for each round.',
           'Participants will be judged on the basis of fluency, spontaneity, presentation, sense of humour, communication skills and interaction with the listeners.',
           'Decision of the judges will be final.',
-        ],
-        eventHeads: [
-          {
-            name: 'Anuj Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Simran Kureel',
-            mobile: '',
-          },
-          {
-            name: 'Shivam Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Ashutosh Kumar',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Abhishek Pratap Singh',
-            mobile: '',
-          },
-          {
-            name: 'Anjali Bhagoria',
-            mobile: '',
-          },
-          {
-            name: 'Ashish Khatri',
-            mobile: '',
-          },
-          {
-            name: 'Lumbini',
-            mobile: '',
-          },
-          {
-            name: 'Manish',
-            mobile: '',
-          },
         ],
       },
       {
@@ -1595,46 +976,6 @@ const eventData = {
           'Name of document: Creative_Writing_English_(name and surname of the applicant)',
           'You have to write your ​ name, age, city, college/school (if any), phone number and email​ in your entry.',
         ],
-        eventHeads: [
-          {
-            name: 'Anuj Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Simran Kureel',
-            mobile: '',
-          },
-          {
-            name: 'Shivam Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Ashutosh Kumar',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Abhishek Pratap Singh',
-            mobile: '',
-          },
-          {
-            name: 'Anjali Bhagoria',
-            mobile: '',
-          },
-          {
-            name: 'Ashish Khatri',
-            mobile: '',
-          },
-          {
-            name: 'Lumbini',
-            mobile: '',
-          },
-          {
-            name: 'Manish',
-            mobile: '',
-          },
-        ],
       },
       {
         name: 'Creative Writing (Hindi)',
@@ -1651,46 +992,6 @@ const eventData = {
           'File to be submitted on our mail.',
           'Name of document: Creative_Writing_Hindi_(name and surname of the applicant)',
           'You have to write your ​ name, age, city, college/school (if any), phone number and email​ in your entry.',
-        ],
-        eventHeads: [
-          {
-            name: 'Anuj Sharma',
-            mobile: '',
-          },
-          {
-            name: 'Simran Kureel',
-            mobile: '',
-          },
-          {
-            name: 'Shivam Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Ashutosh Kumar',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Abhishek Pratap Singh',
-            mobile: '',
-          },
-          {
-            name: 'Anjali Bhagoria',
-            mobile: '',
-          },
-          {
-            name: 'Ashish Khatri',
-            mobile: '',
-          },
-          {
-            name: 'Lumbini',
-            mobile: '',
-          },
-          {
-            name: 'Manish',
-            mobile: '',
-          },
         ],
       },
     ],
@@ -1808,210 +1109,119 @@ const eventData = {
     description:
       'The Eumelia event will be a bundle of various sub events where participants would present their vocal and instrumental skills and sing their hearts to please the ears of the audience. We intend to provide stage to singers and musicians to present their best show here in the domains of music, classical singing and modern singing etc. We intend to organize three sub-events, A-capella, Acoustic corner and Raag. Each of these events will be focusing into various different genres and fields of Music.',
     prizeMoney: 'Worth Rs. 52,000',
+    eventHeads: [
+      {
+        name: 'Devwrat Sahu',
+        mobile: '',
+      },
+      {
+        name: 'Saksham Gupta',
+        mobile: '',
+      },
+      {
+        name: 'Amit Kumar',
+        mobile: '',
+      },
+      {
+        name: 'Queen Saikia',
+        mobile: '',
+      },
+      {
+        name: 'Vishal Shivhare',
+        mobile: '',
+      },
+    ],
+    eventOrganisers: [
+      {
+        name: 'Achyuth',
+        mobile: '',
+      },
+      {
+        name: 'Akshay Khatri',
+        mobile: '',
+      },
+      {
+        name: 'Nymika',
+        mobile: '',
+      },
+      {
+        name: 'Mansi Meena',
+        mobile: '',
+      },
+      {
+        name: 'Venkatesh Vuyyala',
+        mobile: '',
+      },
+      {
+        name: 'Shivangi Sachdeva',
+        mobile: '',
+      },
+    ],
     subEvents: [
       {
         name: 'Raag',
-        description: 'Raag will be a dedicated event to appreciate singing with Instruments.',
+        description:
+          "There's something in the soft plink of a sitar, or the mellifluous notes of a flute, that the human voice cannot seem to match. Instrumentalists spend years perfecting their art, to achieve the thrilling pace at which they change notes. Bach, Miles Davis, Zakir Hussain, Yo Yo Ma, and L Subramaniam. These artists and many more have changed how most of us look and listen to music. This year, Aurora'20 gives you a chance for you to hear and create magic-harmonies. It​ will be a dedicated event to appreciate singing with Instruments.",
         fees: 200,
         prizeMoney: 'Worth Rs. 22,000',
         maxTeamSize: 4,
         rules: [
           'Team size : 1-4',
-          'Drum kits will be provided by ABV-IIITM; for all other instruments, it will be the responsibility of the participant and the accompanying instrumentalist to arrange and maintain the instrument.',
+          'It will be the responsibility of the participant and the accompanying instrumentalist to arrange and maintain the instrument.',
           'Use of synthesizer tracks: Use of synthesizer tracks is STRICTLY FORBIDDEN . Any participant found violating this rule would be liable to immediate disqualification.',
-          'Song : The music should be chosen/composed along the lines of the theme announced one week prior to the event. The event is NOT genre-specific.',
-          'Time Limit: Elimination(6-8 mins),Finals(13-15 mins)(Tentative)',
-          'Maximum number of songs: Eliminations :- One Song. Finals:- Two Songs.',
-          'Prizes: Cash prizes will be awarded for the first three positions.',
           {
-            headline: 'Plan of Conduct:',
-            rules: ['Round(s): - Eliminations, Finals.'],
-          },
-        ],
-        eventHeads: [
-          {
-            name: 'Devwrat Sahu',
-            mobile: '',
+            headline: 'Time Limit:',
+            rules: [
+              'Elimination (5-8 mins), Finals (7-10 mins) (Tentative).',
+              'From the moment a participant’s name is announced, his/her time starts. They have to go to the stage, set the instruments, do a sound check (if required) and perform in this time limit. Exceeding time may result in penalties.',
+            ],
           },
           {
-            name: 'Saksham Gupta',
-            mobile: '',
+            headline: 'Maximum number of songs:',
+            rules: ['One Song for elimination round.', 'Two songs for final round.'],
           },
-          {
-            name: 'Amit Kumar',
-            mobile: '',
-          },
-          {
-            name: 'Queen Saika',
-            mobile: '',
-          },
-          {
-            name: 'Vishal Shivhare',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Achyuth',
-            mobile: '',
-          },
-          {
-            name: 'Akshay Khatri',
-            mobile: '',
-          },
-          {
-            name: 'Nymika',
-            mobile: '',
-          },
-          {
-            name: 'Mansi',
-            mobile: '',
-          },
-          {
-            name: 'Rachit Garg',
-            mobile: '',
-          },
-          {
-            name: 'Shivangi Sachdeva',
-            mobile: '',
-          },
+          'Decision of the judges will be final and binding.',
+          'Judging Criteria: Resonance control, clarity, focus, consistency, Pitch accuracy, accuracy of note and rest values, steadiness, correctness of meters,Intonation.',
+          'Plan of conduct: Round(s);- Elimination, Finals',
         ],
       },
       {
         name: 'A-capella​',
         description:
-          'A-capella will focus on the various domains of Free Style Singing without instrumental accompaniment.',
+          'A simple competition with simple rules and one of the most liked and attended event of all musical competitions of Aurora- A capella calls you on stage, and give you the freedom to perform.If you think that you can produce melodies without the help of any instruments, come and find out if you are really as good as you believe. It will focus on the various domains of FreeStyle Singing without instrumental accompaniment.',
         fees: 200,
         prizeMoney: 'Worth Rs. 15,000',
         maxTeamSize: 2,
         rules: [
+          'Team size : 1-2',
           'The participants may perform any composition(s) of his/her choice.',
-          'One additional accompaniment from the participants’ side is allowed (duet).',
-          'Participants must adhere to the prescribed time limit, else they will be penalized heavily.',
+          'Participants must adhere to the prescribed time limit, else they will be penalized   heavily.',
           'Decisions of the judges are final and binding',
           'Judging Criteria: Accuracy of Notes, Rhythm, Selection of Composition, Emotion and overall impact.',
-          'Time Limit : Elimination(5-7mins),Finals(13-15mins) (Tentative)',
-          'Prizes: Cash prizes will be awarded for the first three positions.',
-          'Maximum number of songs: One Song.',
+          'Time Limit : Elimination(3-5mins),Finals(5-7mins) (Tentative)',
           {
-            headline: 'Plan of Conduct:',
-            rules: ['Round(s): - Eliminations, Finals.'],
+            headline: 'Maximum number of songs:',
+            rules: ['One Song for elimination round.', 'Two songs for final round.'],
           },
-        ],
-        eventHeads: [
-          {
-            name: 'Devwrat Sahu',
-            mobile: '',
-          },
-          {
-            name: 'Saksham Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Amit Kumar',
-            mobile: '',
-          },
-          {
-            name: 'Queen Saika',
-            mobile: '',
-          },
-          {
-            name: 'Vishal Shivhare',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Achyuth',
-            mobile: '',
-          },
-          {
-            name: 'Akshay Khatri',
-            mobile: '',
-          },
-          {
-            name: 'Nymika',
-            mobile: '',
-          },
-          {
-            name: 'Mansi',
-            mobile: '',
-          },
-          {
-            name: 'Rachit Garg',
-            mobile: '',
-          },
-          {
-            name: 'Shivangi Sachdeva',
-            mobile: '',
-          },
+          'Plan of conduct: Round(s);- Elimination, Finals',
         ],
       },
       {
         name: 'Acoustic Corner',
         description:
-          'Acoustic corner is a purely instrumental music fiesta which will be aimed to enthuse the audiences with raw music.',
+          '"Music is the shorthand of emotion." — Leo Tolstoy. No matter where you are or what you do some Music will always refresh your mood. Aurora brings you the stage for putting your swift arms and skilful fingers to display before an encouraging and enthusiastic audience. It is a purely instrumental music fiesta which will be aimed to enthuse the audience with raw music.',
         fees: 200,
         prizeMoney: 'Worth Rs. 15,000',
         maxTeamSize: 4,
         rules: [
           'Team size : 1-4',
-          'Time limit : From the moment a participant’s name is announced, he/she will have a total of 8 minutes(Tentative) to go to the stage, set the instruments, perform a sound check (if required) and perform. Exceeding time will result in penalties.',
+          'It will be the responsibility of the participant and the accompanying instrumentalist to arrange and maintain the instrument.',
+          'Time limit : Elimination(5-8 mins), Finals(7-10 mins) (Tentative).',
+          'From the moment a participant’s name is announced, his/her time starts. They have to go to the stage, set the instruments, do a sound check (if required) and perform in this time limit. Exceeding time may result in penalties.',
           'Use of synthesizer tracks: Use of synthesizer tracks is STRICTLY FORBIDDEN . Any participant found violating this rule would be liable to immediate disqualification.',
-          'Song : The music should be chosen/composed along the lines of the theme announced one week prior to the event. The event is NOT genre-specific.',
-          'Prizes: Cash prizes will be awarded for the first three positions.',
-          {
-            headline: 'Plan of Conduct',
-            rules: ['Round(s): - Eliminations, Finals.'],
-          },
-        ],
-        eventHeads: [
-          {
-            name: 'Devwrat Sahu',
-            mobile: '',
-          },
-          {
-            name: 'Saksham Gupta',
-            mobile: '',
-          },
-          {
-            name: 'Amit Kumar',
-            mobile: '',
-          },
-          {
-            name: 'Queen Saika',
-            mobile: '',
-          },
-          {
-            name: 'Vishal Shivhare',
-            mobile: '',
-          },
-        ],
-        eventOrganisers: [
-          {
-            name: 'Achyuth',
-            mobile: '',
-          },
-          {
-            name: 'Akshay Khatri',
-            mobile: '',
-          },
-          {
-            name: 'Nymika',
-            mobile: '',
-          },
-          {
-            name: 'Mansi',
-            mobile: '',
-          },
-          {
-            name: 'Rachit Garg',
-            mobile: '',
-          },
-          {
-            name: 'Shivangi Sachdeva',
-            mobile: '',
-          },
+          'Decision of the judges will be final and binding .',
+          'Judging Criteria: Resonance control, Selection of Composition, clarity, focus, consistency, accuracy of note, steadiness, Intonation ,rhythm, emotion and overall impact.',
+          'Plan of conduct: Round(s);- Elimination, Finals',
         ],
       },
     ],

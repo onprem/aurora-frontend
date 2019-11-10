@@ -33,7 +33,7 @@
 .card_heading {
   margin: 0px;
   color: white;
-  font-size: 110px;
+  font-size: 7em;
   font-weight: 100;
   font-family: 'SkullAndVoid';
 }
@@ -42,7 +42,7 @@
   color: white;
   text-align: justify;
   width: 90%;
-  font-size: 22px;
+  font-size: 1.5em;
   font-weight: 400;
 
   /* line-height: 50px; */
@@ -57,6 +57,14 @@
   font-weight: 300;
   font-family: 'SkullAndVoid';
   cursor: pointer;
+}
+@media only screen and (max-width: 1600px) and (min-width: 1300px) {
+  .card_heading {
+    font-size: 6em;
+  }
+  .card_para {
+    font-size: 1.3em;
+  }
 }
 @media (max-width: 1366px) {
   .card_heading {
