@@ -518,7 +518,8 @@ const eventData = {
     subEvents: [
       {
         name: 'Dancing Mantra​',
-        description: 'Solo, Duet',
+        description:
+          'Aurora brings you one of the best platforms to steal the spotlight and celebrate the true liberation of emotions. It’s an opportunity to showcase the magic in your footsteps through solo dance.',
         fees: 249,
         maxTeamSize: 2,
         prizeMoney: 'Worth Rs. 25,000',
@@ -591,8 +592,85 @@ const eventData = {
         ],
       },
       {
-        name: 'Synchro Funk',
-        description: 'Street Dancing',
+        name: 'Raqs',
+        description:
+          'Dancing is a conversation that needs not be spoken but is implicitly understood. This event gives the opportunity for an enthusiastic expression of camaraderie and trust as groups dance to the rhythm tying them together as they vie for the top spot.',
+        fees: 749,
+        maxTeamSize: 15,
+        prizeMoney: 'Worth Rs. 32,500',
+        rules: [
+          'Group entries.',
+          'Knockout round',
+          'Minimum members: 3',
+          'All the teams will first have to compete in the elimination round. Only the teams selected by the judge will qualify for the next round.',
+          'No limitations on dance styles. Music provided by us and varies between different genres (for example hip hop, house, funk, dubstep).',
+          'One battle of 8 minutes, divided into four performances one by one, one performance is of minimum 1 minute and maximum 2 minutes.',
+        ],
+        eventHeads: [
+          {
+            name: 'Gaurav Verma',
+            mobile: '',
+          },
+          {
+            name: 'Deepak Paliwal',
+            mobile: '',
+          },
+          {
+            name: 'Aditya Shankar Mishra',
+            mobile: '',
+          },
+          {
+            name: 'Suryadeepti',
+            mobile: '',
+          },
+          {
+            name: 'Anivesh',
+            mobile: '',
+          },
+        ],
+        eventOrganisers: [
+          {
+            name: 'Ashok Meena',
+            mobile: '',
+          },
+          {
+            name: 'Mohit Mochi',
+            mobile: '',
+          },
+          {
+            name: 'Vineet',
+            mobile: '',
+          },
+          {
+            name: 'Afroz',
+            mobile: '',
+          },
+          {
+            name: 'Amit Kumar',
+            mobile: '',
+          },
+          {
+            name: 'Deeksha',
+            mobile: '',
+          },
+          {
+            name: 'Aditi',
+            mobile: '',
+          },
+          {
+            name: 'Tamanna',
+            mobile: '',
+          },
+          {
+            name: 'Anshul Dubey',
+            mobile: '',
+          },
+        ],
+      },
+      {
+        name: 'Crew Battle',
+        description:
+          'Paint the stage with talent as you put your best foot forward with moves that leave the audience stunned. This event glorifies the relationship of a dancer to the rhythm as they battle it out for the best of street dance.',
         fees: 749,
         maxTeamSize: 15,
         prizeMoney: 'Worth Rs. 32,500',
@@ -666,19 +744,13 @@ const eventData = {
         ],
       },
       {
-        name: 'Crew Battle',
-        description: 'Group Dancing',
-        fees: 749,
+        name: 'Step Up Final Battle',
+        description:
+          'Tear down the walls and unleash your passion for the ultimate battle. In this event, the winners and runner-ups of Dancing Mantra, Crew Battle and Raqs will battle for the final crown. ',
+        fees: 0,
         maxTeamSize: 15,
-        prizeMoney: 'Worth Rs. 32,500',
-        rules: [
-          'Group entries.',
-          'Knockout round',
-          'Minimum members: 3',
-          'All the teams will first have to compete in the elimination round. Only the teams selected by the judge will qualify for the next round.',
-          'No limitations on dance styles. Music provided by us and varies between different genres (for example hip hop, house, funk, dubstep).',
-          'One battle of 8 minutes, divided into four performances one by one, one performance is of minimum 1 minute and maximum 2 minutes.',
-        ],
+        prizeMoney: 'Worth Rs. 10,000',
+        rules: [],
         eventHeads: [
           {
             name: 'Gaurav Verma',
@@ -1005,7 +1077,7 @@ const eventData = {
         ],
         eventOrganisers: [
           {
-            name: 'Rutviz Raut',
+            name: 'Nitya Chandra',
             mobile: '',
           },
           {
@@ -1021,7 +1093,7 @@ const eventData = {
             mobile: '',
           },
           {
-            name: 'Madhvik',
+            name: 'Madhvik Agrawal',
             mobile: '',
           },
           {
@@ -1074,7 +1146,7 @@ const eventData = {
         ],
         eventOrganisers: [
           {
-            name: 'Rutviz Raut',
+            name: 'Nitya Chandra',
             mobile: '',
           },
           {
@@ -1090,7 +1162,7 @@ const eventData = {
             mobile: '',
           },
           {
-            name: 'Madhvik',
+            name: 'Madhvik Agrawal',
             mobile: '',
           },
           {
@@ -1143,7 +1215,7 @@ const eventData = {
         ],
         eventOrganisers: [
           {
-            name: 'Rutviz Raut',
+            name: 'Nitya Chandra',
             mobile: '',
           },
           {
@@ -1159,7 +1231,7 @@ const eventData = {
             mobile: '',
           },
           {
-            name: 'Madhvik',
+            name: 'Madhvik Agrawal',
             mobile: '',
           },
           {
