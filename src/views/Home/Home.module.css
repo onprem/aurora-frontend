@@ -145,6 +145,8 @@
   100% {
     transform: translateX(0);
     transform: translateY(0);
+  }
+}
 
 @media only screen and (max-width: 1366px) {
   .homeDate {
