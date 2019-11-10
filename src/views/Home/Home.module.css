@@ -104,9 +104,15 @@
   }
   .Logo {
     width: 40vw;
+    margin-top: 10vh;
   }
   .Text {
     width: 60vw;
+  }
+  .homeDate {
+    margin-top: 25px;
+    font-size: 1.6em;
+    letter-spacing: 0.2em;
   }
   .Bat1 {
     top: 70%;
@@ -139,5 +145,22 @@
   .Bat9 {
     right: 78%;
     /* width: 250px; */
+  }
+}
+
+@media only screen and (max-width: 450px) and (min-aspect-ratio: 9/16) {
+  .Logo {
+    margin-top: 5vh;
+  }
+  .Text {
+    width: 60vw;
+  }
+  .homeDate {
+    margin-top: 10px;
+    font-size: 1.4em;
+    letter-spacing: 0.15em;
+  }
+  .Bats {
+    transform: scale(0.8);
   }
 }
