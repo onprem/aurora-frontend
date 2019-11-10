@@ -37,6 +37,7 @@
   align-content: center;
   align-items: center;
   width: 49%;
+  min-height: 600px;
   height: 100%;
   margin-right: 20px;
 }
@@ -94,6 +95,7 @@
   align-content: center;
   align-items: center;
   height: 8.5vh;
+  min-height: 50px;
 }
 .cordi_heading {
   color: white;
@@ -111,19 +113,15 @@
 .map_container {
   margin-top: 15px;
   border: 3px solid black;
+  margin-top: 15px;
+  border-radius: 8px;
+  width: 100%;
+  height: 70%;
 
   /* margin: 0px; */
 }
 .cordi_heading {
   width: 65%;
-}
-.map_container {
-  margin-top: 15px;
-  border: 2px solid black;
-
-  border-radius: 8px;
-  width: 100%;
-  height: 70%;
 }
 
 .form {
@@ -142,6 +140,7 @@
   font-weight: 600;
   border-radius: 8px;
   height: 5vh;
+  min-height: 30px;
   margin-top: 40px;
   padding: 0px;
   display: flex;
@@ -186,6 +185,7 @@
   color: white;
   font-size: 32px;
   height: 8vh;
+  min-height: 50px;
   margin-top: 40px;
   padding: 0px;
   cursor: pointer;
