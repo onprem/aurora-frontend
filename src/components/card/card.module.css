@@ -58,6 +58,14 @@
   font-family: 'SkullAndVoid';
   cursor: pointer;
 }
+@media only screen and (max-width: 1600px) and (min-width: 1300px) {
+  .card_heading {
+    font-size: 6em;
+  }
+  .card_para {
+    font-size: 1.3em;
+  }
+}
 @media (max-width: 1366px) {
   .card_heading {
     font-size: 60px;
