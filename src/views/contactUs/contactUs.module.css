@@ -71,7 +71,7 @@
   margin: 0px;
   font-size: 28px;
   letter-spacing: 5px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .contact_card {
   margin-top: 15px;
@@ -106,6 +106,7 @@
   /* margin: 0px; */
 
   letter-spacing: 5px;
+  font-weight: 600;
 }
 
 .map_container {
@@ -190,6 +191,7 @@
   padding: 0px;
   cursor: pointer;
   letter-spacing: 8px;
+  font-weight: 600;
   /* padding-left: 10px; */
 }
 

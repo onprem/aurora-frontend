@@ -112,12 +112,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
   border-radius: 50%;
   border: none;
   color: white;
-  font-size: 30px;
-  font-weight: 800;
   background: black;
   outline: none;
   border: none;

@@ -67,7 +67,7 @@
   transform: scale(1.1);
 }
 .footer_heading {
-  font-weight: 800;
+  font-weight: 700;
   color: white;
   font-size: 34px;
   text-transform: uppercase;
@@ -184,6 +184,7 @@
   .footer_support,
   .footer_social_cause {
     width: 90%;
+    line-height: 1.2em;
   }
   .footer_content_container {
     width: 100%;
