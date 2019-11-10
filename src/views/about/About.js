@@ -24,16 +24,16 @@ const About = () => {
         </div>
         <div className={style.about_para_container}>
           <p className={style.about_para}>
-            Aurora is the annual cultural festival of ABV-IIITM, Gwalior, an autonomous institute of
-            Government of India. Coupled with the legacy of fellowship and pride, Aurora is one of
-            the largest collegiate festival celebrations in central India, hence one of the most
-            eagerly anticipated events in the institute calender. It attracts a whooping 10,000+
-            students from more than 70 colleges all over the country. In past, Aurora has been a
-            festive affair to part off and an exclusive stage for the best of the artists,
-            performers and show stoppers. Aurora&apos;20 is ready to bewitch the hearts of the
-            masses with an idiosyncartic blend of shimmer, mystique, stupendous talent, breathtaking
-            performances, enrapturing panache, unnerving bands, aesthetic dance moves, soulful
-            moves, top-notch art and sublime actors.
+            Aurora is the annual cultural festival of ABV-IIITM, Gwalior, an Institute of National
+            Importance established by MHRD, Government of India. Coupled with the legacy of
+            fellowship and pride, Aurora is one of the largest collegiate festival celebrations in
+            central India, hence one of the most eagerly anticipated events in the institute
+            calender. It attracts a whooping 10,000+ students from more than 70 colleges all over
+            the country. In past, Aurora has been a festive affair to part off and an exclusive
+            stage for the best of the artists, performers and show stoppers. Aurora&apos;20 is ready
+            to bewitch the hearts of the masses with an idiosyncartic blend of shimmer, mystique,
+            stupendous talent, breathtaking performances, enrapturing panache, unnerving bands,
+            aesthetic dance moves, soulful moves, top-notch art and sublime actors.
           </p>
         </div>
       </div>

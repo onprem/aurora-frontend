@@ -34,6 +34,7 @@
   cursor: pointer;
   outline: none;
   color: black;
+  letter-spacing: 0.1em;
 }
 .eventAccordion.open .headSectionBtn {
   font-size: 4em;

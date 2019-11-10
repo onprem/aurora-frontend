@@ -17,7 +17,13 @@ const Home = () => {
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const bats = ['Bat1', 'Bat2', 'Bat3', 'Bat4', 'Bat5', 'Bat6', 'Bat7', 'Bat8', 'Bat9'].map(
     style => {
-      return <Bat className={styles[style]} speed={Math.random() * 0.4 + 0.6} key={style} />;
+      return (
+        <Bat
+          className={`${styles[style]} ${styles.Bats}`}
+          speed={Math.random() * 0.4 + 0.6}
+          key={style}
+        />
+      );
     }
   );
   return (
@@ -25,17 +31,25 @@ const Home = () => {
       <div className={styles.Home}>
         {isDesktop ? (
           <>
-            <Parallax y={[-110, 75]}>
+            <Parallax y={[-130, 65]} x={[180, -80]}>
               <AuroraCircleIcon className={styles.Logo} />
             </Parallax>
-            <Parallax y={[-160, 380]}>
+            <Parallax y={[30, 50]} x={[-70, 70]}>
               <AuroraTextIcon className={styles.Text} />
             </Parallax>
+            <div className={styles.homeDate}>
+              <span>14-16</span>
+              <span>FEB. 2020</span>
+            </div>
           </>
         ) : (
           <>
             <AuroraCircleIcon className={styles.Logo} />
             <AuroraTextIcon className={styles.Text} />
+            <div className={styles.homeDate}>
+              <span>14-16</span>
+              <span>FEB. 2020</span>
+            </div>
           </>
         )}
         <Graveyard />

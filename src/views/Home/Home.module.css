@@ -8,14 +8,49 @@
 }
 .Logo {
   margin-top: 15vh;
-  margin-bottom: 5vh;
+  margin-bottom: 0vh;
   width: 25vh;
 }
 .Text {
-  width: 30vh;
+  width: 55vh;
+}
+.homeDate {
+  position: relative;
+  /* top: 50vh;
+  transform: translateY(-50%);
+  right: 25px; */
+  margin-top: 85px;
+  display: flex;
+  flex-direction: column;
+  font-size: 2.4em;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  justify-content: center;
+  align-items: center;
+  /* font-family: "SkullAndVoid"; */
+  /* width: max-content; */
+}
+.homeDate > span:nth-child(1) {
+  font-weight: 300;
+  font-size: 1.8em;
+  /* letter-spacing: 0; */
 }
 
 /* Bats */
+.Bat1,
+.Bat2,
+.Bat3,
+.Bat4,
+.Bat5 {
+  animation: batAnimate1 linear 3s infinite;
+}
+
+.Bat7,
+.Bat9,
+.Bat6,
+.Bat8 {
+  animation: batAnimate2 linear 3s infinite;
+}
 .Bat1 {
   top: 80%;
   right: 25%;
@@ -23,25 +58,25 @@
   width: 70px;
 }
 .Bat2 {
-  top: 75%;
+  top: 80%;
   right: 48%;
   width: 100px;
 }
 .Bat3 {
-  top: 75%;
-  right: 45%;
+  top: 73%;
+  right: 42%;
   transform: rotate(25deg);
   width: 40px;
 }
 .Bat4 {
-  top: 30%;
+  top: 26%;
   right: 40%;
   transform: rotate(30deg);
   width: 75px;
 }
 .Bat5 {
-  top: 22%;
-  right: 54%;
+  top: 18%;
+  right: 56%;
   width: 120px;
   transform: rotate(-10deg);
 }
@@ -64,9 +99,62 @@
   transform: rotate(-10deg);
 }
 .Bat9 {
-  top: 21%;
-  right: 57%;
+  top: 18%;
+  right: 60%;
   width: 50px;
+}
+
+
+@keyframes batAnimate1 {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateX(-5px) translateY(-5px);
+  }
+  40% {
+    transform: translateX(5px) translateY(5px);
+  }
+  60% {
+    transform: translate(-5px) translateY(5px);
+  }
+  80% {
+    transform: translateX(5px) translateY(-5px);
+  }
+  100% {
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+}
+@keyframes batAnimate2 {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateX(5px) translateY(-5);
+  }
+  40% {
+    transform: translate(-5px) translateY(5px);
+  }
+  60% {
+    transform: translateX(5px) translateY(5px);
+  }
+  80% {
+    transform: translateX(-5px) translateY(-5px);
+  }
+  100% {
+    transform: translateX(0);
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .homeDate {
+    margin-top: 55px;
+    font-size: 1.6em;
+    letter-spacing: 0.2em;
+
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -75,9 +163,15 @@
   }
   .Logo {
     width: 40vw;
+    margin-top: 10vh;
   }
   .Text {
     width: 60vw;
+  }
+  .homeDate {
+    margin-top: 25px;
+    font-size: 1.6em;
+    letter-spacing: 0.2em;
   }
   .Bat1 {
     top: 70%;
@@ -110,5 +204,22 @@
   .Bat9 {
     right: 78%;
     /* width: 250px; */
+  }
+}
+
+@media only screen and (max-width: 450px) and (min-aspect-ratio: 9/16) {
+  .Logo {
+    margin-top: 5vh;
+  }
+  .Text {
+    width: 60vw;
+  }
+  .homeDate {
+    margin-top: 10px;
+    font-size: 1.4em;
+    letter-spacing: 0.15em;
+  }
+  .Bats {
+    transform: scale(0.8);
   }
 }
