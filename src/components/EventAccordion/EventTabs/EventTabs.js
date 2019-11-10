@@ -19,7 +19,7 @@ const EventTabs = ({ event }) => {
         }
       });
 
-      return <ol>{partRules}</ol>;
+      return <ul>{partRules}</ul>;
     };
     return getRules(event.rules);
   }, [event]);

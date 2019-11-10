@@ -51,16 +51,22 @@ const EventDetails = () => {
 
   const openHeight = `calc(100% - ${(event.subEvents.length - 1) * 35 + 5}px)`;
 
-  const accordions = event.subEvents.map((subEvent, index) => (
-    <EventAccordion
-      event={subEvent}
-      isOpen={index === openEvent}
-      onClick={() => setOpenEvent(index)}
-      path={`/events/${eventId}/${index + 1}`}
-      openHeight={openHeight}
-      key={subEvent.name}
-    />
-  ));
+  const accordions = event.subEvents.map((subEvent, index) => {
+    return (
+      <EventAccordion
+        event={{
+          ...subEvent,
+          eventHeads: event.eventHeads,
+          eventOrganisers: event.eventOrganisers,
+        }}
+        isOpen={index === openEvent}
+        onClick={() => setOpenEvent(index)}
+        path={`/events/${eventId}/${index + 1}`}
+        openHeight={openHeight}
+        key={subEvent.name}
+      />
+    );
+  });
 
   return <EventWrapper>{accordions}</EventWrapper>;
 };
