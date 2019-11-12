@@ -61,4 +61,4 @@ jobs:
           chmod 400 $HOME/ecd
 
       - name: Deploy the build to server
-        run: rsync -avz --delete -e "ssh -i $HOME/ecd -o StrictHostKeyChecking=no" build ops@aurorafest.org:/var/www/aurora-staging/
+        run: rsync -avz --delete -e "ssh -i $HOME/ecd -o StrictHostKeyChecking=no" build ops@staging.aurorafest.org:/var/www/aurora-staging/
