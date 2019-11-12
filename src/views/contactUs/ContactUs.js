@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -6,6 +6,9 @@ import style from './contactUs.module.css';
 
 import Particle from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
+import Path from '../../components/chealCaowaPath/Path';
+import Bat from '../../components/bat/Bat';
+import AnimateChealCaowa from '../../utils/chealCaowa';
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
@@ -39,6 +42,15 @@ const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault();
   };
+  useEffect(() => {
+    const bat = document.getElementById('bat');
+    const container = document.getElementsByClassName('path_wrapper')[0];
+    const chealCaowa = new AnimateChealCaowa(container, bat, 200);
+    const AnimateChealCaowaFrame = requestAnimationFrame(chealCaowa.moveBat);
+    return () => {
+      window.cancelAnimationFrame(AnimateChealCaowaFrame);
+    };
+  });
   return (
     <>
       <Link to="/">
@@ -122,6 +134,8 @@ const Contact = () => {
       </div>
 
       <Particle />
+      <Path width="100px" height="100px" />
+      <Bat className={style.contact_ChealCaowa} />
     </>
   );
 };
