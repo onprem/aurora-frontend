@@ -58,7 +58,7 @@ jobs:
           ECD_KEY: ${{ secrets.ECD_KEY }}
         run: |
           echo "$ECD_KEY" | base64 -d > $HOME/ecd
-          chmod 400 ecd
+          chmod 400 $HOME/ecd
 
       - name: Deploy the build to server
         run: rsync -avz --delete -e "ssh -i $HOME/ecd -o StrictHostKeyChecking=no" build ops@aurorafest.org:/var/www/aurora-staging/
