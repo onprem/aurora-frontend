@@ -990,14 +990,20 @@ const eventData = {
     singleEvent: true,
     description:
       'The Corna event will be one of the flagship events where multiple bands will compete amongst each other to prove their mettle on the stage while rocking and winning the audience with their stringing guitars and drums enthralling the audience. This will be a mega event in itself which will also form one of the pro-nights.',
-    prizeMoney: 'Worth Rs. 1,20,000',
+    prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
     fees: 2000,
     maxTeamSize: 10,
     rules: [
-      'Bands will have to bring ​ their own​ Musical Instruments and Special Effects.However,Programmed Music is not allowed.',
-      'Marks will be deducted for exceeding the Time Limit.',
-      'The decision of the judges will be ​ Final​ and ​ Binding​.',
-      'Bands will be disqualified on the spot for Misconduct,Obscenity or Foul Language.',
+      {
+        headline: 'Guidelines:',
+        rules: [
+          'Bands will have to bring ​their own​ Musical Instruments and Special Effects. However, Programmed Music is not allowed.',
+          'Marks will be deducted for exceeding the Time Limit.',
+          'The decision of the judges will be ​Final​ and ​Binding​.',
+          'Bands will be disqualified on the spot for Misconduct, Obscenity or Foul Language.',
+          'Basic drum kit will be provided to bands in prelims.',
+        ],
+      },
       {
         headline: 'Judging Criteria:',
         rules: [
@@ -1011,15 +1017,15 @@ const eventData = {
       {
         headline: 'Pre-finals:',
         rules: [
-          'Bands will be allowed a total of ​ 9 mins​ on-stage(including 6 minutes for performance and 3 mins for setup,soundcheck and clearance).',
-          'Participants are ​ NOT​ required to play an original composition.',
+          'Bands will be allowed a total of ​11 mins​ on-stage (including 8 minutes for performance and 3 mins for setup, soundcheck and clearance).',
+          'Participants are NOT​ required to play an original composition.',
         ],
       },
       {
         headline: 'Finals:',
         rules: [
-          'Bands will be allowed a total of ​ 20 mins​ on-stage(including performance,setup and soundcheck).',
-          'Participants are required to play at least ​ ONE​ original composition.',
+          'Bands will be allowed a total of ​ 20 mins​ on-stage (including performance, setup and soundcheck).',
+          'Participants are required to play at least ONE​ original composition.',
         ],
       },
     ],
