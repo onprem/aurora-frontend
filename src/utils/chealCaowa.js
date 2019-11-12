@@ -1,13 +1,13 @@
 class AnimateChealCaowa {
-  constructor(container, bat, initialY) {
+  constructor(container, bat, initialY, speed) {
     this.counter = 0;
     this.angleCounter = 0;
-    this.initialY = initialY;
+    this.initialY = initialY || 0;
     this.x = 0;
     this.y = 0;
-    this.prevLength = 0;
+    this.speed = speed || 0;
+    this.angleCheck = 0;
     this.direction = true;
-    this.svgContainer = container;
     // eslint-disable-next-line prefer-destructuring
     this.svg = container.getElementsByTagName('path')[0];
     this.svgLength = this.svg.getTotalLength();
@@ -24,8 +24,26 @@ class AnimateChealCaowa {
     if (this.direction) {
       this.x = this.svg.getPointAtLength(this.counter * this.svgLength).x + 15;
       this.y = this.svg.getPointAtLength(this.counter * this.svgLength).y + 15;
-
-      this.angleCounter =
+      if (this.angleCheck >= Math.PI / 2) {
+        this.angleCounter =
+          Math.PI / 1.6 +
+          Math.PI / 2 +
+          Math.atan(
+            this.svg.getPointAtLength(this.counter * this.svgLength + 2).y -
+              this.svg.getPointAtLength(this.counter * this.svgLength).y /
+                this.svg.getPointAtLength(this.counter * this.svgLength + 2).x -
+              this.svg.getPointAtLength(this.counter * this.svgLength).y
+          );
+      } else
+        this.angleCounter =
+          Math.PI / 1.6 +
+          Math.atan(
+            this.svg.getPointAtLength(this.counter * this.svgLength + 2).y -
+              this.svg.getPointAtLength(this.counter * this.svgLength).y /
+                this.svg.getPointAtLength(this.counter * this.svgLength + 2).x -
+              this.svg.getPointAtLength(this.counter * this.svgLength).y
+          );
+      this.angleCheck =
         Math.PI / 1.6 +
         Math.atan(
           this.svg.getPointAtLength(this.counter * this.svgLength + 2).y -
@@ -33,8 +51,7 @@ class AnimateChealCaowa {
               this.svg.getPointAtLength(this.counter * this.svgLength + 2).x -
             this.svg.getPointAtLength(this.counter * this.svgLength).y
         );
-      this.prevLength = this.counter * this.svgLength;
-      this.counter += 0.00085;
+      this.counter += this.speed;
     } else {
       this.counter = 0;
       this.direction = !this.direction;

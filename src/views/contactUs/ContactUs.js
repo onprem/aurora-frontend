@@ -45,7 +45,7 @@ const Contact = () => {
   useEffect(() => {
     const bat = document.getElementById('bat');
     const container = document.getElementsByClassName('path_wrapper')[0];
-    const chealCaowa = new AnimateChealCaowa(container, bat, 200);
+    const chealCaowa = new AnimateChealCaowa(container, bat, 200, 0.00085);
     const AnimateChealCaowaFrame = requestAnimationFrame(chealCaowa.moveBat);
     return () => {
       window.cancelAnimationFrame(AnimateChealCaowaFrame);
