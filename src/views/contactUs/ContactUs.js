@@ -1,22 +1,29 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/react-hooks';
 
 import style from './contactUs.module.css';
 
 import Particle from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
+import Path from '../../components/chealCaowaPath/Path';
+import Bat from '../../components/bat/Bat';
+import AnimateChealCaowa from '../../utils/chealCaowa';
+import Loader from '../../components/Loader/Loader';
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import useMediaQuery from '../../utils/useMediaQuery';
+import getAlert from '../../utils/getAlert';
+
+import CONTACT_US from '../../graphQl/mutations/contactUs';
 
 const cordiData = [
   {
-    name: `Ojaswa Sharma`,
-    tel: `+91-9131102279`,
-    mail: `ojaswa@aurorafest.org`,
+    name: `Arihant Jain`,
+    tel: `+91-7509998118`,
+    mail: `arihant@aurorafest.org`,
   },
   {
     name: `Chandan Kumar`,
@@ -24,9 +31,9 @@ const cordiData = [
     mail: `chandan@aurorafest.org`,
   },
   {
-    name: `Arihant Jain`,
-    tel: `+91-7509998118`,
-    mail: `arihant@aurorafest.org`,
+    name: `Ojaswa Sharma`,
+    tel: `+91-9131102279`,
+    mail: `ojaswa@aurorafest.org`,
   },
   {
     name: `Ruchika Agrawal`,
@@ -36,9 +43,53 @@ const cordiData = [
 ];
 
 const Contact = () => {
+  const [inputs, changeInputs] = useState({ name: '', email: '', subject: '', message: '' });
+  const [runContactUs, { data, loading, error }] = useMutation(CONTACT_US);
+  const isMobile = useMediaQuery('(max-width:850px)');
+
+  const handleInput = event => {
+    const { value, name } = event.target;
+    changeInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
+    runContactUs({ variables: inputs });
   };
+  useEffect(() => {
+    const bat = document.getElementById('bat');
+    const container = document.getElementsByClassName('path_wrapper')[0];
+    const chealCaowa = new AnimateChealCaowa(container, bat, 200, 0.00085);
+    const AnimateChealCaowaFrame = requestAnimationFrame(chealCaowa.moveBat);
+    return () => {
+      window.cancelAnimationFrame(AnimateChealCaowaFrame);
+    };
+  });
+
+  useEffect(() => {
+    if (data) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'success',
+        title: data.contactUs.message,
+      });
+      changeInputs({ name: '', email: '', subject: '', message: '' });
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+  }, [error]);
+
   return (
     <>
       <Link to="/">
@@ -50,14 +101,14 @@ const Contact = () => {
             <div className={style.contact_us}>
               <h3 className={style.contact_heading}>Contact Us :</h3>
               <div className={style.contact_card}>
-                {cordiData.map(data => (
+                {cordiData.map(cData => (
                   <div className={style.cordi}>
-                    <h4 className={style.cordi_heading}>{data.name}</h4>
-                    <a href={`tel:${data.tel}`}>
+                    <h4 className={style.cordi_heading}>{cData.name}</h4>
+                    <a href={`tel:${cData.tel}`}>
                       <Phone width="30px" height="30px" />
                     </a>
 
-                    <a href={`mailto:${data.mail}`}>
+                    <a href={`mailto:${cData.mail}`}>
                       <Mail width="30px" height="30px" />
                     </a>
                   </div>
@@ -94,34 +145,49 @@ const Contact = () => {
                 className={style.single_line_input}
                 placeholder="Name"
                 name="name"
+                value={inputs.name}
+                onChange={handleInput}
               />
               <input
                 type="email"
                 className={style.single_line_input}
                 placeholder="E-mail Address"
                 name="email"
+                value={inputs.email}
+                onChange={handleInput}
               />
               <input
                 type="text"
                 className={style.single_line_input}
                 placeholder="Subject"
                 name="subject"
+                value={inputs.subject}
+                onChange={handleInput}
               />
               <textarea
                 className={style.multiple_line_input}
                 placeholder="Message"
                 name="message"
+                value={inputs.message}
+                onChange={handleInput}
               />
-              <button type="submit" onClick={handleSubmit} className={style.form_submit}>
-                SUBMIT
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className={style.form_submit}
+                disabled={loading}
+              >
+                {loading ? <Loader /> : `SUBMIT`}
               </button>
             </form>
           </div>
         </div>
-        {useMediaQuery('(max-width:850px)') ? null : <Social fill="#000000" />}
+        {isMobile ? null : <Social fill="#000000" />}
       </div>
 
       <Particle />
+      <Path width="100px" height="100px" />
+      <Bat className={style.contact_ChealCaowa} />
     </>
   );
 };

@@ -1,0 +1,34 @@
+.Alert {
+  position: fixed;
+  top: 2vh;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10vh);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+  z-index: 3;
+  background: white;
+  transition: transform 1s ease-in-out;
+}
+.Alert.success {
+  border: 2px solid var(--success);
+  /* border-radius: 5px; */
+  color: var(--success);
+}
+.Alert.error {
+  border: 2px solid var(--error);
+  /* border-radius: 5px; */
+  color: var(--error);
+}
+.Alert.active {
+  transform: translateX(-50%) translateY(0);
+}
+.messageBox, .crossBtn {
+  margin: 10px 15px;
+}
+.crossBtn {
+  font-size: 3em;
+  line-height: 0.4;
+  margin-right: 5px;
+}

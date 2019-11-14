@@ -192,8 +192,15 @@
   cursor: pointer;
   letter-spacing: 8px;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* padding-left: 10px; */
 }
+/* .form_submit:disabled {
+  background: var(--disabled);
+  border-color: var(--disabled);
+} */
 
 .map_outer {
   position: relative;
@@ -288,4 +295,9 @@
     top: 10px;
     left: 10px;
   }
+}
+.contact_ChealCaowa {
+  top: 0px;
+  left: -30px;
+  width: 60px;
 }

@@ -26,7 +26,7 @@ const Footer = () => {
           <ul className={style.footer_sitemap}>
             <h2 className={style.footer_heading}>Sitemap</h2>
             {sitemap.map(map => (
-              <Link to={map.path}>
+              <Link to={map.path} key={map.title}>
                 <li className={style.footer_sitemap_li}>{map.title}</li>
               </Link>
             ))}
@@ -37,7 +37,7 @@ const Footer = () => {
           <ul className={style.footer_support}>
             <h2 className={style.footer_heading}>Support</h2>
             {support.map(sup => (
-              <Link to={sup.path}>
+              <Link to={sup.path} key={sup.title}>
                 <li className={style.footer_support_li}>{sup.title}</li>
               </Link>
             ))}
@@ -45,7 +45,9 @@ const Footer = () => {
           <ul className={style.footer_social_cause}>
             <h2 className={style.footer_heading}>Social Cause</h2>
             {social.map(soc => (
-              <li className={style.footer_social_li}>{soc}</li>
+              <li className={style.footer_social_li} key={soc}>
+                {soc}
+              </li>
             ))}
           </ul>
         </div>
