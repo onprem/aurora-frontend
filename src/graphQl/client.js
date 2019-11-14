@@ -6,7 +6,7 @@ import { setContext } from 'apollo-link-context';
 import { ApolloLink } from 'apollo-link';
 
 const uri =
-  process.env.NODE_ENV === 'production'
+  process.env.REACT_APP_ENV === 'production'
     ? 'https://api.aurorafest.org/api/graphql'
     : 'https://api.staging.aurorafest.org/api/graphql';
 
