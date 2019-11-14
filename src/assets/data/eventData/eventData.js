@@ -4,7 +4,7 @@ const eventData = {
     singleEvent: true,
     description:
       'Parivesh the most glamorous event of the festival is ready to captivate the audience with its mesmerizing charm. Fashion is an art and Parivesh is the ultimate platform to express yourself. Boasting of a decade long legacy, the “gloss, glitz and glamour” is back with bigger and better stakes with Parivesh. Parivesh gives you the golden opportunity to emerge as a trendsetter in front of the big guns of trade and a huge ecstatic audience. The curtains would slowly draw apart to spell-bound everyone by the angelic beauty stunning the stage. If you have got the beguiling looks and the perfect vogue, Parivesh is just the event for you! This is a competition tailor made for all of you whoever aspires to be the next glamorous DIVA or HUNK. Come set the stage on fire with your charm and charisma at Aurora!!!',
-    prizeMoney: 'Worth Rs. 1,20,000',
+    prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
     fees: 2500,
     maxTeamSize: 15,
     rules: [
@@ -121,10 +121,26 @@ const eventData = {
     ],
     subEvents: [
       {
+        name: 'Graffathon',
+        description:
+          'This competition is open to all graffiti artists, who are able to submit examples of their creative artwork. Just pick up your spray cans and brushes and display your creativity on our walls.',
+        prizeMoney: 'INR 12,000 + Goodies, Benefits and Sponsored Gifts',
+        fees: 200,
+        maxTeamSize: 4,
+        rules: [
+          'This is an on-spot event',
+          'This is a solo event',
+          'This is a spray painting competition',
+          'Materials will be provided',
+          'Participants will be judged on the basis of creativity, innovation, and design',
+          'Decision of the judges will be final and binding',
+        ],
+      },
+      {
         name: 'On Spot Painting',
         description:
           'This is an on-spot painting contest for all the artists who want to bring their imagination on a canvas. So grab your brushes and colours and bring your creativity live on the canvas.',
-        prizeMoney: 'Worth Rs. 7,500',
+        prizeMoney: 'INR 7,500 + Goodies, Benefits and Sponsored Gifts',
         fees: 150,
         maxTeamSize: 1,
         rules: [
@@ -140,59 +156,10 @@ const eventData = {
         ],
       },
       {
-        name: 'Naqaab (Face Painting)',
-        description:
-          'Around the world, there are face painting festivals, conventions, and even competitions to celebrate this art form. The artist can do FACE PAINTING on his own face or face of any other person (model/friend/ relative). Face Painting on any subject or theme will be accepted.',
-        prizeMoney: 'Worth Rs. 2,000',
-        fees: 0,
-        maxTeamSize: 1,
-        rules: [
-          'Team members(2 people — the one who will paint and the other whose face will be painted OR 1 person — paint your own face) ',
-          'This is an on-spot event.',
-          'Materials will be provided',
-          'Separate mirror will be provided for solo artist only.',
-          'Time – 1 hour',
-          'Participants will be judged on the basis of creativity, innovation, and design',
-          'Decision of the judges will be final and binding',
-        ],
-      },
-      {
-        name: 'Graffathon',
-        description:
-          'This competition is open to all graffiti artists, who are able to submit examples of their creative artwork. Just pick up your spray cans and brushes and display your creativity on our walls.',
-        prizeMoney: 'Worth Rs. 12,000',
-        fees: 200,
-        maxTeamSize: 4,
-        rules: [
-          'This is an on-spot event',
-          'This is a solo event',
-          'This is a spray painting competition',
-          'Materials will be provided',
-          'Participants will be judged on the basis of creativity, innovation, and design',
-          'Decision of the judges will be final and binding',
-        ],
-      },
-      {
-        name: 'Best out of Waste',
-        description: '',
-        prizeMoney: 'Worth Rs. 5,000',
-        fees: 0,
-        maxTeamSize: 1,
-        rules: [
-          'This is an on-spot event.',
-          'Team event (2 – 3 members)',
-          'Materials will be provided',
-          'Preparation time – 1 hour',
-          'Presentation time – 5 minutes',
-          'Participants will be judged on the basis of creativity, innovation, and design.',
-          'The decision of the judges will be final and binding.',
-        ],
-      },
-      {
         name: 'On-spot sketching',
         description:
           'This contest is open to all traditional artists that draw using lead pencils. The topic is BLACK & WHITE PENCIL DRAWING. Contestants can make drawing of any subject that they want with lead pencil(s). No color artwork will be accepted, only black/white/grayscale pencil artwork for this contest.',
-        prizeMoney: 'Worth Rs. 7,500',
+        prizeMoney: 'INR 7,500 + Goodies, Benefits and Sponsored Gifts',
         fees: 150,
         maxTeamSize: 1,
         rules: [
@@ -205,12 +172,45 @@ const eventData = {
         ],
       },
       {
+        name: 'Best out of Waste',
+        description: '',
+        prizeMoney: 'INR 5,000 + Goodies, Benefits and Sponsored Gifts',
+        fees: 0,
+        maxTeamSize: 3,
+        rules: [
+          'This is an on-spot event.',
+          'Team event (2 – 3 members)',
+          'Materials will be provided',
+          'Preparation time – 1 hour',
+          'Presentation time – 5 minutes',
+          'Participants will be judged on the basis of creativity, innovation, and design.',
+          'The decision of the judges will be final and binding.',
+        ],
+      },
+      {
+        name: 'Naqaab (Face Painting)',
+        description:
+          'Around the world, there are face painting festivals, conventions, and even competitions to celebrate this art form. The artist can do FACE PAINTING on his own face or face of any other person (model/friend/ relative). Face Painting on any subject or theme will be accepted.',
+        prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
+        fees: 0,
+        maxTeamSize: 2,
+        rules: [
+          'Team members(2 people — the one who will paint and the other whose face will be painted OR 1 person — paint your own face) ',
+          'This is an on-spot event.',
+          'Materials will be provided',
+          'Separate mirror will be provided for solo artist only.',
+          'Time – 1 hour',
+          'Participants will be judged on the basis of creativity, innovation, and design',
+          'Decision of the judges will be final and binding',
+        ],
+      },
+      {
         name: 'Doodly-doo(Online)',
         description:
           'Doodly-doo is a doodle art contest which gives a chance to use your imagination and share your doodling skills with the world.',
-        prizeMoney: 'Worth Rs. 2,000',
+        prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 200,
-        maxTeamSize: 3,
+        maxTeamSize: 1,
         rules: [
           'This is an online event',
           'They must not be offensive or contain any material that is unlawful or copied. Such entries will not be considered for evaluation.',
@@ -227,7 +227,7 @@ const eventData = {
     singleEvent: true,
     description:
       "If you have outrageous personality, better showcase your talent. Mr and Miss Aurora (MnM) is coming this Aurora 2019 to let you explore the hidden potential in yourself, compete with some of the toughest people around you and give you the chance to be the face of Aurora. MnM, a talent hunt to test your confidence, aptitude, IQ and your wits. If you think you have got the X-factor to woe the crowd with your personality, don't wait then. Show your mettle and walk away with your head held high, your prestige intact and of course with the coveted title. Explore your physical and mental capabilities through a series of resilient challenges. So this year again, Aurora'20 is coming with it's flagship event M&M to give the adrenaline rush you desire, and of course quintessentially our own Roadies.",
-    prizeMoney: 'Worth Rs. 30,000',
+    prizeMoney: 'INR 30,000 + Goodies, Benefits and Sponsored Gifts',
     fees: 500,
     maxTeamSize: 1,
     rules: [
@@ -314,7 +314,7 @@ const eventData = {
     singleEvent: false,
     description:
       '“​ Great dancers are not great because of their technique; they are great because of their passion.” Opportunity dances with those already on the dance floor. So here comes the most awaiting dancing events –​ Step Up​ for you which will vibrate your feet and will throb your heartbeats. Be ready to rock n roll because Step Up is the heat of dance which will take you to the new level of passion to just dance and nothing else. So get ready to put the stage on fire and back the bugs.',
-    prizeMoney: 'Worth Rs. 1,00,000',
+    prizeMoney: 'INR 1 Lakhs + Goodies, Benefits and Sponsored Gifts',
     eventHeads: [
       {
         name: 'Gaurav Verma',
@@ -377,64 +377,53 @@ const eventData = {
     ],
     subEvents: [
       {
-        name: 'Dancing Mantra​',
-        description:
-          'Aurora brings you one of the best platforms to steal the spotlight and celebrate the true liberation of emotions. It’s an opportunity to showcase the magic in your footsteps through solo dance.',
-        fees: 249,
-        maxTeamSize: 2,
-        prizeMoney: 'Worth Rs. 25,000',
-        rules: [
-          'Maximum time limit: ● Elimination round: 3 min. ● Final round: 5 min',
-          'Only the participants decided by the judge will qualify for the final round.',
-          'For the final round, the song will be provided to the team corresponding to the dance skills and next day have to perform.',
-          'It is not necessary for the participants to perform on different songs for elimination and final round.',
-          'Costumes are not necessary for the round but marks will be given for costumes.',
-        ],
-      },
-      {
-        name: 'Raqs',
+        name: 'Synchro Funk',
         description:
           'Dancing is a conversation that needs not be spoken but is implicitly understood. This event gives the opportunity for an enthusiastic expression of camaraderie and trust as groups dance to the rhythm tying them together as they vie for the top spot.',
         fees: 749,
         maxTeamSize: 15,
-        prizeMoney: 'Worth Rs. 32,500',
+        prizeMoney: 'INR 50,000 + Goodies, Benefits and Sponsored Gifts',
         rules: [
-          'Group entries.',
-          'Knockout round',
-          'Minimum members: 3',
+          'Minimum number of team members = 3, maximum number of team members = 15.',
+          'Maximum time limit:  ● Elimination round: 4 min ● Final round: 6 min',
           'All the teams will first have to compete in the elimination round. Only the teams selected by the judge will qualify for the next round.',
-          'No limitations on dance styles. Music provided by us and varies between different genres (for example hip hop, house, funk, dubstep).',
-          'One battle of 8 minutes, divided into four performances one by one, one performance is of minimum 1 minute and maximum 2 minutes.',
+          'For the final round, the song will be provided to the participant corresponding to the dance skills.',
+          'It is not necessary for the participants to perform on different songs for the elimination round.',
+          'Costumes are not necessary for the round but marks will be given for costumes.',
         ],
       },
       {
-        name: 'Crew Battle (Street Dance)',
+        name: 'Dancing Dyad​',
         description:
-          'Paint the stage with talent as you put your best foot forward with moves that leave the audience stunned. This event glorifies the relationship of a dancer to the rhythm as they battle it out for the best of street dance.',
-        fees: 749,
-        maxTeamSize: 15,
-        prizeMoney: 'Worth Rs. 32,500',
+          'Aurora brings you one of the best platforms to steal the spotlight and celebrate the true liberation of emotions. It’s an opportunity to showcase the magic in your footsteps through duet dance.',
+        fees: 399,
+        maxTeamSize: 2,
+        prizeMoney: 'INR 30,000 + Goodies, Benefits and Sponsored Gifts',
         rules: [
-          'Minimum number of team member-3. Maximum number of team member-15',
-          'Maximum time limits: Elimination round : 4 min. Final round : 6 min.',
+          'Number of team members = 2.',
+          'Maximum time limit: ● Elimination round: 4 min. ● Final round: 6 min',
           'All the teams will first have to compete in the elimination round. Only the teams selected by the judge will qualify for the next round.',
-          'For the final round, the song will be provided to the team corresponding to the dance skills and two days for the preparation.',
+          'For the final round, the song will be provided to the participant corresponding to the dance skills and the next day they have to perform.',
           'It is not necessary for the participants to perform on different songs for elimination and final round.',
           'Costumes are not necessary for the round but marks will be given for costumes.',
         ],
       },
       {
-        name: 'Step Up Final Battle',
+        name: 'Street Dance',
         description:
-          'Tear down the walls and unleash your passion for the ultimate battle. In this event, the winners and runner-ups of Dancing Mantra, Street Dance and Raqs will battle for the final crown. ',
-        fees: 0,
-        maxTeamSize: 15,
-        prizeMoney: 'Worth Rs. 10,000',
+          'Paint the stage with talent as you put your best foot forward with moves that leave the audience stunned. This event glorifies the relationship of a dancer to the rhythm as they battle it out for the best of street dance.',
+        fees: 249,
+        maxTeamSize: 1,
+        prizeMoney: 'INR 20,000 + Goodies, Benefits and Sponsored Gifts',
         rules: [
-          'Only the winners and runner-ups are eligible.',
-          'Maximum time limit:- 6 min.',
-          'It is not necessary for the participants to perform on different songs.',
-          'Costumes are not necessary for the round but marks will be given for costumes.',
+          'Single entries.',
+          'There will be Knockout rounds.',
+          'All the participants will first have to compete in the elimination round. Only the participants selected by the judge will qualify for the next round.',
+          'For elimination round, the song will be of your choice.',
+          'For Semi-Final and Final, the song will be provided.',
+          'No limitations on dance styles, it may vary between different genres (for example hip hop, house, funk, dubstep).',
+          'The elimination round will be of 3 minutes.',
+          'Semi-Final and Final will be of 4 and 6 minutes respectively.',
         ],
       },
     ],
@@ -444,7 +433,7 @@ const eventData = {
     singleEvent: true,
     description:
       "Have you ever wanted to change the way systems and organizations work in our country? Have you thought to bring out CHANGE, REFORM, REVOLUTION? Have your mind ever started the journey of BADLAAV from AAGAZ to ANZAM? If yes, our event 'STREET-PLAY (Nukkad Natak Competition)' is the perfect opportunity. Here, we hit the streets, we sing, we dance, we act, we shout with minds full of thoughts of creating something new. 'The creation of something new is not accomplished by the intellect but by the play instinct.' -Carl Jung Well, it's time to create something new with your voice, action, acting and overall play. We have just one thing to say - BE THE CREATOR OF YOUR OWN WORLD!",
-    prizeMoney: 'Worth Rs. 25,000',
+    prizeMoney: 'INR 25,000 + Goodies, Benefits and Sponsored Gifts',
     fees: 479,
     maxTeamSize: 20,
     rules: [
@@ -492,7 +481,7 @@ const eventData = {
   pikture: {
     name: 'The Pikture',
     singleEvent: false,
-    prizeMoney: 'Worth Rs. 22,000',
+    prizeMoney: 'INR 22,000 + Goodies, Benefits and Sponsored Gifts',
     eventHeads: [
       {
         name: 'Pragnya Tata',
@@ -535,7 +524,7 @@ const eventData = {
         description:
           'The movie-making contest for several previous editions has been one of the premier events of the Aurora where students with interest and prowess in the movie-making domains come forwards with their short movies. This event will also bring out the talents of the participants or the students in domains like film editing, cinematography, etc.',
         fees: 249,
-        prizeMoney: 'Worth Rs. 17,000',
+        prizeMoney: 'INR 17,000 + Goodies, Benefits and Sponsored Gifts',
         rules: [
           'The participants will have to submit their videos in a Pen drive at the control tent. Aurora is not responsible for any technical problems arising out of the non-compatibility of the videos.',
           'The submissions would be taken on the last day of Aurora one hour before the start of the event. The participants must be present at the specified venue during the judging of their submission.',
@@ -550,7 +539,7 @@ const eventData = {
         description:
           'The photography competition will be a one of a kind masterful event where the participants will be clicking snaps on various themes, including the three-day final show, and then finally those photographs will be judged on various trivial aspects of photography like exposure and light settings, etc.',
         fees: 0,
-        prizeMoney: 'Worth Rs. 2,000',
+        prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
         rules: [
           'This is an individual Online competition.',
           'The event consists of two rounds. First an online qualifier for which a theme would be provided. Selected participants will then move to the second round and cover various events during Aurora’20',
@@ -571,7 +560,7 @@ const eventData = {
         description:
           'Portray a story, an emotion or a feeling through a slideshow of 5-10 pictures and post it on Aurora’s FB page. The judgment will be based on the number of likes, comments, shares and the content of the story.',
         fees: 0,
-        prizeMoney: 'Worth Rs. 3,000',
+        prizeMoney: 'INR 3,000 + Goodies, Benefits and Sponsored Gifts',
         rules: [
           'This is an individual online competition.',
           'The slideshow must consist of at least 3 and at most 10 pictures.',
@@ -634,7 +623,7 @@ const eventData = {
         name: 'Aptitude Quiz',
         description:
           '"The best preparation for tomorrow is doing your best today." - H. Jackson Brown Jr. Ready to test your intellectual skills ? Come be a part of series of mind-boggling questions which will test your logical and analytical skills.',
-        prizeMoney: 'Worth Rs. 6,000',
+        prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 150,
         maxTeamSize: 2,
         rules: [
@@ -659,7 +648,7 @@ const eventData = {
         name: 'BIT Quiz',
         description:
           "Do you have impulse? Do you have the knowledge? Do you wish to feel a rush of Adrenaline? Aurora'20 , IIITM Gwalior present it’s BIT Quiz competition. Lets' test your knowledge in the field of Business and the IT world.",
-        prizeMoney: 'Worth Rs. 6,000',
+        prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 150,
         maxTeamSize: 2,
         rules: [
@@ -684,7 +673,7 @@ const eventData = {
         name: 'Cine Quiz',
         description:
           "Show off your binge watching skills in Cine Quiz which is going to be the next big thing during Aurora'20. This quiz will test your knowledge of Movies, Comics, and TV Series ranging from hollywood to bollywood. Let's see who conquers the throne.",
-        prizeMoney: 'Worth Rs. 6,000',
+        prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 150,
         maxTeamSize: 2,
         rules: [
@@ -758,7 +747,7 @@ const eventData = {
       {
         name: 'CS-GO',
         description: 'Showcase your talent in Counter Strike.',
-        prizeMoney: 'Worth Rs. 20,000',
+        prizeMoney: 'INR 20,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 249,
         maxTeamSize: 5,
         rules: [
@@ -843,7 +832,7 @@ const eventData = {
       {
         name: 'PUBG',
         description: '',
-        prizeMoney: 'Worth Rs. 10,000',
+        prizeMoney: 'INR 10,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 149,
         maxTeamSize: 4,
         rules: [
@@ -888,7 +877,7 @@ const eventData = {
   a_lit: {
     name: 'A-Lit',
     singleEvent: false,
-    prizeMoney: 'Worth Rs. 24,000',
+    prizeMoney: 'INR 24,000 + Goodies, Benefits and Sponsored Gifts',
     eventHeads: [
       {
         name: 'Anuj Sharma',
@@ -934,7 +923,7 @@ const eventData = {
         name: 'Open Mic',
         description:
           'The Open Mic is an open stage for all talent like poetry, storytelling, stand-up comedy, Mimicry, Beat boxing; rapping or any other unique talent you have. You get the chance to perform in front of a live audience.',
-        prizeMoney: 'Worth Rs. 15,000',
+        prizeMoney: 'INR 15,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 200,
         maxTeamSize: 1,
         rules: [
@@ -950,7 +939,7 @@ const eventData = {
         name: 'Morning Radio',
         description:
           'If you’re spontaneous, confident & have a brilliant sense of humour, get set to be the next radio star. If you love music & stories, are fluent in Hindi & English, then you just could be the lucky one! This event gives you the chance to own your show with a live audience right by your side. Be an RJ, show off your voice and interaction skills, speak a lot and you have chance to win.',
-        prizeMoney: 'Worth Rs. 5,000',
+        prizeMoney: 'INR 5,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 200,
         maxTeamSize: 1,
         rules: [
@@ -964,7 +953,7 @@ const eventData = {
         name: 'Creative Writing (English)',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
-        prizeMoney: 'Worth Rs. 2,000',
+        prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 0,
         maxTeamSize: 1,
         rules: [
@@ -981,7 +970,7 @@ const eventData = {
         name: 'Creative Writing (Hindi)',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
-        prizeMoney: 'Worth Rs. 2,000',
+        prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 0,
         maxTeamSize: 1,
         rules: [
@@ -1001,14 +990,20 @@ const eventData = {
     singleEvent: true,
     description:
       'The Corna event will be one of the flagship events where multiple bands will compete amongst each other to prove their mettle on the stage while rocking and winning the audience with their stringing guitars and drums enthralling the audience. This will be a mega event in itself which will also form one of the pro-nights.',
-    prizeMoney: 'Worth Rs. 1,20,000',
+    prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
     fees: 2000,
     maxTeamSize: 10,
     rules: [
-      'Bands will have to bring ​ their own​ Musical Instruments and Special Effects.However,Programmed Music is not allowed.',
-      'Marks will be deducted for exceeding the Time Limit.',
-      'The decision of the judges will be ​ Final​ and ​ Binding​.',
-      'Bands will be disqualified on the spot for Misconduct,Obscenity or Foul Language.',
+      {
+        headline: 'Guidelines:',
+        rules: [
+          'Bands will have to bring ​their own​ Musical Instruments and Special Effects. However, Programmed Music is not allowed.',
+          'Marks will be deducted for exceeding the Time Limit.',
+          'The decision of the judges will be ​Final​ and ​Binding​.',
+          'Bands will be disqualified on the spot for Misconduct, Obscenity or Foul Language.',
+          'Basic drum kit will be provided to bands in prelims.',
+        ],
+      },
       {
         headline: 'Judging Criteria:',
         rules: [
@@ -1022,15 +1017,15 @@ const eventData = {
       {
         headline: 'Pre-finals:',
         rules: [
-          'Bands will be allowed a total of ​ 9 mins​ on-stage(including 6 minutes for performance and 3 mins for setup,soundcheck and clearance).',
-          'Participants are ​ NOT​ required to play an original composition.',
+          'Bands will be allowed a total of ​11 mins​ on-stage (including 8 minutes for performance and 3 mins for setup, soundcheck and clearance).',
+          'Participants are NOT​ required to play an original composition.',
         ],
       },
       {
         headline: 'Finals:',
         rules: [
-          'Bands will be allowed a total of ​ 20 mins​ on-stage(including performance,setup and soundcheck).',
-          'Participants are required to play at least ​ ONE​ original composition.',
+          'Bands will be allowed a total of ​ 20 mins​ on-stage (including performance, setup and soundcheck).',
+          'Participants are required to play at least ONE​ original composition.',
         ],
       },
     ],
@@ -1108,7 +1103,7 @@ const eventData = {
     singleEvent: false,
     description:
       'The Eumelia event will be a bundle of various sub events where participants would present their vocal and instrumental skills and sing their hearts to please the ears of the audience. We intend to provide stage to singers and musicians to present their best show here in the domains of music, classical singing and modern singing etc. We intend to organize three sub-events, A-capella, Acoustic corner and Raag. Each of these events will be focusing into various different genres and fields of Music.',
-    prizeMoney: 'Worth Rs. 52,000',
+    prizeMoney: 'INR 52,000 + Goodies, Benefits and Sponsored Gifts',
     eventHeads: [
       {
         name: 'Devwrat Sahu',
@@ -1163,7 +1158,7 @@ const eventData = {
         description:
           "There's something in the soft plink of a sitar, or the mellifluous notes of a flute, that the human voice cannot seem to match. Instrumentalists spend years perfecting their art, to achieve the thrilling pace at which they change notes. Bach, Miles Davis, Zakir Hussain, Yo Yo Ma, and L Subramaniam. These artists and many more have changed how most of us look and listen to music. This year, Aurora'20 gives you a chance for you to hear and create magic-harmonies. It​ will be a dedicated event to appreciate singing with Instruments.",
         fees: 200,
-        prizeMoney: 'Worth Rs. 22,000',
+        prizeMoney: 'INR 22,000 + Goodies, Benefits and Sponsored Gifts',
         maxTeamSize: 4,
         rules: [
           'Team size : 1-4',
@@ -1190,7 +1185,7 @@ const eventData = {
         description:
           'A simple competition with simple rules and one of the most liked and attended event of all musical competitions of Aurora- A capella calls you on stage, and give you the freedom to perform.If you think that you can produce melodies without the help of any instruments, come and find out if you are really as good as you believe. It will focus on the various domains of FreeStyle Singing without instrumental accompaniment.',
         fees: 200,
-        prizeMoney: 'Worth Rs. 15,000',
+        prizeMoney: 'INR 15,000 + Goodies, Benefits and Sponsored Gifts',
         maxTeamSize: 2,
         rules: [
           'Team size : 1-2',
@@ -1211,7 +1206,7 @@ const eventData = {
         description:
           '"Music is the shorthand of emotion." — Leo Tolstoy. No matter where you are or what you do some Music will always refresh your mood. Aurora brings you the stage for putting your swift arms and skilful fingers to display before an encouraging and enthusiastic audience. It is a purely instrumental music fiesta which will be aimed to enthuse the audience with raw music.',
         fees: 200,
-        prizeMoney: 'Worth Rs. 15,000',
+        prizeMoney: 'INR 15,000 + Goodies, Benefits and Sponsored Gifts',
         maxTeamSize: 4,
         rules: [
           'Team size : 1-4',

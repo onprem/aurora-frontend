@@ -29,9 +29,11 @@ jobs:
             ${{ runner.OS }}-
 
       - name: Install dependencies
-        run: yarn
+        run: yarn install --prod
 
       - name: Build
+        env:
+          REACT_APP_ENV: production
         run: yarn build
 
       - name: Upload build
@@ -55,8 +57,8 @@ jobs:
         env:
           ECD_KEY: ${{ secrets.ECD_KEY }}
         run: |
-          echo "$ECD_KEY" | base64 -d > ecd
-          chmod 400 ecd
+          echo "$ECD_KEY" | base64 -d > $HOME/ecd
+          chmod 400 $HOME/ecd
 
       - name: Deploy the build to server
-        run: scp -r -i ecd -o StrictHostKeyChecking=no build ops@aurorafest.org:/var/www/aurora/
+        run: rsync -avz --delete -e "ssh -i $HOME/ecd -o StrictHostKeyChecking=no" build ops@aurorafest.org:/var/www/aurora/
