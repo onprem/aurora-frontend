@@ -7,12 +7,12 @@ const Alert = ({ message, type }) => {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    const timeoutID = window.setTimeout(setActive, 300, true);
+    const timeoutID = window.setTimeout(setActive, 50, true);
     return () => window.clearTimeout(timeoutID);
   }, []);
 
   useEffect(() => {
-    const timeoutID = window.setTimeout(setActive, 4300, false);
+    const timeoutID = window.setTimeout(setActive, 4050, false);
     return () => window.clearTimeout(timeoutID);
   }, []);
 

@@ -1,9 +1,11 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
-// import { onError } from 'apollo-link-error';
+import { onError } from 'apollo-link-error';
 import { setContext } from 'apollo-link-context';
 import { ApolloLink } from 'apollo-link';
+
+import getAlert from '../utils/getAlert';
 
 const uri =
   process.env.REACT_APP_ENV === 'production'
@@ -24,16 +26,25 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-// const errLink = onError(({ graphQLErrors, networkError }) => {
-//   if (graphQLErrors)
-//     graphQLErrors.map(({ message, locations, path }) =>
-//       console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
-//     );
-//   if (networkError) console.log(`[Network error]: ${networkError}`);
-// });
+const errLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors)
+    graphQLErrors.map(({ message, locations, path }) =>
+      // eslint-disable-next-line no-console
+      console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
+    );
+  if (networkError) {
+    const toast = getAlert();
+    toast.fire({
+      icon: 'error',
+      title: `Network Error: ${networkError.message}`,
+    });
+    // eslint-disable-next-line no-console
+    console.log(`[Network error]: ${networkError}`);
+  }
+});
 
 const client = new ApolloClient({
-  link: ApolloLink.from([authLink, backendLink]),
+  link: ApolloLink.from([errLink, authLink, backendLink]),
   cache: new InMemoryCache(),
 });
 

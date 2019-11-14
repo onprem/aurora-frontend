@@ -9,21 +9,21 @@ import Social from '../../components/Social/Social';
 import Path from '../../components/chealCaowaPath/Path';
 import Bat from '../../components/bat/Bat';
 import AnimateChealCaowa from '../../utils/chealCaowa';
-import Alert from '../../components/Alert/Alert';
-
+import Loader from '../../components/Loader/Loader';
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import useMediaQuery from '../../utils/useMediaQuery';
+import getAlert from '../../utils/getAlert';
 
 import CONTACT_US from '../../graphQl/mutations/contactUs';
 
 const cordiData = [
   {
-    name: `Ojaswa Sharma`,
-    tel: `+91-9131102279`,
-    mail: `ojaswa@aurorafest.org`,
+    name: `Arihant Jain`,
+    tel: `+91-7509998118`,
+    mail: `arihant@aurorafest.org`,
   },
   {
     name: `Chandan Kumar`,
@@ -31,9 +31,9 @@ const cordiData = [
     mail: `chandan@aurorafest.org`,
   },
   {
-    name: `Arihant Jain`,
-    tel: `+91-7509998118`,
-    mail: `arihant@aurorafest.org`,
+    name: `Ojaswa Sharma`,
+    tel: `+91-9131102279`,
+    mail: `ojaswa@aurorafest.org`,
   },
   {
     name: `Ruchika Agrawal`,
@@ -58,7 +58,6 @@ const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault();
     runContactUs({ variables: inputs });
-    changeInputs({ name: '', email: '', subject: '', message: '' });
   };
   useEffect(() => {
     const bat = document.getElementById('bat');
@@ -69,11 +68,30 @@ const Contact = () => {
       window.cancelAnimationFrame(AnimateChealCaowaFrame);
     };
   });
+
+  useEffect(() => {
+    if (data) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'success',
+        title: data.contactUs.message,
+      });
+      changeInputs({ name: '', email: '', subject: '', message: '' });
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+  }, [error]);
+
   return (
     <>
-      {data && <Alert message={data.contactUs.message} type="success" />}
-      {error && <Alert message="some error occured" type="error" />}
-
       <Link to="/">
         <img src={logo} className={style.contact_aurora_logo} alt="logo" />
       </Link>
@@ -159,7 +177,7 @@ const Contact = () => {
                 className={style.form_submit}
                 disabled={loading}
               >
-                SUBMIT
+                {loading ? <Loader /> : `SUBMIT`}
               </button>
             </form>
           </div>
