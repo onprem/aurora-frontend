@@ -67,7 +67,7 @@ const Contact = () => {
     return () => {
       window.cancelAnimationFrame(AnimateChealCaowaFrame);
     };
-  });
+  }, []);
 
   useEffect(() => {
     if (data) {
