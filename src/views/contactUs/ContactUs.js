@@ -1,16 +1,19 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/react-hooks';
 
 import style from './contactUs.module.css';
 
 import Particle from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
+import Alert from '../../components/Alert/Alert';
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import useMediaQuery from '../../utils/useMediaQuery';
+
+import CONTACT_US from '../../graphQl/mutations/contactUs';
 
 const cordiData = [
   {
@@ -36,11 +39,28 @@ const cordiData = [
 ];
 
 const Contact = () => {
+  const [inputs, changeInputs] = useState({ name: '', email: '', subject: '', message: '' });
+  const [runContactUs, { data, loading, error }] = useMutation(CONTACT_US);
+  const isMobile = useMediaQuery('(max-width:850px)');
+
+  const handleInput = event => {
+    const { value, name } = event.target;
+    changeInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
+    runContactUs({ variables: inputs });
+    changeInputs({ name: '', email: '', subject: '', message: '' });
   };
   return (
     <>
+      {data && <Alert message={data.contactUs.message} type="success" />}
+      {error && <Alert message="some error occured" type="error" />}
+
       <Link to="/">
         <img src={logo} className={style.contact_aurora_logo} alt="logo" />
       </Link>
@@ -50,14 +70,14 @@ const Contact = () => {
             <div className={style.contact_us}>
               <h3 className={style.contact_heading}>Contact Us :</h3>
               <div className={style.contact_card}>
-                {cordiData.map(data => (
+                {cordiData.map(cData => (
                   <div className={style.cordi}>
-                    <h4 className={style.cordi_heading}>{data.name}</h4>
-                    <a href={`tel:${data.tel}`}>
+                    <h4 className={style.cordi_heading}>{cData.name}</h4>
+                    <a href={`tel:${cData.tel}`}>
                       <Phone width="30px" height="30px" />
                     </a>
 
-                    <a href={`mailto:${data.mail}`}>
+                    <a href={`mailto:${cData.mail}`}>
                       <Mail width="30px" height="30px" />
                     </a>
                   </div>
@@ -94,31 +114,44 @@ const Contact = () => {
                 className={style.single_line_input}
                 placeholder="Name"
                 name="name"
+                value={inputs.name}
+                onChange={handleInput}
               />
               <input
                 type="email"
                 className={style.single_line_input}
                 placeholder="E-mail Address"
                 name="email"
+                value={inputs.email}
+                onChange={handleInput}
               />
               <input
                 type="text"
                 className={style.single_line_input}
                 placeholder="Subject"
                 name="subject"
+                value={inputs.subject}
+                onChange={handleInput}
               />
               <textarea
                 className={style.multiple_line_input}
                 placeholder="Message"
                 name="message"
+                value={inputs.message}
+                onChange={handleInput}
               />
-              <button type="submit" onClick={handleSubmit} className={style.form_submit}>
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className={style.form_submit}
+                disabled={loading}
+              >
                 SUBMIT
               </button>
             </form>
           </div>
         </div>
-        {useMediaQuery('(max-width:850px)') ? null : <Social fill="#000000" />}
+        {isMobile ? null : <Social fill="#000000" />}
       </div>
 
       <Particle />
