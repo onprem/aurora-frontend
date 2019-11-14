@@ -5,6 +5,7 @@
   justify-content: flex-end;
   background: black;
   overflow: hidden;
+  z-index: 1;
 }
 .footer_content_container {
   width: 80%;

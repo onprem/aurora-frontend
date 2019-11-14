@@ -29,7 +29,7 @@ const data = [
   },
   {
     title: `Mr. & Ms. Aurora`,
-    desc: `Being different and charismatic is a boon. Being born with a wonderful personality, why not showcase it? Here is an opportunity. Mr and Miss Aurora (MnM) is coming this Aurora 2019 to let you explore the hidden potential in yourself, compete with some of the toughest people around you and give you the chance to be the face of Aurora. MnM, a talent hunt to test your confidence, aptitude, IQ and your wits. If you think you have got the X-factor to woe the crowd with your personality, don't wait then. Show your mettle and walk away with your head held high, your prestige intact and of course with the coveted title.`,
+    desc: `Being different and charismatic is a boon. Being born with a wonderful personality, why not showcase it? Here is an opportunity. Mr and Miss Aurora (MnM) is coming this Aurora 2020 to let you explore the hidden potential in yourself, compete with some of the toughest people around you and give you the chance to be the face of Aurora. MnM, a talent hunt to test your confidence, aptitude, IQ and your wits. If you think you have got the X-factor to woe the crowd with your personality, don't wait then. Show your mettle and walk away with your head held high, your prestige intact and of course with the coveted title.`,
     minDesc: `This Aurora explore your hidden potential, compete with some of the toughest people around you and get a chance to be the face of Aurora.`,
     img: mrAurora,
     path: '/events/mnm',

@@ -194,6 +194,10 @@
   font-weight: 600;
   /* padding-left: 10px; */
 }
+.form_submit:disabled {
+  background: var(--disabled);
+  border-color: var(--disabled);
+}
 
 .map_outer {
   position: relative;
