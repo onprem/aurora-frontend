@@ -6,7 +6,6 @@ class AnimateChealCaowa {
     this.x = 0;
     this.y = 0;
     this.speed = speed || 0;
-    this.angleCheck = 0;
     this.direction = true;
     // eslint-disable-next-line prefer-destructuring
     this.svg = container.getElementsByTagName('path')[0];
@@ -24,46 +23,24 @@ class AnimateChealCaowa {
     if (this.direction) {
       this.x = this.svg.getPointAtLength(this.counter * this.svgLength).x + 15;
       this.y = this.svg.getPointAtLength(this.counter * this.svgLength).y + 15;
-      if (this.angleCheck >= Math.PI / 2) {
-        this.angleCounter =
-          Math.PI / 1.6 +
-          Math.PI / 2 +
-          Math.atan(
-            this.svg.getPointAtLength(this.counter * this.svgLength + 2).y -
-              this.svg.getPointAtLength(this.counter * this.svgLength).y /
-                this.svg.getPointAtLength(this.counter * this.svgLength + 2).x -
-              this.svg.getPointAtLength(this.counter * this.svgLength).y
-          );
-      } else
-        this.angleCounter =
-          Math.PI / 1.6 +
-          Math.atan(
-            this.svg.getPointAtLength(this.counter * this.svgLength + 2).y -
-              this.svg.getPointAtLength(this.counter * this.svgLength).y /
-                this.svg.getPointAtLength(this.counter * this.svgLength + 2).x -
-              this.svg.getPointAtLength(this.counter * this.svgLength).y
-          );
-      this.angleCheck =
-        Math.PI / 1.6 +
-        Math.atan(
-          this.svg.getPointAtLength(this.counter * this.svgLength + 2).y -
-            this.svg.getPointAtLength(this.counter * this.svgLength).y /
-              this.svg.getPointAtLength(this.counter * this.svgLength + 2).x -
-            this.svg.getPointAtLength(this.counter * this.svgLength).y
-        );
+
+      const dely =
+        this.svg.getPointAtLength(this.counter * this.svgLength + 2).y -
+        this.svg.getPointAtLength(this.counter * this.svgLength).y;
+      const delx =
+        this.svg.getPointAtLength(this.counter * this.svgLength + 2).x -
+        this.svg.getPointAtLength(this.counter * this.svgLength).x;
+      const angle = Math.atan(Math.abs(dely / delx));
+
+      if (dely < 0 && delx >= 0) this.angleCounter = Math.PI / 2 - angle;
+      else if (dely >= 0 && delx >= 0) this.angleCounter = Math.PI / 2 + angle;
+      else if (dely >= 0 && delx < 0) this.angleCounter = Math.PI + Math.PI / 2 - angle;
+      else this.angleCounter = (3 * Math.PI) / 2 + angle;
+
       this.counter += this.speed;
     } else {
       this.counter = 0;
       this.direction = !this.direction;
-      // this.x = this.svg.getPointAtLength(this.counter * this.svgLength).x - 15;
-      // this.y = this.svg.getPointAtLength(this.counter * this.svgLength).y - 15;
-      // this.angleCounter = Math.atan(
-      //   this.svg.getPointAtLength(this.counter * this.svgLength + 2).y -
-      //     this.svg.getPointAtLength(this.counter * this.svgLength).y /
-      //       this.svg.getPointAtLength(this.counter * this.svgLength + 2).x -
-      //     this.svg.getPointAtLength(this.counter * this.svgLength).y
-      // );
-      // this.prevLength = this.counter * this.svgLength;
     }
 
     this.bat.setAttribute(
