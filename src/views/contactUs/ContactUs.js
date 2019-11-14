@@ -9,13 +9,13 @@ import Social from '../../components/Social/Social';
 import Path from '../../components/chealCaowaPath/Path';
 import Bat from '../../components/bat/Bat';
 import AnimateChealCaowa from '../../utils/chealCaowa';
-import Alert from '../../components/Alert/Alert';
 import Loader from '../../components/Loader/Loader';
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import useMediaQuery from '../../utils/useMediaQuery';
+import getAlert from '../../utils/getAlert';
 
 import CONTACT_US from '../../graphQl/mutations/contactUs';
 
@@ -70,14 +70,28 @@ const Contact = () => {
   });
 
   useEffect(() => {
-    if (data) changeInputs({ name: '', email: '', subject: '', message: '' });
+    if (data) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'success',
+        title: data.contactUs.message,
+      });
+      changeInputs({ name: '', email: '', subject: '', message: '' });
+    }
   }, [data]);
+
+  useEffect(() => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+  }, [error]);
 
   return (
     <>
-      {data && <Alert message={data.contactUs.message} type="success" />}
-      {error && <Alert message="some error occured" type="error" />}
-
       <Link to="/">
         <img src={logo} className={style.contact_aurora_logo} alt="logo" />
       </Link>
