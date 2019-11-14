@@ -4,6 +4,7 @@
   --secondary: #ffffff;
   --success: #4b8f49;
   --error: #ea4242;
+  --disabled: #4f4f4f;
 
   /* Breakpoints */
   --mobileViewportWidth: 992px;

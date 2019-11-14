@@ -54,6 +54,7 @@ const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault();
     runContactUs({ variables: inputs });
+    changeInputs({ name: '', email: '', subject: '', message: '' });
   };
   return (
     <>
@@ -113,6 +114,7 @@ const Contact = () => {
                 className={style.single_line_input}
                 placeholder="Name"
                 name="name"
+                value={inputs.name}
                 onChange={handleInput}
               />
               <input
@@ -120,6 +122,7 @@ const Contact = () => {
                 className={style.single_line_input}
                 placeholder="E-mail Address"
                 name="email"
+                value={inputs.email}
                 onChange={handleInput}
               />
               <input
@@ -127,12 +130,14 @@ const Contact = () => {
                 className={style.single_line_input}
                 placeholder="Subject"
                 name="subject"
+                value={inputs.subject}
                 onChange={handleInput}
               />
               <textarea
                 className={style.multiple_line_input}
                 placeholder="Message"
                 name="message"
+                value={inputs.message}
                 onChange={handleInput}
               />
               <button
