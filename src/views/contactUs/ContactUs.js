@@ -21,9 +21,9 @@ import CONTACT_US from '../../graphQl/mutations/contactUs';
 
 const cordiData = [
   {
-    name: `Ojaswa Sharma`,
-    tel: `+91-9131102279`,
-    mail: `ojaswa@aurorafest.org`,
+    name: `Arihant Jain`,
+    tel: `+91-7509998118`,
+    mail: `arihant@aurorafest.org`,
   },
   {
     name: `Chandan Kumar`,
@@ -31,9 +31,9 @@ const cordiData = [
     mail: `chandan@aurorafest.org`,
   },
   {
-    name: `Arihant Jain`,
-    tel: `+91-7509998118`,
-    mail: `arihant@aurorafest.org`,
+    name: `Ojaswa Sharma`,
+    tel: `+91-9131102279`,
+    mail: `ojaswa@aurorafest.org`,
   },
   {
     name: `Ruchika Agrawal`,
