@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 
@@ -6,7 +6,11 @@ import style from './contactUs.module.css';
 
 import Particle from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
+import Path from '../../components/chealCaowaPath/Path';
+import Bat from '../../components/bat/Bat';
+import AnimateChealCaowa from '../../utils/chealCaowa';
 import Alert from '../../components/Alert/Alert';
+
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
@@ -56,6 +60,15 @@ const Contact = () => {
     runContactUs({ variables: inputs });
     changeInputs({ name: '', email: '', subject: '', message: '' });
   };
+  useEffect(() => {
+    const bat = document.getElementById('bat');
+    const container = document.getElementsByClassName('path_wrapper')[0];
+    const chealCaowa = new AnimateChealCaowa(container, bat, 200, 0.00085);
+    const AnimateChealCaowaFrame = requestAnimationFrame(chealCaowa.moveBat);
+    return () => {
+      window.cancelAnimationFrame(AnimateChealCaowaFrame);
+    };
+  });
   return (
     <>
       {data && <Alert message={data.contactUs.message} type="success" />}
@@ -155,6 +168,8 @@ const Contact = () => {
       </div>
 
       <Particle />
+      <Path width="100px" height="100px" />
+      <Bat className={style.contact_ChealCaowa} />
     </>
   );
 };
