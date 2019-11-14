@@ -6,6 +6,7 @@ import style from './contactUs.module.css';
 
 import Particle from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
+import Alert from '../../components/Alert/Alert';
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
@@ -42,10 +43,6 @@ const Contact = () => {
   const [runContactUs, { data, loading, error }] = useMutation(CONTACT_US);
   const isMobile = useMediaQuery('(max-width:850px)');
 
-  if (data) return <h1>SUCCESS...</h1>;
-
-  if (error) return <h1>Error :)</h1>;
-
   const handleInput = event => {
     const { value, name } = event.target;
     changeInputs({
@@ -60,6 +57,9 @@ const Contact = () => {
   };
   return (
     <>
+      {data && <Alert message={data.contactUs.message} type="success" />}
+      {error && <Alert message="some error occured" type="error" />}
+
       <Link to="/">
         <img src={logo} className={style.contact_aurora_logo} alt="logo" />
       </Link>
