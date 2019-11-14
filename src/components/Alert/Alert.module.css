@@ -2,7 +2,7 @@
   position: fixed;
   top: 2vh;
   left: 50%;
-  transform: translateX(-50%) translateY(-100vh);
+  transform: translateX(-50%) translateY(-10vh);
   display: flex;
   justify-content: space-between;
   align-items: center;

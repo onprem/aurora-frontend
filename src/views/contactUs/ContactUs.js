@@ -10,7 +10,7 @@ import Path from '../../components/chealCaowaPath/Path';
 import Bat from '../../components/bat/Bat';
 import AnimateChealCaowa from '../../utils/chealCaowa';
 import Alert from '../../components/Alert/Alert';
-
+import Loader from '../../components/Loader/Loader';
 
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
@@ -58,7 +58,6 @@ const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault();
     runContactUs({ variables: inputs });
-    changeInputs({ name: '', email: '', subject: '', message: '' });
   };
   useEffect(() => {
     const bat = document.getElementById('bat');
@@ -69,6 +68,11 @@ const Contact = () => {
       window.cancelAnimationFrame(AnimateChealCaowaFrame);
     };
   });
+
+  useEffect(() => {
+    if (data) changeInputs({ name: '', email: '', subject: '', message: '' });
+  }, [data]);
+
   return (
     <>
       {data && <Alert message={data.contactUs.message} type="success" />}
@@ -159,7 +163,7 @@ const Contact = () => {
                 className={style.form_submit}
                 disabled={loading}
               >
-                SUBMIT
+                {loading ? <Loader /> : `SUBMIT`}
               </button>
             </form>
           </div>
