@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import useMediaQuery from '../../utils/useMediaQuery';
 
@@ -7,6 +7,8 @@ import Bat from '../../components/bat/Bat';
 import Social from '../../components/Social/Social';
 import Particles from '../../components/particles/Particle';
 import Footer from '../../components/footer/Footer';
+import Path from '../../components/chealCaowaPath/Path';
+import AnimateChealCaowa from '../../utils/chealCaowa';
 
 import { ReactComponent as AuroraCircleIcon } from '../../assets/icons/auroraCircle.svg';
 import { ReactComponent as AuroraTextIcon } from '../../assets/icons/auroraText.svg';
@@ -19,13 +21,43 @@ const Home = () => {
     style => {
       return (
         <Bat
-          className={`${styles[style]} ${styles.Bats}`}
+          className={styles.Bats}
+          id={styles[style]}
           speed={Math.random() * 0.4 + 0.6}
           key={style}
         />
       );
     }
   );
+  // eslint-disable-next-line consistent-return
+  useEffect(() => {
+    if (isDesktop) {
+      const bat1 = document.getElementById('bat1');
+      const bat2 = document.getElementById('bat2');
+      const bat3 = document.getElementById('bat3');
+      const path1 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
+      const path2 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
+      const path3 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
+
+      const chealCaowa1 = new AnimateChealCaowa(path1, bat1, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame1 = requestAnimationFrame(chealCaowa1.moveBat);
+      const chealCaowa2 = new AnimateChealCaowa(path2, bat2, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame2 = requestAnimationFrame(chealCaowa2.moveBat);
+      const chealCaowa3 = new AnimateChealCaowa(path3, bat3, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame3 = requestAnimationFrame(chealCaowa3.moveBat);
+      return () => {
+        window.cancelAnimationFrame(AnimateChealCaowaFrame1);
+        window.cancelAnimationFrame(AnimateChealCaowaFrame2);
+        window.cancelAnimationFrame(AnimateChealCaowaFrame3);
+      };
+    }
+  }, [isDesktop]);
   return (
     <>
       <div className={styles.Home}>
@@ -58,6 +90,17 @@ const Home = () => {
       </div>
       <Footer />
       {isDesktop && <Social />}
+      <Particles />
+      {isDesktop ? (
+        <>
+          <Path width="100px" height="100px" />
+          <div className="bat_div">
+            <Bat className={styles.contact_ChealCaowa} id="bat1" key="1" />
+            <Bat className={styles.contact_ChealCaowa} id="bat2" key="2" />
+            <Bat className={styles.contact_ChealCaowa} id="bat3" key="3" />
+          </div>
+        </>
+      ) : null}
     </>
   );
 };
