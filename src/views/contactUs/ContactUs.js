@@ -11,19 +11,19 @@ import Bat from '../../components/bat/Bat';
 import AnimateChealCaowa from '../../utils/chealCaowa';
 import Alert from '../../components/Alert/Alert';
 
-
 import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import useMediaQuery from '../../utils/useMediaQuery';
+import emailValidation from '../../utils/validation';
 
 import CONTACT_US from '../../graphQl/mutations/contactUs';
 
 const cordiData = [
   {
-    name: `Ojaswa Sharma`,
-    tel: `+91-9131102279`,
-    mail: `ojaswa@aurorafest.org`,
+    name: `Arihant Jain`,
+    tel: `+91-7509998118`,
+    mail: `arihant@aurorafest.org`,
   },
   {
     name: `Chandan Kumar`,
@@ -31,9 +31,9 @@ const cordiData = [
     mail: `chandan@aurorafest.org`,
   },
   {
-    name: `Arihant Jain`,
-    tel: `+91-7509998118`,
-    mail: `arihant@aurorafest.org`,
+    name: `Ojaswa Sharma`,
+    tel: `+91-9131102279`,
+    mail: `ojaswa@aurorafest.org`,
   },
   {
     name: `Ruchika Agrawal`,
@@ -57,18 +57,30 @@ const Contact = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    runContactUs({ variables: inputs });
-    changeInputs({ name: '', email: '', subject: '', message: '' });
+    if (emailValidation(inputs.email)) {
+      runContactUs({ variables: inputs });
+      changeInputs({ name: '', email: '', subject: '', message: '' });
+    }
   };
   useEffect(() => {
-    const bat = document.getElementById('bat');
-    const container = document.getElementsByClassName('path_wrapper')[0];
-    const chealCaowa = new AnimateChealCaowa(container, bat, 200, 0.00085);
-    const AnimateChealCaowaFrame = requestAnimationFrame(chealCaowa.moveBat);
+    const bat1 = document.getElementById('bat1');
+    const bat2 = document.getElementById('bat2');
+    const path1 = document
+      .getElementsByClassName('path_wrapper')[0]
+      .getElementsByTagName('path')[0];
+    const path2 = document
+      .getElementsByClassName('path_wrapper')[0]
+      .getElementsByTagName('path')[1];
+
+    const chealCaowa1 = new AnimateChealCaowa(path1, bat1, 200, 0, 0.00085);
+    const AnimateChealCaowaFrame1 = requestAnimationFrame(chealCaowa1.moveBat);
+    const chealCaowa2 = new AnimateChealCaowa(path2, bat2, 200, 0, 0.00008);
+    const AnimateChealCaowaFrame2 = requestAnimationFrame(chealCaowa2.moveBat);
     return () => {
-      window.cancelAnimationFrame(AnimateChealCaowaFrame);
+      window.cancelAnimationFrame(AnimateChealCaowaFrame1);
+      window.cancelAnimationFrame(AnimateChealCaowaFrame2);
     };
-  });
+  }, []);
   return (
     <>
       {data && <Alert message={data.contactUs.message} type="success" />}
@@ -132,7 +144,14 @@ const Contact = () => {
               />
               <input
                 type="email"
-                className={style.single_line_input}
+                className={
+                  // eslint-disable-next-line no-nested-ternary
+                  inputs.email
+                    ? emailValidation(inputs.email)
+                      ? `${style.single_line_input}`
+                      : `${style.single_line_input} ${style.inValidEmail}`
+                    : `${style.single_line_input}`
+                }
                 placeholder="E-mail Address"
                 name="email"
                 value={inputs.email}
@@ -169,7 +188,8 @@ const Contact = () => {
 
       <Particle />
       <Path width="100px" height="100px" />
-      <Bat className={style.contact_ChealCaowa} />
+      <Bat className={style.contact_ChealCaowa} id="bat1" key="1" />
+      <Bat className={style.contact_ChealCaowa} id="bat2" key="2" />
     </>
   );
 };

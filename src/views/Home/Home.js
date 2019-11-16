@@ -19,7 +19,8 @@ const Home = () => {
     style => {
       return (
         <Bat
-          className={`${styles[style]} ${styles.Bats}`}
+          className={styles.Bats}
+          id={styles[style]}
           speed={Math.random() * 0.4 + 0.6}
           key={style}
         />

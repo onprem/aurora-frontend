@@ -5,10 +5,10 @@ import styles from './Bat.module.css';
 
 import animationData from '../../assets/lottie/bat.json';
 
-const Bat = ({ className, speed }) => {
+const Bat = ({ className, speed, id }) => {
   useEffect(() => {
     const lottieOptions = {
-      container: document.getElementsByClassName(className)[0],
+      container: document.getElementById(id),
       loop: true,
       autoplay: true,
       animationData,
@@ -22,9 +22,9 @@ const Bat = ({ className, speed }) => {
     return () => {
       batAnim.destroy();
     };
-  }, [className, speed]);
+  }, [id, speed]);
 
-  return <div id="bat" className={classNames(styles.Bat, className)} />;
+  return <div id={id} className={classNames(styles.Bat, className)} />;
 };
 
 Bat.defaultProps = {

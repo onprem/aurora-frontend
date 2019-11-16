@@ -37,73 +37,72 @@
 }
 
 /* Bats */
-.Bat1,
-.Bat2,
-.Bat3,
-.Bat4,
-.Bat5 {
+#Bat1,
+#Bat2,
+#Bat3,
+#Bat4,
+#Bat5 {
   animation: batAnimate1 linear 3s infinite;
 }
 
-.Bat7,
-.Bat9,
-.Bat6,
-.Bat8 {
+#Bat7,
+#Bat9,
+#Bat6,
+#Bat8 {
   animation: batAnimate2 linear 3s infinite;
 }
-.Bat1 {
+#Bat1 {
   top: 80%;
   right: 25%;
   transform: rotate(20deg);
   width: 70px;
 }
-.Bat2 {
+#Bat2 {
   top: 80%;
   right: 48%;
   width: 100px;
 }
-.Bat3 {
+#Bat3 {
   top: 73%;
   right: 42%;
   transform: rotate(25deg);
   width: 40px;
 }
-.Bat4 {
+#Bat4 {
   top: 26%;
   right: 40%;
   transform: rotate(30deg);
   width: 75px;
 }
-.Bat5 {
+#Bat5 {
   top: 18%;
   right: 56%;
   width: 120px;
   transform: rotate(-10deg);
 }
-.Bat6 {
+#Bat6 {
   top: 80%;
   right: 65%;
   width: 50px;
   transform: rotate(-5deg);
 }
-.Bat7 {
+#Bat7 {
   top: 45%;
   right: 55%;
   width: 60px;
   transform: rotate(30deg);
 }
-.Bat8 {
+#Bat8 {
   top: 80%;
   right: 7%;
   width: 40px;
   transform: rotate(-10deg);
 }
-.Bat9 {
+#Bat9 {
   top: 18%;
   right: 60%;
   width: 50px;
 }
-
 
 @keyframes batAnimate1 {
   0% {
@@ -153,7 +152,6 @@
     margin-top: 55px;
     font-size: 1.6em;
     letter-spacing: 0.2em;
-
   }
 }
 
@@ -173,35 +171,35 @@
     font-size: 1.6em;
     letter-spacing: 0.2em;
   }
-  .Bat1 {
+  #Bat1 {
     top: 70%;
   }
-  .Bat2 {
+  #Bat2 {
     top: 65%;
   }
-  .Bat3 {
+  #Bat3 {
     top: 65%;
     right: 40%;
   }
-  .Bat4 {
+  #Bat4 {
     right: 15%;
   }
-  .Bat5 {
+  #Bat5 {
     right: 65%;
   }
-  .Bat6 {
+  #Bat6 {
     top: 65%;
     right: 90%;
     /* width: 200px; */
   }
-  .Bat7 {
+  #Bat7 {
     top: 40%;
     /* width: 200px; */
   }
-  .Bat8 {
+  #Bat8 {
     top: 70%;
   }
-  .Bat9 {
+  #Bat9 {
     right: 78%;
     /* width: 250px; */
   }
