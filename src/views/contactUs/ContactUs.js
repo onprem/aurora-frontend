@@ -15,6 +15,7 @@ import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import useMediaQuery from '../../utils/useMediaQuery';
+import emailValidation from '../../utils/validation';
 import getAlert from '../../utils/getAlert';
 
 import CONTACT_US from '../../graphQl/mutations/contactUs';
@@ -57,17 +58,55 @@ const Contact = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    runContactUs({ variables: inputs });
+    const toast = getAlert();
+    if (inputs.email && inputs.name && inputs.message) {
+      if (emailValidation(inputs.email)) {
+        runContactUs({ variables: inputs });
+      } else {
+        toast.fire({
+          icon: 'error',
+          title: 'Please enter valid email',
+        });
+      }
+    } else {
+      changeInputs({
+        name: inputs.name ? inputs.name : undefined,
+        email: inputs.email ? inputs.email : undefined,
+        subject: inputs.subject ? inputs.subject : undefined,
+        message: inputs.message ? inputs.message : undefined,
+      });
+      toast.fire({
+        icon: 'error',
+        title: 'Name, email or message cannot be empty',
+      });
+    }
   };
   useEffect(() => {
-    const bat = document.getElementById('bat');
-    const container = document.getElementsByClassName('path_wrapper')[0];
-    const chealCaowa = new AnimateChealCaowa(container, bat, 200, 0.00085);
-    const AnimateChealCaowaFrame = requestAnimationFrame(chealCaowa.moveBat);
+    const bat1 = document.getElementById('bat1');
+    const bat2 = document.getElementById('bat2');
+    const bat3 = document.getElementById('bat3');
+    const path1 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+      Math.floor(Math.random() * 17)
+    ];
+    const path2 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+      Math.floor(Math.random() * 17)
+    ];
+    const path3 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+      Math.floor(Math.random() * 17)
+    ];
+
+    const chealCaowa1 = new AnimateChealCaowa(path1, bat1, 200, 0, 0.0003);
+    const AnimateChealCaowaFrame1 = requestAnimationFrame(chealCaowa1.moveBat);
+    const chealCaowa2 = new AnimateChealCaowa(path2, bat2, 200, 0, 0.0003);
+    const AnimateChealCaowaFrame2 = requestAnimationFrame(chealCaowa2.moveBat);
+    const chealCaowa3 = new AnimateChealCaowa(path3, bat3, 200, 0, 0.0003);
+    const AnimateChealCaowaFrame3 = requestAnimationFrame(chealCaowa3.moveBat);
     return () => {
-      window.cancelAnimationFrame(AnimateChealCaowaFrame);
+      window.cancelAnimationFrame(AnimateChealCaowaFrame1);
+      window.cancelAnimationFrame(AnimateChealCaowaFrame2);
+      window.cancelAnimationFrame(AnimateChealCaowaFrame3);
     };
-  });
+  }, []);
 
   useEffect(() => {
     if (data) {
@@ -142,19 +181,34 @@ const Contact = () => {
               <h3 className={style.contact_heading}>Reach Us :</h3>
               <input
                 type="text"
-                className={style.single_line_input}
+                className={
+                  inputs.name === undefined
+                    ? `${style.single_line_input} ${style.inValid}`
+                    : `${style.single_line_input}`
+                }
                 placeholder="Name"
                 name="name"
                 value={inputs.name}
                 onChange={handleInput}
+                required
               />
               <input
                 type="email"
-                className={style.single_line_input}
+                className={
+                  // eslint-disable-next-line no-nested-ternary
+                  inputs.email
+                    ? emailValidation(inputs.email)
+                      ? `${style.single_line_input}`
+                      : `${style.single_line_input} ${style.inValid}`
+                    : inputs.email === undefined
+                    ? `${style.single_line_input} ${style.inValid}`
+                    : `${style.single_line_input}`
+                }
                 placeholder="E-mail Address"
                 name="email"
                 value={inputs.email}
                 onChange={handleInput}
+                required
               />
               <input
                 type="text"
@@ -165,11 +219,16 @@ const Contact = () => {
                 onChange={handleInput}
               />
               <textarea
-                className={style.multiple_line_input}
+                className={
+                  inputs.message === undefined
+                    ? `${style.multiple_line_input} ${style.inValid}`
+                    : `${style.multiple_line_input}`
+                }
                 placeholder="Message"
                 name="message"
                 value={inputs.message}
                 onChange={handleInput}
+                required
               />
               <button
                 type="submit"
@@ -187,7 +246,11 @@ const Contact = () => {
 
       <Particle />
       <Path width="100px" height="100px" />
-      <Bat className={style.contact_ChealCaowa} />
+      <div className="bat_div">
+        <Bat className={style.contact_ChealCaowa} id="bat1" key="1" />
+        <Bat className={style.contact_ChealCaowa} id="bat2" key="2" />
+        <Bat className={style.contact_ChealCaowa} id="bat3" key="3" />
+      </div>
     </>
   );
 };

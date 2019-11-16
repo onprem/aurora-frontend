@@ -301,3 +301,6 @@
   left: -30px;
   width: 60px;
 }
+.inValid {
+  border-color: var(--error);
+}

@@ -463,7 +463,7 @@ const eventData = {
     ],
     eventHeads: [
       {
-        name: 'Jaggadesh Suggula',
+        name: 'Jagadeesh Suggula',
         mobile: '',
       },
       {

@@ -1,14 +1,15 @@
 class AnimateChealCaowa {
-  constructor(container, bat, initialY, speed) {
+  constructor(path, bat, initialY, initialX, speed) {
     this.counter = 0;
     this.angleCounter = 0;
     this.initialY = initialY || 0;
+    this.initialX = initialX || 0;
     this.x = 0;
     this.y = 0;
     this.speed = speed || 0;
     this.direction = true;
     // eslint-disable-next-line prefer-destructuring
-    this.svg = container.getElementsByTagName('path')[0];
+    this.svg = path;
     this.svgLength = this.svg.getTotalLength();
     this.bat = bat;
   }
@@ -45,7 +46,7 @@ class AnimateChealCaowa {
 
     this.bat.setAttribute(
       'style',
-      `transform: translate(${this.x}px, ${this.y - this.initialY}px) rotateZ(${
+      `transform: translate(${this.x - this.initialX}px, ${this.y - this.initialY}px) rotateZ(${
         this.angleCounter
       }rad)`
     );
