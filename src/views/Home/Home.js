@@ -29,32 +29,35 @@ const Home = () => {
       );
     }
   );
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
-    const bat1 = document.getElementById('bat1');
-    const bat2 = document.getElementById('bat2');
-    const bat3 = document.getElementById('bat3');
-    const path1 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
-      Math.floor(Math.random() * 17)
-    ];
-    const path2 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
-      Math.floor(Math.random() * 17)
-    ];
-    const path3 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
-      Math.floor(Math.random() * 17)
-    ];
+    if (isDesktop) {
+      const bat1 = document.getElementById('bat1');
+      const bat2 = document.getElementById('bat2');
+      const bat3 = document.getElementById('bat3');
+      const path1 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
+      const path2 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
+      const path3 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
 
-    const chealCaowa1 = new AnimateChealCaowa(path1, bat1, 200, 0, 0.0003);
-    const AnimateChealCaowaFrame1 = requestAnimationFrame(chealCaowa1.moveBat);
-    const chealCaowa2 = new AnimateChealCaowa(path2, bat2, 200, 0, 0.0003);
-    const AnimateChealCaowaFrame2 = requestAnimationFrame(chealCaowa2.moveBat);
-    const chealCaowa3 = new AnimateChealCaowa(path3, bat3, 200, 0, 0.0003);
-    const AnimateChealCaowaFrame3 = requestAnimationFrame(chealCaowa3.moveBat);
-    return () => {
-      window.cancelAnimationFrame(AnimateChealCaowaFrame1);
-      window.cancelAnimationFrame(AnimateChealCaowaFrame2);
-      window.cancelAnimationFrame(AnimateChealCaowaFrame3);
-    };
-  }, []);
+      const chealCaowa1 = new AnimateChealCaowa(path1, bat1, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame1 = requestAnimationFrame(chealCaowa1.moveBat);
+      const chealCaowa2 = new AnimateChealCaowa(path2, bat2, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame2 = requestAnimationFrame(chealCaowa2.moveBat);
+      const chealCaowa3 = new AnimateChealCaowa(path3, bat3, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame3 = requestAnimationFrame(chealCaowa3.moveBat);
+      return () => {
+        window.cancelAnimationFrame(AnimateChealCaowaFrame1);
+        window.cancelAnimationFrame(AnimateChealCaowaFrame2);
+        window.cancelAnimationFrame(AnimateChealCaowaFrame3);
+      };
+    }
+  }, [isDesktop]);
   return (
     <>
       <div className={styles.Home}>
@@ -88,12 +91,16 @@ const Home = () => {
       <Footer />
       {isDesktop && <Social />}
       <Particles />
-      <Path width="100px" height="100px" />
-      <div className="bat_div">
-        <Bat className={styles.contact_ChealCaowa} id="bat1" key="1" />
-        <Bat className={styles.contact_ChealCaowa} id="bat2" key="2" />
-        <Bat className={styles.contact_ChealCaowa} id="bat3" key="3" />
-      </div>
+      {isDesktop ? (
+        <>
+          <Path width="100px" height="100px" />
+          <div className="bat_div">
+            <Bat className={styles.contact_ChealCaowa} id="bat1" key="1" />
+            <Bat className={styles.contact_ChealCaowa} id="bat2" key="2" />
+            <Bat className={styles.contact_ChealCaowa} id="bat3" key="3" />
+          </div>
+        </>
+      ) : null}
     </>
   );
 };
