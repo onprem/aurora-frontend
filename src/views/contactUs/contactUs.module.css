@@ -192,12 +192,15 @@
   cursor: pointer;
   letter-spacing: 8px;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* padding-left: 10px; */
 }
-.form_submit:disabled {
+/* .form_submit:disabled {
   background: var(--disabled);
   border-color: var(--disabled);
-}
+} */
 
 .map_outer {
   position: relative;
@@ -298,6 +301,6 @@
   left: -30px;
   width: 60px;
 }
-.inValidEmail {
+.inValid {
   border-color: var(--error);
 }
