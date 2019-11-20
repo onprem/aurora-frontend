@@ -747,7 +747,7 @@ const eventData = {
       {
         name: 'CS-GO',
         description: 'Showcase your talent in Counter Strike.',
-        prizeMoney: 'INR 20,000 + Goodies, Benefits and Sponsored Gifts',
+        prizeMoney: 'INR 25,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 249,
         maxTeamSize: 5,
         rules: [
@@ -832,7 +832,7 @@ const eventData = {
       {
         name: 'PUBG',
         description: '',
-        prizeMoney: 'INR 10,000 + Goodies, Benefits and Sponsored Gifts',
+        prizeMoney: 'INR 15,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 149,
         maxTeamSize: 4,
         rules: [
