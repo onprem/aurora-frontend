@@ -69,21 +69,17 @@ const Home = () => {
             <Parallax y={[30, 50]} x={[-70, 70]}>
               <AuroraTextIcon className={styles.Text} />
             </Parallax>
-            <div className={styles.homeDate}>
-              <span>14-16</span>
-              <span>FEB. 2020</span>
-            </div>
           </>
         ) : (
           <>
             <AuroraCircleIcon className={styles.Logo} />
             <AuroraTextIcon className={styles.Text} />
-            <div className={styles.homeDate}>
-              <span>14-16</span>
-              <span>FEB. 2020</span>
-            </div>
           </>
         )}
+        <div className={styles.homeDate}>
+          <span>14-16</span>
+          <span>FEB. 2020</span>
+        </div>
         <Graveyard />
         <Particles />
         {bats}
