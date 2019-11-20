@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
 import eventData from '../../assets/data/eventData/eventData';
@@ -32,14 +32,16 @@ const EventWrapper = ({ children }) => {
 const EventDetails = () => {
   const { eventId, subEventId } = useParams();
   const event = eventData[eventId.replace(/-/gi, '_')] || eventData.parivesh;
-  let init = 0;
 
-  if (!event.singleEvent && subEventId) {
-    const toOpen = Number(subEventId) - 1;
-    if (toOpen < event.subEvents.length && toOpen > 0) init = toOpen;
-  }
+  const [openEvent, setOpenEvent] = useState(0);
 
-  const [openEvent, setOpenEvent] = useState(init);
+  useEffect(() => {
+    if (!event.singleEvent && subEventId) {
+      const toOpen = Number(subEventId) - 1;
+      if (toOpen < event.subEvents.length && toOpen > 0) setOpenEvent(toOpen);
+    }
+    setOpenEvent(0);
+  }, [subEventId, event]);
 
   if (event.singleEvent) {
     return (
