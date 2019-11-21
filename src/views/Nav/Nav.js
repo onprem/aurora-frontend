@@ -34,10 +34,10 @@ const Nav = () => {
     //   title: 'Accomodation',
     //   path: '/accomodation',
     // },
-    // {
-    //   title: 'Login/Register',
-    //   path: '/login',
-    // },
+    {
+      title: 'Login/Register',
+      path: '/login',
+    },
     // {
     //   title: 'Team',
     //   path: '/team',
@@ -63,7 +63,11 @@ const Nav = () => {
   return (
     <>
       <button
-        className={classNames(styles.burger, { [styles.open]: isNavOpen })}
+        className={
+          window.location.pathname === '/login' || window.location.pathname === '/register'
+            ? classNames(styles.burger, { [styles.open]: isNavOpen }, styles.burger_white)
+            : classNames(styles.burger, { [styles.open]: isNavOpen })
+        }
         onClick={toggleNav}
         type="button"
         aria-label="open menu"
