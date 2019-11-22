@@ -9,6 +9,7 @@ import Home from './views/Home/Home';
 import Nav from './views/Nav/Nav';
 import About from './views/about/About';
 import Event from './views/events/Event';
+import Verify from './views/verify/verify';
 
 import EventDetails from './views/EventDetails/EventDetails';
 
@@ -37,6 +38,9 @@ function App() {
 
         <Route exact path="/contact">
           <Contact />
+        </Route>
+        <Route exact path="/verify/:token">
+          <Verify />
         </Route>
         <Route>
           <h1>You Lost?</h1>
