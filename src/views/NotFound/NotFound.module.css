@@ -1,0 +1,33 @@
+.notFoundContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.15em;
+}
+.notFoundContainer > span {
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 1vh;
+}
+.dummyAnim {
+  width: 25vw;
+}
+.goHomeBtn {
+  padding: 0.4em 1.4em;
+  color: white;
+  background: black;
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  font-size: 1.6em;
+  font-weight: 600;
+  border-radius: 0.2em;
+}
+.goHomeBtn > svg {
+  margin-right: 15px;
+}
