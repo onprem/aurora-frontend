@@ -715,10 +715,6 @@ const eventData = {
     ],
     eventOrganisers: [
       {
-        name: 'Siddharth',
-        mobile: '',
-      },
-      {
         name: 'Kapin Sangwan',
         mobile: '',
       },
