@@ -1,0 +1,22 @@
+.dashboardContainer {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+.heading {
+  margin: 8vh 0 0 0;
+  font-size: 2.5em;
+  letter-spacing: 0.25em;
+}
+.sections {
+  width: 80%;
+  background: white;
+  border: solid 5px black;
+  border-radius: 1em;
+  padding: 2vh 3vh;
+  margin-top: 6vh;
+}
