@@ -9,6 +9,7 @@ import Home from './views/Home/Home';
 import Nav from './views/Nav/Nav';
 import About from './views/about/About';
 import Event from './views/events/Event';
+import LoginRegister from './views/loginRegister/LoginRegister';
 import NotFound from './views/NotFound/NotFound';
 
 import EventDetails from './views/EventDetails/EventDetails';
@@ -35,7 +36,9 @@ function App() {
         <Route exact path={['/events/:eventId', '/events/:eventId/:subEventId']}>
           <EventDetails />
         </Route>
-
+        <Route exact path={['/login', '/register']}>
+          <LoginRegister />
+        </Route>
         <Route exact path="/contact">
           <Contact />
         </Route>
