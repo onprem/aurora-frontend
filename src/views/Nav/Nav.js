@@ -9,6 +9,7 @@ import styles from './Nav.module.css';
 const Nav = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 450px)');
+  const isLogRegMobile = useMediaQuery('(max-width: 800px)');
 
   const toggleNav = () => {
     setNavOpen(!isNavOpen);
@@ -64,8 +65,11 @@ const Nav = () => {
     <>
       <button
         className={
+          // eslint-disable-next-line no-nested-ternary
           window.location.pathname === '/login' || window.location.pathname === '/register'
-            ? classNames(styles.burger, { [styles.open]: isNavOpen }, styles.burger_white)
+            ? isLogRegMobile
+              ? classNames(styles.burger, { [styles.open]: isNavOpen })
+              : classNames(styles.burger, { [styles.open]: isNavOpen }, styles.burger_white)
             : classNames(styles.burger, { [styles.open]: isNavOpen })
         }
         onClick={toggleNav}
