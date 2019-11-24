@@ -76,14 +76,11 @@ const Home = () => {
             <AuroraTextIcon className={styles.Text} />
           </>
         )}
-
         <div className={styles.homeDate}>
           <span>14-16</span>
           <span>FEB. 2020</span>
         </div>
-
-        <Graveyard isHauntedHouse />
-
+        <Graveyard />
         <Particles />
         {bats}
       </div>
