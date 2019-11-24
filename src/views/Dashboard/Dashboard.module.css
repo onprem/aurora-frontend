@@ -1,0 +1,36 @@
+.dashboardContainer {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.heading {
+  margin: 8vh 0 6vh 0;
+  font-size: 2.5em;
+  letter-spacing: 0.25em;
+}
+.sections {
+  width: 80%;
+  background: white;
+  border: solid 5px black;
+  border-radius: 1em;
+  padding: 2vh 3vh;
+  margin-bottom: 6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profileSection {
+  flex-direction: row;
+}
+@media only screen and (max-width: 500px) {
+  .sections {
+    font-size: 1em;
+    overflow-x: auto;
+  }
+}

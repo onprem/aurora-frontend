@@ -31,3 +31,8 @@
 .goHomeBtn > svg {
   margin-right: 15px;
 }
+@media only screen and (max-width: 500px) {
+  .dummyAnim {
+    width: 90vw;
+  }
+}

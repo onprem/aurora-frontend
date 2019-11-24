@@ -7,6 +7,27 @@ export default gql`
       name
       email
       phone
+      teams {
+        id
+        event {
+          id
+          name
+          fee
+        }
+        paymentStatus
+      }
+      teamInvitations {
+        invitedBy {
+          id
+          name
+        }
+        team {
+          id
+          event {
+            name
+          }
+        }
+      }
     }
   }
 `;

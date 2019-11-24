@@ -6,7 +6,7 @@ import useMediaQuery from '../../utils/useMediaQuery';
 
 import styles from './Nav.module.css';
 
-const Nav = () => {
+const Nav = ({ isLoggedIn }) => {
   const [isNavOpen, setNavOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 450px)');
   const isLogRegMobile = useMediaQuery('(max-width: 800px)');
@@ -14,7 +14,7 @@ const Nav = () => {
   const toggleNav = () => {
     setNavOpen(!isNavOpen);
   };
-  const pages = [
+  const allPages = [
     {
       title: 'Home',
       path: '/',
@@ -39,6 +39,14 @@ const Nav = () => {
       title: 'Login/Register',
       path: '/login',
     },
+    {
+      title: 'Dashboard',
+      path: '/dashboard',
+    },
+    {
+      title: 'LogOut',
+      path: '/logout',
+    },
     // {
     //   title: 'Team',
     //   path: '/team',
@@ -52,6 +60,10 @@ const Nav = () => {
       path: '/contact',
     },
   ];
+
+  const pages = isLoggedIn
+    ? allPages.filter(page => page.path !== '/login' && page.path !== '/register')
+    : allPages.filter(page => page.path !== '/dashboard' && page.path !== '/logout');
 
   const navList = pages.map(page => (
     <li className={styles.nav_li} key={page.path}>

@@ -4,5 +4,6 @@
   left: 0px;
   z-index: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
