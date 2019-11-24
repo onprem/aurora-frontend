@@ -68,6 +68,11 @@
 .burger::after {
   border-bottom: 5px solid black;
 }
+.burger_white,
+.burger_white::before,
+.burger_white::after {
+  border-bottom: 5px solid white;
+}
 .burger::before,
 .burger::after {
   display: block;
@@ -79,6 +84,10 @@
 
 .burger.open {
   border-bottom: 5px solid transparent;
+}
+.open.burger::before,
+.open.burger::after {
+  border-bottom: 5px solid black;
 }
 .open.burger::before {
   transform: rotate(405deg) translateY(7px) translateX(7px);
