@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import Graveyard from '../../components/graveyard/Graveyard';
 import Bat from '../../components/bat/Bat';
@@ -59,16 +60,20 @@ const LoginRegister = () => {
       <div className={style.loginRegister_parent_container}>
         <img src={thinking} className={style.thinking_img_left} alt="thinking" />
         <img src={thinking} className={style.thinking_img_right} alt="thinking" />
-        <div
-          className={
-            window.location.pathname === '/login'
-              ? style.dummy_loginRegister_card
-              : `${style.dummy_loginRegister_card} 
-            ${style.dummy_loginRegister_card_register}`
-          }
-        >
-          {window.location.pathname === '/login' ? <Login /> : <Register />}
-        </div>
+        <Switch>
+          <Route exact path="/login">
+            <div className={style.dummy_loginRegister_card}>
+              <Login />
+            </div>
+          </Route>
+          <Route exact path="/register">
+            <div
+              className={`${style.dummy_loginRegister_card} ${style.dummy_loginRegister_card_register}`}
+            >
+              <Register />
+            </div>
+          </Route>
+        </Switch>
       </div>
       {bats}
       <Graveyard />
