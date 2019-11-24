@@ -6,14 +6,6 @@
   bottom: 0;
   display: flex;
 }
-.footer_wt_haunted {
-  position: absolute;
-  /* height: 330px; */
-  width: 101%;
-  right: 0;
-  bottom: 0;
-  display: flex;
-}
 
 .hauntedHouse {
   position: absolute;
@@ -28,13 +20,6 @@
     width: 100%;
     height: 20%;
     bottom: 8.5vh;
-  }
-  .footer_wt_haunted {
-    position: fixed;
-    width: 100%;
-    height: 150px;
-    bottom: 0;
-    /* bottom: 8.5vh; */
   }
   .hauntedHouse {
     bottom: 8.5vh;
