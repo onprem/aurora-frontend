@@ -3,20 +3,18 @@ import classNames from 'classnames';
 
 import styles from './Profile.module.css';
 
-const Profile = ({ className }) => {
-  const user = {
-    id: 'AR-OJ-69',
-    name: 'Ojaswa Sharma',
-    phone: '9599474147',
+const Profile = ({ className, user }) => {
+  const dummy = {
     college: 'ABV-IIITM, Gwalior',
     city: 'Gwalior',
     photo: '/assets/profile.jpg',
   };
+
   return (
     <section className={classNames(styles.profileSection, className)}>
       <div className={styles.leftDiv}>
         <div className={styles.photoDiv}>
-          <img src={user.photo} alt="Profile" />
+          <img src={dummy.photo} alt="Profile" />
         </div>
         <div className={styles.nameDiv}>
           <span>{user.name}</span>
@@ -32,13 +30,22 @@ const Profile = ({ className }) => {
           </div>
           <div>
             <span>{user.phone}</span>
-            <span>{user.college}</span>
-            <span>{user.city}</span>
+            <span>{dummy.college}</span>
+            <span>{dummy.city}</span>
           </div>
         </div>
       </div>
     </section>
   );
+};
+
+Profile.defaultProps = {
+  user: {
+    id: 'AR-OJ-69',
+    name: 'Ojaswa Sharma',
+    phone: '9599474147',
+    email: 'ojaswa@aurorafest.org',
+  },
 };
 
 export default Profile;

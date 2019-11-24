@@ -16,13 +16,25 @@
   width: 100%;
   border-collapse: collapse;
 }
-.evtTable > tr > th {
+.evtTable tr > th {
   font-size: 1.2em;
   font-weight: 600;
 }
-.evtTable > tr {
+.evtTable tr {
   height: 3em;
 }
-.evtTable > tr:nth-child(1) {
+.evtTable > thead > tr {
   border-bottom: 2px solid black;
+}
+@media only screen and (max-width: 500px) {
+  .evtTable tr > th {
+    font-size: 1em;
+    font-weight: 600;
+  }
+  /* .evtTable > tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  } */
 }

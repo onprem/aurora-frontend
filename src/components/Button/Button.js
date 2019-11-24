@@ -8,7 +8,7 @@ const ButtonContent = ({ text, Icon, iconPosition }) => {
   if (Icon && iconPosition === 'left')
     return (
       <>
-        <Icon height="1.2em" width="auto" className={styles.rightMargin} />
+        <Icon height="1.2em" className={styles.rightMargin} />
         {text}
       </>
     );
@@ -16,7 +16,7 @@ const ButtonContent = ({ text, Icon, iconPosition }) => {
     return (
       <>
         {text}
-        <Icon height="1.2em" width="auto" className={styles.leftMargin} />
+        <Icon height="1.2em" className={styles.leftMargin} />
       </>
     );
   return <>{text}</>;

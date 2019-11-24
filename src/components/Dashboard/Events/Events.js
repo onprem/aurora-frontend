@@ -9,10 +9,10 @@ import styles from './Events.module.css';
 const PaidEvents = ({ teams }) => {
   const teamList = teams.map((team, index) => {
     return (
-      <tr>
+      <tr key={team.id}>
         <td>{index + 1}</td>
         <td>{team.event.name}</td>
-        <td>{team.event.parent}</td>
+        <td>{team.event.id}</td>
         <td>{team.id}</td>
       </tr>
     );
@@ -22,13 +22,15 @@ const PaidEvents = ({ teams }) => {
     <>
       <h3>Paid Events</h3>
       <table className={styles.evtTable}>
-        <tr>
-          <th>#</th>
-          <th>Event Name</th>
-          <th>Parent Event</th>
-          <th>Team ID</th>
-        </tr>
-        {teamList}
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Event Name</th>
+            <th>Parent Event</th>
+            <th>Team ID</th>
+          </tr>
+        </thead>
+        <tbody>{teamList}</tbody>
       </table>
     </>
   );
@@ -37,10 +39,10 @@ const PaidEvents = ({ teams }) => {
 const UnPaidEvents = ({ teams }) => {
   const teamList = teams.map((team, index) => {
     return (
-      <tr>
+      <tr key={team.id}>
         <td>{index + 1}</td>
         <td>{team.event.name}</td>
-        <td>{team.event.parent}</td>
+        <td>{team.event.id}</td>
         <td>{team.id}</td>
         <td>{team.event.fee}</td>
       </tr>
@@ -51,26 +53,51 @@ const UnPaidEvents = ({ teams }) => {
     <>
       <h3>Unpaid Events</h3>
       <table className={styles.evtTable}>
-        <tr>
-          <th>#</th>
-          <th>Event Name</th>
-          <th>Parent Event</th>
-          <th>Team ID</th>
-          <th>Fee</th>
-        </tr>
-        {teamList}
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Event Name</th>
+            <th>Parent Event</th>
+            <th>Team ID</th>
+            <th>Fee</th>
+          </tr>
+        </thead>
+        <tbody>{teamList}</tbody>
       </table>
     </>
   );
 };
 
-const Events = ({ className }) => {
-  const teams = [
+const Events = ({ className, teams }) => {
+  const paidTeams = teams.filter(team => team.paymentStatus === true);
+  const unPaidTeams = teams.filter(team => team.paymentStatus === false);
+
+  return (
+    <section className={classNames(styles.eventSection, className)}>
+      <h2>Registered Events</h2>
+      {paidTeams && (
+        <div className={styles.paidDiv}>
+          <PaidEvents teams={paidTeams} />
+        </div>
+      )}
+      {unPaidTeams && (
+        <div className={styles.pendingDiv}>
+          <UnPaidEvents teams={unPaidTeams} />
+        </div>
+      )}
+      <Button text="ADD EVENTS" Icon={PlusIcon} iconPosition="left" isLoading={false} />
+    </section>
+  );
+};
+
+Events.defaultProps = {
+  teams: [
     {
       id: 'AR-OJ-69-420',
+      paymentStatus: true,
       event: {
         name: 'Dancing Dyad',
-        parent: 'Step Up',
+        id: 'Step Up',
         paid: true,
         fee: 500,
       },
@@ -87,9 +114,10 @@ const Events = ({ className }) => {
     },
     {
       id: 'AR-OJ-69-421',
+      paymentStatus: true,
       event: {
         name: 'Baet the Beat',
-        parent: 'Step Up',
+        id: 'Step Up',
         paid: true,
         fee: 200,
       },
@@ -102,9 +130,10 @@ const Events = ({ className }) => {
     },
     {
       id: 'AR-OJ-69-422',
+      paymentStatus: false,
       event: {
         name: 'Synchro Funk',
-        parent: 'Step Up',
+        id: 'Step Up',
         paid: false,
         fee: 1000,
       },
@@ -123,26 +152,7 @@ const Events = ({ className }) => {
         },
       ],
     },
-  ];
-  const paidTeams = teams.filter(team => team.event.paid === true);
-  const unPaidTeams = teams.filter(team => team.event.paid === false);
-
-  return (
-    <section className={classNames(styles.eventSection, className)}>
-      <h2>Registered Events</h2>
-      {paidTeams && (
-        <div className={styles.paidDiv}>
-          <PaidEvents teams={paidTeams} />
-        </div>
-      )}
-      {unPaidTeams && (
-        <div className={styles.pendingDiv}>
-          <UnPaidEvents teams={unPaidTeams} />
-        </div>
-      )}
-      <Button text="ADD EVENTS" Icon={PlusIcon} iconPosition="left" isLoading={false} />
-    </section>
-  );
+  ],
 };
 
 export default Events;

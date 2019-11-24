@@ -28,3 +28,9 @@
 .profileSection {
   flex-direction: row;
 }
+@media only screen and (max-width: 500px) {
+  .sections {
+    font-size: 1em;
+    overflow-x: auto;
+  }
+}
