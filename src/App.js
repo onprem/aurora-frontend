@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import styles from './App.module.css';
@@ -10,6 +10,7 @@ import Nav from './views/Nav/Nav';
 import About from './views/about/About';
 import Event from './views/events/Event';
 import LoginRegister from './views/loginRegister/LoginRegister';
+import NotFound from './views/NotFound/NotFound';
 
 import EventDetails from './views/EventDetails/EventDetails';
 
@@ -35,20 +36,14 @@ function App() {
         <Route exact path={['/events/:eventId', '/events/:eventId/:subEventId']}>
           <EventDetails />
         </Route>
-        <Route exact path="/login">
-          <LoginRegister />
-        </Route>
-        <Route exact path="/register">
+        <Route exact path={['/login', '/register']}>
           <LoginRegister />
         </Route>
         <Route exact path="/contact">
           <Contact />
         </Route>
         <Route>
-          <h1>You Lost?</h1>
-          <h3 style={{ borderBottom: '2px solid black' }}>
-            <Link to="/">Go Home</Link>
-          </h3>
+          <NotFound />
         </Route>
       </Switch>
     </div>

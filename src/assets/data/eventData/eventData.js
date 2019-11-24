@@ -409,9 +409,9 @@ const eventData = {
         ],
       },
       {
-        name: 'Street Dance',
+        name: 'Beat the Beat',
         description:
-          'Paint the stage with talent as you put your best foot forward with moves that leave the audience stunned. This event glorifies the relationship of a dancer to the rhythm as they battle it out for the best of street dance.',
+          'Paint the stage with talent as you put your best foot forward with moves that leave the audience stunned. This event glorifies the relationship of a dancer to the rhythm as they battle it out for the best of Face Off.',
         fees: 249,
         maxTeamSize: 1,
         prizeMoney: 'INR 20,000 + Goodies, Benefits and Sponsored Gifts',
@@ -421,7 +421,7 @@ const eventData = {
           'All the participants will first have to compete in the elimination round. Only the participants selected by the judge will qualify for the next round.',
           'For elimination round, the song will be of your choice.',
           'For Semi-Final and Final, the song will be provided.',
-          'No limitations on dance styles, it may vary between different genres (for example hip hop, house, funk, dubstep).',
+          'No limitations on dance styles, it may vary between different genres (for example hip hop, house, funk, classical).',
           'The elimination round will be of 3 minutes.',
           'Semi-Final and Final will be of 4 and 6 minutes respectively.',
         ],
@@ -714,10 +714,6 @@ const eventData = {
       },
     ],
     eventOrganisers: [
-      {
-        name: 'Siddharth',
-        mobile: '',
-      },
       {
         name: 'Kapin Sangwan',
         mobile: '',

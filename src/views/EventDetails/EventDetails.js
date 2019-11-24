@@ -39,8 +39,7 @@ const EventDetails = () => {
     if (!event.singleEvent && subEventId) {
       const toOpen = Number(subEventId) - 1;
       if (toOpen < event.subEvents.length && toOpen > 0) setOpenEvent(toOpen);
-    }
-    setOpenEvent(0);
+    } else setOpenEvent(0);
   }, [subEventId, event]);
 
   if (event.singleEvent) {
