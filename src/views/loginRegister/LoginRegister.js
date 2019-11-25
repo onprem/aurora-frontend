@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
 import Graveyard from '../../components/graveyard/Graveyard';
 import Bat from '../../components/bat/Bat';
@@ -15,7 +15,10 @@ import style from './loginRegister.module.css';
 
 import thinking from '../../assets/images/thinking.png';
 
-const LoginRegister = () => {
+const LoginRegister = ({ isLoggedIn, setIsLoggedIn }) => {
+  const history = useHistory();
+  if (isLoggedIn) history.push('/logout');
+
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const bats = ['Bat1', 'Bat2', 'Bat3', 'Bat4', 'Bat5', 'Bat6', 'Bat7', 'Bat8', 'Bat9'].map(
     styles => {
@@ -63,7 +66,7 @@ const LoginRegister = () => {
         <Switch>
           <Route exact path="/login">
             <div className={style.dummy_loginRegister_card}>
-              <Login />
+              <Login setIsLoggedIn={setIsLoggedIn} />
             </div>
           </Route>
           <Route exact path="/register">

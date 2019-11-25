@@ -40,7 +40,7 @@ const Dashboard = () => {
         <Events className={styles.sections} teams={data.user.teams} />
         <Invites className={styles.sections} teamInvitations={data.user.teamInvitations} />
       </div>
-      <Particles />
+      <Particles minHeight="140vh" />
     </>
   );
 };

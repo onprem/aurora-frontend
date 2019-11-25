@@ -49,7 +49,7 @@ function App() {
           <EventDetails />
         </Route>
         <Route exact path={['/login', '/register']}>
-          <LoginRegister />
+          <LoginRegister isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         </Route>
         <Route exact path="/contact">
           <Contact />

@@ -13,7 +13,7 @@ import style from './login.module.css';
 
 import LOGIN from '../../graphQl/mutations/login';
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const history = useHistory();
   const [inputs, changeInputs] = useState({ email: '', password: '' });
   const [runLogin, { data, loading, error }] = useMutation(LOGIN);
@@ -53,15 +53,12 @@ const Login = () => {
   };
   useEffect(() => {
     if (data) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'success',
-        title: `Successfully logged in`,
-      });
       changeInputs({ email: '', password: '' });
       localStorage.setItem('token', data.login);
+      setIsLoggedIn(true);
+      history.push('/dashboard');
     }
-  }, [data]);
+  }, [data, history, setIsLoggedIn]);
   useEffect(() => {
     if (error && error.graphQLErrors.length > 0) {
       const toast = getAlert();

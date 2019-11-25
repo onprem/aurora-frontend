@@ -15,16 +15,33 @@
 .inviteTable tr {
   height: var(--trHeight);
 }
-.inviteTable tr > td:nth-child(5) {
+.inviteTable tr > td:last-child {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: var(--trHeight);
 }
-.inviteTable tr > td:nth-child(5) > button:nth-child(1) {
+.inviteTable tr > td:last-child > button:nth-child(1) {
   margin-right: 1.5em;
 }
 .inviteTable > thead > tr {
   border-bottom: 2px solid black;
+}
+@media only screen and (max-width: 500px) {
+  .inviteTable tr > th {
+    font-size: 1em;
+    font-weight: 600;
+  }
+  .inviteTable tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    margin-bottom: 2vh;
+  }
+  .inviteTable tr > td:last-child {
+    margin-top: 1vh;
+  }
 }
