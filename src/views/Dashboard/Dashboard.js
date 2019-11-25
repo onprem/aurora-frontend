@@ -37,8 +37,8 @@ const Dashboard = () => {
       <div className={styles.dashboardContainer}>
         <h1 className={styles.heading}>DASHBOARD</h1>
         <Profile className={`${styles.sections} ${styles.profileSection}`} user={data.user} />
-        <Events className={styles.sections} />
-        <Invites className={styles.sections} />
+        <Events className={styles.sections} teams={data.user.teams} />
+        <Invites className={styles.sections} teamInvitations={data.user.teamInvitations} />
       </div>
       <Particles minHeight="140vh" />
     </>

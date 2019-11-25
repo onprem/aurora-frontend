@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { useHistory } from 'react-router-dom';
 
 import Button from '../../Button/Button';
 import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
@@ -118,6 +119,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
 };
 
 const Events = ({ className, teams }) => {
+  const history = useHistory();
   const isDesktop = useMediaQuery('(min-width: 500px)');
 
   const paidTeams = teams.filter(team => team.paymentStatus === true);
@@ -136,7 +138,13 @@ const Events = ({ className, teams }) => {
           <UnPaidEvents teams={unPaidTeams} isDesktop={isDesktop} />
         </div>
       )}
-      <Button text="ADD EVENTS" Icon={PlusIcon} iconPosition="left" isLoading={false} />
+      <Button
+        text="ADD EVENTS"
+        Icon={PlusIcon}
+        iconPosition="left"
+        isLoading={false}
+        onClick={() => history.push('/events')}
+      />
     </section>
   );
 };

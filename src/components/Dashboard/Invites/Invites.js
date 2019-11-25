@@ -42,27 +42,31 @@ const Invites = ({ className, teamInvitations }) => {
   return (
     <section className={classNames(styles.inviteSection, className)}>
       <h2>Pending Invitations</h2>
-      <table className={styles.inviteTable}>
-        <thead>
-          {isDesktop ? (
-            <tr>
-              <th>#</th>
-              <th>From</th>
-              <th>ARID</th>
-              <th>Event Name</th>
-              <th>Action</th>
-            </tr>
-          ) : (
-            <tr>
-              <th>#</th>
-              <th>From</th>
-              <th>Event Name</th>
-            </tr>
-          )}
-        </thead>
+      {teamInvitations.length > 0 ? (
+        <table className={styles.inviteTable}>
+          <thead>
+            {isDesktop ? (
+              <tr>
+                <th>#</th>
+                <th>From</th>
+                <th>ARID</th>
+                <th>Event Name</th>
+                <th>Action</th>
+              </tr>
+            ) : (
+              <tr>
+                <th>#</th>
+                <th>From</th>
+                <th>Event Name</th>
+              </tr>
+            )}
+          </thead>
 
-        <tbody>{inviteTable}</tbody>
-      </table>
+          <tbody>{inviteTable}</tbody>
+        </table>
+      ) : (
+        <span>You don&apos;t have any team invitations yet.</span>
+      )}
     </section>
   );
 };
