@@ -62,3 +62,13 @@
 .detailsDiv > div > span {
   margin-bottom: 1vh;
 }
+@media only screen and (max-width: 500px) {
+  .nameDiv > span:first-child {
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+  }
+  .nameDiv > span:last-child {
+    font-size: 1.2em;
+    margin-bottom: 2.5vh;
+  }
+}

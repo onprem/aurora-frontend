@@ -3,16 +3,26 @@ import classNames from 'classnames';
 
 import Button from '../../Button/Button';
 import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
+import useMediaQuery from '../../../utils/useMediaQuery';
 
 import styles from './Events.module.css';
 
-const PaidEvents = ({ teams }) => {
+const PaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
+    if (isDesktop) {
+      return (
+        <tr key={team.id}>
+          <td>{index + 1}</td>
+          <td>{team.event.name}</td>
+          <td>{team.event.id}</td>
+          <td>{team.id}</td>
+        </tr>
+      );
+    }
     return (
       <tr key={team.id}>
         <td>{index + 1}</td>
         <td>{team.event.name}</td>
-        <td>{team.event.id}</td>
         <td>{team.id}</td>
       </tr>
     );
@@ -21,30 +31,57 @@ const PaidEvents = ({ teams }) => {
   return (
     <>
       <h3>Paid Events</h3>
-      <table className={styles.evtTable}>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Event Name</th>
-            <th>Parent Event</th>
-            <th>Team ID</th>
-          </tr>
-        </thead>
-        <tbody>{teamList}</tbody>
-      </table>
+      {teams.length > 0 ? (
+        <table className={styles.evtTable}>
+          <thead>
+            {isDesktop ? (
+              <tr>
+                <th>#</th>
+                <th>Event Name</th>
+                <th>Parent Event</th>
+                <th>Team ID</th>
+              </tr>
+            ) : (
+              <tr>
+                <th>#</th>
+                <th>Event Name</th>
+                <th>Team ID</th>
+              </tr>
+            )}
+          </thead>
+          <tbody>{teamList}</tbody>
+        </table>
+      ) : (
+        <span>You have not paid for any events yet.</span>
+      )}
     </>
   );
 };
 
-const UnPaidEvents = ({ teams }) => {
+const UnPaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
+    if (isDesktop) {
+      return (
+        <tr key={team.id}>
+          <td>{index + 1}</td>
+          <td>{team.event.name}</td>
+          <td>{team.event.id}</td>
+          <td>{team.id}</td>
+          <td>
+            &#8377;
+            {team.event.fee}
+          </td>
+        </tr>
+      );
+    }
     return (
       <tr key={team.id}>
         <td>{index + 1}</td>
         <td>{team.event.name}</td>
-        <td>{team.event.id}</td>
-        <td>{team.id}</td>
-        <td>{team.event.fee}</td>
+        <td>
+          &#8377;
+          {team.event.fee}
+        </td>
       </tr>
     );
   });
@@ -52,23 +89,37 @@ const UnPaidEvents = ({ teams }) => {
   return (
     <>
       <h3>Unpaid Events</h3>
-      <table className={styles.evtTable}>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Event Name</th>
-            <th>Parent Event</th>
-            <th>Team ID</th>
-            <th>Fee</th>
-          </tr>
-        </thead>
-        <tbody>{teamList}</tbody>
-      </table>
+      {teams.length > 0 ? (
+        <table className={styles.evtTable}>
+          <thead>
+            {isDesktop ? (
+              <tr>
+                <th>#</th>
+                <th>Event Name</th>
+                <th>Parent Event</th>
+                <th>Team ID</th>
+                <th>Fee</th>
+              </tr>
+            ) : (
+              <tr>
+                <th>#</th>
+                <th>Event Name</th>
+                <th>Fee</th>
+              </tr>
+            )}
+          </thead>
+          <tbody>{teamList}</tbody>
+        </table>
+      ) : (
+        <span>You do not have any unpaid events.</span>
+      )}
     </>
   );
 };
 
 const Events = ({ className, teams }) => {
+  const isDesktop = useMediaQuery('(min-width: 500px)');
+
   const paidTeams = teams.filter(team => team.paymentStatus === true);
   const unPaidTeams = teams.filter(team => team.paymentStatus === false);
 
@@ -77,12 +128,12 @@ const Events = ({ className, teams }) => {
       <h2>Registered Events</h2>
       {paidTeams && (
         <div className={styles.paidDiv}>
-          <PaidEvents teams={paidTeams} />
+          <PaidEvents teams={paidTeams} isDesktop={isDesktop} />
         </div>
       )}
       {unPaidTeams && (
         <div className={styles.pendingDiv}>
-          <UnPaidEvents teams={unPaidTeams} />
+          <UnPaidEvents teams={unPaidTeams} isDesktop={isDesktop} />
         </div>
       )}
       <Button text="ADD EVENTS" Icon={PlusIcon} iconPosition="left" isLoading={false} />
