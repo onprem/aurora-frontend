@@ -61,7 +61,7 @@ const Register = () => {
       const toast = getAlert();
       toast.fire({
         icon: 'success',
-        title: data.contactUs.message,
+        title: data.register.message,
       });
       changeInputs({ email: '', password: '' });
     }

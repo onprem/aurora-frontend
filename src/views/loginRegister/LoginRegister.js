@@ -17,7 +17,7 @@ import thinking from '../../assets/images/thinking.png';
 
 const LoginRegister = ({ isLoggedIn, setIsLoggedIn }) => {
   const history = useHistory();
-  if (isLoggedIn) history.push('/logout');
+  if (isLoggedIn) history.push('/dashboard');
 
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const bats = ['Bat1', 'Bat2', 'Bat3', 'Bat4', 'Bat5', 'Bat6', 'Bat7', 'Bat8', 'Bat9'].map(
