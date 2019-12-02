@@ -5,9 +5,10 @@ import styles from './Profile.module.css';
 
 const Profile = ({ className, user }) => {
   const dummy = {
-    college: 'ABV-IIITM, Gwalior',
+    // college: 'Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior',
+    college: 'ABV-IIITM',
     city: 'Gwalior',
-    photo: '/assets/profile.jpg',
+    photo: `/assets/profile.jpg`,
   };
 
   return (
@@ -25,12 +26,14 @@ const Profile = ({ className, user }) => {
         <div className={styles.detailsDiv}>
           <div>
             <span>Contact Number:</span>
-            <span>College:</span>
-            <span>City:</span>
+            <span>{user.phone}</span>
           </div>
           <div>
-            <span>{user.phone}</span>
+            <span>College:</span>
             <span>{dummy.college}</span>
+          </div>
+          <div>
+            <span>City:</span>
             <span>{dummy.city}</span>
           </div>
         </div>
