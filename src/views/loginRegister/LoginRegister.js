@@ -7,6 +7,7 @@ import Particles from '../../components/particles/Particle';
 import Path from '../../components/chealCaowaPath/Path';
 import AnimateChealCaowa from '../../utils/chealCaowa';
 import useMediaQuery from '../../utils/useMediaQuery';
+import { useAuth } from '../../context/auth';
 import Social from '../../components/Social/Social';
 import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
@@ -15,9 +16,10 @@ import style from './loginRegister.module.css';
 
 import thinking from '../../assets/images/thinking.png';
 
-const LoginRegister = ({ isLoggedIn, setIsLoggedIn }) => {
+const LoginRegister = () => {
+  const { authToken } = useAuth();
   const history = useHistory();
-  if (isLoggedIn) history.push('/dashboard');
+  if (authToken) history.push('/dashboard');
 
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const bats = ['Bat1', 'Bat2', 'Bat3', 'Bat4', 'Bat5', 'Bat6', 'Bat7', 'Bat8', 'Bat9'].map(
@@ -66,7 +68,7 @@ const LoginRegister = ({ isLoggedIn, setIsLoggedIn }) => {
         <Switch>
           <Route exact path="/login">
             <div className={style.dummy_loginRegister_card}>
-              <Login setIsLoggedIn={setIsLoggedIn} />
+              <Login />
             </div>
           </Route>
           <Route exact path="/register">

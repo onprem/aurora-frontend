@@ -3,13 +3,15 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import Social from '../../components/Social/Social';
 import useMediaQuery from '../../utils/useMediaQuery';
+import { useAuth } from '../../context/auth';
 
 import styles from './Nav.module.css';
 
-const Nav = ({ isLoggedIn }) => {
+const Nav = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 450px)');
   const isLogRegMobile = useMediaQuery('(max-width: 800px)');
+  const { authToken } = useAuth();
 
   const toggleNav = () => {
     setNavOpen(!isNavOpen);
@@ -61,7 +63,7 @@ const Nav = ({ isLoggedIn }) => {
     },
   ];
 
-  const pages = isLoggedIn
+  const pages = authToken
     ? allPages.filter(page => page.path !== '/login' && page.path !== '/register')
     : allPages.filter(page => page.path !== '/dashboard' && page.path !== '/logout');
 

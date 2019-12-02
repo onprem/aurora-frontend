@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 
 import getAlert from '../../utils/getAlert';
+import { useAuth } from '../../context/auth';
 import { ReactComponent as Arrow } from '../../assets/icons/arrowLeft.svg';
 import Loader from '../Loader/Loader';
 import { emailValidation, ARValidation } from '../../utils/validation';
@@ -13,7 +14,8 @@ import style from './login.module.css';
 
 import LOGIN from '../../graphQl/mutations/login';
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = () => {
+  const { setAuthToken } = useAuth();
   const history = useHistory();
   const [inputs, changeInputs] = useState({ email: '', password: '' });
   const [runLogin, { data, loading, error }] = useMutation(LOGIN);
@@ -54,11 +56,10 @@ const Login = ({ setIsLoggedIn }) => {
   useEffect(() => {
     if (data) {
       changeInputs({ email: '', password: '' });
-      localStorage.setItem('token', data.login);
-      setIsLoggedIn(true);
+      setAuthToken(data.login);
       history.push('/dashboard');
     }
-  }, [data, history, setIsLoggedIn]);
+  }, [data, history, setAuthToken]);
   useEffect(() => {
     if (error && error.graphQLErrors.length > 0) {
       const toast = getAlert();
