@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 
 import getAlert from '../../utils/getAlert';
@@ -17,8 +17,11 @@ import LOGIN from '../../graphQl/mutations/login';
 const Login = () => {
   const { setAuthToken } = useAuth();
   const history = useHistory();
+  const location = useLocation();
+
   const [inputs, changeInputs] = useState({ email: '', password: '' });
   const [runLogin, { data, loading, error }] = useMutation(LOGIN);
+
   const handleInput = event => {
     const { value, name } = event.target;
     changeInputs({
@@ -26,10 +29,12 @@ const Login = () => {
       [name]: value,
     });
   };
+
   const registerClick = e => {
     e.preventDefault();
     history.push('/register');
   };
+
   const handleSubmit = e => {
     e.preventDefault();
     const toast = getAlert();
@@ -53,13 +58,17 @@ const Login = () => {
       });
     }
   };
+
   useEffect(() => {
     if (data) {
+      const referer =
+        location.state && location.state.referer ? location.state.referer : '/dashboard';
       changeInputs({ email: '', password: '' });
       setAuthToken(data.login);
-      history.push('/dashboard');
+      history.push(referer);
     }
-  }, [data, history, setAuthToken]);
+  }, [data, history, location, setAuthToken]);
+
   useEffect(() => {
     if (error && error.graphQLErrors.length > 0) {
       const toast = getAlert();
@@ -69,6 +78,7 @@ const Login = () => {
       });
     }
   }, [error]);
+
   return (
     <form className={style.login_form}>
       <h1 className={style.login_heading}>LOGIN</h1>

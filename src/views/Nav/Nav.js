@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import Social from '../../components/Social/Social';
 import useMediaQuery from '../../utils/useMediaQuery';
@@ -12,6 +12,7 @@ const Nav = () => {
   const isMobile = useMediaQuery('(max-width: 450px)');
   const isLogRegMobile = useMediaQuery('(max-width: 800px)');
   const { authToken } = useAuth();
+  const location = useLocation();
 
   const toggleNav = () => {
     setNavOpen(!isNavOpen);
@@ -80,7 +81,7 @@ const Nav = () => {
       <button
         className={
           // eslint-disable-next-line no-nested-ternary
-          window.location.pathname === '/login' || window.location.pathname === '/register'
+          location.pathname === '/login' || location.pathname === '/register'
             ? isLogRegMobile
               ? classNames(styles.burger, { [styles.open]: isNavOpen })
               : classNames(styles.burger, { [styles.open]: isNavOpen }, styles.burger_white)

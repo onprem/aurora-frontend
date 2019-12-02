@@ -18,6 +18,7 @@ import EventDetails from './views/EventDetails/EventDetails';
 import Contact from './views/contactUs/ContactUs';
 import Dashboard from './views/Dashboard/Dashboard';
 import LogOut from './components/LogOut/LogOut';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
   const [authToken, setAuthToken] = useState();
@@ -66,9 +67,9 @@ function App() {
             <Route exact path="/contact">
               <Contact />
             </Route>
-            <Route exact path="/dashboard">
+            <ProtectedRoute exact path="/dashboard">
               <Dashboard />
-            </Route>
+            </ProtectedRoute>
             <Route exact path="/logout">
               <LogOut />
             </Route>
