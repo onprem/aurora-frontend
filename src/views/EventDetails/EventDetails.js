@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
 
 import eventData from '../../assets/data/eventData/eventData';
 import EventAccordion from '../../components/EventAccordion/EventAccordion';
@@ -15,11 +15,16 @@ import styles from './EventDetails.module.css';
 const EventWrapper = ({ children }) => {
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const history = useHistory();
+  const location = useLocation();
+  const index = location.state && location.state.index ? location.state.index : 0;
 
   return (
     <>
       <div className={styles.eventDetail}>
-        <ArrowLeftIcon className={styles.backArrow} onClick={() => history.push('/events')} />
+        <ArrowLeftIcon
+          className={styles.backArrow}
+          onClick={() => history.push({ pathname: '/events', state: { index } })}
+        />
         <div className={styles.accordionContainer}>{children}</div>
       </div>
       <Particles />

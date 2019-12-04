@@ -46,22 +46,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
 .detailsDiv > div {
   display: flex;
-  flex-direction: column;
-}
-.detailsDiv > div:nth-child(1) {
-  align-items: flex-end;
-  margin-right: 2vw;
-  font-weight: 800;
-}
-.detailsDiv > div:nth-child(2) {
-  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
 .detailsDiv > div > span {
-  margin-bottom: 1vh;
+  text-align: justify;
 }
+.detailsDiv > div > span:first-child {
+  /* width: 40%; */
+  text-align: right;
+  font-weight: 600;
+  margin-right: 25px;
+}
+
 @media only screen and (max-width: 500px) {
   .nameDiv > span:first-child {
     margin-top: 1vh;

@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 
 import getAlert from '../../utils/getAlert';
+import { useAuth } from '../../context/auth';
 import { ReactComponent as Arrow } from '../../assets/icons/arrowLeft.svg';
 import Loader from '../Loader/Loader';
 import { emailValidation, ARValidation } from '../../utils/validation';
@@ -13,10 +14,14 @@ import style from './login.module.css';
 
 import LOGIN from '../../graphQl/mutations/login';
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = () => {
+  const { setAuthToken } = useAuth();
   const history = useHistory();
+  const location = useLocation();
+
   const [inputs, changeInputs] = useState({ email: '', password: '' });
   const [runLogin, { data, loading, error }] = useMutation(LOGIN);
+
   const handleInput = event => {
     const { value, name } = event.target;
     changeInputs({
@@ -24,10 +29,12 @@ const Login = ({ setIsLoggedIn }) => {
       [name]: value,
     });
   };
+
   const registerClick = e => {
     e.preventDefault();
     history.push('/register');
   };
+
   const handleSubmit = e => {
     e.preventDefault();
     const toast = getAlert();
@@ -51,14 +58,17 @@ const Login = ({ setIsLoggedIn }) => {
       });
     }
   };
+
   useEffect(() => {
     if (data) {
+      const referer =
+        location.state && location.state.referer ? location.state.referer : '/dashboard';
       changeInputs({ email: '', password: '' });
-      localStorage.setItem('token', data.login);
-      setIsLoggedIn(true);
-      history.push('/dashboard');
+      setAuthToken(data.login);
+      history.push(referer);
     }
-  }, [data, history, setIsLoggedIn]);
+  }, [data, history, location, setAuthToken]);
+
   useEffect(() => {
     if (error && error.graphQLErrors.length > 0) {
       const toast = getAlert();
@@ -68,6 +78,7 @@ const Login = ({ setIsLoggedIn }) => {
       });
     }
   }, [error]);
+
   return (
     <form className={style.login_form}>
       <h1 className={style.login_heading}>LOGIN</h1>

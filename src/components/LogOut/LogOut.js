@@ -1,7 +1,11 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-const LogOut = ({ logMeOut }) => {
+import { useAuth } from '../../context/auth';
+
+const LogOut = () => {
+  const { logMeOut } = useAuth();
+
   logMeOut();
   return <Redirect to="/login" />;
 };

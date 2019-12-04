@@ -7,6 +7,10 @@ export default gql`
       name
       email
       phone
+      college
+      displayPic
+      gender
+      city
       teams {
         id
         event {

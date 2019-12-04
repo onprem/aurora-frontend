@@ -48,8 +48,8 @@ const Event = () => {
         <img className={style.aurora_logo} src={Logo} alt="logo" />
       </Link>
       <Carousel>
-        {cardData.map(event => (
-          <Card params={event} />
+        {cardData.map((event, index) => (
+          <Card params={event} index={index} />
         ))}
       </Carousel>
       <Particles />
