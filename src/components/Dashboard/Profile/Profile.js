@@ -4,18 +4,13 @@ import classNames from 'classnames';
 import styles from './Profile.module.css';
 
 const Profile = ({ className, user }) => {
-  const dummy = {
-    // college: 'Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior',
-    college: 'ABV-IIITM',
-    city: 'Gwalior',
-    photo: `/assets/profile.jpg`,
-  };
+  const dpBaseURL = 'https://storage.cloud.google.com/aurora-dp/';
 
   return (
     <section className={classNames(styles.profileSection, className)}>
       <div className={styles.leftDiv}>
         <div className={styles.photoDiv}>
-          <img src={dummy.photo} alt="Profile" />
+          <img src={dpBaseURL + user.displayPic} alt="Profile" />
         </div>
         <div className={styles.nameDiv}>
           <span>{user.name}</span>
@@ -30,11 +25,11 @@ const Profile = ({ className, user }) => {
           </div>
           <div>
             <span>College:</span>
-            <span>{dummy.college}</span>
+            <span>{user.college}</span>
           </div>
           <div>
             <span>City:</span>
-            <span>{dummy.city}</span>
+            <span>{user.city}</span>
           </div>
         </div>
       </div>
