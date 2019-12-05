@@ -176,6 +176,7 @@ const RegisterTab = ({ eventId }) => {
         icon: 'success',
         title: sendInvite.data.sendInvite.message,
       });
+      changeInputs({ id: '' });
     }
   }, [eventRegister.data, sendInvite.data]);
   if (loading) return <Loader />;
