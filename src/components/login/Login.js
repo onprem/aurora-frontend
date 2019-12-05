@@ -65,7 +65,7 @@ const Login = () => {
         location.state && location.state.referer ? location.state.referer : '/dashboard';
       changeInputs({ email: '', password: '' });
       setAuthToken(data.login);
-      history.push(referer);
+      history.push({ pathname: referer, state: location.state });
     }
   }, [data, history, location, setAuthToken]);
 
