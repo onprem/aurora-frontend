@@ -1,13 +1,12 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query User {
-    user {
-      id
-      name
-      email
-      phone
-      teams {
+  mutation sendInvite($teamId: String!, $arId: String!) {
+    sendInvite(teamId: $teamId, arId: $arId) {
+      code
+      message
+      success
+      team {
         id
         members {
           name
@@ -22,18 +21,6 @@ export default gql`
         pendingInvitations {
           id
           name
-        }
-      }
-      teamInvitations {
-        invitedBy {
-          id
-          name
-        }
-        team {
-          id
-          event {
-            name
-          }
         }
       }
     }

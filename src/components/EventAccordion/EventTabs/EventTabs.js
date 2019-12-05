@@ -7,7 +7,6 @@ import styles from './EventTabs.module.css';
 
 const EventTabs = ({ event }) => {
   const [activeTab, setActiveTab] = useState(0);
-
   const rules = useMemo(() => {
     const getRules = tempRules => {
       let partRules = [];
@@ -103,7 +102,7 @@ const EventTabs = ({ event }) => {
             [styles.active]: activeTab === 2,
           })}
         >
-          <RegisterTab />
+          <RegisterTab eventId={event.id || 1} />
         </div>
       </section>
     </div>

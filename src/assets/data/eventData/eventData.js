@@ -670,7 +670,7 @@ const eventData = {
         ],
       },
       {
-        name: 'Cine Quiz',
+        name: 'Cine Binge',
         description:
           "Show off your binge watching skills in Cine Quiz which is going to be the next big thing during Aurora'20. This quiz will test your knowledge of Movies, Comics, and TV Series ranging from hollywood to bollywood. Let's see who conquers the throne.",
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
@@ -1053,7 +1053,7 @@ const eventData = {
         mobile: '',
       },
       {
-        name: 'Sikhar Goswami',
+        name: 'Shikhar Goswami',
         mobile: '',
       },
       {
@@ -1085,11 +1085,7 @@ const eventData = {
       //   mobile: '',
       // },
       {
-        name: 'Aditya Sharma',
-        mobile: '',
-      },
-      {
-        name: 'Navneet Singh',
+        name: 'Pranav Mishra',
         mobile: '',
       },
     ],
