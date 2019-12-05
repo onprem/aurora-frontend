@@ -11,10 +11,12 @@ import { useAuth } from '../../context/auth';
 import Social from '../../components/Social/Social';
 import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
+import ForgotPassword from '../../components/forgotPassword/ForgotPassword';
 
 import style from './loginRegister.module.css';
 
 import thinking from '../../assets/images/thinking.webp';
+import ResetPassword from '../../components/resetPassword/ResetPassword';
 
 const LoginRegister = () => {
   const { authToken } = useAuth();
@@ -76,6 +78,16 @@ const LoginRegister = () => {
               className={`${style.dummy_loginRegister_card} ${style.dummy_loginRegister_card_register}`}
             >
               <Register />
+            </div>
+          </Route>
+          <Route exact path="/forgotPassword">
+            <div className={style.dummy_loginRegister_card}>
+              <ForgotPassword />
+            </div>
+          </Route>
+          <Route exact path="/reset/:token">
+            <div className={style.dummy_loginRegister_card}>
+              <ResetPassword />
             </div>
           </Route>
         </Switch>
