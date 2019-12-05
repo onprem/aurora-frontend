@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import { useMutation } from '@apollo/react-hooks';
 
@@ -14,6 +14,7 @@ import Loader from '../Loader/Loader';
 import { ReactComponent as Arrow } from '../../assets/icons/arrowLeft.svg';
 
 const ResetPassword = () => {
+  const history = useHistory();
   const { token } = useParams();
   const [inputs, changeInputs] = useState({ password: '' });
   const [runResetPassword, { data, loading, error }] = useMutation(RESET_PASSWORD);
@@ -38,8 +39,11 @@ const ResetPassword = () => {
   useEffect(() => {
     if (data) {
       changeInputs({ password: '' });
+      setTimeout(() => {
+        history.push('/login');
+      }, 4000);
     }
-  }, [data]);
+  }, [data, history]);
   useEffect(() => {
     const toast = getAlert();
     if (error && error.graphQLErrors.length > 0) {
@@ -53,7 +57,10 @@ const ResetPassword = () => {
   return (
     <form className={style.login_form}>
       {data ? (
-        <p>{data.resetPassword.message}</p>
+        <>
+          <p>{data.resetPassword.message}</p>
+          <p>Redirecting to login page shortly.</p>
+        </>
       ) : (
         <>
           <h1 className={style.login_heading}>Reset Password</h1>
