@@ -6,6 +6,23 @@ export default gql`
       code
       message
       success
+      team {
+        id
+        members {
+          name
+          id
+        }
+        event {
+          id
+          name
+          fee
+        }
+        paymentStatus
+        pendingInvitations {
+          id
+          name
+        }
+      }
     }
   }
 `;

@@ -16,7 +16,7 @@ import getAlert from '../../../../utils/getAlert';
 import Invitation from './invitation/Invitation';
 import Loader from '../../../Loader/Loader';
 import TeamMember from './teamMember/TeamMember';
-import PendingInvitations from './pendingInvitation/PendingInvitation.js';
+import PendingInvitations from './pendingInvitation/PendingInvitation';
 import { ReactComponent as Register } from '../../../../assets/icons/register.svg';
 
 const RegisterTab = ({ eventId }) => {
@@ -42,7 +42,22 @@ const RegisterTab = ({ eventId }) => {
       });
     },
   });
-  const [runSendInvite, sendInvite] = useMutation(SEND_INVITE);
+  const [runSendInvite, sendInvite] = useMutation(SEND_INVITE, {
+    update: (cacheStore, { data: newData }) => {
+      const userData = cacheStore.readQuery({ query: USER_QUERY });
+      const newTeams = userData.user.teams.filter(team => team.id !== userTeam.id);
+      newTeams.push(newData.sendInvite.team);
+      cacheStore.writeQuery({
+        query: USER_QUERY,
+        data: {
+          user: {
+            ...userData.user,
+            teams: newTeams,
+          },
+        },
+      });
+    },
+  });
   const handleSendInvite = () => {
     runSendInvite({ variables: { teamId: userTeam.id, arId: inputs.id } });
   };
@@ -84,17 +99,16 @@ const RegisterTab = ({ eventId }) => {
       <div className={style.registerTab_invitations_container}>
         <h2 className={style.registerTab_heading}>PENDING INVITES</h2>
         <hr className={style.registerTab_hr} />
-        {/* {userTeam
-          ? userTeam.pendingInvitation.map((invites, index) => (
+        {userTeam
+          ? userTeam.pendingInvitations.map((invites, index) => (
               // eslint-disable-next-line react/jsx-indent
               <PendingInvitations sr={index + 1} invites={invites} teamid={userTeam.id} />
             ))
-          : null} */}
+          : null}
       </div>
     </>
   );
 
-  console.log(userTeam);
   const handleRegister = e => {
     e.preventDefault();
     runEventRegister({ variables: { eventId } });

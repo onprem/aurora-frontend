@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useEffect } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 

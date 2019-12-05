@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
@@ -8,7 +9,6 @@ import Button from '../../../../Button/Button';
 import { ReactComponent as Cross } from '../../../../../assets/icons/cross.svg';
 import CANCEL_INVITE from '../../../../../graphQl/mutations/cancelInvite';
 import USER_QUERY from '../../../../../graphQl/queries/user';
-import Loader from '../../../../Loader/Loader';
 
 const PendingInvitation = ({ sr, invites, teamid }) => {
   const [runCancelInvite, cancelInvite] = useMutation(CANCEL_INVITE, {
@@ -37,8 +37,8 @@ const PendingInvitation = ({ sr, invites, teamid }) => {
       <span className={style.invitation_content}>{invites.id}</span>
       <Button
         iconPosition="right"
-        text={cancelInvite.loading ? <Loader /> : `Cancel Invite`}
-        Icon={cancelInvite.loading ? null : Cross}
+        text="CANCEL"
+        Icon={Cross}
         className={style.member_button}
         onClick={() => runCancelInvite({ variables: { teamId: teamid, arId: invites.id } })}
         isLoading={cancelInvite.loading}

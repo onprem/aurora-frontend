@@ -18,7 +18,7 @@ export default gql`
           fee
         }
         paymentStatus
-        pendingInvitation {
+        pendingInvitations {
           id
           name
         }
