@@ -258,7 +258,7 @@ const eventData = {
         mobile: '',
       },
       {
-        name: 'Saniya Arora',
+        name: 'Rachit Gupta',
         mobile: '',
       },
       {
@@ -907,7 +907,7 @@ const eventData = {
     fees: 479,
     maxTeamSize: 20,
     rules: [
-      'Team Size: 8-20 (Including all music accompanists),',
+      'Team Size: 12-20 (Including all music accompanists),',
       'Only a single and final round will lead to results.',
       'Stage specifications: Open-air ground stage with audience on all sides.',
       'Time Limit: 10-15 minutes (including setup and clearance time i.e. empty stage to empty stage).',
