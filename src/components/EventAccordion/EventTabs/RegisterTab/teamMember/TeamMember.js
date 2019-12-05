@@ -91,30 +91,32 @@ const TeamMember = ({ sr, member, user, teamid }) => {
 
   return (
     <div className={style.invitation_container}>
-      <span className={(style.invitation_content, style.invitation_content_sr)}>{sr}</span>
+      <span className={style.invitation_content_sr}>{sr}</span>
       <span className={style.invitation_content}>{member.name}</span>
       <span className={style.invitation_content}>{member.id}</span>
-      {member.id === user.id ? (
-        <Button
-          iconPosition="right"
-          text={loading ? <Loader /> : `LEAVE`}
-          Icon={loading ? null : Leave}
-          className={style.member_button}
-          onClick={() => runLeaveTeam({ variables: { teamId: teamid } })}
-          isLoading={loading}
-          disabled={loading}
-        />
-      ) : (
-        <Button
-          iconPosition="right"
-          text={removeMember.loading ? <Loader /> : `REMOVE`}
-          Icon={removeMember.loading ? null : Cross}
-          className={style.member_button}
-          onClick={() => runRemoveMember({ variables: { teamId: teamid, arId: member.id } })}
-          isLoading={removeMember.loading}
-          disabled={removeMember.loading}
-        />
-      )}
+      <div className={style.invitation_button_container_single}>
+        {member.id === user.id ? (
+          <Button
+            iconPosition="right"
+            text={loading ? <Loader /> : `LEAVE`}
+            Icon={loading ? null : Leave}
+            className={style.member_button}
+            onClick={() => runLeaveTeam({ variables: { teamId: teamid } })}
+            isLoading={loading}
+            disabled={loading}
+          />
+        ) : (
+          <Button
+            iconPosition="right"
+            text={removeMember.loading ? <Loader /> : `REMOVE`}
+            Icon={removeMember.loading ? null : Cross}
+            className={style.member_button}
+            onClick={() => runRemoveMember({ variables: { teamId: teamid, arId: member.id } })}
+            isLoading={removeMember.loading}
+            disabled={removeMember.loading}
+          />
+        )}
+      </div>
     </div>
   );
 };

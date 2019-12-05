@@ -87,7 +87,7 @@ const Invitations = ({ sr, invite }) => {
   }, [error, decline.error]);
   return (
     <div className={style.invitation_container}>
-      <span className={style.invitation_content}>{sr}</span>
+      <span className={style.invitation_content_sr}>{sr}</span>
       <span className={style.invitation_content}>{invite.invitedBy.name}</span>
       <span className={style.invitation_content}>{invite.invitedBy.id}</span>
       <span className={style.invitation_button_container}>

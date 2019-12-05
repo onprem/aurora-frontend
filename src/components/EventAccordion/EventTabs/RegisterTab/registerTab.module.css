@@ -15,6 +15,7 @@
   font-size: 1.3em !important;
   letter-spacing: 0.5em !important;
   min-width: 195px !important;
+  overflow: hidden;
   /* height: 10%; */
 }
 
@@ -62,6 +63,10 @@
   width: 15vw;
   font-size: 0.8em;
   border-radius: 5px;
+  padding-left: 8px;
+  outline: none;
+  appearance: none;
+  border: 2px solid black;
 }
 .registerTab_invite_button {
   background: white !important;
@@ -70,11 +75,15 @@
   margin-left: 2vw !important;
   color: black !important;
   font-size: 0.8em !important;
+  overflow: hidden;
 }
 .registerTab_invite_button svg,
 .registerTab_button svg {
   fill: black;
   stroke: black;
+}
+.registerTab_input_invalid {
+  border-color: var(--error);
 }
 @media (max-width: 1120px) {
   .registerTab_invite_button {

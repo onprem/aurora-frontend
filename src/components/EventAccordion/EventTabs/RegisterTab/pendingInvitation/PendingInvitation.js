@@ -32,18 +32,20 @@ const PendingInvitation = ({ sr, invites, teamid }) => {
   });
   return (
     <div className={style.invitation_container}>
-      <span className={style.invitation_content}>{sr}</span>
+      <span className={style.invitation_content_sr}>{sr}</span>
       <span className={style.invitation_content}>{invites.name}</span>
       <span className={style.invitation_content}>{invites.id}</span>
-      <Button
-        iconPosition="right"
-        text="CANCEL"
-        Icon={Cross}
-        className={style.member_button}
-        onClick={() => runCancelInvite({ variables: { teamId: teamid, arId: invites.id } })}
-        isLoading={cancelInvite.loading}
-        disabled={cancelInvite.loading}
-      />
+      <div className={style.invitation_button_container_single}>
+        <Button
+          iconPosition="right"
+          text="CANCEL"
+          Icon={Cross}
+          className={style.member_button}
+          onClick={() => runCancelInvite({ variables: { teamId: teamid, arId: invites.id } })}
+          isLoading={cancelInvite.loading}
+          disabled={cancelInvite.loading}
+        />
+      </div>
     </div>
   );
 };

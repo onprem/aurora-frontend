@@ -8,6 +8,7 @@ import { useAuth } from '../../../../context/auth';
 import USER_QUERY from '../../../../graphQl/queries/user';
 import EVENT_REGISTER from '../../../../graphQl/mutations/eventRegister';
 import SEND_INVITE from '../../../../graphQl/mutations/sendInvite';
+import { ARValidation } from '../../../../utils/validation';
 
 import style from './registerTab.module.css';
 
@@ -59,7 +60,22 @@ const RegisterTab = ({ eventId }) => {
     },
   });
   const handleSendInvite = () => {
-    runSendInvite({ variables: { teamId: userTeam.id, arId: inputs.id } });
+    const toast = getAlert();
+    if (inputs.id) {
+      if (ARValidation(inputs.id)) {
+        runSendInvite({ variables: { teamId: userTeam.id, arId: inputs.id } });
+      } else
+        toast.fire({
+          icon: 'error',
+          title: 'Please enter valid AR-ID',
+        });
+    } else {
+      changeInputs({ id: undefined });
+      toast.fire({
+        icon: 'error',
+        title: 'AR-ID cannot be empty',
+      });
+    }
   };
 
   const RenderAfterRegister = (
@@ -76,7 +92,15 @@ const RegisterTab = ({ eventId }) => {
             value={inputs.id}
             onChange={handleInput}
             required
-            className={style.registerTab_input}
+            className={
+              inputs.id
+                ? ARValidation(inputs.id)
+                  ? style.registerTab_input
+                  : `${style.registerTab_input} ${style.registerTab_input_invalid}`
+                : inputs.id === undefined
+                ? `${style.registerTab_input} ${style.registerTab_input_invalid}`
+                : style.registerTab_input
+            }
           />
           <Button
             text="SEND INVITE"
@@ -96,16 +120,18 @@ const RegisterTab = ({ eventId }) => {
             ))
           : null}
       </div>
-      <div className={style.registerTab_invitations_container}>
-        <h2 className={style.registerTab_heading}>PENDING INVITES</h2>
-        <hr className={style.registerTab_hr} />
-        {userTeam
-          ? userTeam.pendingInvitations.map((invites, index) => (
-              // eslint-disable-next-line react/jsx-indent
-              <PendingInvitations sr={index + 1} invites={invites} teamid={userTeam.id} />
-            ))
-          : null}
-      </div>
+      {userTeam && userTeam.pendingInvitations.length ? (
+        <div className={style.registerTab_invitations_container}>
+          <h2 className={style.registerTab_heading}>PENDING INVITES</h2>
+          <hr className={style.registerTab_hr} />
+          {userTeam
+            ? userTeam.pendingInvitations.map((invites, index) => (
+                // eslint-disable-next-line react/jsx-indent
+                <PendingInvitations sr={index + 1} invites={invites} teamid={userTeam.id} />
+              ))
+            : null}
+        </div>
+      ) : null}
     </>
   );
 
