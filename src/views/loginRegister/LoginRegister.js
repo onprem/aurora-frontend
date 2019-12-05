@@ -14,7 +14,7 @@ import Register from '../../components/register/Register';
 
 import style from './loginRegister.module.css';
 
-import thinking from '../../assets/images/thinking.png';
+import thinking from '../../assets/images/thinking.webp';
 
 const LoginRegister = () => {
   const { authToken } = useAuth();

@@ -2,7 +2,8 @@
   width: 100%;
   border: 3px solid black;
   border-radius: 15px;
-  background: white;
+  background: black;
+  color: white;
   margin-top: 5px;
   transition: height 0.3s ease-in;
   height: 30px;
@@ -11,6 +12,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.eventAccordion.open {
+  background: white;
+  color: black;
 }
 .eventAccordion.open .bodySection {
   overflow: hidden;
@@ -44,13 +49,14 @@
   width: 90%;
   cursor: pointer;
   outline: none;
-  color: black;
+  color: white;
   letter-spacing: 0.1em;
 }
 .eventAccordion.open .headSectionBtn {
   font-size: 4em;
   height: 70px;
   cursor: default;
+  color: black;
 }
 
 @media only screen and (max-width: 1366px) {

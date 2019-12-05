@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -8,18 +8,21 @@ import { AuthContext } from './context/auth';
 import styles from './App.module.css';
 import './assets/styles/variables.css';
 
-import Home from './views/Home/Home';
-import Nav from './views/Nav/Nav';
-import About from './views/about/About';
-import Event from './views/events/Event';
-import LoginRegister from './views/loginRegister/LoginRegister';
-import Verify from './views/Verify/Verify';
-import NotFound from './views/NotFound/NotFound';
-import EventDetails from './views/EventDetails/EventDetails';
-import Contact from './views/contactUs/ContactUs';
-import Dashboard from './views/Dashboard/Dashboard';
-import LogOut from './components/LogOut/LogOut';
+import Loader from './components/Loader/Loader';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+
+import Nav from './views/Nav/Nav';
+
+const Home = React.lazy(() => import('./views/Home/Home'));
+const About = React.lazy(() => import('./views/about/About'));
+const Event = React.lazy(() => import('./views/events/Event'));
+const LoginRegister = React.lazy(() => import('./views/loginRegister/LoginRegister'));
+const Verify = React.lazy(() => import('./views/Verify/Verify'));
+const NotFound = React.lazy(() => import('./views/NotFound/NotFound'));
+const EventDetails = React.lazy(() => import('./views/EventDetails/EventDetails'));
+const Contact = React.lazy(() => import('./views/contactUs/ContactUs'));
+const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
+const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
 
 function App() {
   const [authToken, setAuthToken] = useState();
@@ -45,42 +48,44 @@ function App() {
     <AuthContext.Provider value={{ authToken, setAuthToken: setToken, logMeOut }}>
       <ApolloProvider client={client}>
         <div className={styles.App}>
-          <Nav />
-          <Switch>
-            <Route exact path="/">
-              <ParallaxProvider>
-                <Home />
-              </ParallaxProvider>
-            </Route>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/events">
-              <Event />
-            </Route>
+          <Suspense fallback={<Loader fill="#000000" />}>
+            <Nav />
+            <Switch>
+              <Route exact path="/">
+                <ParallaxProvider>
+                  <Home />
+                </ParallaxProvider>
+              </Route>
+              <Route exact path="/about">
+                <About />
+              </Route>
+              <Route exact path="/events">
+                <Event />
+              </Route>
 
-            <Route exact path={['/events/:eventId', '/events/:eventId/:subEventId']}>
-              <EventDetails />
-            </Route>
-            <Route exact path={['/login', '/register']}>
-              <LoginRegister />
-            </Route>
-            <Route exact path="/verify/:token">
-              <Verify />
-            </Route>
-            <Route exact path="/contact">
-              <Contact />
-            </Route>
-            <ProtectedRoute exact path="/dashboard">
-              <Dashboard />
-            </ProtectedRoute>
-            <Route exact path="/logout">
-              <LogOut />
-            </Route>
-            <Route>
-              <NotFound />
-            </Route>
-          </Switch>
+              <Route exact path={['/events/:eventId', '/events/:eventId/:subEventId']}>
+                <EventDetails />
+              </Route>
+              <Route exact path={['/login', '/register']}>
+                <LoginRegister />
+              </Route>
+              <Route exact path="/verify/:token">
+                <Verify />
+              </Route>
+              <Route exact path="/contact">
+                <Contact />
+              </Route>
+              <ProtectedRoute exact path="/dashboard">
+                <Dashboard />
+              </ProtectedRoute>
+              <Route exact path="/logout">
+                <LogOut />
+              </Route>
+              <Route>
+                <NotFound />
+              </Route>
+            </Switch>
+          </Suspense>
         </div>
       </ApolloProvider>
     </AuthContext.Provider>
