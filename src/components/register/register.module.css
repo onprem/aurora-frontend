@@ -8,6 +8,17 @@
   align-content: center;
   align-items: center;
 }
+.renderAfterRegister {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 1.1em;
+  padding: 10px;
+}
 .register_heading {
   margin-bottom: 0px;
 }
