@@ -66,7 +66,7 @@ function App() {
               <Route exact path={['/events/:eventId', '/events/:eventId/:subEventId']}>
                 <EventDetails />
               </Route>
-              <Route exact path={['/login', '/register']}>
+              <Route exact path={['/login', '/register', '/forgotPassword', '/reset/:token']}>
                 <LoginRegister />
               </Route>
               <Route exact path="/verify/:token">

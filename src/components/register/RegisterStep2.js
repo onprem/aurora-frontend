@@ -92,6 +92,7 @@ const RegisterStep2 = ({ changeInputs, inputs, changeStep, submit, loading }) =>
         }
         placeholder=""
         name="password"
+        autoComplete="new-password"
         value={inputs.password}
         onChange={handleInput}
         required
