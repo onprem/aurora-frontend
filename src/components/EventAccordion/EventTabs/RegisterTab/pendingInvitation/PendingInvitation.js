@@ -9,6 +9,7 @@ import Button from '../../../../Button/Button';
 import { ReactComponent as Cross } from '../../../../../assets/icons/cross.svg';
 import CANCEL_INVITE from '../../../../../graphQl/mutations/cancelInvite';
 import USER_QUERY from '../../../../../graphQl/queries/user';
+import Loader from '../../../../Loader/Loader';
 
 const PendingInvitation = ({ sr, invites, teamid }) => {
   const [runCancelInvite, cancelInvite] = useMutation(CANCEL_INVITE, {
@@ -38,11 +39,10 @@ const PendingInvitation = ({ sr, invites, teamid }) => {
       <div className={style.invitation_button_container_single}>
         <Button
           iconPosition="right"
-          text="CANCEL"
-          Icon={Cross}
+          text={cancelInvite.loading ? <Loader fill="#000000" /> : 'CANCEL'}
+          Icon={cancelInvite.loading ? null : Cross}
           className={style.member_button}
           onClick={() => runCancelInvite({ variables: { teamId: teamid, arId: invites.id } })}
-          isLoading={cancelInvite.loading}
           disabled={cancelInvite.loading}
         />
       </div>

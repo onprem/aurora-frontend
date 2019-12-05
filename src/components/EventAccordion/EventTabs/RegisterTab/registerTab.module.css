@@ -15,7 +15,8 @@
   font-size: 1.3em !important;
   letter-spacing: 0.5em !important;
   min-width: 195px !important;
-  overflow: hidden;
+  overflow: hidden !important;
+  height: 2.5em !important;
   /* height: 10%; */
 }
 
@@ -54,6 +55,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
   align-items: center;
   align-content: center;
   margin-bottom: 25px;
@@ -70,12 +72,12 @@
 }
 .registerTab_invite_button {
   background: white !important;
-  width: 12vw !important;
+  width: 16vw !important;
   height: 2.5em !important;
   margin-left: 2vw !important;
   color: black !important;
   font-size: 0.8em !important;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .registerTab_invite_button svg,
 .registerTab_button svg {
@@ -112,16 +114,39 @@
     letter-spacing: 0.3em !important;
   }
 }
+@media (max-width: 500px) {
+  .registerTab_form {
+    justify-content: center;
+  }
+  .registerTab_form_p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  .registerTab_invite_button {
+    width: 14em !important;
+    margin-top: 10px !important;
+    margin-left: -1.5px !important;
+    height: 3em !important;
+    font-size: 1em !important;
+  }
+  .registerTab_input {
+    width: 18em;
+    height: 3em;
+  }
+}
 @media (max-width: 400px) {
   .registerTab_heading {
     font-size: 0.8em;
   }
   .registerTab_invite_button {
     font-size: 0.6em !important;
+    width: 18em !important;
     height: 3.5em !important;
   }
   .registerTab_input {
-    width: 11em;
+    width: 9em;
     height: 2em;
   }
   .registerTab_button {
