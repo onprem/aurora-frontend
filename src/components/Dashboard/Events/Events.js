@@ -53,7 +53,8 @@ const PaidEvents = ({ teams, isDesktop }) => {
           <tbody>{teamList}</tbody>
         </table>
       ) : (
-        <span>You have not paid for any events yet.</span>
+        // <span>You have not paid for any events yet.</span>
+        <span>Payment for events will start soon.</span>
       )}
     </>
   );

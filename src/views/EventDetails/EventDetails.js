@@ -61,9 +61,9 @@ const EventDetails = () => {
     return (
       <EventAccordion
         event={{
-          ...subEvent,
           eventHeads: event.eventHeads,
           eventOrganisers: event.eventOrganisers,
+          ...subEvent,
         }}
         isOpen={index === openEvent}
         onClick={() => setOpenEvent(index)}
