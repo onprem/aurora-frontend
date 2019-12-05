@@ -13,7 +13,15 @@ export default gql`
           name
           fee
         }
+        members {
+          name
+          id
+        }
         paymentStatus
+        pendingInvitation {
+          id
+          name
+        }
       }
     }
   }

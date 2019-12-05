@@ -90,7 +90,7 @@ const TeamMember = ({ sr, member, user, teamid }) => {
 
   return (
     <div className={style.invitation_container}>
-      <span className={style.invitation_content}>{sr}</span>
+      <span className={(style.invitation_content, style.invitation_content_sr)}>{sr}</span>
       <span className={style.invitation_content}>{member.name}</span>
       <span className={style.invitation_content}>{member.id}</span>
       {member.id === user.id ? (
