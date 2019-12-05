@@ -9,7 +9,7 @@
   align-items: center;
 }
 .renderAfterRegister {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,12 @@
   align-content: center;
   align-items: center;
   font-size: 1.1em;
-  padding: 10px;
+  width: 90%;
+  text-align: justify;
+  /* padding: 10px; */
+}
+.after_render_p {
+  width: 100%;
 }
 .register_heading {
   margin-bottom: 0px;

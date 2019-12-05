@@ -38,7 +38,9 @@
   background-color: white;
   border: 3px solid black;
   border-radius: 8px;
-  /* overflow: hidden; */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 .dummy_loginRegister_card_register {
   height: 74vh;

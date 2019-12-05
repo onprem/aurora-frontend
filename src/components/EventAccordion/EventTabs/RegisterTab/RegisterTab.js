@@ -20,8 +20,9 @@ import TeamMember from './teamMember/TeamMember';
 import PendingInvitations from './pendingInvitation/PendingInvitation';
 import { ReactComponent as Register } from '../../../../assets/icons/register.svg';
 import { ReactComponent as Inv } from '../../../../assets/icons/sendInvite.svg';
+import { ReactComponent as Arrow } from '../../../../assets/icons/arrowLeft.svg';
 
-const RegisterTab = ({ eventId }) => {
+const RegisterTab = ({ eventId, teamMaxSize }) => {
   const { authToken } = useAuth();
   const { data, loading, error } = useQuery(USER_QUERY);
   const history = useHistory();
@@ -113,6 +114,7 @@ const RegisterTab = ({ eventId }) => {
             disabled={sendInvite.loading}
           />
         </form>
+        <p className={style.max_size}>{`* Max size of team is ${teamMaxSize}`}</p>
       </div>
       <div className={style.registerTab_invitations_container}>
         <h2 className={style.registerTab_heading}>TEAM MEMBERS</h2>
@@ -201,7 +203,7 @@ const RegisterTab = ({ eventId }) => {
           <p className={style.registerTab_rule}>
             * By registering you agree to all the terms and conditions of the event
           </p>
-          <p className={style.registerTab_rule}>* Allowed Team size (2-5)</p>
+          <p className={style.registerTab_rule}>{`* Max Team size is ${teamMaxSize}`}</p>
         </div>
 
         {data.user.teamInvitations.length ? (
@@ -216,7 +218,16 @@ const RegisterTab = ({ eventId }) => {
       </div>
     )
   ) : (
-    <span>Please Login and try again</span>
+    <div className={style.must_auth_container}>
+      <p>Please login to continue with the registration process !</p>
+      <Button
+        text="LOGIN"
+        iconPosition="right"
+        Icon={Arrow}
+        className={style.must_auth_button}
+        onClick={() => history.push('/login')}
+      />
+    </div>
   );
 };
 
