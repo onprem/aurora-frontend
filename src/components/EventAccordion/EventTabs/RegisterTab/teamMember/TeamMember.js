@@ -98,21 +98,19 @@ const TeamMember = ({ sr, member, user, teamid }) => {
         {member.id === user.id ? (
           <Button
             iconPosition="right"
-            text={loading ? <Loader /> : `LEAVE`}
+            text={loading ? <Loader fill="#000000" /> : `LEAVE`}
             Icon={loading ? null : Leave}
             className={style.member_button}
             onClick={() => runLeaveTeam({ variables: { teamId: teamid } })}
-            isLoading={loading}
             disabled={loading}
           />
         ) : (
           <Button
             iconPosition="right"
-            text={removeMember.loading ? <Loader /> : `REMOVE`}
+            text={removeMember.loading ? <Loader fill="#000000" /> : `REMOVE`}
             Icon={removeMember.loading ? null : Cross}
             className={style.member_button}
             onClick={() => runRemoveMember({ variables: { teamId: teamid, arId: member.id } })}
-            isLoading={removeMember.loading}
             disabled={removeMember.loading}
           />
         )}

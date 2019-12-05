@@ -19,6 +19,7 @@ import Loader from '../../../Loader/Loader';
 import TeamMember from './teamMember/TeamMember';
 import PendingInvitations from './pendingInvitation/PendingInvitation';
 import { ReactComponent as Register } from '../../../../assets/icons/register.svg';
+import { ReactComponent as Inv } from '../../../../assets/icons/sendInvite.svg';
 
 const RegisterTab = ({ eventId }) => {
   const { authToken } = useAuth();
@@ -83,7 +84,7 @@ const RegisterTab = ({ eventId }) => {
       <p>You have successfully registered for the event!</p>
       <div className={style.registerTab_form_container}>
         {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-        <p>Team ID : {userTeam ? userTeam.id : null}</p>
+        <p className={style.registerTab_form_p}>Team ID : {userTeam ? userTeam.id : null}</p>
         <form className={style.registerTab_form}>
           <input
             type="text"
@@ -103,10 +104,12 @@ const RegisterTab = ({ eventId }) => {
             }
           />
           <Button
-            text="SEND INVITE"
+            text={sendInvite.loading ? <Loader fill="#000000" /> : 'INVITE'}
             iconPosition="right"
+            Icon={sendInvite.loading ? null : Inv}
             className={style.registerTab_invite_button}
             onClick={handleSendInvite}
+            disabled={sendInvite.loading}
           />
         </form>
       </div>
@@ -186,12 +189,11 @@ const RegisterTab = ({ eventId }) => {
     ) : (
       <div className={style.parent_registerTab}>
         <Button
-          text="REGISTER"
+          text={eventRegister.loading ? <Loader fill="#000000" /> : 'REGISTER'}
           iconPosition="right"
-          Icon={Register}
+          Icon={eventRegister.loading ? null : Register}
           onClick={handleRegister}
           className={style.registerTab_button}
-          isLoading={eventRegister.loading}
           disabled={eventRegister.loading}
         />
         <div className={style.registerTab_rules_container}>
