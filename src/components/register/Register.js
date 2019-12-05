@@ -63,7 +63,7 @@ const Register = () => {
   };
   const RenderAfterRegister = data ? (
     <div className={style.renderAfterRegister}>
-      <p>{data.signup.message}</p>
+      <p className={style.after_render_p}>{data.signup.message}</p>
       <Button text="LOGIN" onClick={() => history.push('/login')} iconPosition="right" Icon={Log} />
     </div>
   ) : null;

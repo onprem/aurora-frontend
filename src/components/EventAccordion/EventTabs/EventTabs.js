@@ -102,7 +102,7 @@ const EventTabs = ({ event }) => {
             [styles.active]: activeTab === 2,
           })}
         >
-          <RegisterTab eventId={event.id || 1} />
+          <RegisterTab eventId={event.id} teamMaxSize={event.maxTeamSize} />
         </div>
       </section>
     </div>
