@@ -15,7 +15,7 @@ import logo from '../../assets/icons/auroraLogo.svg';
 import { ReactComponent as Mail } from '../../assets/icons/mail-new.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import useMediaQuery from '../../utils/useMediaQuery';
-import emailValidation from '../../utils/validation';
+import { emailValidation } from '../../utils/validation';
 import getAlert from '../../utils/getAlert';
 
 import CONTACT_US from '../../graphQl/mutations/contactUs';
