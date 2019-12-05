@@ -1,0 +1,78 @@
+.invitation_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.invitation_content {
+  color: white;
+  font-size: 0.9em;
+  width: 15%;
+}
+.invitation_button_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+  align-content: center;
+  align-items: center;
+}
+.invitation_button {
+  background: white;
+  color: black;
+  font-size: 0.8em;
+  height: 2.5em;
+  width: 48%;
+  min-width: 120px;
+}
+.member_button {
+  background: white;
+  color: black;
+  font-size: 0.8em;
+  height: 2.5em;
+  width: 15%;
+  min-width: 10em;
+}
+
+.invitation_button svg {
+  fill: black;
+  stroke: black;
+}
+@media (max-width: 920px) {
+  .invitation_content {
+    width: 20%;
+    text-align: left;
+  }
+  .invitation_container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .invitation_button_container {
+    width: 70%;
+  }
+  .invitation_button {
+    width: 140px;
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 650px) {
+  .invitation_content {
+    min-width: 6.5em;
+  }
+}
+@media (max-width: 400px) {
+  .invitation_button_container {
+    justify-content: center;
+  }
+  .invitation_content {
+    font-size: 0.75em;
+  }
+  .invitation_button {
+    font-size: 0.65em;
+    width: 100px;
+    min-width: 100px;
+  }
+}
