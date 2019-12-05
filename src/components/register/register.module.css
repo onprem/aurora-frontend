@@ -19,6 +19,7 @@
   font-size: 1.1em;
   width: 90%;
   text-align: justify;
+  overflow: hidden;
   /* padding: 10px; */
 }
 .after_render_p {
