@@ -60,7 +60,8 @@ const RegisterTab = ({ eventId }) => {
       });
     },
   });
-  const handleSendInvite = () => {
+  const handleSendInvite = e => {
+    e.preventDefault();
     const toast = getAlert();
     if (inputs.id) {
       if (ARValidation(inputs.id)) {
