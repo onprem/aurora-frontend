@@ -11,6 +11,7 @@
   color: white;
   font-size: 0.9em;
   width: 15%;
+  text-align: left;
 }
 .invitation_button_container {
   display: flex;

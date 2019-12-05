@@ -8,13 +8,13 @@
   align-content: center;
 }
 .registerTab_button {
-  background: white;
-  color: black;
-  width: 30%;
-  border-radius: 7px;
-  font-size: 1.3em;
-  letter-spacing: 0.5em;
-  min-width: 195px;
+  background: white !important;
+  color: black !important;
+  width: 30% !important;
+  border-radius: 7px !important;
+  font-size: 1.3em !important;
+  letter-spacing: 0.5em !important;
+  min-width: 195px !important;
   /* height: 10%; */
 }
 
@@ -63,31 +63,31 @@
   font-size: 0.8em;
   border-radius: 5px;
 }
-.registerTab_send_invite_button {
-  background: white;
-  width: 12vw;
-  height: 2.5em;
-  margin-left: 2vw;
-  color: black;
-  font-size: 0.8em;
+.registerTab_invite_button {
+  background: white !important;
+  width: 12vw !important;
+  height: 2.5em !important;
+  margin-left: 2vw !important;
+  color: black !important;
+  font-size: 0.8em !important;
 }
-.registerTab_send_invite_button svg,
+.registerTab_invite_button svg,
 .registerTab_button svg {
   fill: black;
   stroke: black;
 }
 @media (max-width: 1120px) {
-  .registerTab_send_invite_button {
-    font-size: 0.7em;
+  .registerTab_invite_button {
+    font-size: 0.7em !important;
   }
   .registerTab_button {
-    font-size: 1.1em;
-    letter-spacing: 0.4em;
+    font-size: 1.1em !important;
+    letter-spacing: 0.4em !important;
   }
 }
 @media (max-width: 920px) {
-  .registerTab_send_invite_button {
-    width: 14em;
+  .registerTab_invite_button {
+    width: 14em !important;
   }
   .registerTab_input {
     width: 14em;
@@ -99,24 +99,24 @@
     margin-top: 10%;
   }
   .registerTab_button {
-    font-size: 0.9em;
-    letter-spacing: 0.3em;
+    font-size: 0.9em !important;
+    letter-spacing: 0.3em !important;
   }
 }
 @media (max-width: 400px) {
   .registerTab_heading {
     font-size: 0.8em;
   }
-  .registerTab_send_invite_button {
-    font-size: 0.6em;
-    height: 3.5em;
+  .registerTab_invite_button {
+    font-size: 0.6em !important;
+    height: 3.5em !important;
   }
   .registerTab_input {
     width: 11em;
     height: 2em;
   }
   .registerTab_button {
-    font-size: 0.8em;
-    letter-spacing: 0.1em;
+    font-size: 0.8em !important;
+    letter-spacing: 0.1em !important;
   }
 }

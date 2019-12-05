@@ -20,12 +20,12 @@ import TeamMember from './teamMember/TeamMember';
 import PendingInvitations from './pendingInvitation/PendingInvitation.js';
 import { ReactComponent as Register } from '../../../../assets/icons/register.svg';
 
-const RegisterTab = ({ eventName, eventId }) => {
+const RegisterTab = ({ eventId }) => {
   const { authToken } = useAuth();
   const { data, loading, error } = useQuery(USER_QUERY);
   const history = useHistory();
   const [inputs, changeInputs] = useState({ id: '' });
-  const userTeam = data ? data.user.teams.filter(team => team.event.id === 1)[0] : null;
+  const userTeam = data ? data.user.teams.filter(team => team.event.id === eventId)[0] : null;
   const handleInput = e => {
     changeInputs({ id: e.target.value });
   };
@@ -67,7 +67,7 @@ const RegisterTab = ({ eventName, eventId }) => {
           <Button
             text="SEND INVITE"
             iconPosition="right"
-            className={style.registerTab_send_invite_button}
+            className={style.registerTab_invite_button}
             onClick={handleSendInvite}
           />
         </form>
@@ -98,7 +98,7 @@ const RegisterTab = ({ eventName, eventId }) => {
   console.log(userTeam);
   const handleRegister = e => {
     e.preventDefault();
-    runEventRegister({ variables: { eventId: 1 } });
+    runEventRegister({ variables: { eventId } });
   };
   useEffect(() => {
     if (eventRegister.error && eventRegister.error.graphQLErrors.length > 0) {
@@ -161,13 +161,15 @@ const RegisterTab = ({ eventName, eventId }) => {
           <p className={style.registerTab_rule}>* Allowed Team size (2-5)</p>
         </div>
 
-        <div className={style.registerTab_invitations_container}>
-          <h2 className={style.registerTab_heading}>INVITATIONS</h2>
-          <hr className={style.registerTab_hr} />
-          {data.user.teamInvitations.map((invite, index) => (
-            <Invitation sr={index + 1} invite={invite} />
-          ))}
-        </div>
+        {data.user.teamInvitations.length ? (
+          <div className={style.registerTab_invitations_container}>
+            <h2 className={style.registerTab_heading}>INVITATIONS</h2>
+            <hr className={style.registerTab_hr} />
+            {data.user.teamInvitations.map((invite, index) => (
+              <Invitation sr={index + 1} invite={invite} />
+            ))}
+          </div>
+        ) : null}
       </div>
     )
   ) : (
