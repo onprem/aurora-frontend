@@ -20,7 +20,9 @@ const PaidEvents = ({ teams, isDesktop }) => {
         <tr key={team.id}>
           <td>{index + 1}</td>
           <td>
-            <Link to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard' } }}>
+            <Link
+              to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', index: 2 } }}
+            >
               {team.event.name}
             </Link>
           </td>
@@ -33,7 +35,9 @@ const PaidEvents = ({ teams, isDesktop }) => {
       <tr key={team.id}>
         <td>{index + 1}</td>
         <td>
-          <Link to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard' } }}>
+          <Link
+            to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', index: 2 } }}
+          >
             {team.event.name}
           </Link>
         </td>
@@ -84,7 +88,9 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
         <tr key={team.id}>
           <td>{index + 1}</td>
           <td>
-            <Link to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard' } }}>
+            <Link
+              to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', index: 2 } }}
+            >
               {team.event.name}
             </Link>
           </td>
@@ -101,7 +107,9 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
       <tr key={team.id}>
         <td>{index + 1}</td>
         <td>
-          <Link to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard' } }}>
+          <Link
+            to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', index: 2 } }}
+          >
             {team.event.name}
           </Link>
         </td>

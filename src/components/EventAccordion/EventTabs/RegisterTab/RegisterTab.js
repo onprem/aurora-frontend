@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useAuth } from '../../../../context/auth';
 
@@ -23,11 +23,15 @@ import { ReactComponent as Inv } from '../../../../assets/icons/sendInvite.svg';
 import { ReactComponent as Arrow } from '../../../../assets/icons/arrowLeft.svg';
 
 const RegisterTab = ({ eventId, teamMaxSize }) => {
+  const location = useLocation();
   const { authToken } = useAuth();
-  const { data, loading, error } = useQuery(USER_QUERY);
+  const { data, loading } = useQuery(USER_QUERY);
   const history = useHistory();
   const [inputs, changeInputs] = useState({ id: '' });
   const userTeam = data ? data.user.teams.filter(team => team.event.id === eventId)[0] : null;
+  const userInvitations = data
+    ? data.user.teamInvitations.filter(invitation => invitation.team.event.id === eventId)
+    : null;
   const handleInput = e => {
     changeInputs({ id: e.target.value });
   };
@@ -87,33 +91,35 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
       <div className={style.registerTab_form_container}>
         {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
         <p className={style.registerTab_form_p}>Team ID : {userTeam ? userTeam.id : null}</p>
-        <form className={style.registerTab_form}>
-          <input
-            type="text"
-            placeholder="Enter AR-ID"
-            name="id"
-            value={inputs.id}
-            onChange={handleInput}
-            required
-            className={
-              inputs.id
-                ? ARValidation(inputs.id)
-                  ? style.registerTab_input
-                  : `${style.registerTab_input} ${style.registerTab_input_invalid}`
-                : inputs.id === undefined
-                ? `${style.registerTab_input} ${style.registerTab_input_invalid}`
-                : style.registerTab_input
-            }
-          />
-          <Button
-            text={sendInvite.loading ? <Loader fill="#000000" /> : 'INVITE'}
-            iconPosition="right"
-            Icon={sendInvite.loading ? null : Inv}
-            className={style.registerTab_invite_button}
-            onClick={handleSendInvite}
-            disabled={sendInvite.loading}
-          />
-        </form>
+        {userTeam && userTeam.members.length + userTeam.pendingInvitations.length < teamMaxSize && (
+          <form className={style.registerTab_form}>
+            <input
+              type="text"
+              placeholder="Enter AR-ID"
+              name="id"
+              value={inputs.id}
+              onChange={handleInput}
+              required
+              className={
+                inputs.id
+                  ? ARValidation(inputs.id)
+                    ? style.registerTab_input
+                    : `${style.registerTab_input} ${style.registerTab_input_invalid}`
+                  : inputs.id === undefined
+                  ? `${style.registerTab_input} ${style.registerTab_input_invalid}`
+                  : style.registerTab_input
+              }
+            />
+            <Button
+              text={sendInvite.loading ? <Loader fill="#000000" /> : 'INVITE'}
+              iconPosition="right"
+              Icon={sendInvite.loading ? null : Inv}
+              className={style.registerTab_invite_button}
+              onClick={handleSendInvite}
+              disabled={sendInvite.loading}
+            />
+          </form>
+        )}
         <p className={style.max_size}>{`* Max size of team is ${teamMaxSize}`}</p>
       </div>
       <div className={style.registerTab_invitations_container}>
@@ -160,14 +166,7 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
         title: sendInvite.error.graphQLErrors[0].message,
       });
     }
-    if (error && error.graphQLErrors.length > 0) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'error',
-        title: error.graphQLErrors[0].message,
-      });
-    }
-  }, [eventRegister.error, error, history, sendInvite.error]);
+  }, [eventRegister.error, sendInvite.error]);
   useEffect(() => {
     if (eventRegister.data) {
       const toast = getAlert();
@@ -206,11 +205,11 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
           <p className={style.registerTab_rule}>{`* Max Team size is ${teamMaxSize}`}</p>
         </div>
 
-        {data.user.teamInvitations.length ? (
+        {userInvitations.length ? (
           <div className={style.registerTab_invitations_container}>
             <h2 className={style.registerTab_heading}>INVITATIONS</h2>
             <hr className={style.registerTab_hr} />
-            {data.user.teamInvitations.map((invite, index) => (
+            {userInvitations.map((invite, index) => (
               <Invitation sr={index + 1} invite={invite} />
             ))}
           </div>
@@ -225,7 +224,11 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
         iconPosition="right"
         Icon={Arrow}
         className={style.must_auth_button}
-        onClick={() => history.push('/login')}
+        onClick={
+          () =>
+            history.push({ pathname: '/login', state: { referer: location.pathname, index: 2 } })
+          // eslint-disable-next-line react/jsx-curly-newline
+        }
       />
     </div>
   );

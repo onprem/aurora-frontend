@@ -1,4 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
+
+import { useLocation } from 'react-router-dom';
+
 import classNames from 'classnames';
 
 import RegisterTab from './RegisterTab/RegisterTab';
@@ -6,6 +9,7 @@ import RegisterTab from './RegisterTab/RegisterTab';
 import styles from './EventTabs.module.css';
 
 const EventTabs = ({ event }) => {
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState(0);
   const rules = useMemo(() => {
     const getRules = tempRules => {
@@ -47,6 +51,11 @@ const EventTabs = ({ event }) => {
       window.removeEventListener('keydown', handleKey);
     };
   }, [activeTab]);
+  useEffect(() => {
+    if (location.state && location.state.index) {
+      if (location.state.index > 0 && location.state.index < 3) setActiveTab(location.state.index);
+    }
+  }, [location]);
 
   return (
     <div className={styles.tabContainer}>
