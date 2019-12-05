@@ -11,7 +11,6 @@ import SEND_INVITE from '../../../../graphQl/mutations/sendInvite';
 
 import style from './registerTab.module.css';
 
-// import Button from '../../../Button/Button';
 import Button from '../../../Button/Button';
 import getAlert from '../../../../utils/getAlert';
 import Invitation from './invitation/Invitation';

@@ -7,11 +7,7 @@ import style from './particles.module.css';
 import config from '../../assets/configs/particlesjs-config.json';
 
 const Particle = ({ minHeight }) => {
-  return <Particles params={config} className={style.canvas_wrapper} style={{ minHeight }} />;
-};
-
-Particle.defaultProps = {
-  minHeight: '100vh',
+  return <Particles params={config} className={style.canvas_wrapper} />;
 };
 
 export default Particle;
