@@ -17,13 +17,14 @@ const EventWrapper = ({ children }) => {
   const history = useHistory();
   const location = useLocation();
   const index = location.state && location.state.index ? location.state.index : 0;
+  const referer = location.state && location.state.referer ? location.state.referer : '/events';
 
   return (
     <>
       <div className={styles.eventDetail}>
         <ArrowLeftIcon
           className={styles.backArrow}
-          onClick={() => history.push({ pathname: '/events', state: { index } })}
+          onClick={() => history.push({ pathname: referer, state: { index } })}
         />
         <div className={styles.accordionContainer}>{children}</div>
       </div>

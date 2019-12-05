@@ -16,6 +16,8 @@ export default gql`
           id
           name
           fee
+          parentEvent
+          maxSize
         }
         paymentStatus
         pendingInvitations {

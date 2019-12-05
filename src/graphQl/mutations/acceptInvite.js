@@ -12,6 +12,8 @@ export default gql`
           id
           name
           fee
+          parentEvent
+          maxSize
         }
         members {
           name

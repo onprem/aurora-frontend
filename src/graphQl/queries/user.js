@@ -7,6 +7,10 @@ export default gql`
       name
       email
       phone
+      gender
+      city
+      displayPic
+      college
       teams {
         id
         members {
@@ -17,6 +21,8 @@ export default gql`
           id
           name
           fee
+          parentEvent
+          maxSize
         }
         paymentStatus
         pendingInvitations {
@@ -32,6 +38,7 @@ export default gql`
         team {
           id
           event {
+            id
             name
           }
         }

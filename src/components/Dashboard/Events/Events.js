@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
+import eventData from '../../../assets/data/eventData/eventData';
 import Button from '../../Button/Button';
 import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
 import useMediaQuery from '../../../utils/useMediaQuery';
@@ -10,12 +11,20 @@ import styles from './Events.module.css';
 
 const PaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
+    const parentEvt = team.event.parentEvent;
+    const parentEvtName = parentEvt
+      ? eventData[parentEvt.replace(/-/gi, '_')].name
+      : team.event.name;
     if (isDesktop) {
       return (
         <tr key={team.id}>
           <td>{index + 1}</td>
-          <td>{team.event.name}</td>
-          <td>{team.event.id}</td>
+          <td>
+            <Link to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard' } }}>
+              {team.event.name}
+            </Link>
+          </td>
+          <td>{parentEvtName}</td>
           <td>{team.id}</td>
         </tr>
       );
@@ -23,7 +32,11 @@ const PaidEvents = ({ teams, isDesktop }) => {
     return (
       <tr key={team.id}>
         <td>{index + 1}</td>
-        <td>{team.event.name}</td>
+        <td>
+          <Link to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard' } }}>
+            {team.event.name}
+          </Link>
+        </td>
         <td>{team.id}</td>
       </tr>
     );
@@ -62,12 +75,20 @@ const PaidEvents = ({ teams, isDesktop }) => {
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
+    const parentEvt = team.event.parentEvent;
+    const parentEvtName = parentEvt
+      ? eventData[parentEvt.replace(/-/gi, '_')].name
+      : team.event.name;
     if (isDesktop) {
       return (
         <tr key={team.id}>
           <td>{index + 1}</td>
-          <td>{team.event.name}</td>
-          <td>{team.event.id}</td>
+          <td>
+            <Link to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard' } }}>
+              {team.event.name}
+            </Link>
+          </td>
+          <td>{parentEvtName}</td>
           <td>{team.id}</td>
           <td>
             &#8377;
@@ -79,7 +100,11 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
     return (
       <tr key={team.id}>
         <td>{index + 1}</td>
-        <td>{team.event.name}</td>
+        <td>
+          <Link to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard' } }}>
+            {team.event.name}
+          </Link>
+        </td>
         <td>
           &#8377;
           {team.event.fee}
