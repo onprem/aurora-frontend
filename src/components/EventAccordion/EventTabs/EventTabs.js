@@ -1,11 +1,16 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+
+import { useLocation } from 'react-router-dom';
+
 import classNames from 'classnames';
+
+import RegisterTab from './RegisterTab/RegisterTab';
 
 import styles from './EventTabs.module.css';
 
 const EventTabs = ({ event }) => {
-  const [activeTab, setActiveTab] = useState('about');
-
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState(0);
   const rules = useMemo(() => {
     const getRules = tempRules => {
       let partRules = [];
@@ -30,33 +35,55 @@ const EventTabs = ({ event }) => {
     <li key={organiser.name}>{organiser.name}</li>
   ));
 
+  useEffect(() => {
+    const handleLeft = () => {
+      if (activeTab === 0) setActiveTab(2);
+      else setActiveTab(activeTab - 1);
+    };
+
+    const handleKey = e => {
+      if (e.keyCode === 37) handleLeft();
+      else if (e.keyCode === 39) setActiveTab((activeTab + 1) % 3);
+    };
+
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+    };
+  }, [activeTab]);
+  useEffect(() => {
+    if (location.state && location.state.index) {
+      if (location.state.index > 0 && location.state.index < 3) setActiveTab(location.state.index);
+    }
+  }, [location]);
+
   return (
     <div className={styles.tabContainer}>
       <section className={styles.tabHeads}>
         <button
           type="button"
-          className={classNames(styles.tabBtn, { [styles.active]: activeTab === 'about' })}
-          onClick={() => setActiveTab('about')}
+          className={classNames(styles.tabBtn, { [styles.active]: activeTab === 0 })}
+          onClick={() => setActiveTab(0)}
         >
           ABOUT
         </button>
         <button
           type="button"
-          className={classNames(styles.tabBtn, { [styles.active]: activeTab === 'rules' })}
-          onClick={() => setActiveTab('rules')}
+          className={classNames(styles.tabBtn, { [styles.active]: activeTab === 1 })}
+          onClick={() => setActiveTab(1)}
         >
           RULES
         </button>
         <button
           type="button"
-          className={classNames(styles.tabBtn, { [styles.active]: activeTab === 'register' })}
-          onClick={() => setActiveTab('register')}
+          className={classNames(styles.tabBtn, { [styles.active]: activeTab === 2 })}
+          onClick={() => setActiveTab(2)}
         >
           REGISTER
         </button>
       </section>
       <section className={styles.tabBodys}>
-        <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 'about' })}>
+        <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 0 })}>
           <div className={styles.descriptionTab}>
             <h3>Description</h3>
             <p>{event.description}</p>
@@ -76,15 +103,15 @@ const EventTabs = ({ event }) => {
             </div>
           </div>
         </div>
-        <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 'rules' })}>
+        <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 1 })}>
           {rules}
         </div>
         <div
           className={classNames(styles.tabContent, styles.registerTab, {
-            [styles.active]: activeTab === 'register',
+            [styles.active]: activeTab === 2,
           })}
         >
-          <h2>Registration will open soon.</h2>
+          <RegisterTab eventId={event.id} teamMaxSize={event.maxTeamSize} />
         </div>
       </section>
     </div>

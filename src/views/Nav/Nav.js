@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import Social from '../../components/Social/Social';
 import useMediaQuery from '../../utils/useMediaQuery';
+import { useAuth } from '../../context/auth';
 
 import styles from './Nav.module.css';
 
@@ -10,11 +11,13 @@ const Nav = () => {
   const [isNavOpen, setNavOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 450px)');
   const isLogRegMobile = useMediaQuery('(max-width: 800px)');
+  const { authToken } = useAuth();
+  const location = useLocation();
 
   const toggleNav = () => {
     setNavOpen(!isNavOpen);
   };
-  const pages = [
+  const allPages = [
     {
       title: 'Home',
       path: '/',
@@ -39,6 +42,14 @@ const Nav = () => {
       title: 'Login/Register',
       path: '/login',
     },
+    {
+      title: 'Dashboard',
+      path: '/dashboard',
+    },
+    {
+      title: 'LogOut',
+      path: '/logout',
+    },
     // {
     //   title: 'Team',
     //   path: '/team',
@@ -53,6 +64,10 @@ const Nav = () => {
     },
   ];
 
+  const pages = authToken
+    ? allPages.filter(page => page.path !== '/login' && page.path !== '/register')
+    : allPages.filter(page => page.path !== '/dashboard' && page.path !== '/logout');
+
   const navList = pages.map(page => (
     <li className={styles.nav_li} key={page.path}>
       <NavLink to={page.path} onClick={toggleNav}>
@@ -66,7 +81,7 @@ const Nav = () => {
       <button
         className={
           // eslint-disable-next-line no-nested-ternary
-          window.location.pathname === '/login' || window.location.pathname === '/register'
+          location.pathname === '/login' || location.pathname === '/register'
             ? isLogRegMobile
               ? classNames(styles.burger, { [styles.open]: isNavOpen })
               : classNames(styles.burger, { [styles.open]: isNavOpen }, styles.burger_white)

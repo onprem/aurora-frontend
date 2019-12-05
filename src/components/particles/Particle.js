@@ -9,4 +9,5 @@ import config from '../../assets/configs/particlesjs-config.json';
 const Particle = () => {
   return <Particles params={config} className={style.canvas_wrapper} />;
 };
+
 export default Particle;

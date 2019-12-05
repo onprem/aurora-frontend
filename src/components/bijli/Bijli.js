@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import useMediaQuery from '../../utils/useMediaQuery';
 import BijliIcon from '../../assets/icons/thunder';
@@ -14,6 +14,7 @@ import bijliData from '../../assets/data/eventData/cardData';
 
 const Bijli = ({ activate, onPage }) => {
   const [isBijliOpen, setBijliOpen] = useState(false);
+  const location = useLocation();
 
   const isMobile = useMediaQuery('(max-width: 500px)');
 
@@ -40,7 +41,7 @@ const Bijli = ({ activate, onPage }) => {
   } else {
     BijliList = bijliData.map(bijli => (
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-      <Link to={bijli.path}>
+      <Link to={{ pathname: bijli.path, state: location.state }}>
         <li className={style.bijli_li} key={bijli.title}>
           {bijli.title}
         </li>

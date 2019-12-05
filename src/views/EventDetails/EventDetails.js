@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
 
 import eventData from '../../assets/data/eventData/eventData';
 import EventAccordion from '../../components/EventAccordion/EventAccordion';
@@ -15,11 +15,17 @@ import styles from './EventDetails.module.css';
 const EventWrapper = ({ children }) => {
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const history = useHistory();
+  const location = useLocation();
+  const index = location.state && location.state.index ? location.state.index : 0;
+  const referer = location.state && location.state.referer ? location.state.referer : '/events';
 
   return (
     <>
       <div className={styles.eventDetail}>
-        <ArrowLeftIcon className={styles.backArrow} onClick={() => history.push('/events')} />
+        <ArrowLeftIcon
+          className={styles.backArrow}
+          onClick={() => history.push({ pathname: referer, state: { index } })}
+        />
         <div className={styles.accordionContainer}>{children}</div>
       </div>
       <Particles />
@@ -39,8 +45,7 @@ const EventDetails = () => {
     if (!event.singleEvent && subEventId) {
       const toOpen = Number(subEventId) - 1;
       if (toOpen < event.subEvents.length && toOpen > 0) setOpenEvent(toOpen);
-    }
-    setOpenEvent(0);
+    } else setOpenEvent(0);
   }, [subEventId, event]);
 
   if (event.singleEvent) {
@@ -57,9 +62,9 @@ const EventDetails = () => {
     return (
       <EventAccordion
         event={{
-          ...subEvent,
           eventHeads: event.eventHeads,
           eventOrganisers: event.eventOrganisers,
+          ...subEvent,
         }}
         isOpen={index === openEvent}
         onClick={() => setOpenEvent(index)}

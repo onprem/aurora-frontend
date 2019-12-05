@@ -6,7 +6,7 @@ import useMediaQuery from '../../utils/useMediaQuery';
 
 import style from './card.module.css';
 
-const Card = ({ params }) => {
+const Card = ({ params, index }) => {
   return (
     <>
       <div
@@ -22,7 +22,11 @@ const Card = ({ params }) => {
           <p className={style.card_para}>
             {useMediaQuery('(max-width: 1100px)') ? params.minDesc : params.desc}
           </p>
-          <Link to={params.path} className={style.card_button} style={{ color: `${params.color}` }}>
+          <Link
+            to={{ pathname: params.path, state: { index } }}
+            className={style.card_button}
+            style={{ color: `${params.color}` }}
+          >
             Know More &gt;
           </Link>
         </div>

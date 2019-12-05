@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import Bijli from '../bijli/Bijli';
 
@@ -8,9 +11,16 @@ import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg';
 import style from './carousel.module.css';
 
 const Carousel = ({ children }) => {
+  const location = useLocation();
+
   const [active, setActive] = useState(1);
   let xDown = null;
   let yDown = null;
+
+  useEffect(() => {
+    const initialIndex = location.state && location.state.index ? location.state.index + 1 : 1;
+    setActive(initialIndex);
+  }, [location]);
 
   const handleLeftClick = () => {
     if (active - 1 === 0) setActive(children.length);
@@ -89,9 +99,21 @@ const Carousel = ({ children }) => {
     <div className={style.carousel_parent_container}>
       <div className={style.carousel_container} id="carouselTouch">
         <div className={style.carousel_card_container}>
-          {children.map((Card, index) => (
-            <div className={classNameResolver(index + 1)}>{Card}</div>
-          ))}
+          {children.map((Card, index) => {
+            if (index + 1 === active + 1)
+              return (
+                <div onClick={handleRightClick} className={classNameResolver(index + 1)}>
+                  {Card}
+                </div>
+              );
+            if (index + 1 === active - 1)
+              return (
+                <div onClick={handleLeftClick} className={classNameResolver(index + 1)}>
+                  {Card}
+                </div>
+              );
+            return <div className={classNameResolver(index + 1)}>{Card}</div>;
+          })}
         </div>
       </div>
       <div className={style.slider_container}>

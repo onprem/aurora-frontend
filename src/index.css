@@ -24,6 +24,12 @@ a {
 button::-moz-focus-inner {
   border: 0;
 }
+.swal2-popup.swal2-toast {
+  background: #19191a !important;
+}
+.swal2-timer-progress-bar {
+  background: rgba(255,255,255,0.4) !important;
+}
 
 @media only screen and (max-width: 1600px) and (min-width: 1300px) {
   body {

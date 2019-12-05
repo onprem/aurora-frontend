@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/react-hooks';
+import { useHistory } from 'react-router-dom';
 
 import RegisterStep1 from './RegisterStep1';
 import RegisterStep2 from './RegisterStep2';
@@ -12,8 +13,12 @@ import getAlert from '../../utils/getAlert';
 import style from './register.module.css';
 
 import REGISTER from '../../graphQl/mutations/register';
+import Button from '../Button/Button';
+import { ReactComponent as Log } from '../../assets/icons/arrow.svg';
 
 const Register = () => {
+  const history = useHistory();
+  const is800 = useMediaQuery(`(max-width:800px)`);
   const isMobile = useMediaQuery(`(max-width:450px)`);
   const [inputs, changeInputs] = useState({
     name: '',
@@ -56,12 +61,18 @@ const Register = () => {
       });
     }
   };
+  const RenderAfterRegister = data ? (
+    <div className={style.renderAfterRegister}>
+      <p className={style.after_render_p}>{data.signup.message}</p>
+      <Button text="LOGIN" onClick={() => history.push('/login')} iconPosition="right" Icon={Log} />
+    </div>
+  ) : null;
   useEffect(() => {
     if (data) {
       const toast = getAlert();
       toast.fire({
         icon: 'success',
-        title: data.contactUs.message,
+        title: 'Registered Successfully',
       });
       changeInputs({ email: '', password: '' });
     }
@@ -93,7 +104,9 @@ const Register = () => {
     };
   }, [dimensions]);
   const [step, changeStep] = useState('1');
-  return (
+  return data ? (
+    RenderAfterRegister
+  ) : (
     <div className={style.register_parent}>
       <h1 className={style.register_heading}>REGISTER</h1>
 
@@ -107,7 +120,7 @@ const Register = () => {
           <path
             transform={
               // eslint-disable-next-line no-nested-ternary
-              useMediaQuery(`(max-width:800px)`)
+              is800
                 ? isMobile
                   ? `scale(${(1 * window.innerWidth) / 1920})`
                   : `scale(${(0.7 * window.innerWidth) / 1920})`
@@ -128,7 +141,7 @@ const Register = () => {
             }
             style={{
               // eslint-disable-next-line no-nested-ternary
-              width: useMediaQuery(`(max-width:800px)`)
+              width: is800
                 ? isMobile
                   ? `${(window.innerWidth * 125) / 1920}px`
                   : `${(window.innerWidth * 87) / 1920}px`

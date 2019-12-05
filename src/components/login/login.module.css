@@ -33,7 +33,7 @@
   outline: none;
 }
 .login_button {
-  width: 50%;
+  width: 43%;
   background: black;
   color: white;
   cursor: pointer;
@@ -43,13 +43,14 @@
   font-size: 1em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-content: center;
   align-items: center;
 }
 .arrow {
   transform: rotateZ(180deg);
   width: 1vw;
+  margin-left: 20px;
 }
 .arrow_back {
   height: 1vw;
