@@ -81,7 +81,9 @@ const Nav = () => {
       <button
         className={
           // eslint-disable-next-line no-nested-ternary
-          location.pathname === '/login' || location.pathname === '/register'
+          location.pathname === '/login' ||
+          location.pathname === '/register' ||
+          location.pathname === '/forgotPassword'
             ? isLogRegMobile
               ? classNames(styles.burger, { [styles.open]: isNavOpen })
               : classNames(styles.burger, { [styles.open]: isNavOpen }, styles.burger_white)
