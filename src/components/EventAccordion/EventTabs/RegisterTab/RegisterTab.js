@@ -110,14 +110,21 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
                   : style.registerTab_input
               }
             />
-            <Button
-              text={sendInvite.loading ? <Loader fill="#000000" /> : 'INVITE'}
-              iconPosition="right"
-              Icon={sendInvite.loading ? null : Inv}
-              className={style.registerTab_invite_button}
+            <button
+              type="submit"
               onClick={handleSendInvite}
+              className={style.registerTab_invite_button}
               disabled={sendInvite.loading}
-            />
+            >
+              {sendInvite.loading ? (
+                <Loader />
+              ) : (
+                <>
+                  Send Invite
+                  <Inv className={style.inv} />
+                </>
+              )}
+            </button>
           </form>
         )}
         <p className={style.max_size}>{`* Max size of team is ${teamMaxSize}`}</p>
@@ -190,14 +197,21 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
       <div className={style.parent_registerTab}>{RenderAfterRegister}</div>
     ) : (
       <div className={style.parent_registerTab}>
-        <Button
-          text={eventRegister.loading ? <Loader fill="#000000" /> : 'REGISTER'}
-          iconPosition="right"
-          Icon={eventRegister.loading ? null : Register}
+        <button
+          type="submit"
           onClick={handleRegister}
           className={style.registerTab_button}
           disabled={eventRegister.loading}
-        />
+        >
+          {eventRegister.loading ? (
+            <Loader />
+          ) : (
+            <>
+              Register
+              <Register className={style.inv} />
+            </>
+          )}
+        </button>
         <div className={style.registerTab_rules_container}>
           <p className={style.registerTab_rule}>
             * By registering you agree to all the terms and conditions of the event
