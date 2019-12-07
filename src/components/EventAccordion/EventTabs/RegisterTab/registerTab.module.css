@@ -8,15 +8,24 @@
   align-content: center;
 }
 .registerTab_button {
-  background: white !important;
-  color: black !important;
-  width: 30% !important;
-  border-radius: 7px !important;
-  font-size: 1.3em !important;
-  letter-spacing: 0.5em !important;
-  min-width: 195px !important;
-  overflow: hidden !important;
-  height: 2.5em !important;
+  background: white;
+  color: black;
+  width: 30%;
+  border-radius: 7px;
+  font-size: 1.3em;
+  letter-spacing: 0.5em;
+  min-width: 195px;
+  overflow: hidden;
+  height: 2.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  appearance: none;
+  cursor: pointer;
+  border: none;
   /* height: 10%; */
 }
 
@@ -71,13 +80,28 @@
   border: 2px solid black;
 }
 .registerTab_invite_button {
-  background: white !important;
-  width: 16vw !important;
-  height: 2.5em !important;
-  margin-left: 2vw !important;
-  color: black !important;
-  font-size: 0.8em !important;
-  overflow: hidden !important;
+  background: white;
+  width: 16vw;
+  height: 2.5em;
+  margin-left: 2vw;
+  color: black;
+  font-size: 0.8em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 2.5em;
+  text-transform: uppercase;
+  appearance: none;
+  cursor: pointer;
+  border: none;
+}
+.inv {
+  margin-left: 15px;
+  height: 1.8em;
+  width: auto;
 }
 .registerTab_invite_button svg,
 .registerTab_button svg {
