@@ -120,7 +120,7 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
                 <Loader />
               ) : (
                 <>
-                  Invite
+                  Send Invite
                   <Inv className={style.inv} />
                 </>
               )}
