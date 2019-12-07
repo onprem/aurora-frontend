@@ -179,21 +179,3 @@
     height: 3em;
   }
 }
-@media (max-width: 400px) {
-  .registerTab_heading {
-    font-size: 0.8em;
-  }
-  .registerTab_invite_button {
-    font-size: 0.6em !important;
-    width: 18em !important;
-    height: 3.5em !important;
-  }
-  .registerTab_input {
-    width: 9em;
-    height: 2em;
-  }
-  .registerTab_button {
-    font-size: 0.8em !important;
-    letter-spacing: 0.1em !important;
-  }
-}
