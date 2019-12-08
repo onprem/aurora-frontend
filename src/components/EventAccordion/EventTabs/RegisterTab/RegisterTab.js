@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 
@@ -24,6 +25,7 @@ import { ReactComponent as Inv } from '../../../../assets/icons/sendInvite.svg';
 import { ReactComponent as Arrow } from '../../../../assets/icons/arrowLeft.svg';
 import { ReactComponent as Tick } from '../../../../assets/icons/tick.svg';
 import { ReactComponent as Edit } from '../../../../assets/icons/edit.svg';
+import { ReactComponent as Cross } from '../../../../assets/icons/cut.svg';
 
 const RegisterTab = ({ eventId, teamMaxSize }) => {
   const location = useLocation();
@@ -87,7 +89,9 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
       });
     }
   };
-  const [teamName, changeTeamName] = useState({ name: userTeam ? userTeam.name : '' });
+  const [teamName, changeTeamName] = useState({
+    name: userTeam && userTeam.name ? userTeam.name : '',
+  });
   const [isEditingTeamName, changeIsEditingTeamName] = useState(false);
   const [runteamNameChange, teamNameChange] = useMutation(CHANGE_TEAM_NAME, {
     update: (cacheStore, { data: newData }) => {
@@ -107,13 +111,13 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
   });
   const handleTeamNameInput = e => {
     changeTeamName({ name: e.target.value });
-    changeIsEditingTeamName(!isEditingTeamName);
   };
   const handleTeamNameSubmit = e => {
     e.preventDefault();
     if (isEditingTeamName) {
       if (teamName.name) {
-        runteamNameChange({ variables: { teamId: userTeam.id, name: teamName } });
+        runteamNameChange({ variables: { teamId: userTeam.id, name: teamName.name } });
+        changeIsEditingTeamName(!isEditingTeamName);
       } else {
         const toast = getAlert();
         toast.fire({
@@ -123,6 +127,9 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
       }
     } else {
       changeIsEditingTeamName(!isEditingTeamName);
+      setTimeout(() => {
+        document.getElementById('team_input').focus();
+      }, 1);
     }
   };
   const RenderAfterRegister = (
@@ -169,20 +176,31 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
         )}
         {userTeam && userTeam.event.isNameRequired && (
           <form className={style.registerTab_teamName_form}>
-            <p className={style.registerTab_form_p}>Team Name: </p>
+            <p className={(style.registerTab_form_p, style.registerTab_form_p_team)}>Team Name: </p>
             {!isEditingTeamName ? (
-              <p className={style.registerTab_form_p}>
-                {userTeam ? userTeam.name : 'Please set your team name'}
+              <p className={(style.registerTab_form_p, style.userTeam_name)}>
+                {userTeam.name ? userTeam.name : 'Please set your team name'}
               </p>
             ) : (
               <input
                 type="text"
                 placeholder={userTeam ? userTeam.name : ''}
                 name="name"
+                id="team_input"
                 value={teamName.name}
                 onChange={handleTeamNameInput}
-                className={style.RegisterTab_teamName_input}
+                className={style.registerTab_teamName_input}
               />
+            )}
+            {isEditingTeamName && (
+              <button
+                type="button"
+                onClick={() => changeIsEditingTeamName(!isEditingTeamName)}
+                className={style.registerTab_teamChange_button}
+                disabled={teamNameChange.loading}
+              >
+                <Cross fill="red" />
+              </button>
             )}
             <button
               type="submit"
@@ -192,10 +210,10 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
             >
               {teamNameChange.loading ? (
                 <Loader />
-              ) : isEditingTeamName ? (
-                <Edit className={style.edit} />
+              ) : !isEditingTeamName ? (
+                <Edit className={style.edit} fill="white" />
               ) : (
-                <Tick className={style.tick} />
+                <Tick className={style.tick} fill="green" />
               )}
             </button>
           </form>
@@ -208,7 +226,13 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
         {userTeam
           ? userTeam.members.map((member, index) => (
               // eslint-disable-next-line react/jsx-indent
-              <TeamMember sr={index + 1} member={member} teamid={userTeam.id} user={data.user} />
+              <TeamMember
+                key={index}
+                sr={index + 1}
+                member={member}
+                teamid={userTeam.id}
+                user={data.user}
+              />
             ))
           : null}
       </div>
@@ -219,7 +243,12 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
           {userTeam
             ? userTeam.pendingInvitations.map((invites, index) => (
                 // eslint-disable-next-line react/jsx-indent
-                <PendingInvitations sr={index + 1} invites={invites} teamid={userTeam.id} />
+                <PendingInvitations
+                  key={index}
+                  sr={index + 1}
+                  invites={invites}
+                  teamid={userTeam.id}
+                />
               ))
             : null}
         </div>
@@ -311,7 +340,7 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
             <h2 className={style.registerTab_heading}>INVITATIONS</h2>
             <hr className={style.registerTab_hr} />
             {userInvitations.map((invite, index) => (
-              <Invitation sr={index + 1} invite={invite} />
+              <Invitation key={index} sr={index + 1} invite={invite} />
             ))}
           </div>
         ) : null}

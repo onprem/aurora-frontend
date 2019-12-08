@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export default gql`
   mutation SetTeamName($teamId: String!, $name: String!) {
-    setTeamName(teamId: $teamId, arId: $name) {
+    setTeamName(teamId: $teamId, name: $name) {
       code
       message
       success
