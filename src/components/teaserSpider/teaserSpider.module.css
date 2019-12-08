@@ -50,7 +50,7 @@
 .cuatro {
   background: rgba(0, 0, 0, 0.5);
   position: relative;
-  width: 2vw;
+  width: 1.5vw;
   height: 3px;
 }
 
@@ -58,8 +58,8 @@
 .dos > .dos,
 .tres > .tres,
 .cuatro > .cuatro {
-  transform-origin: 2vw top;
-  transform: rotate(-80deg) translateX(2vw);
+  transform-origin: 1.5vw top;
+  transform: rotate(-80deg) translateX(1.5vw);
   animation: seg 2.5s ease infinite;
 }
 
@@ -67,8 +67,8 @@
 .dos > .dos > .dos,
 .tres > .tres > .tres,
 .cuatro > .cuatro > .cuatro {
-  transform-origin: 2vw top;
-  transform: rotate(10deg) translateX(2vw);
+  transform-origin: 1.5vw top;
+  transform: rotate(10deg) translateX(1.5vw);
   animation: seg 1.5s ease infinite;
 }
 
@@ -110,7 +110,7 @@
 
 @keyframes seg {
   50% {
-    transform: rotate(55deg) translateX(2vw);
+    transform: rotate(55deg) translateX(1.5vw);
   }
 }
 @keyframes seg2 {
