@@ -90,7 +90,7 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
     }
   };
   const [teamName, changeTeamName] = useState({
-    name: userTeam && userTeam.name ? userTeam.name : '',
+    name: '',
   });
   const [isEditingTeamName, changeIsEditingTeamName] = useState(false);
   const [runteamNameChange, teamNameChange] = useMutation(CHANGE_TEAM_NAME, {
