@@ -199,7 +199,7 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
                 className={style.registerTab_teamChange_button}
                 disabled={teamNameChange.loading}
               >
-                <Cross fill="red" />
+                <Cross fill="white" />
               </button>
             )}
             <button
@@ -213,7 +213,7 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
               ) : !isEditingTeamName ? (
                 <Edit className={style.edit} fill="white" />
               ) : (
-                <Tick className={style.tick} fill="green" />
+                <Tick className={style.tick} fill="white" />
               )}
             </button>
           </form>
