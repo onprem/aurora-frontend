@@ -306,7 +306,7 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
           <p className={style.registerTab_rule}>{`* Max Team size is ${teamMaxSize}`}</p>
         </div>
 
-        {userInvitations.length ? (
+        {userInvitations && userInvitations.length ? (
           <div className={style.registerTab_invitations_container}>
             <h2 className={style.registerTab_heading}>INVITATIONS</h2>
             <hr className={style.registerTab_hr} />
