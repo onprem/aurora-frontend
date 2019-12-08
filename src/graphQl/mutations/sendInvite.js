@@ -8,6 +8,7 @@ export default gql`
       success
       team {
         id
+        name
         members {
           name
           id
@@ -18,6 +19,7 @@ export default gql`
           fee
           parentEvent
           maxSize
+          isNameRequired
         }
         paymentStatus
         pendingInvitations {

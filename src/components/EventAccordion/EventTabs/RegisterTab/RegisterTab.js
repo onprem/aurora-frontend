@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 
@@ -8,6 +9,7 @@ import { useAuth } from '../../../../context/auth';
 import USER_QUERY from '../../../../graphQl/queries/user';
 import EVENT_REGISTER from '../../../../graphQl/mutations/eventRegister';
 import SEND_INVITE from '../../../../graphQl/mutations/sendInvite';
+import CHANGE_TEAM_NAME from '../../../../graphQl/mutations/changeTeamName';
 import { ARValidation } from '../../../../utils/validation';
 
 import style from './registerTab.module.css';
@@ -21,6 +23,9 @@ import PendingInvitations from './pendingInvitation/PendingInvitation';
 import { ReactComponent as Register } from '../../../../assets/icons/register.svg';
 import { ReactComponent as Inv } from '../../../../assets/icons/sendInvite.svg';
 import { ReactComponent as Arrow } from '../../../../assets/icons/arrowLeft.svg';
+import { ReactComponent as Tick } from '../../../../assets/icons/tick.svg';
+import { ReactComponent as Edit } from '../../../../assets/icons/edit.svg';
+import { ReactComponent as Cross } from '../../../../assets/icons/cut.svg';
 
 const RegisterTab = ({ eventId, teamMaxSize }) => {
   const location = useLocation();
@@ -84,7 +89,49 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
       });
     }
   };
-
+  const [teamName, changeTeamName] = useState({
+    name: '',
+  });
+  const [isEditingTeamName, changeIsEditingTeamName] = useState(false);
+  const [runteamNameChange, teamNameChange] = useMutation(CHANGE_TEAM_NAME, {
+    update: (cacheStore, { data: newData }) => {
+      const userData = cacheStore.readQuery({ query: USER_QUERY });
+      const newTeams = userData.user.teams.filter(team => team.id !== userTeam.id);
+      newTeams.push(newData.setTeamName.team);
+      cacheStore.writeQuery({
+        query: USER_QUERY,
+        data: {
+          user: {
+            ...userData.user,
+            teams: newTeams,
+          },
+        },
+      });
+    },
+  });
+  const handleTeamNameInput = e => {
+    changeTeamName({ name: e.target.value });
+  };
+  const handleTeamNameSubmit = e => {
+    e.preventDefault();
+    if (isEditingTeamName) {
+      if (teamName.name) {
+        runteamNameChange({ variables: { teamId: userTeam.id, name: teamName.name } });
+        changeIsEditingTeamName(!isEditingTeamName);
+      } else {
+        const toast = getAlert();
+        toast.fire({
+          icon: 'error',
+          title: 'Team Name cannot be empty',
+        });
+      }
+    } else {
+      changeIsEditingTeamName(!isEditingTeamName);
+      setTimeout(() => {
+        document.getElementById('team_input').focus();
+      }, 1);
+    }
+  };
   const RenderAfterRegister = (
     <>
       <p>You have successfully registered for the event!</p>
@@ -127,6 +174,50 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
             </button>
           </form>
         )}
+        {userTeam && userTeam.event.isNameRequired && (
+          <form className={style.registerTab_teamName_form}>
+            <p className={(style.registerTab_form_p, style.registerTab_form_p_team)}>Team Name: </p>
+            {!isEditingTeamName ? (
+              <p className={(style.registerTab_form_p, style.userTeam_name)}>
+                {userTeam.name ? userTeam.name : 'Please set your team name'}
+              </p>
+            ) : (
+              <input
+                type="text"
+                placeholder={userTeam ? userTeam.name : ''}
+                name="name"
+                id="team_input"
+                value={teamName.name}
+                onChange={handleTeamNameInput}
+                className={style.registerTab_teamName_input}
+              />
+            )}
+            {isEditingTeamName && (
+              <button
+                type="button"
+                onClick={() => changeIsEditingTeamName(!isEditingTeamName)}
+                className={style.registerTab_teamChange_button}
+                disabled={teamNameChange.loading}
+              >
+                <Cross fill="red" />
+              </button>
+            )}
+            <button
+              type="submit"
+              onClick={handleTeamNameSubmit}
+              className={style.registerTab_teamChange_button}
+              disabled={teamNameChange.loading}
+            >
+              {teamNameChange.loading ? (
+                <Loader />
+              ) : !isEditingTeamName ? (
+                <Edit className={style.edit} fill="white" />
+              ) : (
+                <Tick className={style.tick} fill="green" />
+              )}
+            </button>
+          </form>
+        )}
         <p className={style.max_size}>{`* Max size of team is ${teamMaxSize}`}</p>
       </div>
       <div className={style.registerTab_invitations_container}>
@@ -135,7 +226,13 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
         {userTeam
           ? userTeam.members.map((member, index) => (
               // eslint-disable-next-line react/jsx-indent
-              <TeamMember sr={index + 1} member={member} teamid={userTeam.id} user={data.user} />
+              <TeamMember
+                key={index}
+                sr={index + 1}
+                member={member}
+                teamid={userTeam.id}
+                user={data.user}
+              />
             ))
           : null}
       </div>
@@ -146,7 +243,12 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
           {userTeam
             ? userTeam.pendingInvitations.map((invites, index) => (
                 // eslint-disable-next-line react/jsx-indent
-                <PendingInvitations sr={index + 1} invites={invites} teamid={userTeam.id} />
+                <PendingInvitations
+                  key={index}
+                  sr={index + 1}
+                  invites={invites}
+                  teamid={userTeam.id}
+                />
               ))
             : null}
         </div>
@@ -173,7 +275,14 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
         title: sendInvite.error.graphQLErrors[0].message,
       });
     }
-  }, [eventRegister.error, sendInvite.error]);
+    if (teamNameChange.error && teamNameChange.error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: teamNameChange.error.graphQLErrors[0].message,
+      });
+    }
+  }, [eventRegister.error, sendInvite.error, teamNameChange.error]);
   useEffect(() => {
     if (eventRegister.data) {
       const toast = getAlert();
@@ -190,7 +299,14 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
       });
       changeInputs({ id: '' });
     }
-  }, [eventRegister.data, sendInvite.data]);
+    if (teamNameChange.data) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'success',
+        title: teamNameChange.data.setTeamName.message,
+      });
+    }
+  }, [eventRegister.data, sendInvite.data, teamNameChange.data]);
   if (loading) return <Loader />;
   return authToken ? (
     userTeam ? (
@@ -219,12 +335,12 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
           <p className={style.registerTab_rule}>{`* Max Team size is ${teamMaxSize}`}</p>
         </div>
 
-        {userInvitations.length ? (
+        {userInvitations && userInvitations.length ? (
           <div className={style.registerTab_invitations_container}>
             <h2 className={style.registerTab_heading}>INVITATIONS</h2>
             <hr className={style.registerTab_hr} />
             {userInvitations.map((invite, index) => (
-              <Invitation sr={index + 1} invite={invite} />
+              <Invitation key={index} sr={index + 1} invite={invite} />
             ))}
           </div>
         ) : null}

@@ -130,6 +130,51 @@
 .must_auth_button svg {
   transform: rotate(180deg);
 }
+.registerTab_teamName_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+.userTeam_name {
+  margin-left: 10px;
+}
+.registerTab_form_p_team {
+  width: 6.5em;
+}
+.registerTab_teamChange_button {
+  margin-left: 10px;
+  width: 2em;
+  height: 1em;
+  background: black;
+  border: none;
+  cursor: pointer;
+}
+.registerTab_teamChange_button:focus {
+  outline: none;
+  appearance: none;
+}
+.edit {
+  width: 1.5em;
+  margin-top: -0.2em;
+}
+.tick {
+  margin-top: -0.2em;
+  width: 1.5em;
+  height: 1.5em;
+}
+.registerTab_teamName_input {
+  margin-left: 10px;
+  padding-left: 5px;
+  width: 8em;
+  height: 1.5em;
+  font-size: 0.8em;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  appearance: none;
+}
 @media (max-width: 1120px) {
   .registerTab_invite_button {
     font-size: 0.7em !important;
@@ -177,5 +222,13 @@
   .registerTab_input {
     width: 18em;
     height: 3em;
+  }
+  .registerTab_teamName_form {
+    justify-content: center;
+  }
+  .userTeam_name,
+  .registerTab_teamName_input,
+  .registerTab_teamChange_button {
+    margin-left: 5px;
   }
 }
