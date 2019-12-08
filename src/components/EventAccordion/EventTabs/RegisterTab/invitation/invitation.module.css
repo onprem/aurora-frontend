@@ -45,6 +45,14 @@
   width: 48%;
   min-width: 120px;
   overflow: hidden !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 2.5em;
+  border: none;
+  cursor: pointer;
 }
 .member_button {
   background: white;
@@ -53,9 +61,19 @@
   height: 2.5em;
   width: 15%;
   min-width: 10em;
-  overflow: hidden !important;
+  overflow: hidden;
+  border-radius: 2.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  cursor: pointer;
+  border: none;
 }
-
+.cross {
+  width: 1.2em;
+  margin-left: 8px;
+}
 .invitation_button svg {
   fill: black !important;
   stroke: black !important;
