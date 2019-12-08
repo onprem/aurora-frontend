@@ -9,6 +9,7 @@ import Particles from '../../components/particles/Particle';
 import Footer from '../../components/footer/Footer';
 import Path from '../../components/chealCaowaPath/Path';
 import AnimateChealCaowa from '../../utils/chealCaowa';
+import Spider from '../../components/teaserSpider/TeaserSpider';
 
 import { ReactComponent as AuroraCircleIcon } from '../../assets/icons/auroraCircle.svg';
 import { ReactComponent as AuroraTextIcon } from '../../assets/icons/auroraText.svg';
@@ -83,7 +84,7 @@ const Home = () => {
         </div>
 
         <Graveyard isHauntedHouse />
-
+        <Spider />
         <Particles />
         {bats}
       </div>
