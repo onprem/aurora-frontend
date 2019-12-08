@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  mutation eventRegister($eventId: Int!) {
-    eventRegister(eventId: $eventId) {
+  mutation SetTeamName($teamId: String!, $name: String!) {
+    setTeamName(teamId: $teamId, arId: $name) {
       code
       message
       success

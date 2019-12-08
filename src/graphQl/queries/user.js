@@ -13,6 +13,7 @@ export default gql`
       college
       teams {
         id
+        name
         members {
           name
           id
@@ -23,6 +24,7 @@ export default gql`
           fee
           parentEvent
           maxSize
+          isNameRequired
         }
         paymentStatus
         pendingInvitations {
