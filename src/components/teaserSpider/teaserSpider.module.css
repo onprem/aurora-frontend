@@ -1,0 +1,261 @@
+.container {
+  position: absolute;
+  top: 0;
+  right: 20%;
+  margin-left: -20px;
+  animation: inicio 5s ease-in-out forwards;
+}
+
+.web {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: -100px;
+  left: 4.5px;
+  margin-left: 9px;
+  width: 1px;
+  height: 100px;
+}
+
+.content {
+  background: rgba(0, 0, 0, 1);
+  border-radius: 100%;
+  color: #fff;
+  font-size: 1.3em;
+  position: absolute;
+  z-index: 1;
+  margin-top: -5px;
+  margin-left: -2px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.left {
+  position: absolute;
+}
+
+.right {
+  position: absolute;
+  transform: rotateY(180deg) translateX(-30px);
+}
+
+.uno,
+.dos,
+.tres,
+.cuatro {
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 1.5vw;
+  height: 3px;
+}
+
+.uno > .uno,
+.dos > .dos,
+.tres > .tres,
+.cuatro > .cuatro {
+  transform-origin: 1.5vw top;
+  transform: rotate(-80deg) translateX(1.5vw);
+  animation: seg 2.5s ease infinite;
+}
+
+.uno > .uno > .uno,
+.dos > .dos > .dos,
+.tres > .tres > .tres,
+.cuatro > .cuatro > .cuatro {
+  transform-origin: 1.5vw top;
+  transform: rotate(10deg) translateX(1.5vw);
+  animation: seg 1.5s ease infinite;
+}
+
+.right > .dos > .dos {
+  animation-delay: 200ms;
+}
+
+.dos > .dos {
+  animation-delay: 400ms;
+}
+
+.dos > .dos > .dos {
+  animation-delay: 200ms;
+}
+
+.right > .tres > .tres {
+  animation-delay: 400ms;
+}
+
+.tres > .tres {
+  animation-delay: 600ms;
+}
+
+.tres > .tres > .tres {
+  animation-delay: 300ms;
+}
+
+.right > .cuatro > .cuatro {
+  animation-delay: 100ms;
+}
+
+.cuatro > .cuatro {
+  animation-delay: 800ms;
+}
+
+.cuatro > .cuatro > .cuatro {
+  animation-delay: 400ms;
+}
+
+@keyframes seg {
+  50% {
+    transform: rotate(55deg) translateX(1.5vw);
+  }
+}
+@keyframes seg2 {
+  50% {
+    transform: rotate(55deg) translateX(3vw);
+  }
+}
+@keyframes seg3 {
+  50% {
+    transform: rotate(55deg) translateX(5vw);
+  }
+}
+
+@keyframes inicio {
+  100% {
+    top: 100px;
+  }
+}
+@keyframes inicio2 {
+  100% {
+    top: 60px;
+  }
+}
+@media (max-width: 950px) {
+  .uno > .uno > .uno,
+  .dos > .dos > .dos,
+  .tres > .tres > .tres,
+  .cuatro > .cuatro > .cuatro {
+    transform-origin: 3vw top;
+    transform: rotate(10deg) translateX(3vw);
+    animation: seg2 2.5s ease infinite;
+  }
+  .uno > .uno,
+  .dos > .dos,
+  .tres > .tres,
+  .cuatro > .cuatro {
+    transform-origin: 3vw top;
+    transform: rotate(-80deg) translateX(3vw);
+    animation: seg2 2.5s ease infinite;
+  }
+  .uno,
+  .dos,
+  .tres,
+  .cuatro {
+    width: 3vw;
+  }
+  .right > .dos > .dos {
+    animation-delay: 200ms;
+  }
+
+  .dos > .dos {
+    animation-delay: 400ms;
+  }
+
+  .dos > .dos > .dos {
+    animation-delay: 200ms;
+  }
+
+  .right > .tres > .tres {
+    animation-delay: 400ms;
+  }
+
+  .tres > .tres {
+    animation-delay: 600ms;
+  }
+
+  .tres > .tres > .tres {
+    animation-delay: 300ms;
+  }
+
+  .right > .cuatro > .cuatro {
+    animation-delay: 100ms;
+  }
+
+  .cuatro > .cuatro {
+    animation-delay: 800ms;
+  }
+
+  .cuatro > .cuatro > .cuatro {
+    animation-delay: 400ms;
+  }
+}
+@media (max-width: 500px) {
+  .uno > .uno > .uno,
+  .dos > .dos > .dos,
+  .tres > .tres > .tres,
+  .cuatro > .cuatro > .cuatro {
+    transform-origin: 5vw top;
+    transform: rotate(10deg) translateX(5vw);
+    animation: seg3 2.5s ease infinite;
+  }
+  .uno > .uno,
+  .dos > .dos,
+  .tres > .tres,
+  .cuatro > .cuatro {
+    transform-origin: 5vw top;
+    transform: rotate(-80deg) translateX(5vw);
+    animation: seg3 2.5s ease infinite;
+  }
+  .uno,
+  .dos,
+  .tres,
+  .cuatro {
+    width: 5vw;
+  }
+  .right > .dos > .dos {
+    animation-delay: 200ms;
+  }
+
+  .dos > .dos {
+    animation-delay: 400ms;
+  }
+
+  .dos > .dos > .dos {
+    animation-delay: 200ms;
+  }
+
+  .right > .tres > .tres {
+    animation-delay: 400ms;
+  }
+
+  .tres > .tres {
+    animation-delay: 600ms;
+  }
+
+  .tres > .tres > .tres {
+    animation-delay: 300ms;
+  }
+
+  .right > .cuatro > .cuatro {
+    animation-delay: 100ms;
+  }
+
+  .cuatro > .cuatro {
+    animation-delay: 800ms;
+  }
+
+  .cuatro > .cuatro > .cuatro {
+    animation-delay: 400ms;
+  }
+  .container {
+    left: 20%;
+    animation: inicio2 5s ease-in-out forwards;
+  }
+  .web {
+    top: -60;
+  }
+}
