@@ -5,7 +5,6 @@ import style from './invitation.module.css';
 
 import getAlert from '../../../../../utils/getAlert';
 
-import Button from '../../../../Button/Button';
 import { ReactComponent as CrossIcon } from '../../../../../assets/icons/cross.svg';
 import { ReactComponent as CheckIcon } from '../../../../../assets/icons/checkmark.svg';
 import Loader from '../../../../Loader/Loader';
@@ -91,20 +90,36 @@ const Invitations = ({ sr, invite }) => {
       <span className={style.invitation_content}>{invite.invitedBy.name}</span>
       <span className={style.invitation_content}>{invite.invitedBy.id}</span>
       <span className={style.invitation_button_container}>
-        <Button
-          iconPosition="right"
-          text={loading ? <Loader /> : `ACCEPT`}
-          Icon={loading ? null : CheckIcon}
-          className={style.invitation_button}
+        <button
+          type="button"
           onClick={() => runAcceptInvite({ variables: { teamId: invite.team.id } })}
-        />
-        <Button
-          text={decline.loading ? <Loader /> : `REJECT`}
           className={style.invitation_button}
-          iconPosition="right"
-          Icon={decline.loading ? null : CrossIcon}
+          disabled={loading}
+        >
+          {loading ? (
+            <Loader fill="#000000" />
+          ) : (
+            <>
+              ACCEPT
+              <CheckIcon className={style.cross} />
+            </>
+          )}
+        </button>
+        <button
+          type="button"
           onClick={() => runDeclineInvite({ variables: { teamId: invite.team.id } })}
-        />
+          className={style.invitation_button}
+          disabled={decline.loading}
+        >
+          {decline.loading ? (
+            <Loader fill="#000000" />
+          ) : (
+            <>
+              REJECT
+              <CrossIcon className={style.cross} />
+            </>
+          )}
+        </button>
       </span>
     </div>
   );

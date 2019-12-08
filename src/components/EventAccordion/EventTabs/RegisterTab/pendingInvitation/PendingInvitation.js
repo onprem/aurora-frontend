@@ -5,7 +5,6 @@ import { useMutation } from '@apollo/react-hooks';
 
 import style from '../invitation/invitation.module.css';
 
-import Button from '../../../../Button/Button';
 import { ReactComponent as Cross } from '../../../../../assets/icons/cross.svg';
 import CANCEL_INVITE from '../../../../../graphQl/mutations/cancelInvite';
 import USER_QUERY from '../../../../../graphQl/queries/user';
@@ -37,14 +36,21 @@ const PendingInvitation = ({ sr, invites, teamid }) => {
       <span className={style.invitation_content}>{invites.name}</span>
       <span className={style.invitation_content}>{invites.id}</span>
       <div className={style.invitation_button_container_single}>
-        <Button
-          iconPosition="right"
-          text={cancelInvite.loading ? <Loader fill="#000000" /> : 'CANCEL'}
-          Icon={cancelInvite.loading ? null : Cross}
-          className={style.member_button}
+        <button
+          type="button"
           onClick={() => runCancelInvite({ variables: { teamId: teamid, arId: invites.id } })}
+          className={style.member_button}
           disabled={cancelInvite.loading}
-        />
+        >
+          {cancelInvite.loading ? (
+            <Loader fill="#000000" />
+          ) : (
+            <>
+              CANCEL
+              <Cross className={style.cross} />
+            </>
+          )}
+        </button>
       </div>
     </div>
   );
