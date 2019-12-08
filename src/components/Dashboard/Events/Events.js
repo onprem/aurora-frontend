@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { useHistory, Link } from 'react-router-dom';
 
 import eventData from '../../../assets/data/eventData/eventData';
 import Button from '../../Button/Button';
+import PayButton from './PayButton/PayButton';
 import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
 import useMediaQuery from '../../../utils/useMediaQuery';
 
@@ -21,7 +22,10 @@ const PaidEvents = ({ teams, isDesktop }) => {
           <td>{index + 1}</td>
           <td>
             <Link
-              to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', index: 2 } }}
+              to={{
+                pathname: `/events/${parentEvt}`,
+                state: { referer: '/dashboard', indexTab: 2 },
+              }}
             >
               {team.event.name}
             </Link>
@@ -36,7 +40,7 @@ const PaidEvents = ({ teams, isDesktop }) => {
         <td>{index + 1}</td>
         <td>
           <Link
-            to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', index: 2 } }}
+            to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', indexTab: 2 } }}
           >
             {team.event.name}
           </Link>
@@ -78,18 +82,33 @@ const PaidEvents = ({ teams, isDesktop }) => {
 };
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
+  const [toPay, setToPay] = useState([]);
+
+  const addToPayment = (team, event) => {
+    // event.preventDefault();
+    if (event.target.checked) setToPay(toPay.concat([team]));
+    else setToPay(toPay.filter(elem => elem.id !== team.id));
+  };
+
   const teamList = teams.map((team, index) => {
     const parentEvt = team.event.parentEvent;
     const parentEvtName = parentEvt
       ? eventData[parentEvt.replace(/-/gi, '_')].name
       : team.event.name;
+
     if (isDesktop) {
       return (
         <tr key={team.id}>
+          <td>
+            <input type="checkbox" value={team.id} onClick={event => addToPayment(team, event)} />
+          </td>
           <td>{index + 1}</td>
           <td>
             <Link
-              to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', index: 2 } }}
+              to={{
+                pathname: `/events/${parentEvt}`,
+                state: { referer: '/dashboard', indexTab: 2 },
+              }}
             >
               {team.event.name}
             </Link>
@@ -105,10 +124,13 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
     }
     return (
       <tr key={team.id}>
+        <td>
+          <input type="checkbox" value={team.id} onClick={event => addToPayment(team, event)} />
+        </td>
         <td>{index + 1}</td>
         <td>
           <Link
-            to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', index: 2 } }}
+            to={{ pathname: `/events/${parentEvt}`, state: { referer: '/dashboard', indexTab: 2 } }}
           >
             {team.event.name}
           </Link>
@@ -125,26 +147,35 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
     <>
       <h3>Unpaid Events</h3>
       {teams.length > 0 ? (
-        <table className={styles.evtTable}>
-          <thead>
-            {isDesktop ? (
-              <tr>
-                <th>#</th>
-                <th>Event Name</th>
-                <th>Parent Event</th>
-                <th>Team ID</th>
-                <th>Fee</th>
-              </tr>
-            ) : (
-              <tr>
-                <th>#</th>
-                <th>Event Name</th>
-                <th>Fee</th>
-              </tr>
-            )}
-          </thead>
-          <tbody>{teamList}</tbody>
-        </table>
+        <>
+          <table className={styles.evtTable}>
+            <thead>
+              {isDesktop ? (
+                <tr>
+                  <th>.</th>
+                  <th>#</th>
+                  <th>Event Name</th>
+                  <th>Parent Event</th>
+                  <th>Team ID</th>
+                  <th>Fee</th>
+                </tr>
+              ) : (
+                <tr>
+                  <th>.</th>
+                  <th>#</th>
+                  <th>Event Name</th>
+                  <th>Fee</th>
+                </tr>
+              )}
+            </thead>
+            <tbody>{teamList}</tbody>
+          </table>
+          {toPay.length > 0 ? (
+            <PayButton toPay={toPay} />
+          ) : (
+            <span>Select events to pay for them.</span>
+          )}
+        </>
       ) : (
         <span>You do not have any unpaid events.</span>
       )}
