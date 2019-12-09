@@ -108,7 +108,11 @@ const Login = () => {
       </label>
       <input
         type="password"
-        className={style.login_input}
+        className={
+          inputs.password === undefined
+            ? `${style.login_input} ${style.login_input_invalid}`
+            : style.login_input
+        }
         placeholder=""
         name="password"
         value={inputs.password}
