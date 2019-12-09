@@ -171,7 +171,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
             <tbody>{teamList}</tbody>
           </table>
           {toPay.length > 0 ? (
-            <PayButton toPay={toPay} />
+            <PayButton toPay={toPay} setToPay={setToPay} />
           ) : (
             <span>Select events to pay for them.</span>
           )}
