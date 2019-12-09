@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 
-import Button from '../../../../Button/Button';
 import Loader from '../../../../Loader/Loader';
 import { ReactComponent as Leave } from '../../../../../assets/icons/leaveTeam.svg';
 import { ReactComponent as Cross } from '../../../../../assets/icons/cross.svg';
@@ -96,23 +95,37 @@ const TeamMember = ({ sr, member, user, teamid }) => {
       <span className={style.invitation_content}>{member.id}</span>
       <div className={style.invitation_button_container_single}>
         {member.id === user.id ? (
-          <Button
-            iconPosition="right"
-            text={loading ? <Loader fill="#000000" /> : `LEAVE`}
-            Icon={loading ? null : Leave}
-            className={style.member_button}
+          <button
+            type="button"
             onClick={() => runLeaveTeam({ variables: { teamId: teamid } })}
-            disabled={loading}
-          />
-        ) : (
-          <Button
-            iconPosition="right"
-            text={removeMember.loading ? <Loader fill="#000000" /> : `REMOVE`}
-            Icon={removeMember.loading ? null : Cross}
             className={style.member_button}
+            disabled={loading}
+          >
+            {loading ? (
+              <Loader fill="#000000" />
+            ) : (
+              <>
+                LEAVE
+                <Leave className={style.cross} />
+              </>
+            )}
+          </button>
+        ) : (
+          <button
+            type="button"
             onClick={() => runRemoveMember({ variables: { teamId: teamid, arId: member.id } })}
+            className={style.member_button}
             disabled={removeMember.loading}
-          />
+          >
+            {removeMember.loading ? (
+              <Loader fill="#000000" />
+            ) : (
+              <>
+                REMOVE
+                <Cross className={style.cross} />
+              </>
+            )}
+          </button>
         )}
       </div>
     </div>
