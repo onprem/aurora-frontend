@@ -2,6 +2,8 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 
+import Swal from 'sweetalert2/src/sweetalert2';
+
 import { useHistory, useLocation } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useAuth } from '../../../../context/auth';
@@ -258,7 +260,21 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
 
   const handleRegister = e => {
     e.preventDefault();
-    runEventRegister({ variables: { eventId } });
+    Swal.fire({
+      title: 'Are you sure?',
+      text:
+        'Registering your own team will automatically reject all your invitations for the current event.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: 'white',
+      cancelButtonColor: 'white',
+      cancelButtonText: '<span style="color:black">Cancel</span>',
+      confirmButtonText: '<span style="color:black">Register</span>',
+    }).then(result => {
+      if (result.value) {
+        runEventRegister({ variables: { eventId } });
+      }
+    });
   };
   useEffect(() => {
     if (eventRegister.error && eventRegister.error.graphQLErrors.length > 0) {

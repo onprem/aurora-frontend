@@ -14,6 +14,7 @@ const TeaserSpider = () => {
         target="_blank"
         rel="noreferrer"
         className={style.content}
+        title="Watch Aurora'20 Teaser on Youtube"
       >
         <Youtube />
       </a>
