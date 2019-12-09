@@ -52,8 +52,9 @@ const EventTabs = ({ event }) => {
     };
   }, [activeTab]);
   useEffect(() => {
-    if (location.state && location.state.index) {
-      if (location.state.index > 0 && location.state.index < 3) setActiveTab(location.state.index);
+    if (location.state && location.state.indexTab) {
+      if (location.state.indexTab > 0 && location.state.indexTab < 3)
+        setActiveTab(location.state.indexTab);
     }
   }, [location]);
 

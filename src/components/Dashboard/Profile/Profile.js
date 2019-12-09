@@ -14,7 +14,10 @@ const Profile = ({ className, user }) => {
         </div>
         <div className={styles.nameDiv}>
           <span>{user.name}</span>
-          <span>{user.id}</span>
+          <span>
+            <b>AR-ID: </b>
+            {user.id}
+          </span>
         </div>
       </div>
       <div className={styles.rightDiv}>
