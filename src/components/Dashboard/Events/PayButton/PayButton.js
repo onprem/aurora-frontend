@@ -2,7 +2,7 @@ import React from 'react';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 
 import Loader from '../../../Loader/Loader';
-import useRzrPay from '../PayModal/PayModal';
+import useRzrPay from '../../../../utils/useRzrPay';
 import getAlert from '../../../../utils/getAlert';
 
 import GEN_ORDER from '../../../../graphQl/mutations/generateEventOrder';
@@ -43,6 +43,7 @@ const PayButton = ({ toPay, setToPay }) => {
   const launchRzrPay = useRzrPay();
 
   const handlePayment = response => {
+    // eslint-disable-next-line no-console
     console.log(response);
     verifyOrder({
       variables: {
@@ -85,7 +86,14 @@ const PayButton = ({ toPay, setToPay }) => {
       className={styles.PayBtn}
       onClick={() => getOrder({ variables: { teamIds } })}
     >
-      {loading ? <Loader /> : `PAY INR ${totalMoney}`}
+      {loading ? (
+        <Loader height="1em" />
+      ) : (
+        <>
+          PAY &#8377;
+          {totalMoney}
+        </>
+      )}
     </button>
   );
 };
