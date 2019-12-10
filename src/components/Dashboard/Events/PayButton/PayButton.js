@@ -101,8 +101,8 @@ const PayButton = ({ toPay, setToPay }) => {
       showCancelButton: true,
       confirmButtonColor: 'white',
       cancelButtonColor: 'white',
-      cancelButtonText: '<span style="color:black">Cancel</span>',
-      confirmButtonText: '<span style="color:black">PAY</span>',
+      cancelButtonText: '<span style="color:black; font-weight:600">Cancel</span>',
+      confirmButtonText: '<span style="color:black; font-weight:600">PAY</span>',
     }).then(result => {
       if (result.value) {
         getOrder({ variables: { teamIds } });

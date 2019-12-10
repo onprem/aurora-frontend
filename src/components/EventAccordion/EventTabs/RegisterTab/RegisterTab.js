@@ -276,8 +276,8 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
       showCancelButton: true,
       confirmButtonColor: 'white',
       cancelButtonColor: 'white',
-      cancelButtonText: '<span style="color:black">Cancel</span>',
-      confirmButtonText: '<span style="color:black">Register</span>',
+      cancelButtonText: '<span style="color:black; font-weight:600">Cancel</span>',
+      confirmButtonText: '<span style="color:black; font-weight:600">Register</span>',
     }).then(result => {
       if (result.value) {
         runEventRegister({ variables: { eventId } });
