@@ -65,15 +65,44 @@ const PayButton = ({ toPay, setToPay }) => {
 
   const [getOrder, { loading }] = useMutation(GEN_ORDER, {
     onCompleted: oData => {
-      launchRzrPay({
-        ...options,
-        prefill: {
-          name: userRes.data.user.name,
-          email: userRes.data.user.email,
-          contact: userRes.data.user.phone,
-        },
-        ...oData.generateEventOrder,
-      });
+      if (oData.generateEventOrder.order_id === '0') {
+        const toast = getAlert();
+        toast.fire({
+          icon: 'success',
+          title: 'Payment successful',
+        });
+        setToPay([]);
+      } else {
+        launchRzrPay({
+          ...options,
+          prefill: {
+            name: userRes.data.user.name,
+            email: userRes.data.user.email,
+            contact: userRes.data.user.phone,
+          },
+          ...oData.generateEventOrder,
+        });
+      }
+    },
+    update: (cacheStore, { data: newData }) => {
+      if (newData.generateEventOrder.order_id === '0') {
+        const usrData = cacheStore.readQuery({ query: USER_QUERY });
+
+        const newTeams = usrData.user.teams.map(team => {
+          if (toPay.some(payTeam => payTeam.id === team.id))
+            return {
+              ...team,
+              paymentStatus: true,
+            };
+          return team;
+        });
+        cacheStore.writeQuery({
+          query: USER_QUERY,
+          data: {
+            user: { ...usrData.user, teams: newTeams },
+          },
+        });
+      }
     },
     onError: handleErrors,
   });

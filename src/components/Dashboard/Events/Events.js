@@ -145,8 +145,8 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
   return (
     <>
       <h3 style={{ textAlign: 'left' }}>
-        Unpaid Events
-        <br />
+        Unpaid Events&nbsp;
+        {!isDesktop && <br />}
         (payment pending)
       </h3>
       {teams.length > 0 ? (
