@@ -52,8 +52,9 @@ const EventTabs = ({ event }) => {
     };
   }, [activeTab]);
   useEffect(() => {
-    if (location.state && location.state.index) {
-      if (location.state.index > 0 && location.state.index < 3) setActiveTab(location.state.index);
+    if (location.state && location.state.indexTab) {
+      if (location.state.indexTab > 0 && location.state.indexTab < 3)
+        setActiveTab(location.state.indexTab);
     }
   }, [location]);
 
@@ -91,6 +92,14 @@ const EventTabs = ({ event }) => {
           <div>
             <h3>Prizes</h3>
             <p>{event.prizeMoney}</p>
+          </div>
+          <div>
+            <h3>Fee</h3>
+            <p>
+              &#8377;&nbsp;
+              {event.fees}
+              &nbsp;/-
+            </p>
           </div>
           <div className={styles.teamDiv}>
             <div>

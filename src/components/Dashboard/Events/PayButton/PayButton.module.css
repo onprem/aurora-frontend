@@ -1,0 +1,11 @@
+.PayBtn {
+  color: white;
+  background: black;
+  border: none;
+  border-radius: 3em;
+  padding: 10px 25px;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}

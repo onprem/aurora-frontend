@@ -2,6 +2,8 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 
+import Swal from 'sweetalert2/src/sweetalert2';
+
 import { useHistory, useLocation } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useAuth } from '../../../../context/auth';
@@ -253,12 +255,34 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
             : null}
         </div>
       ) : null}
+      <button
+        type="button"
+        className={style.registerTab_invite_button}
+        style={{ marginTop: '20px' }}
+        onClick={() => history.push('/dashboard')}
+      >
+        PAY NOW &#8377;
+      </button>
     </>
   );
 
   const handleRegister = e => {
     e.preventDefault();
-    runEventRegister({ variables: { eventId } });
+    Swal.fire({
+      title: 'Are you sure?',
+      text:
+        'Registering your own team will automatically reject all your invitations for the current event.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: 'white',
+      cancelButtonColor: 'white',
+      cancelButtonText: '<span style="color:black; font-weight:600">Cancel</span>',
+      confirmButtonText: '<span style="color:black; font-weight:600">Register</span>',
+    }).then(result => {
+      if (result.value) {
+        runEventRegister({ variables: { eventId } });
+      }
+    });
   };
   useEffect(() => {
     if (eventRegister.error && eventRegister.error.graphQLErrors.length > 0) {
