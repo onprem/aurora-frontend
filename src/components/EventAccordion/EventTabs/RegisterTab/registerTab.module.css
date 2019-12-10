@@ -97,6 +97,8 @@
   appearance: none;
   cursor: pointer;
   border: none;
+  font-weight: 600;
+  letter-spacing: 0.2em;
 }
 .inv {
   margin-left: 15px;

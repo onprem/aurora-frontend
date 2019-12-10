@@ -74,8 +74,7 @@ const PaidEvents = ({ teams, isDesktop }) => {
           <tbody>{teamList}</tbody>
         </table>
       ) : (
-        // <span>You have not paid for any events yet.</span>
-        <span>Payment for events will start soon.</span>
+        <span>You have not paid for any events yet.</span>
       )}
     </>
   );
@@ -145,7 +144,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
 
   return (
     <>
-      <h3>Unpaid Events</h3>
+      <h3>Unpaid Event (payment pending)</h3>
       {teams.length > 0 ? (
         <>
           <table className={styles.evtTable}>

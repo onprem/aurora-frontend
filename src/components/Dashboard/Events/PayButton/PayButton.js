@@ -59,7 +59,7 @@ const PayButton = ({ toPay, setToPay }) => {
   const options = {
     currency: 'INR',
     name: 'Aurora 20',
-    description: 'Pay for Aurora',
+    description: 'Payment for Events',
     handler: handlePayment,
   };
 
@@ -85,7 +85,18 @@ const PayButton = ({ toPay, setToPay }) => {
   const placeOrder = () => {
     Swal.fire({
       title: 'Are you sure?',
-      html: `<ul><li style="text-align:left">Total Amount to be payed is ${totalMoney} + payment gateway charges</li><li style="text-align:left"><p style="text-align:left">Terms and Conditions</p><ul><li style="text-align:left; margin-bottom:10px">Users can be added to the team but cannot be removed or cannot leave the team once the payment for the team is done</li><li style="text-align:left; margin-bottom:10px">Payment is non-refundable under any circumstances whatsoever except for extreme cases. Contact our tech support team(<a style="text-decoration:underline" href="mailto:support@aurorafest.org">support@aurorafest.org</a>) for extreme case scenarios.</li></ul></li><li style="text-align:left">By continuing to payment you abide by all the terms and conditions listed above</li></ul>`,
+      html: `<ul>
+        <li style="text-align:left; margin-bottom:10px">
+          Total payable amount is &#8377;${totalMoney} + &#8377;${Math.floor(totalMoney * 2.42) /
+        100} (payment gateway charges)
+      </li>
+        <li style="text-align:left; margin-bottom:10px">
+        Users can be added to the team but cannot be removed or cannot leave the team once the payment for the team is done
+      </li>
+        <li style="text-align:left; margin-bottom:10px">
+          Payment is non-refundable under any circumstances whatsoever except for extreme cases. Contact our tech support team (<a style="text-decoration:underline" href="mailto:support@aurorafest.org">support@aurorafest.org</a>) for extreme case scenarios.
+        </li>
+      </ul>`,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: 'white',

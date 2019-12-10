@@ -44,7 +44,7 @@
   height: 2.5em;
   width: 48%;
   min-width: 120px;
-  overflow: hidden !important;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -53,6 +53,8 @@
   border-radius: 2.5em;
   border: none;
   cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.2em;
 }
 .member_button {
   background: white;
@@ -70,14 +72,16 @@
   align-content: center;
   cursor: pointer;
   border: none;
+  font-weight: 600;
+  letter-spacing: 0.2em;
 }
 .cross {
   width: 1.2em;
   margin-left: 8px;
 }
 .invitation_button svg {
-  fill: black !important;
-  stroke: black !important;
+  fill: black;
+  stroke: black;
 }
 @media (max-width: 920px) {
   .invitation_content {
@@ -131,7 +135,7 @@
   }
   .member_button {
     margin-top: 10px;
-    min-width: 200px !important;
-    min-height: 40px !important;
+    min-width: 200px;
+    min-height: 40px;
   }
 }
