@@ -255,6 +255,14 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
             : null}
         </div>
       ) : null}
+      <button
+        type="button"
+        className={style.registerTab_invite_button}
+        style={{ marginTop: '20px' }}
+        onClick={() => history.push('/dashboard')}
+      >
+        PAY NOW &#8377;
+      </button>
     </>
   );
 
