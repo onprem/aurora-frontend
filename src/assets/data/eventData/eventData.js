@@ -465,7 +465,7 @@ const eventData = {
         name: 'Raag',
         description:
           "There's something in the soft plink of a sitar, or the mellifluous notes of a flute, that the human voice cannot seem to match. Instrumentalists spend years perfecting their art, to achieve the thrilling pace at which they change notes. Bach, Miles Davis, Zakir Hussain, Yo Yo Ma, and L Subramaniam. These artists and many more have changed how most of us look and listen to music. This year, Aurora'20 gives you a chance for you to hear and create magic-harmonies. It​ will be a dedicated event to appreciate singing with Instruments.",
-        fees: 200,
+        fees: 249,
         prizeMoney: 'INR 22,000 + Goodies, Benefits and Sponsored Gifts',
         maxTeamSize: 4,
         rules: [
@@ -652,7 +652,7 @@ const eventData = {
         description:
           'Around the world, there are face painting festivals, conventions, and even competitions to celebrate this art form. The artist can do FACE PAINTING on his own face or face of any other person (model/friend/ relative). Face Painting on any subject or theme will be accepted.',
         prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
-        fees: 200,
+        fees: 0,
         maxTeamSize: 2,
         rules: [
           'Team members(2 people — the one who will paint and the other whose face will be painted OR 1 person — paint your own face) ',
@@ -1175,7 +1175,7 @@ const eventData = {
         name: 'CS-GO',
         description: 'Showcase your talent in Counter Strike.',
         prizeMoney: 'INR 25,000 + Goodies, Benefits and Sponsored Gifts',
-        fees: 249,
+        fees: 349,
         maxTeamSize: 5,
         rules: [
           {
@@ -1262,7 +1262,7 @@ const eventData = {
         name: 'PUBG',
         description: '',
         prizeMoney: 'INR 15,000 + Goodies, Benefits and Sponsored Gifts',
-        fees: 149,
+        fees: 199,
         maxTeamSize: 4,
         rules: [
           {
