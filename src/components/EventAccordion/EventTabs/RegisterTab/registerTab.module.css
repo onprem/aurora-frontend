@@ -26,6 +26,7 @@
   appearance: none;
   cursor: pointer;
   border: none;
+  font-weight: 600;
   /* height: 10%; */
 }
 
