@@ -5,7 +5,7 @@ import mrAurora from '../../images/m&m.jpg';
 import literary from '../../images/literary.jpg';
 import le from '../../images/le.jpg';
 import informal from '../../images/informal.jpg';
-import gaming from '../../images/gaming.jpg';
+import gamiacs from '../../images/gamiacs.jpg';
 import eumelia from '../../images/eumelia.jpg';
 import corna from '../../images/corna.jpg';
 import pikture from '../../images/pickture-new.jpg';
@@ -92,11 +92,11 @@ const data = [
     color: `#C38D21`,
   },
   {
-    title: `Gaming`,
-    desc: `Think you have what it takes? Aurora presents Gaming events where you can showcase you skills in games like CS-GO and PUBG.`,
-    minDesc: `Think you have what it takes? Aurora presents Gaming events where you can showcase you skills in games like CS-GO and PUBG.`,
-    img: gaming,
-    path: '/events/gaming',
+    title: `Gamiacs`,
+    desc: `Think you have what it takes? Aurora presents Gamiacs events where you can showcase you skills in games like CS-GO and PUBG.`,
+    minDesc: `Think you have what it takes? Aurora presents Gamiacs events where you can showcase you skills in games like CS-GO and PUBG.`,
+    img: gamiacs,
+    path: '/events/gamiacs',
     color: `#777133`,
   },
 ];
