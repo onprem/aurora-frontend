@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 
 import Graveyard from '../../components/graveyard/Graveyard';
 import Bat from '../../components/bat/Bat';
@@ -20,8 +20,9 @@ import ResetPassword from '../../components/resetPassword/ResetPassword';
 
 const LoginRegister = () => {
   const { authToken } = useAuth();
-  const history = useHistory();
-  if (authToken) history.push('/dashboard');
+  const location = useLocation();
+
+  const referer = location.state && location.state.referer ? location.state.referer : '/dashboard';
 
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const bats = ['Bat1', 'Bat2', 'Bat3', 'Bat4', 'Bat5', 'Bat6', 'Bat7', 'Bat8', 'Bat9'].map(
@@ -36,32 +37,39 @@ const LoginRegister = () => {
       );
     }
   );
-  useEffect(() => {
-    const bat1 = document.getElementById('bat1');
-    const bat2 = document.getElementById('bat2');
-    const bat3 = document.getElementById('bat3');
-    const path1 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
-      Math.floor(Math.random() * 17)
-    ];
-    const path2 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
-      Math.floor(Math.random() * 17)
-    ];
-    const path3 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
-      Math.floor(Math.random() * 17)
-    ];
 
-    const chealCaowa1 = new AnimateChealCaowa(path1, bat1, 200, 0, 0.0003);
-    const AnimateChealCaowaFrame1 = requestAnimationFrame(chealCaowa1.moveBat);
-    const chealCaowa2 = new AnimateChealCaowa(path2, bat2, 200, 0, 0.0003);
-    const AnimateChealCaowaFrame2 = requestAnimationFrame(chealCaowa2.moveBat);
-    const chealCaowa3 = new AnimateChealCaowa(path3, bat3, 200, 0, 0.0003);
-    const AnimateChealCaowaFrame3 = requestAnimationFrame(chealCaowa3.moveBat);
-    return () => {
-      window.cancelAnimationFrame(AnimateChealCaowaFrame1);
-      window.cancelAnimationFrame(AnimateChealCaowaFrame2);
-      window.cancelAnimationFrame(AnimateChealCaowaFrame3);
-    };
-  }, []);
+  useEffect(() => {
+    if (!authToken) {
+      const bat1 = document.getElementById('bat1');
+      const bat2 = document.getElementById('bat2');
+      const bat3 = document.getElementById('bat3');
+      const path1 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
+      const path2 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
+      const path3 = document.getElementsByClassName('path_wrapper')[0].getElementsByTagName('path')[
+        Math.floor(Math.random() * 17)
+      ];
+
+      const chealCaowa1 = new AnimateChealCaowa(path1, bat1, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame1 = requestAnimationFrame(chealCaowa1.moveBat);
+      const chealCaowa2 = new AnimateChealCaowa(path2, bat2, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame2 = requestAnimationFrame(chealCaowa2.moveBat);
+      const chealCaowa3 = new AnimateChealCaowa(path3, bat3, 200, 0, 0.0003);
+      const AnimateChealCaowaFrame3 = requestAnimationFrame(chealCaowa3.moveBat);
+      return () => {
+        window.cancelAnimationFrame(AnimateChealCaowaFrame1);
+        window.cancelAnimationFrame(AnimateChealCaowaFrame2);
+        window.cancelAnimationFrame(AnimateChealCaowaFrame3);
+      };
+    }
+    return undefined;
+  }, [authToken]);
+
+  if (authToken) return <Redirect to={referer} />;
+
   return (
     <>
       <div className={style.loginRegister_parent_container}>
