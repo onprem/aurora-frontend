@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
@@ -20,7 +20,29 @@ const Login = () => {
   const location = useLocation();
 
   const [inputs, changeInputs] = useState({ email: '', password: '' });
-  const [runLogin, { data, loading, error }] = useMutation(LOGIN);
+
+  const handleLogin = data => {
+    const referer =
+      location.state && location.state.referer ? location.state.referer : '/dashboard';
+    changeInputs({ email: '', password: '' });
+    setAuthToken(data.login);
+    history.push({ pathname: referer, state: location.state });
+  };
+
+  const handleErrors = error => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+  };
+
+  const [runLogin, { loading }] = useMutation(LOGIN, {
+    onCompleted: handleLogin,
+    onError: handleErrors,
+  });
 
   const handleInput = event => {
     const { value, name } = event.target;
@@ -58,26 +80,6 @@ const Login = () => {
       });
     }
   };
-
-  useEffect(() => {
-    if (data) {
-      const referer =
-        location.state && location.state.referer ? location.state.referer : '/dashboard';
-      changeInputs({ email: '', password: '' });
-      setAuthToken(data.login);
-      history.push({ pathname: referer, state: location.state });
-    }
-  }, [data, history, location, setAuthToken]);
-
-  useEffect(() => {
-    if (error && error.graphQLErrors.length > 0) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'error',
-        title: error.graphQLErrors[0].message,
-      });
-    }
-  }, [error]);
 
   return (
     <form className={style.login_form}>
