@@ -1126,7 +1126,7 @@ const eventData = {
       },
     ],
   },
-  gaming: {
+  gamiacs: {
     name: 'Gamiacs',
     singleEvent: false,
     eventHeads: [
