@@ -1,19 +1,30 @@
 .container {
   display: flex;
-  width: 100%;
+  width: 80%;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   font-size: 1.4em;
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .userDiv {
   display: flex;
-  width: 80%;
+  width: calc(100% - 1em);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0.4em;
   border-bottom: solid 2px black;
+}
+
+.userDiv:focus {
+  /* border: solid 2px black;
+  border-top: none; */
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.moarBtn {
+  margin: 0.5em;
 }
