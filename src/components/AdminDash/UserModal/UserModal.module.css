@@ -1,0 +1,33 @@
+.container {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.open {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 80%;
+  padding: 4em;
+  font-size: 2em;
+}
+
+.modal > section{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}

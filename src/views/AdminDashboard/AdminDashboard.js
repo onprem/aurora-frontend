@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 
 import Loader from '../../components/Loader/Loader';
+import UserTable from '../../components/AdminDash/UserTable/UserTable';
 import getAlert from '../../utils/getAlert';
 import ALL_USRS from '../../graphQl/queries/protected/allUsers';
 
@@ -25,6 +26,9 @@ const AdminDashboard = () => {
   };
 
   const { data, loading } = useQuery(ALL_USRS, {
+    variables: {
+      limit: 10,
+    },
     onError: handleErrors,
   });
 
@@ -50,6 +54,7 @@ const AdminDashboard = () => {
         {data?.allUsers?.total}
         &nbsp;users.
       </h1>
+      <UserTable users={data?.allUsers?.users || []} />
     </div>
   );
 };
