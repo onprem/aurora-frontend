@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 
 import Loader from '../../Loader/Loader';
@@ -12,7 +13,7 @@ import EVT_TEAMS from '../../../graphQl/queries/protected/eventTeams';
 
 import styles from './TeamTable.module.css';
 
-const TableBody = ({ event }) => {
+const TableBody = ({ event, setTotal }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalTeam, setModalTeam] = useState(null);
   const [page, setPage] = useState(0);
@@ -34,7 +35,7 @@ const TableBody = ({ event }) => {
       limit,
     },
     onError: handleErrors,
-    onCompleted: () => setPage(pageN => pageN + 1),
+    // onCompleted: () => setPage(pageN => pageN + 1),
     notifyOnNetworkStatusChange: true,
   });
 
@@ -47,14 +48,18 @@ const TableBody = ({ event }) => {
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev;
         return {
-          allUsers: {
+          eventTeams: {
             ...prev.eventTeams,
-            users: prev.eventTeams.teams.concat(fetchMoreResult.eventTeams.teams),
+            teams: prev.eventTeams.teams.concat(fetchMoreResult.eventTeams.teams),
           },
         };
       },
     });
   };
+
+  useEffect(() => {
+    if (data) setPage(Math.floor(data.eventTeams.teams.length / limit));
+  }, [event, limit, data]);
 
   if (loading && page === 0)
     return (
@@ -78,6 +83,8 @@ const TableBody = ({ event }) => {
   };
 
   const { teams, total } = data.eventTeams;
+
+  setTotal(total);
 
   const teamItems = teams.map((team, index) => {
     return (
@@ -118,9 +125,31 @@ const TableBody = ({ event }) => {
 };
 
 const TeamTable = ({ events }) => {
+  const [event, setEvent] = useState(events[0]);
+  const [total, setTotal] = useState(0);
+
+  const handleChange = e => {
+    setEvent(events[Number(e.target.value)]);
+  };
+
   return (
     <div className={styles.teamTable}>
-      <TableBody event={events[0]} />
+      <div className={styles.evtDiv}>
+        <h2 className={styles.evtHead}>{`${event.name} (TOTAL TEAMS: ${total})`}</h2>
+        <div>
+          <label className={styles.label}>CHANGE EVENT: </label>
+          <select className={styles.evtSelect} name="event" onChange={handleChange}>
+            {events.map((evt, index) => {
+              return (
+                <option key={evt.id} value={index}>
+                  {evt.name}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+      </div>
+      <TableBody event={event} setTotal={setTotal} />
     </div>
   );
 };

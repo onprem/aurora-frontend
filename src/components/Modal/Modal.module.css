@@ -30,6 +30,7 @@
   color: white;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 .crossBtn > svg {
   height: 4em;
