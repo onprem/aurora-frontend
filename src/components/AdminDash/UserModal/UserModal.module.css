@@ -12,3 +12,12 @@
   align-items: center;
   margin-bottom: 1em;
 }
+
+@media only screen and (max-width: 500px) {
+  .modalHeadings {
+    font-size: 1em;
+  }
+  .modalSections {
+    flex-direction: column;
+  }
+}

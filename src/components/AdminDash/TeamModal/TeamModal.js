@@ -37,7 +37,7 @@ const TeamModal = ({ team, isOpen, setIsOpen }) => {
               <b>PAYMENT:</b> {team.paymentStatus ? 'Paid' : 'Unpaid'}
             </span>
           </section>
-          <h3 className={styles.modalHeadings}>MEMBERS</h3>
+          <h3 className={styles.modalHeadings}>MEMBERS (TOTAL: {team.members.length})</h3>
           {members}
         </>
       )}

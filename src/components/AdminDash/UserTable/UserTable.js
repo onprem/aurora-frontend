@@ -16,7 +16,7 @@ const UserTable = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalUser, setModalUser] = useState(null);
   const [page, setPage] = useState(0);
-  const [limit] = useState(10);
+  const [limit] = useState(25);
 
   const handleErrors = error => {
     if (error && error.graphQLErrors.length > 0) {
@@ -60,8 +60,8 @@ const UserTable = () => {
       <>
         <div className={styles.userDivHeading}>
           <span className={styles.indexSpan}>#</span>
-          <span className={styles.idSpan}>AR-ID</span>
           <span className={styles.nameSpan}>NAME</span>
+          <span className={styles.idSpan}>AR-ID</span>
           <span className={styles.emailSpan}>EMAIL</span>
           <span className={styles.citySpan}>CITY</span>
         </div>
@@ -86,8 +86,8 @@ const UserTable = () => {
     <>
       <div className={styles.userDivHeading}>
         <span className={styles.indexSpan}>#</span>
-        <span className={styles.idSpan}>AR-ID</span>
         <span className={styles.nameSpan}>NAME</span>
+        <span className={styles.idSpan}>AR-ID</span>
         <span className={styles.emailSpan}>EMAIL</span>
         <span className={styles.citySpan}>CITY</span>
       </div>

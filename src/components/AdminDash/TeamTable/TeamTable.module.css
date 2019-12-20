@@ -66,3 +66,24 @@
 .paymentSpan {
   width: 10%;
 }
+
+@media only screen and (max-width: 500px) {
+  .teamDiv {
+    font-size: 0.8em;
+  }
+  .evtHead {
+    font-size: 1.2em;
+  }
+  .idSpan {
+    width: auto;
+  }
+  .usersSpan {
+    display: none;
+  }
+  .nameSpan {
+    display: none;
+  }
+  .paymentSpan {
+    width: auto;
+  }
+}

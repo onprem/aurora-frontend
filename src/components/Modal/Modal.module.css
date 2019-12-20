@@ -21,6 +21,9 @@
   width: 80%;
   padding: 4em;
   font-size: 1.7em;
+  transition: all 0.8s ease-out;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .crossBtn {
@@ -35,4 +38,12 @@
 .crossBtn > svg {
   height: 4em;
   color: black;
+}
+
+@media only screen and (max-width: 500px) {
+  .modal {
+    font-size: 1.2em;
+    padding: 0;
+    width: 96%;
+  }
 }

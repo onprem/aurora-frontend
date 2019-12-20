@@ -17,7 +17,7 @@ const TableBody = ({ event, setTotal }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalTeam, setModalTeam] = useState(null);
   const [page, setPage] = useState(0);
-  const [limit] = useState(10);
+  const [limit] = useState(25);
 
   const handleErrors = error => {
     if (error && error.graphQLErrors.length > 0) {
