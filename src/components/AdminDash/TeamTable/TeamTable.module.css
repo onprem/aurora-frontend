@@ -1,0 +1,48 @@
+.teamTable {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4em 0;
+}
+.container {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4em;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.teamDiv {
+  composes: userDiv from '../UserTable/UserTable.module.css';
+}
+
+.teamDivHeading {
+  composes: userDivHeading from '../UserTable/UserTable.module.css';
+}
+
+.moarBtn {
+  margin: 0.5em;
+}
+
+.indexSpan {
+  width: 5%;
+}
+
+.idSpan {
+  width: 20%;
+}
+
+.nameSpan {
+  width: 25%;
+}
+
+.usersSpan {
+  width: 40%;
+}
+
+.paymentSpan {
+  width: 10%;
+}

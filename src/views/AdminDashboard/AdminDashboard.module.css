@@ -4,5 +4,10 @@
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+}
+
+.heading {
+  margin: 2em 0;
+  letter-spacing: 0.1em;
+  border-bottom: solid 2px black;
 }

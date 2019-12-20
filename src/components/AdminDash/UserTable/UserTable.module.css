@@ -10,13 +10,22 @@
 
 .userDiv {
   display: flex;
-  width: calc(100% - 1em);
+  width: calc(100% - 2.5em);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4em;
+  padding: 0.4em 1em;
   border-bottom: solid 2px black;
+  cursor: pointer;
+}
+
+.userDivHeading {
+  composes: userDiv;
+  width: calc(80% - 2.5em);
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
 }
 
 .userDiv:focus {
@@ -27,4 +36,24 @@
 
 .moarBtn {
   margin: 0.5em;
+}
+
+.indexSpan {
+  width: 5%;
+}
+
+.idSpan {
+  width: 15%;
+}
+
+.nameSpan {
+  width: 25%;
+}
+
+.emailSpan {
+  width: 35%;
+}
+
+.citySpan {
+  width: 20%;
 }

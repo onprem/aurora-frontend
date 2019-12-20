@@ -3,15 +3,15 @@ import { useQuery } from '@apollo/react-hooks';
 
 import Loader from '../../components/Loader/Loader';
 import UserTable from '../../components/AdminDash/UserTable/UserTable';
+import TeamTable from '../../components/AdminDash/TeamTable/TeamTable';
 import getAlert from '../../utils/getAlert';
-import ALL_USRS from '../../graphQl/queries/protected/allUsers';
+
+import ADMIN_META from '../../graphQl/queries/protected/adminMetadata';
 
 import styles from './AdminDashboard.module.css';
 
 const AdminDashboard = () => {
   const [err, setErr] = useState(false);
-  const [page, setPage] = useState(0);
-  const [limit] = useState(5);
 
   const handleErrors = error => {
     if (error && error.graphQLErrors.length > 0) {
@@ -27,32 +27,9 @@ const AdminDashboard = () => {
     }
   };
 
-  const { data, loading, fetchMore } = useQuery(ALL_USRS, {
-    variables: {
-      limit,
-    },
+  const { data, loading } = useQuery(ADMIN_META, {
     onError: handleErrors,
-    onCompleted: () => setPage(pageN => pageN + 1),
-    notifyOnNetworkStatusChange: true,
   });
-
-  const fetchMoreUsers = () => {
-    fetchMore({
-      variables: {
-        limit,
-        page,
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult) return prev;
-        return {
-          allUsers: {
-            ...prev.allUsers,
-            users: prev.allUsers.users.concat(fetchMoreResult.allUsers.users),
-          },
-        };
-      },
-    });
-  };
 
   if (err)
     return (
@@ -61,27 +38,20 @@ const AdminDashboard = () => {
       </div>
     );
 
-  if (loading && page === 0)
+  if (loading)
     return (
-      <div className={styles.adminDiv}>
+      <div className={styles.adminDiv} style={{ justifyContent: 'center' }}>
         <Loader fill="#000000" />
       </div>
     );
 
+  const { isRoot, events } = data.adminMetadata;
+
   return (
     <div className={styles.adminDiv}>
-      <h1>Hey Admin</h1>
-      <h1>
-        We got&nbsp;
-        {data?.allUsers?.total}
-        &nbsp;users.
-      </h1>
-      <UserTable
-        users={data?.allUsers?.users || []}
-        fetchMoreUsers={fetchMoreUsers}
-        total={data?.allUsers?.total}
-        loading={loading}
-      />
+      <h1 className={styles.heading}>ADMIN DASHBOARD</h1>
+      {isRoot && <UserTable />}
+      <TeamTable events={events} />
     </div>
   );
 };
