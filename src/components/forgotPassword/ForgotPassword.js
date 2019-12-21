@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/react-hooks';
 
@@ -15,7 +15,24 @@ import { ReactComponent as Arrow } from '../../assets/icons/arrowLeft.svg';
 
 const ForgotPassword = () => {
   const [inputs, changeInputs] = useState({ email: '' });
-  const [runForgotPassword, { data, loading, error }] = useMutation(FORGOT_PASSWORD);
+
+  const handleErrors = error => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+  };
+
+  const [runForgotPassword, { data, loading }] = useMutation(FORGOT_PASSWORD, {
+    onError: handleErrors,
+    onCompleted: () => {
+      changeInputs({ email: '' });
+    },
+  });
+
   const handleSubmit = e => {
     e.preventDefault();
     const toast = getAlert();
@@ -38,23 +55,10 @@ const ForgotPassword = () => {
       });
     }
   };
+
   const handleInput = e => {
     changeInputs({ email: e.target.value });
   };
-  useEffect(() => {
-    if (data) {
-      changeInputs({ email: '' });
-    }
-  }, [data]);
-  useEffect(() => {
-    const toast = getAlert();
-    if (error && error.graphQLErrors.length > 0) {
-      toast.fire({
-        icon: 'error',
-        title: error.graphQLErrors[0].message,
-      });
-    }
-  }, [error]);
 
   return (
     <form className={style.login_form}>

@@ -20,6 +20,7 @@ const Register = () => {
   const history = useHistory();
   const is800 = useMediaQuery(`(max-width:800px)`);
   const isMobile = useMediaQuery(`(max-width:450px)`);
+
   const [inputs, changeInputs] = useState({
     name: '',
     phone: '',
@@ -33,19 +34,43 @@ const Register = () => {
     height: window.innerHeight,
     width: window.innerWidth,
   });
-  const [runRegister, { data, loading, error }] = useMutation(REGISTER);
+  const [step, changeStep] = useState('1');
+
+  const handleErrors = error => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+  };
+
+  const [runRegister, { data, loading }] = useMutation(REGISTER, {
+    onError: handleErrors,
+    onCompleted: () => {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'success',
+        title: 'Registered Successfully',
+      });
+      changeInputs({ email: '', password: '' });
+    },
+  });
+
   const handleSubmit = () => {
-    const toast = getAlert();
     if (inputs.email && inputs.password && inputs.city && inputs.college) {
       if (emailValidation(inputs.email)) {
         runRegister({ variables: inputs });
       } else {
+        const toast = getAlert();
         toast.fire({
           icon: 'error',
           title: 'Please enter valid email',
         });
       }
     } else {
+      const toast = getAlert();
       changeInputs({
         gender: inputs.gender,
         phone: inputs.phone,
@@ -61,31 +86,7 @@ const Register = () => {
       });
     }
   };
-  const RenderAfterRegister = data ? (
-    <div className={style.renderAfterRegister}>
-      <p className={style.after_render_p}>{data.signup.message}</p>
-      <Button text="LOGIN" onClick={() => history.push('/login')} iconPosition="right" Icon={Log} />
-    </div>
-  ) : null;
-  useEffect(() => {
-    if (data) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'success',
-        title: 'Registered Successfully',
-      });
-      changeInputs({ email: '', password: '' });
-    }
-  }, [data]);
-  useEffect(() => {
-    if (error && error.graphQLErrors.length > 0) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'error',
-        title: error.graphQLErrors[0].message,
-      });
-    }
-  }, [error]);
+
   useEffect(() => {
     let timeout;
     function handleResize() {
@@ -103,7 +104,14 @@ const Register = () => {
       window.removeEventListener('resize', null);
     };
   }, [dimensions]);
-  const [step, changeStep] = useState('1');
+
+  const RenderAfterRegister = data ? (
+    <div className={style.renderAfterRegister}>
+      <p className={style.after_render_p}>{data.signup.message}</p>
+      <Button text="LOGIN" onClick={() => history.push('/login')} iconPosition="right" Icon={Log} />
+    </div>
+  ) : null;
+
   return data ? (
     RenderAfterRegister
   ) : (

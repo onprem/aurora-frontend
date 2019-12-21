@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import Particles from '../../components/particles/Particle';
@@ -13,14 +13,15 @@ import USR_QUERY from '../../graphQl/queries/user';
 import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
-  const { data, loading, error } = useQuery(USR_QUERY);
+  const [err, setErr] = useState(false);
   const history = useHistory();
 
-  useEffect(() => {
+  const handleErrors = error => {
     if (error && error.graphQLErrors.length > 0) {
       if (error.graphQLErrors[0].extensions.code === 'UNAUTHENTICATED') {
         history.push('/logout');
       } else {
+        setErr(true);
         const toast = getAlert();
         toast.fire({
           icon: 'error',
@@ -28,9 +29,13 @@ const Dashboard = () => {
         });
       }
     }
-  }, [error, history]);
+  };
 
-  if (loading || error) return <Loader fill="#000000" />;
+  const { data, loading } = useQuery(USR_QUERY, {
+    onError: handleErrors,
+  });
+
+  if (loading || err) return <Loader fill="#000000" />;
 
   return (
     <>

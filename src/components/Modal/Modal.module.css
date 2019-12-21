@@ -1,0 +1,49 @@
+.container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.open {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 80%;
+  padding: 4em;
+  font-size: 1.7em;
+  transition: all 0.8s ease-out;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.crossBtn {
+  position: absolute;
+  top: 2em;
+  left: 1.5em;
+  color: white;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.crossBtn > svg {
+  height: 4em;
+  color: black;
+}
+
+@media only screen and (max-width: 500px) {
+  .modal {
+    font-size: 1.2em;
+    padding: 0;
+    width: 96%;
+  }
+}

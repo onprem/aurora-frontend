@@ -45,8 +45,29 @@ const cordiData = [
 
 const Contact = () => {
   const [inputs, changeInputs] = useState({ name: '', email: '', subject: '', message: '' });
-  const [runContactUs, { data, loading, error }] = useMutation(CONTACT_US);
   const isMobile = useMediaQuery('(max-width:850px)');
+
+  const handleErrors = error => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+  };
+
+  const [runContactUs, { loading }] = useMutation(CONTACT_US, {
+    onError: handleErrors,
+    onCompleted: data => {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'success',
+        title: data.contactUs.message,
+      });
+      changeInputs({ name: '', email: '', subject: '', message: '' });
+    },
+  });
 
   const handleInput = event => {
     const { value, name } = event.target;
@@ -81,6 +102,7 @@ const Contact = () => {
       });
     }
   };
+
   useEffect(() => {
     const bat1 = document.getElementById('bat1');
     const bat2 = document.getElementById('bat2');
@@ -107,27 +129,6 @@ const Contact = () => {
       window.cancelAnimationFrame(AnimateChealCaowaFrame3);
     };
   }, []);
-
-  useEffect(() => {
-    if (data) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'success',
-        title: data.contactUs.message,
-      });
-      changeInputs({ name: '', email: '', subject: '', message: '' });
-    }
-  }, [data]);
-
-  useEffect(() => {
-    if (error && error.graphQLErrors.length > 0) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'error',
-        title: error.graphQLErrors[0].message,
-      });
-    }
-  }, [error]);
 
   return (
     <>

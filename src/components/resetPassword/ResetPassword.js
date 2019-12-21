@@ -1,23 +1,41 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
-
+import React, { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-
 import { useMutation } from '@apollo/react-hooks';
 
-import style from '../login/login.module.css';
+import Loader from '../Loader/Loader';
 
 import RESET_PASSWORD from '../../graphQl/mutations/resetPassword';
 import getAlert from '../../utils/getAlert';
-
-import Loader from '../Loader/Loader';
 import { ReactComponent as Arrow } from '../../assets/icons/arrowLeft.svg';
+
+import style from '../login/login.module.css';
 
 const ResetPassword = () => {
   const history = useHistory();
   const { token } = useParams();
   const [inputs, changeInputs] = useState({ password: '' });
-  const [runResetPassword, { data, loading, error }] = useMutation(RESET_PASSWORD);
+
+  const handleErrors = error => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+  };
+
+  const [runResetPassword, { data, loading }] = useMutation(RESET_PASSWORD, {
+    onError: handleErrors,
+    onCompleted: () => {
+      changeInputs({ password: '' });
+      setTimeout(() => {
+        history.push('/login');
+      }, 4000);
+    },
+  });
+
   const handleSubmit = e => {
     e.preventDefault();
     const toast = getAlert();
@@ -33,26 +51,10 @@ const ResetPassword = () => {
       });
     }
   };
+
   const handleInput = e => {
     changeInputs({ password: e.target.value });
   };
-  useEffect(() => {
-    if (data) {
-      changeInputs({ password: '' });
-      setTimeout(() => {
-        history.push('/login');
-      }, 4000);
-    }
-  }, [data, history]);
-  useEffect(() => {
-    const toast = getAlert();
-    if (error && error.graphQLErrors.length > 0) {
-      toast.fire({
-        icon: 'error',
-        title: error.graphQLErrors[0].message,
-      });
-    }
-  }, [error]);
 
   return (
     <form className={style.login_form}>
