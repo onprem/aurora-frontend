@@ -20,6 +20,12 @@
   cursor: pointer;
 }
 
+.usrHeading {
+  text-transform: uppercase;
+  font-size: 2.2em;
+  letter-spacing: 0.1em;
+}
+
 .userDivHeading {
   composes: userDiv;
   width: calc(80% - 2.5em);
@@ -61,6 +67,9 @@
 @media only screen and (max-width: 500px) {
   .container {
     font-size: 1em;
+  }
+  .usrHeading {
+    font-size: 1.2em;
   }
   .emailSpan, .citySpan {
     display: none;

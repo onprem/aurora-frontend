@@ -13,6 +13,7 @@ export default gql`
           email
           college
           city
+          phone
         }
         paymentStatus
         pendingInvitations {

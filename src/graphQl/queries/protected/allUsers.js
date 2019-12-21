@@ -13,6 +13,7 @@ export default gql`
         city
         displayPic
         college
+        isVerified
         teams {
           id
           name

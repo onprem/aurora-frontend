@@ -23,6 +23,9 @@ const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
             <span>
               <b>EMAIL:</b> {user.email}
             </span>
+            <span>
+              <b>MOBILE:</b> {user.phone}
+            </span>
           </section>
           <section className={styles.modalSections}>
             <span>
@@ -34,6 +37,9 @@ const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
           </section>
           <h3 className={styles.modalHeadings}>REGISTRATIONS</h3>
           <section className={styles.modalSections}>
+            <span>
+              <b>VERIFIED:</b> {user.isVerified ? 'True' : 'False'}
+            </span>
             <span>
               <b>ACCOMODATION:</b> {user.accomodation ? 'True' : 'False'}
             </span>

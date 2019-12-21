@@ -36,8 +36,8 @@ const MakeAdmin = ({ arId }) => {
       showCancelButton: true,
       confirmButtonColor: 'white',
       cancelButtonColor: 'white',
-      cancelButtonText: '<span style="color:black; font-weight:600">Cancel</span>',
-      confirmButtonText: '<span style="color:black; font-weight:600">Register</span>',
+      cancelButtonText: '<span style="color:black; font-weight:600">CANCEL</span>',
+      confirmButtonText: '<span style="color:black; font-weight:600">SUBMIT</span>',
       // eslint-disable-next-line consistent-return
       inputValidator: value => {
         try {
