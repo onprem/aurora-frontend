@@ -38,7 +38,7 @@ const AdminDashboard = () => {
       </div>
     );
 
-  if (loading)
+  if (loading || !data)
     return (
       <div className={styles.adminDiv} style={{ justifyContent: 'center' }}>
         <Loader fill="#000000" />

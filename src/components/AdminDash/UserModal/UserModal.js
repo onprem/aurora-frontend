@@ -2,10 +2,12 @@
 import React from 'react';
 
 import Modal from '../../Modal/Modal';
+import MakeAdmin from '../Actions/MakeAdmin';
+import Impersonate from '../Actions/Impersonate';
 
 import styles from './UserModal.module.css';
 
-const UserModal = ({ user, isOpen, setIsOpen }) => {
+const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       {user && (
@@ -39,6 +41,19 @@ const UserModal = ({ user, isOpen, setIsOpen }) => {
               <b>PRONITE:</b> {user.pronite ? 'True' : 'False'}
             </span>
           </section>
+          {isRoot && (
+            <>
+              <h3 className={styles.modalHeadings}>ACTIONS</h3>
+              <section className={styles.modalSections}>
+                <span>
+                  <MakeAdmin arId={user.id} />
+                </span>
+                <span>
+                  <Impersonate arId={user.id} />
+                </span>
+              </section>
+            </>
+          )}
         </>
       )}
     </Modal>

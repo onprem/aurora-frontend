@@ -103,7 +103,7 @@ const UserTable = () => {
           />
         )}
       </div>
-      <UserModal user={modalUser} isOpen={isModalOpen} setIsOpen={setModalOpen} />
+      <UserModal user={modalUser} isOpen={isModalOpen} setIsOpen={setModalOpen} isRoot />
     </>
   );
 };
