@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './Profile.module.css';
 
 const Profile = ({ className, user }) => {
-  const dpBaseURL = 'https://storage.cloud.google.com/aurora-dp/';
+  const dpBaseURL = 'https://storage.googleapis.com/aurora-dp/';
 
   return (
     <section className={classNames(styles.profileSection, className)}>

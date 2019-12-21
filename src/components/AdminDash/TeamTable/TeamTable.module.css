@@ -1,0 +1,89 @@
+.teamTable {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 4em 0;
+}
+.container {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4em;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.teamDiv {
+  composes: userDiv from '../UserTable/UserTable.module.css';
+}
+
+.teamDivHeading {
+  composes: userDivHeading from '../UserTable/UserTable.module.css';
+}
+
+.evtHead {
+  /* margin: 0; */
+  text-transform: uppercase;
+  font-size: 2.2em;
+  letter-spacing: 0.1em;
+}
+
+.label {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+.evtSelect {
+  background: transparent;
+  border: solid 2px black;
+  border-radius: 0.5em;
+  font-size: 1.4em;
+  padding: 0.1em 0.6em;
+  text-transform: uppercase;
+}
+
+.moarBtn {
+  margin: 0.5em;
+}
+
+.indexSpan {
+  width: 5%;
+}
+
+.idSpan {
+  width: 20%;
+}
+
+.nameSpan {
+  width: 25%;
+}
+
+.usersSpan {
+  width: 40%;
+}
+
+.paymentSpan {
+  width: 10%;
+}
+
+@media only screen and (max-width: 500px) {
+  .teamDiv {
+    font-size: 0.8em;
+  }
+  .evtHead {
+    font-size: 1.2em;
+  }
+  .idSpan {
+    width: auto;
+  }
+  .usersSpan {
+    display: none;
+  }
+  .nameSpan {
+    display: none;
+  }
+  .paymentSpan {
+    width: auto;
+  }
+}

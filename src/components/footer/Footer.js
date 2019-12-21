@@ -11,7 +11,10 @@ const sitemap = [
   { title: 'events', path: '/events' },
   { title: 'contact us', path: '/contact' },
 ];
-const support = [{ title: 'contact us', path: '/contact' }, { title: 'find us', path: '/contact' }];
+const support = [
+  { title: 'contact us', path: '/contact' },
+  { title: 'find us', path: '/contact' },
+];
 const social = ['waste management'];
 
 const Footer = () => {

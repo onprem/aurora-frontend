@@ -22,6 +22,7 @@ const NotFound = React.lazy(() => import('./views/NotFound/NotFound'));
 const EventDetails = React.lazy(() => import('./views/EventDetails/EventDetails'));
 const Contact = React.lazy(() => import('./views/contactUs/ContactUs'));
 const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
+const AdminDashboard = React.lazy(() => import('./views/AdminDashboard/AdminDashboard'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
 
 function App() {
@@ -77,6 +78,9 @@ function App() {
               </Route>
               <ProtectedRoute exact path="/dashboard">
                 <Dashboard />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/admin">
+                <AdminDashboard />
               </ProtectedRoute>
               <Route exact path="/logout">
                 <LogOut />

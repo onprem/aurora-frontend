@@ -14,7 +14,7 @@ const PaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
     const parentEvt = team.event.parentEvent;
     const parentEvtName = parentEvt
-      ? eventData[parentEvt.replace(/-/gi, '_')].name
+      ? eventData[parentEvt.replace(/-/gi, '_')]?.name
       : team.event.name;
     if (isDesktop) {
       return (
@@ -92,7 +92,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
     const parentEvt = team.event.parentEvent;
     const parentEvtName = parentEvt
-      ? eventData[parentEvt.replace(/-/gi, '_')].name
+      ? eventData[parentEvt.replace(/-/gi, '_')]?.name
       : team.event.name;
 
     if (isDesktop) {
