@@ -16,7 +16,13 @@ const TeamModal = ({ team, isOpen, setIsOpen }) => {
           <b>NAME:</b> {member.name}
         </span>
         <span>
+          <b>PHONE:</b>&nbsp;<a href={`tel:${member.phone}`}>{member.phone}</a>
+        </span>
+        <span>
           <b>CITY:</b> {member.city}
+        </span>
+        <span>
+          <b>COLLEGE:</b> {member.college}
         </span>
       </section>
     );
@@ -30,9 +36,11 @@ const TeamModal = ({ team, isOpen, setIsOpen }) => {
             <span>
               <b>TEAM-ID:</b> {team.id}
             </span>
-            <span>
-              <b>TEAM NAME:</b> {team.name}
-            </span>
+            {team.name && (
+              <span>
+                <b>TEAM NAME:</b> {team.name}
+              </span>
+            )}
             <span>
               <b>PAYMENT:</b> {team.paymentStatus ? 'Paid' : 'Unpaid'}
             </span>

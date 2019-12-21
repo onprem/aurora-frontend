@@ -114,7 +114,7 @@ const PayButton = ({ toPay, setToPay }) => {
   const placeOrder = () => {
     Swal.fire({
       title: 'Are you sure?',
-      html: `<ul>
+      html: `<ul style="overflow-y: auto; max-height: 40vh">
         <li style="text-align:left; margin-bottom:10px">
           Total payable amount is &#8377;${totalMoney} + &#8377;${Math.floor(totalMoney * 2.42) /
         100} (payment gateway charges)
@@ -130,7 +130,7 @@ const PayButton = ({ toPay, setToPay }) => {
       showCancelButton: true,
       confirmButtonColor: 'white',
       cancelButtonColor: 'white',
-      cancelButtonText: '<span style="color:black; font-weight:600">Cancel</span>',
+      cancelButtonText: '<span style="color:black; font-weight:600">CANCEL</span>',
       confirmButtonText: '<span style="color:black; font-weight:600">PAY</span>',
     }).then(result => {
       if (result.value) {

@@ -84,6 +84,7 @@ const UserTable = () => {
 
   return (
     <>
+      <h2 className={styles.usrHeading}>{`USERS (TOTAL:${total})`}</h2>
       <div className={styles.userDivHeading}>
         <span className={styles.indexSpan}>#</span>
         <span className={styles.nameSpan}>NAME</span>
