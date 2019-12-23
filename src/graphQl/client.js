@@ -6,13 +6,11 @@ import { setContext } from 'apollo-link-context';
 import { ApolloLink } from 'apollo-link';
 
 import getAlert from '../utils/getAlert';
+import config from '../config';
 // import { useAuth } from '../context/auth';
 
 const useApolloClient = authToken => {
-  const uri =
-    process.env.REACT_APP_ENV === 'production'
-      ? 'https://api.aurorafest.org/api/graphql'
-      : 'https://api.staging.aurorafest.org/api/graphql';
+  const uri = config.apiUrl;
 
   const backendLink = new HttpLink({ uri });
 
