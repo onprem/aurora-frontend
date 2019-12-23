@@ -10,6 +10,7 @@ export default gql`
       gender
       city
       displayPic
+      accommodation
       college
       teams {
         id

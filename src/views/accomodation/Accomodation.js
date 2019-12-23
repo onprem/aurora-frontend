@@ -1,8 +1,9 @@
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
+import Swal from 'sweetalert2/src/sweetalert2';
 
 import style from './accomodation.module.css';
 
@@ -19,9 +20,12 @@ import getAlert from '../../utils/getAlert';
 import { useAuth } from '../../context/auth';
 import useMediaQuery from '../../utils/useMediaQuery';
 import { ARValidation } from '../../utils/validation';
+import useRzrPay from '../../utils/useRzrPay';
 
 import USER_QUERY from '../../graphQl/queries/user';
 import PUBLIC_USER from '../../graphQl/queries/publicUser';
+import GET_ACC_ORDER from '../../graphQl/mutations/generateAccOrder';
+import VERIFY_ACC_ORDER from '../../graphQl/mutations/verifyAccOrder';
 
 const RenderUserById = ({ sr, arId, removeUserById, validUser }) => {
   const { loading, error, data } = useQuery(PUBLIC_USER, { variables: { arId } });
@@ -47,7 +51,7 @@ const RenderUserById = ({ sr, arId, removeUserById, validUser }) => {
   return !loading ? (
     data && data.publicUser ? (
       <div className={style.accomodation_list}>
-        <span className={style.accomodation_list_item}>{sr}</span>
+        <span className={style.accomodation_list_item_sr}>{sr}</span>
         <span className={style.accomodation_list_item}>{data.publicUser.name}</span>
         <span className={style.accomodation_list_item}>{data.publicUser.id}</span>
         <span
@@ -71,20 +75,33 @@ const Accomodation = () => {
   const history = useHistory();
   const isMobile = useMediaQuery('(max-width:500px)');
   const { authToken } = useAuth();
-  const { data, loading } = useQuery(USER_QUERY);
-  const [addMemberPay, changeAddMemberPay] = useState(false);
   const [userArray, changeUserArray] = useState([]);
+  const { data, loading } = useQuery(USER_QUERY, {
+    onCompleted: uData => {
+      changeUserArray([uData.user.id]);
+    },
+  });
+  const [addMemberPay, changeAddMemberPay] = useState(true);
+
   const [showBooking, changeShowBooking] = useState(false);
   const [input, changeInput] = useState('');
 
   const bookAccomodationClick = () => {
     if (authToken) {
-      if (data && !data.user.accomodation) changeShowBooking(true);
-      else {
+      if (data) {
+        if (!data.user.accommodation) changeShowBooking(true);
+        else {
+          const toast = getAlert();
+          toast.fire({
+            icon: 'error',
+            title: 'User already paid for accomodation',
+          });
+        }
+      } else {
         const toast = getAlert();
         toast.fire({
           icon: 'error',
-          title: 'User already paid for accomodation',
+          title: 'Something went wrong. Please try again later',
         });
       }
     } else {
@@ -110,8 +127,8 @@ const Accomodation = () => {
     if (input !== '' && ARValidation(input)) {
       const arr = userArray;
       arr.push(input);
-      changeAddMemberPay(true);
       changeUserArray(arr);
+      changeAddMemberPay(true);
       changeInput('');
     } else {
       const toast = getAlert();
@@ -129,11 +146,106 @@ const Accomodation = () => {
       changeAddMemberPay(false);
     }
   };
-  useEffect(() => {
-    if (data) {
-      changeUserArray([data.user.id]);
+  const handleErrors = error => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
     }
-  }, [data]);
+  };
+  const launchRzrPay = useRzrPay();
+
+  const handleVrfySuccess = qData => {
+    const toast = getAlert();
+    toast.fire({
+      icon: 'success',
+      title: qData.verifyAccOrder.message,
+    });
+    changeUserArray([]);
+    changeShowBooking(false);
+  };
+
+  const [verifyOrder, verifyRes] = useMutation(VERIFY_ACC_ORDER, {
+    onCompleted: handleVrfySuccess,
+    onError: handleErrors,
+  });
+
+  const handlePayment = response => {
+    // eslint-disable-next-line no-console
+    console.log(response);
+    verifyOrder({
+      variables: {
+        orderId: response.razorpay_order_id,
+        paymentId: response.razorpay_payment_id,
+        signature: response.razorpay_signature,
+      },
+    });
+  };
+  const options = {
+    currency: 'INR',
+    name: 'Aurora 20',
+    description: 'Payment for Accomodation',
+    handler: handlePayment,
+  };
+
+  const [getOrder, getOrderRes] = useMutation(GET_ACC_ORDER, {
+    onCompleted: oData => {
+      launchRzrPay({
+        ...options,
+        prefill: {
+          name: data.user.name,
+          email: data.user.email,
+          contact: data.user.phone,
+        },
+        ...oData.generateAccOrder,
+      });
+    },
+    update: cacheStore => {
+      const usrData = cacheStore.readQuery({ query: USER_QUERY });
+      usrData.user.accommodation = true;
+      cacheStore.writeQuery({
+        query: USER_QUERY,
+        data: {
+          user: { ...usrData.user },
+        },
+      });
+    },
+    onError: handleErrors,
+  });
+
+  const placeOrder = () => {
+    if (!addMemberPay) {
+      Swal.fire({
+        title: 'Are you sure?',
+        html: `<ul>
+          <li style="text-align:left; margin-bottom:10px">
+            Total payable amount is &#8377;${userArray.length * 799} + &#8377;${Math.floor(
+          userArray.length * 799 * 2.42
+        ) / 100} (payment gateway charges)
+          </li>
+          <li style="text-align:left; margin-bottom:10px">
+            Payment is non-refundable under any circumstances whatsoever except for extreme cases. Contact our tech support team (<a style="text-decoration:underline" href="mailto:support@aurorafest.org">support@aurorafest.org</a>) for extreme case scenarios.
+          </li>
+        </ul>`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: 'white',
+        cancelButtonColor: 'white',
+        cancelButtonText: '<span style="color:black; font-weight:600">Cancel</span>',
+        confirmButtonText: '<span style="color:black; font-weight:600">PAY</span>',
+      }).then(result => {
+        if (result.value) getOrder({ variables: { userIds: userArray } });
+      });
+    } else {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: 'Something Went wrong please try again later',
+      });
+    }
+  };
 
   const RenderShowBooking = (
     <div className={style.accomodation_show_parent}>
@@ -145,7 +257,7 @@ const Accomodation = () => {
       <h3 className={style.accomodation_h3}>TEAM MEMBERS</h3>
       <div className={style.accomodation_list_container}>
         <div className={style.accomodation_list_heading}>
-          <span className={style.accomodation_list_heading_item}>#</span>
+          <span className={style.accomodation_list_heading_item_sr}>#</span>
           <span className={style.accomodation_list_heading_item}>Name</span>
           <span className={style.accomodation_list_heading_item}>AR-ID</span>
           <span className={style.accomodation_list_heading_item}>Action</span>
@@ -183,19 +295,24 @@ const Accomodation = () => {
           )}
         </button>
       </form>
-      <button className={style.pay_and_add_button} type="button" disabled={addMemberPay}>
-        {!addMemberPay ? (
+      <button
+        className={style.pay_and_add_button}
+        type="button"
+        disabled={addMemberPay || getOrderRes.loading || verifyRes.loading}
+        onClick={placeOrder}
+      >
+        {addMemberPay || getOrderRes.loading || verifyRes.loading ? (
+          <Loader fill="black" />
+        ) : (
           <>
             Pay &#8377;&nbsp;
-            {userArray.length * 800}
+            {userArray.length * 799}
           </>
-        ) : (
-          <Loader fill="black" />
         )}
       </button>
     </div>
   );
-  console.log(userArray);
+
   return (
     <>
       <div className={style.accomodation_parent}>
@@ -235,21 +352,47 @@ const Accomodation = () => {
           </div>
           {!showBooking ? (
             authToken ? (
-              <button
-                type="button"
-                onClick={bookAccomodationClick}
-                className={style.accomodation_book_button}
-                disabled={loading}
-              >
-                {!loading ? (
-                  <>
-                    BOOK ACCOMODATION
-                    <Booking className={style.booking_button_svg} />
-                  </>
-                ) : (
-                  <Loader fill="black" />
-                )}
-              </button>
+              data && data.user.accommodation ? (
+                <div className={style.alreadypaid_container}>
+                  <h3 className={style.accomodation_h3}>Accomodation Fees Successfully Paid</h3>
+                  <svg
+                    className={style.checkmark1}
+                    id="svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 52 52"
+                  >
+                    <circle
+                      className={style.checkmark__circle1}
+                      id="circle"
+                      cx="26"
+                      cy="26"
+                      r="25"
+                      fill="none"
+                    />
+                    <path
+                      className={style.checkmark__check}
+                      fill="none"
+                      d="M14.1 27.2l7.1 7.2 16.7-16.8"
+                    />
+                  </svg>
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={bookAccomodationClick}
+                  className={style.accomodation_book_button}
+                  disabled={loading}
+                >
+                  {!loading ? (
+                    <>
+                      BOOK ACCOMODATION
+                      <Booking className={style.booking_button_svg} />
+                    </>
+                  ) : (
+                    <Loader fill="black" />
+                  )}
+                </button>
+              )
             ) : (
               <button
                 type="button"
@@ -267,9 +410,9 @@ const Accomodation = () => {
             RenderShowBooking
           )}
         </div>
+        {!isMobile ? <Social className={style.accomodation_social} fill="black" /> : null}
       </div>
       <Particles />
-      {!isMobile ? <Social fill="black" /> : null}
       <Link to="/">
         <LogoDark className={style.dark_logo} />
       </Link>
