@@ -27,6 +27,42 @@ import PUBLIC_USER from '../../graphQl/queries/publicUser';
 import GET_ACC_ORDER from '../../graphQl/mutations/generateAccOrder';
 import VERIFY_ACC_ORDER from '../../graphQl/mutations/verifyAccOrder';
 
+const RenderTnC = () => {
+  return (
+    <ul className={style.accomodation_ul}>
+      <li className={style.accomodation_li}>
+        Accomodation Policies
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>
+            Accommodation charges are INR 799 per candidate. It includes charges for accommodation
+            and 3 Pronites and Proshows.
+          </li>
+          <li className={style.accomodation_li}>
+            It does not include a food facility. Guest can purchase their meals from the cafeteria,
+            night cafeteria or hostel messes at subsidized rates.
+          </li>
+        </ul>
+      </li>
+      <li className={style.accomodation_li}>
+        Check-In and Check-Out timings
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>
+            Check-In - Anytime after 13th Feb, 2020, 7:00 PM
+          </li>
+          <li className={style.accomodation_li}>
+            Check Out - on or before 17th Feb, 2020,10:00 AM
+          </li>
+        </ul>
+      </li>
+      <li className={style.accomodation_li}>
+        Accommodation is provided on a shared basis inside campus hostels or International Visitors’
+        Hostel. Girls and boys will be accommodated separately. Number of guests in a room will be
+        decided by Aurora and will be allotted by the Aurora Hospitality team.
+      </li>
+    </ul>
+  );
+};
+
 const RenderUserById = ({ sr, arId, removeUserById, validUser }) => {
   const { loading, error, data } = useQuery(PUBLIC_USER, { variables: { arId } });
   if (data) {
@@ -127,8 +163,8 @@ const Accomodation = () => {
     if (input !== '' && ARValidation(input)) {
       const arr = userArray;
       arr.push(input);
-      changeUserArray(arr);
       changeAddMemberPay(true);
+      changeUserArray(arr);
       changeInput('');
     } else {
       const toast = getAlert();
@@ -142,7 +178,7 @@ const Accomodation = () => {
     if (!bool) {
       changeUserArray(userArray.filter(id => id !== arId));
       changeAddMemberPay(false);
-    } else {
+    } else if (arId === userArray[userArray.length - 1]) {
       changeAddMemberPay(false);
     }
   };
@@ -320,35 +356,7 @@ const Accomodation = () => {
           <h1 className={style.accomodation_h1}>ACCOMODATION</h1>
           <div className={style.accomodation_terms_container}>
             <h3 className={style.accomodation_h3}>Terms & Conditions :</h3>
-            <p className={style.accomodation_p}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-              in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-              in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <RenderTnC />
           </div>
           {!showBooking ? (
             authToken ? (

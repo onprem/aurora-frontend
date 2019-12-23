@@ -245,6 +245,19 @@
   stroke-dashoffset: 48;
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
 }
+.accomodation_ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+.accomodation_li {
+  text-align: justify;
+  width: 90%;
+  margin-top: 0.5em;
+  font-size: 0.9em;
+}
 @keyframes stroke {
   100% {
     stroke-dashoffset: 0;
