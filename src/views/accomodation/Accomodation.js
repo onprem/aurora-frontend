@@ -47,10 +47,10 @@ const RenderTnC = () => {
         Check-In and Check-Out timings
         <ul className={style.accomodation_ul}>
           <li className={style.accomodation_li}>
-            Check-In - Anytime after 13th Feb, 2020, 7:00 PM
+            Check-In - Anytime after 13th Feb. 2020, 7:00 PM
           </li>
           <li className={style.accomodation_li}>
-            Check Out - on or before 17th Feb, 2020,10:00 AM
+            Check-Out- on or before 17th Feb. 2020, 10:00 AM
           </li>
         </ul>
       </li>
