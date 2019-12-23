@@ -323,15 +323,15 @@ const Accomodation = () => {
           type="submit"
           className={style.pay_and_add_button}
           onClick={onAddMemberClick}
-          disabled={addMemberPay}
+          disabled={addMemberPay || getOrderRes.loading || verifyRes.loading}
         >
-          {!addMemberPay ? (
+          {addMemberPay || getOrderRes.loading || verifyRes.loading ? (
+            <Loader fill="black" />
+          ) : (
             <>
               ADD MEMBERS
               <Plus className={style.input_plus} />
             </>
-          ) : (
-            <Loader fill="black" />
           )}
         </button>
       </form>
