@@ -34,10 +34,10 @@ const Nav = () => {
     //   title: 'Pronites',
     //   path: '/pronites',
     // },
-    // {
-    //   title: 'Accomodation',
-    //   path: '/accomodation',
-    // },
+    {
+      title: 'Accomodation',
+      path: '/accomodation',
+    },
     {
       title: 'Login/Register',
       path: '/login',
