@@ -35,7 +35,7 @@ const RenderTnC = () => {
         <ul className={style.accomodation_ul}>
           <li className={style.accomodation_li}>
             Accommodation charges are INR 799 per candidate. It includes charges for accommodation
-            and 3 Pronites and Proshows.
+            for 4D/4N, 3 Pronites and Proshows.
           </li>
           <li className={style.accomodation_li}>
             It does not include a food facility. Guest can purchase their meals from the cafeteria,
@@ -58,6 +58,10 @@ const RenderTnC = () => {
         Accommodation is provided on a shared basis inside campus hostels or International Visitors’
         Hostel. Girls and boys will be accommodated separately. Number of guests in a room will be
         decided by Aurora and will be allotted by the Aurora Hospitality team.
+      </li>
+      <li className={style.accomodation_li}>
+        Taking accommodation abides you to follow all the rules and regulations enforced by college
+        authorities.
       </li>
     </ul>
   );
