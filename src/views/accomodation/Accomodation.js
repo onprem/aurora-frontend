@@ -34,8 +34,8 @@ const RenderTnC = () => {
         Accomodation Policies
         <ul className={style.accomodation_ul}>
           <li className={style.accomodation_li}>
-            Accommodation charges are INR 799 per candidate. It includes charges for accommodation
-            and 3 Pronites and Proshows.
+            Accommodation charges are INR 799 per candidate. It includes accommodation for 4D/4N, 3
+            Pronites and Proshows.
           </li>
           <li className={style.accomodation_li}>
             It does not include a food facility. Guest can purchase their meals from the cafeteria,
@@ -47,10 +47,10 @@ const RenderTnC = () => {
         Check-In and Check-Out timings
         <ul className={style.accomodation_ul}>
           <li className={style.accomodation_li}>
-            Check-In - Anytime after 13th Feb, 2020, 7:00 PM
+            Check-In - Anytime after 13th Feb. 2020, 7:00 PM
           </li>
           <li className={style.accomodation_li}>
-            Check Out - on or before 17th Feb, 2020,10:00 AM
+            Check-Out- on or before 17th Feb. 2020, 10:00 AM
           </li>
         </ul>
       </li>
@@ -58,6 +58,9 @@ const RenderTnC = () => {
         Accommodation is provided on a shared basis inside campus hostels or International Visitors’
         Hostel. Girls and boys will be accommodated separately. Number of guests in a room will be
         decided by Aurora and will be allotted by the Aurora Hospitality team.
+      </li>
+      <li className={style.accomodation_li}>
+        Participants must follow all the rules and regulations of the college.
       </li>
     </ul>
   );
@@ -319,15 +322,15 @@ const Accomodation = () => {
           type="submit"
           className={style.pay_and_add_button}
           onClick={onAddMemberClick}
-          disabled={addMemberPay}
+          disabled={addMemberPay || getOrderRes.loading || verifyRes.loading}
         >
-          {!addMemberPay ? (
+          {addMemberPay || getOrderRes.loading || verifyRes.loading ? (
+            <Loader fill="black" />
+          ) : (
             <>
               ADD MEMBERS
               <Plus className={style.input_plus} />
             </>
-          ) : (
-            <Loader fill="black" />
           )}
         </button>
       </form>
