@@ -33,11 +33,31 @@
   letter-spacing: 0.1em;
   font-weight: 600;
 }
+.userDivHeading > span {
+  display: flex;
+  align-items: center;
+}
 
 .userDiv:focus {
   /* border: solid 2px black;
   border-top: none; */
   background: rgba(0, 0, 0, 0.2);
+}
+
+.usrSelect {
+  background: transparent;
+  border: solid 2px black;
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding: 0.1em 0.6em;
+  text-transform: uppercase;
+}
+
+.usrTxt {
+  border: solid 2px black;
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding: 0.1em 0.6em;
 }
 
 .moarBtn {

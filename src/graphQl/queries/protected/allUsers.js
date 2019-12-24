@@ -1,8 +1,22 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query AllUsers($limit: Int, $page: Int, $sortBy: String, $sortDir: Int) {
-    allUsers(limit: $limit, page: $page, sortBy: $sortBy, sortDir: $sortDir) {
+  query AllUsers(
+    $limit: Int
+    $page: Int
+    $sortBy: String
+    $sortDir: Int
+    $filterBy: String
+    $pattern: String
+  ) {
+    allUsers(
+      limit: $limit
+      page: $page
+      sortBy: $sortBy
+      sortDir: $sortDir
+      filterBy: $filterBy
+      pattern: $pattern
+    ) {
       total
       users {
         id
