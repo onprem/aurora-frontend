@@ -1,8 +1,11 @@
+const isLocal = false;
 module.exports = {
   client: {
     service: {
       name: 'aurora-backend',
-      url: 'https://api.staging.aurorafest.org/api/graphql',
+      url: isLocal
+        ? 'http://localhost:3001/api/graphql'
+        : 'https://api.staging.aurorafest.org/api/graphql',
     },
   },
 };
