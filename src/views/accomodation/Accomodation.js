@@ -60,7 +60,7 @@ const RenderTnC = () => {
         decided by Aurora and will be allotted by the Aurora Hospitality team.
       </li>
       <li className={style.accomodation_li}>
-        Participants must follow all the rules and regulations of the college.
+        Participants must follow all the rules and regulations of the institute.
       </li>
     </ul>
   );
