@@ -18,6 +18,7 @@ const About = React.lazy(() => import('./views/about/About'));
 const Event = React.lazy(() => import('./views/events/Event'));
 const LoginRegister = React.lazy(() => import('./views/loginRegister/LoginRegister'));
 const Verify = React.lazy(() => import('./views/Verify/Verify'));
+const Pronites = React.lazy(() => import('./views/Pronites/Pronites'));
 const NotFound = React.lazy(() => import('./views/NotFound/NotFound'));
 const EventDetails = React.lazy(() => import('./views/EventDetails/EventDetails'));
 const Contact = React.lazy(() => import('./views/contactUs/ContactUs'));
@@ -75,6 +76,9 @@ function App() {
               </Route>
               <Route exact path="/contact">
                 <Contact />
+              </Route>
+              <Route exact path="/pronites">
+                <Pronites />
               </Route>
               <ProtectedRoute exact path="/dashboard">
                 <Dashboard />

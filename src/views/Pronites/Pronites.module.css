@@ -1,0 +1,58 @@
+.pronites_container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.heading {
+  margin: 8vh 0 6vh 0;
+  font-size: 2.5em;
+  letter-spacing: 0.25em;
+}
+.pronites_logo_dark {
+  width: 5vw;
+  min-width: 60px;
+  height: auto;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+@media (max-width: 1366px) {
+  
+}
+@media (max-width: 600px) {
+  
+}
+.contact_ChealCaowa {
+  top: 0px;
+  left: -30px;
+  width: 60px;
+}
+
+.frame_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.frame {
+  /* transform: rotate(20deg); */
+  margin: 100px;
+  height: 500px;
+  widows: 300px;
+}
+
+.frame_reverse {
+  /* transform: rotate(-20deg); */
+  margin: 100px;
+  height: 500px;
+  widows: 300px;
+}
