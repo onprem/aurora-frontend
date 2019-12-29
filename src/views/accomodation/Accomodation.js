@@ -164,11 +164,20 @@ const Accomodation = () => {
   const onAddMemberClick = e => {
     e.preventDefault();
     if (input !== '' && ARValidation(input)) {
-      const arr = userArray;
-      arr.push(input);
-      changeAddMemberPay(true);
-      changeUserArray(arr);
-      changeInput('');
+      const newInput = input.toUpperCase();
+      if (userArray.includes(newInput)) {
+        const toast = getAlert();
+        toast.fire({
+          icon: 'error',
+          title: 'User already added',
+        });
+      } else {
+        const arr = userArray;
+        arr.push(newInput);
+        changeAddMemberPay(true);
+        changeUserArray(arr);
+        changeInput('');
+      }
     } else {
       const toast = getAlert();
       toast.fire({
@@ -253,7 +262,6 @@ const Accomodation = () => {
     },
     onError: handleErrors,
   });
-
   const placeOrder = () => {
     if (!addMemberPay) {
       Swal.fire({
@@ -304,6 +312,7 @@ const Accomodation = () => {
         <hr className={style.list_hr} />
         {userArray.map((id, index) => (
           <RenderUserById
+            key={id}
             sr={index + 1}
             arId={id}
             removeUserById={removeUserById}
