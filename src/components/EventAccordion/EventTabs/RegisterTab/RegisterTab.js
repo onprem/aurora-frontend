@@ -255,14 +255,36 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
             : null}
         </div>
       ) : null}
-      <button
-        type="button"
-        className={style.registerTab_invite_button}
-        style={{ marginTop: '20px' }}
-        onClick={() => history.push('/dashboard')}
-      >
-        PAY NOW &#8377;
-      </button>
+      {userTeam?.paymentStatus ? (
+        <div className={style.alreadypaid_container}>
+          <h3 className={style.accomodation_h3}>Event Fees Successfully Paid</h3>
+          <svg
+            className={style.checkmark1}
+            id="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 52 52"
+          >
+            <circle
+              className={style.checkmark__circle1}
+              id="circle"
+              cx="26"
+              cy="26"
+              r="25"
+              fill="none"
+            />
+            <path className={style.checkmark__check} fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+          </svg>
+        </div>
+      ) : (
+        <button
+          type="button"
+          className={style.registerTab_invite_button}
+          style={{ marginTop: '20px' }}
+          onClick={() => history.push('/dashboard')}
+        >
+          PAY NOW
+        </button>
+      )}
     </>
   );
 

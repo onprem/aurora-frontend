@@ -24,6 +24,7 @@ const Contact = React.lazy(() => import('./views/contactUs/ContactUs'));
 const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 const AdminDashboard = React.lazy(() => import('./views/AdminDashboard/AdminDashboard'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
+const Sponsors = React.lazy(() => import('./views/sponsors/Sponsors'));
 
 function App() {
   const [authToken, setAuthToken] = useState();
@@ -84,6 +85,9 @@ function App() {
               </ProtectedRoute>
               <Route exact path="/logout">
                 <LogOut />
+              </Route>
+              <Route exact path="/sponsors">
+                <Sponsors />
               </Route>
               <Route>
                 <NotFound />

@@ -54,10 +54,10 @@ const Nav = () => {
     //   title: 'Team',
     //   path: '/team',
     // },
-    // {
-    //   title: 'Sponsors',
-    //   path: '/sponsors',
-    // },
+    {
+      title: 'Sponsors',
+      path: '/sponsors',
+    },
     {
       title: 'Contact Us',
       path: '/contact',
