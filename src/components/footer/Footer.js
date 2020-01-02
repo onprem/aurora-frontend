@@ -10,6 +10,7 @@ const sitemap = [
   { title: 'about', path: '/about' },
   { title: 'events', path: '/events' },
   { title: 'contact us', path: '/contact' },
+  { title: 'privacy policy', path: '/privacypolicy' },
 ];
 const support = [
   { title: 'contact us', path: '/contact' },
