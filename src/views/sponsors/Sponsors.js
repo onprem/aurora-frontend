@@ -30,7 +30,12 @@ const Sponsors = () => {
         <h1 className={style.sponsor_heading_h1}>PAST SPONSORS</h1>
         <div className={style.sponsor_section}>
           {sponsors.map(sponsor => (
-            <SponsorCard img={sponsor.img} name={sponsor.name} title={sponsor.title} />
+            <SponsorCard
+              img={sponsor.img}
+              key={sponsor.img}
+              name={sponsor.name}
+              title={sponsor.title}
+            />
           ))}
         </div>
         <Link to="/" className={style.logo}>
