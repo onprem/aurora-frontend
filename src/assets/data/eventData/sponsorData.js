@@ -2,7 +2,7 @@ const sponsors = [
   {
     img: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png',
     name: 'HP',
-    title: '',
+    title: 'Hello from HP',
   },
   {
     img: 'https://seeklogo.com/images/S/SBI_Life_Insurance-logo-F59BE2404A-seeklogo.com.png',

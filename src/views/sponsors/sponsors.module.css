@@ -108,4 +108,13 @@
   .logo {
     width: 6em;
   }
+  .sponsor_card_parent_container {
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 13em;
+    height: 15em;
+  }
+  .sponsor_heading {
+    font-size: 1.2em;
+  }
 }
