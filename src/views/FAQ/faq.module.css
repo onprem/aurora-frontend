@@ -1,0 +1,99 @@
+.about_container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.about_logo_dark {
+  width: 5vw;
+  min-width: 60px;
+  height: auto;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.about_logo_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+.about_logo {
+  width: 9vw;
+  height: auto;
+  margin: 0px;
+  margin-left: -50px;
+}
+.about_heading {
+  margin: 0px;
+  padding: 0px;
+  height: 8vw;
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+.about_para_container {
+  width: 75vw;
+  margin-bottom: 50px;
+}
+.about_para {
+  text-align: justify;
+  font-size: 1.6vw;
+  font-weight: 400;
+  line-height: 50px;
+}
+@media (max-width: 1366px) {
+  .about_para {
+    line-height: 40px;
+  }
+  .about_logo {
+    width: 140px;
+    margin-left: -40px;
+  }
+  .about_heading {
+    height: 140px;
+    margin-top: -25px;
+  }
+  .about_para {
+    font-size: 22px;
+  }
+}
+@media (max-width: 600px) {
+  .about_logo_container {
+    margin-top: 100px;
+  }
+  .about_para {
+    line-height: 25px;
+  }
+  .about_logo {
+    width: 100px;
+    margin-left: -30px;
+  }
+  .about_heading {
+    height: 80px;
+    margin-top: -10px;
+  }
+  .about_para {
+    font-size: 18px;
+  }
+}
+.contact_ChealCaowa {
+  top: 0px;
+  left: -30px;
+  width: 60px;
+}
+.heading {
+  margin: 8vh 0 6vh 0;
+  font-size: 2.5em;
+  letter-spacing: 0.25em;
+}
+.answer {
+  padding-left: 25px;
+}

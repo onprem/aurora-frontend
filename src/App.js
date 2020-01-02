@@ -23,6 +23,7 @@ const EventDetails = React.lazy(() => import('./views/EventDetails/EventDetails'
 const Contact = React.lazy(() => import('./views/contactUs/ContactUs'));
 const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 const AdminDashboard = React.lazy(() => import('./views/AdminDashboard/AdminDashboard'));
+const Faq = React.lazy(() => import('./views/FAQ/faq'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
 const Accomodation = React.lazy(() => import('./views/accomodation/Accomodation'));
 
@@ -88,6 +89,9 @@ function App() {
               </ProtectedRoute>
               <Route exact path="/logout">
                 <LogOut />
+              </Route>
+              <Route exact path="/faq">
+                <Faq />
               </Route>
               <Route>
                 <NotFound />
