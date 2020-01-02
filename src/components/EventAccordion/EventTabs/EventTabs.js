@@ -33,11 +33,15 @@ const EventTabs = ({ event }) => {
   const evtHeads = event.eventHeads.map(head => (
     <li key={head.name}>
       {head.name}
-      {<br />}
-      <a href={`tel:${head.mobile}`}>
-        <Phone width="15px" height="15px" />
-      </a>
-      {head.mobile}
+      {head.mobile && head.mobile !== '' ? (
+        <>
+          <br />
+          <a href={`tel:${head.mobile}`}>
+            <Phone width="15px" height="15px" />
+          </a>
+          {head.mobile}
+        </>
+      ) : null}
     </li>
   ));
 
