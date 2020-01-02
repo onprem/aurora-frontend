@@ -3,6 +3,7 @@ const eventData = {
     id: 1,
     name: 'Parivesh',
     singleEvent: true,
+    shortDes: 'The fashion show',
     description:
       'Parivesh the most glamorous event of the festival is ready to captivate the audience with its mesmerizing charm. Fashion is an art and Parivesh is the ultimate platform to express yourself. Boasting of a decade long legacy, the “gloss, glitz and glamour” is back with bigger and better stakes with Parivesh. Parivesh gives you the golden opportunity to emerge as a trendsetter in front of the big guns of trade and a huge ecstatic audience. The curtains would slowly draw apart to spell-bound everyone by the angelic beauty stunning the stage. If you have got the beguiling looks and the perfect vogue, Parivesh is just the event for you! This is a competition tailor made for all of you whoever aspires to be the next glamorous DIVA or HUNK. Come set the stage on fire with your charm and charisma at Aurora!!!',
     prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
@@ -81,6 +82,7 @@ const eventData = {
     id: 2,
     name: 'Corna',
     singleEvent: true,
+    shortDes: 'A battle of bands',
     description:
       'The Corna event will be one of the flagship events where multiple bands will compete amongst each other to prove their mettle on the stage while rocking and winning the audience with their stringing guitars and drums enthralling the audience. This will be a mega event in itself which will also form one of the pro-nights.',
     prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
@@ -199,6 +201,7 @@ const eventData = {
     id: 3,
     name: 'Mr. and Ms. Aurora',
     singleEvent: true,
+    shortDes: 'a talent hunt to test your confidence, aptitude, IQ and your wits.',
     description:
       "If you have outrageous personality, better showcase your talent. Mr and Miss Aurora (MnM) is coming this Aurora 2019 to let you explore the hidden potential in yourself, compete with some of the toughest people around you and give you the chance to be the face of Aurora. MnM, a talent hunt to test your confidence, aptitude, IQ and your wits. If you think you have got the X-factor to woe the crowd with your personality, don't wait then. Show your mettle and walk away with your head held high, your prestige intact and of course with the coveted title. Explore your physical and mental capabilities through a series of resilient challenges. So this year again, Aurora'20 is coming with it's flagship event M&M to give the adrenaline rush you desire, and of course quintessentially our own Roadies.",
     prizeMoney: 'INR 30,000 + Goodies, Benefits and Sponsored Gifts',
@@ -353,6 +356,7 @@ const eventData = {
       {
         id: 4,
         name: 'Synchro Funk',
+        shortDes: 'A group dance event',
         description:
           'Dancing is a conversation that needs not be spoken but is implicitly understood. This event gives the opportunity for an enthusiastic expression of camaraderie and trust as groups dance to the rhythm tying them together as they vie for the top spot.',
         fees: 749,
@@ -370,6 +374,7 @@ const eventData = {
       {
         id: 5,
         name: 'Dancing Dyad​',
+        shortDes: 'A duet dance event',
         description:
           'Aurora brings you one of the best platforms to steal the spotlight and celebrate the true liberation of emotions. It’s an opportunity to showcase the magic in your footsteps through duet dance.',
         fees: 399,
@@ -387,6 +392,7 @@ const eventData = {
       {
         id: 6,
         name: 'Beat the Beat',
+        shortDes: 'An Individual dance event',
         description:
           'Paint the stage with talent as you put your best foot forward with moves that leave the audience stunned. This event glorifies the relationship of a dancer to the rhythm as they battle it out for the best of Face Off.',
         fees: 249,
@@ -463,6 +469,7 @@ const eventData = {
       {
         id: 7,
         name: 'Raag',
+        shortDes: 'It​ will be a dedicated event to appreciate singing with Instruments.',
         description:
           "There's something in the soft plink of a sitar, or the mellifluous notes of a flute, that the human voice cannot seem to match. Instrumentalists spend years perfecting their art, to achieve the thrilling pace at which they change notes. Bach, Miles Davis, Zakir Hussain, Yo Yo Ma, and L Subramaniam. These artists and many more have changed how most of us look and listen to music. This year, Aurora'20 gives you a chance for you to hear and create magic-harmonies. It​ will be a dedicated event to appreciate singing with Instruments.",
         fees: 249,
@@ -491,6 +498,8 @@ const eventData = {
       {
         id: 8,
         name: 'A-capella​',
+        shortDes:
+          'This event focuses on the various domains of FreeStyle Singing without instrumental accompaniment.',
         description:
           'A simple competition with simple rules and one of the most liked and attended event of all musical competitions of Aurora- A capella calls you on stage, and give you the freedom to perform.If you think that you can produce melodies without the help of any instruments, come and find out if you are really as good as you believe. It will focus on the various domains of FreeStyle Singing without instrumental accompaniment.',
         fees: 200,
@@ -513,6 +522,8 @@ const eventData = {
       {
         id: 9,
         name: 'Acoustic Corner',
+        shortDes:
+          'It is a purely instrumental music fiesta which will be aimed to enthuse the audience with raw music.',
         description:
           '"Music is the shorthand of emotion." — Leo Tolstoy. No matter where you are or what you do some Music will always refresh your mood. Aurora brings you the stage for putting your swift arms and skilful fingers to display before an encouraging and enthusiastic audience. It is a purely instrumental music fiesta which will be aimed to enthuse the audience with raw music.',
         fees: 200,
@@ -578,6 +589,7 @@ const eventData = {
       {
         id: 10,
         name: 'Graffathon',
+        shortDes: 'A wall painting competition',
         description:
           'This competition is open to all graffiti artists, who are able to submit examples of their creative artwork. Just pick up your spray cans and brushes and display your creativity on our walls.',
         prizeMoney: 'INR 12,000 + Goodies, Benefits and Sponsored Gifts',
@@ -615,6 +627,7 @@ const eventData = {
       {
         id: 12,
         name: 'On-spot Sketching',
+        shortDes: 'Contestants can make drawing of any subject that they want with lead pencil(s).',
         description:
           'This contest is open to all traditional artists that draw using lead pencils. The topic is BLACK & WHITE PENCIL DRAWING. Contestants can make drawing of any subject that they want with lead pencil(s). No color artwork will be accepted, only black/white/grayscale pencil artwork for this contest.',
         prizeMoney: 'INR 7,500 + Goodies, Benefits and Sponsored Gifts',
@@ -727,8 +740,9 @@ const eventData = {
       {
         id: 16,
         name: 'Silverscreen',
+        shortDes: 'A short-movie making contest',
         description:
-          'The movie-making contest for several previous editions has been one of the premier events of the Aurora where students with interest and prowess in the movie-making domains come forwards with their short movies. This event will also bring out the talents of the participants or the students in domains like film editing, cinematography, etc.',
+          'The movie-making contest for several previous editions has been one of the premier events of the Aurora where students with interest and prowess in the movie-making domains come forward with their short movies. This event will also bring out the talents of the participants or the students in domains like film editing, cinematography, etc.',
         fees: 249,
         prizeMoney: 'INR 17,000 + Goodies, Benefits and Sponsored Gifts',
         rules: [
@@ -744,6 +758,7 @@ const eventData = {
       {
         id: 17,
         name: 'Panorama',
+        shortDes: 'A photography competetion',
         description:
           'The photography competition will be a one of a kind masterful event where the participants will be clicking snaps on various themes, including the three-day final show, and then finally those photographs will be judged on various trivial aspects of photography like exposure and light settings, etc.',
         fees: 0,
@@ -847,6 +862,8 @@ const eventData = {
       {
         id: 20,
         name: 'Morning Radio',
+        shortDes:
+          ' Be an RJ, show off your voice and interaction skills, speak a lot and you have chance to win.',
         description:
           'If you’re spontaneous, confident & have a brilliant sense of humour, get set to be the next radio star. If you love music & stories, are fluent in Hindi & English, then you just could be the lucky one! This event gives you the chance to own your show with a live audience right by your side. Be an RJ, show off your voice and interaction skills, speak a lot and you have chance to win.',
         prizeMoney: 'INR 5,000 + Goodies, Benefits and Sponsored Gifts',
@@ -862,6 +879,7 @@ const eventData = {
       {
         id: 21,
         name: 'Creative Writing (English)',
+        shortDes: 'An english content writing contest',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
         prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
@@ -880,6 +898,7 @@ const eventData = {
       {
         id: 22,
         name: 'Creative Writing (Hindi)',
+        shortDes: 'An english content writing contest',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
         prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
@@ -900,6 +919,7 @@ const eventData = {
   nukkad: {
     id: 23,
     name: 'Nukkad Natak',
+    shortDes: 'A street play contest',
     singleEvent: true,
     description:
       "Have you ever wanted to change the way systems and organizations work in our country? Have you thought to bring out CHANGE, REFORM, REVOLUTION? Have your mind ever started the journey of BADLAAV from AAGAZ to ANZAM? If yes, our event 'STREET-PLAY (Nukkad Natak Competition)' is the perfect opportunity. Here, we hit the streets, we sing, we dance, we act, we shout with minds full of thoughts of creating something new. 'The creation of something new is not accomplished by the intellect but by the play instinct.' -Carl Jung Well, it's time to create something new with your voice, action, acting and overall play. We have just one thing to say - BE THE CREATOR OF YOUR OWN WORLD!",
@@ -1007,6 +1027,7 @@ const eventData = {
       {
         id: 24,
         name: 'IPL Auction',
+        shortDes: 'Be an IPL franchise owner and show your smartness to form the best team',
         description:
           'This event is a live simulation of the IPL Auctions and gauges Contestants’ analytical and managerial skills in real-time. The event will consist of two rounds. The  Preliminary round will be a multiple-choice based quiz to select 8 teams for the  Main Round which would feature a live auction.',
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
@@ -1049,6 +1070,7 @@ const eventData = {
       {
         id: 25,
         name: 'Aptitude Quiz',
+        shortDes: 'An ultimate test of your logical and intellectual skills',
         description:
           '"The best preparation for tomorrow is doing your best today." - H. Jackson Brown Jr. Ready to test your intellectual skills ? Come be a part of series of mind-boggling questions which will test your logical and analytical skills.',
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
@@ -1075,6 +1097,7 @@ const eventData = {
       {
         id: 26,
         name: 'BIT Quiz',
+        shortDes: 'A quiz to test your knowledge in IT and Business fields',
         description:
           "Do you have impulse? Do you have the knowledge? Do you wish to feel a rush of Adrenaline? Aurora'20 , IIITM Gwalior present it’s BIT Quiz competition. Lets' test your knowledge in the field of Business and the IT world.",
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
@@ -1101,6 +1124,7 @@ const eventData = {
       {
         id: 27,
         name: 'Cine-Binge Quiz',
+        shortDes: 'A quiz to test your knowledge of various Movies, Comics, and TV Series.',
         description:
           "Show off your binge watching skills in Cine Quiz which is going to be the next big thing during Aurora'20. This quiz will test your knowledge of Movies, Comics, and TV Series ranging from hollywood to bollywood. Let's see who conquers the throne.",
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',

@@ -3,6 +3,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import classNames from 'classnames';
+import { ReactComponent as Phone } from '../../../assets/icons/phone.svg';
 
 import RegisterTab from './RegisterTab/RegisterTab';
 
@@ -29,7 +30,16 @@ const EventTabs = ({ event }) => {
     return getRules(event.rules);
   }, [event]);
 
-  const evtHeads = event.eventHeads.map(head => <li key={head.name}>{head.name}</li>);
+  const evtHeads = event.eventHeads.map(head => (
+    <li key={head.name}>
+      {head.name}
+      {<br />}
+      <a href={`tel:${head.mobile}`}>
+        <Phone width="15px" height="15px" />
+      </a>
+      {head.mobile}
+    </li>
+  ));
 
   const evtOrganisers = event.eventOrganisers.map(organiser => (
     <li key={organiser.name}>{organiser.name}</li>
@@ -87,6 +97,7 @@ const EventTabs = ({ event }) => {
         <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 0 })}>
           <div className={styles.descriptionTab}>
             <h3>Description</h3>
+            <strong>{event.shortDes}</strong>
             <p>{event.description}</p>
           </div>
           <div>
