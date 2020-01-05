@@ -202,7 +202,7 @@ const eventData = {
     description:
       "If you have outrageous personality, better showcase your talent. Mr and Miss Aurora (MnM) is coming this Aurora 2019 to let you explore the hidden potential in yourself, compete with some of the toughest people around you and give you the chance to be the face of Aurora. MnM, a talent hunt to test your confidence, aptitude, IQ and your wits. If you think you have got the X-factor to woe the crowd with your personality, don't wait then. Show your mettle and walk away with your head held high, your prestige intact and of course with the coveted title. Explore your physical and mental capabilities through a series of resilient challenges. So this year again, Aurora'20 is coming with it's flagship event M&M to give the adrenaline rush you desire, and of course quintessentially our own Roadies.",
     prizeMoney: 'INR 30,000 + Goodies, Benefits and Sponsored Gifts',
-    fees: 500,
+    fees: 249,
     maxTeamSize: 1,
     rules: [
       'All the tasks and henceforth their rules will be disclosed at the time of the event itself.',
