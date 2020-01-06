@@ -585,7 +585,7 @@ const eventData = {
         maxTeamSize: 4,
         rules: [
           'This is an on-spot event',
-          'This is a solo event',
+          'Maximum team size is 4',
           'This is a spray painting competition',
           'Materials will be provided',
           'Participants will be judged on the basis of creativity, innovation, and design',
@@ -674,6 +674,7 @@ const eventData = {
         maxTeamSize: 1,
         rules: [
           'This is an online event',
+          'The theme for the event will be revealed later',
           'They must not be offensive or contain any material that is unlawful or copied. Such entries will not be considered for evaluation.',
           'Scores will be evaluated in a manner such that: 70%: The number of likes and shares garnered on Facebook. 30%: Artistic merit - drawing skills and use of color.',
           'Use of Facebook Auto Liker is prohibited.',
