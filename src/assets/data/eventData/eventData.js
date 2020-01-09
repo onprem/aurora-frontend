@@ -28,53 +28,57 @@ const eventData = {
     eventHeads: [
       {
         name: 'Ayush Shrivastava',
-        mobile: '',
+        mobile: '8823055712',
       },
       {
         name: 'Harsh Titoria',
-        mobile: '',
+        mobile: '7088744873',
       },
       {
         name: 'Manish Mavi',
-        mobile: '',
+        mobile: '9599474147',
       },
       {
         name: 'Rini Pandey',
-        mobile: '',
+        mobile: '7217824335',
       },
       {
         name: 'Rushikesh Taksande',
-        mobile: '',
+        mobile: '8308109746',
       },
     ],
     eventOrganisers: [
       {
         name: 'Amit Singh',
-        mobile: '',
+        mobile: '6350354769',
       },
       {
         name: 'Ankit',
-        mobile: '',
+        mobile: '9024923695',
       },
       {
         name: 'Nikhil Pareek',
-        mobile: '',
+        mobile: '6376480117',
       },
       {
         name: 'Pooja Talreja',
-        mobile: '',
+        mobile: '7791862594',
       },
       {
         name: 'Prashant Dwivedi',
-        mobile: '',
+        mobile: '9415917512',
       },
       {
         name: 'Rashi',
-        mobile: '',
+        mobile: '7024205660',
       },
       {
         name: 'Shreya',
-        mobile: '',
+        mobile: '8989191677',
+      },
+      {
+        name: 'Aashish',
+        mobile: '7828678252',
       },
     ],
   },
@@ -135,11 +139,11 @@ const eventData = {
       },
       {
         name: 'Poorva Khandare',
-        mobile: '',
+        mobile: '7974441908',
       },
       {
         name: 'Saksham Arjani',
-        mobile: '',
+        mobile: '9799008203',
       },
       {
         name: 'Utkarsh Agrawal',
@@ -149,31 +153,31 @@ const eventData = {
     eventOrganisers: [
       {
         name: 'Vatsal Gupta',
-        mobile: '',
+        mobile: '7766817555',
       },
       {
         name: 'Shikhar Goswami',
-        mobile: '',
+        mobile: '8112274244',
       },
       {
         name: 'Madhuri Raparthi',
-        mobile: '',
+        mobile: '6265695165',
       },
       {
         name: 'Saurabh Prakash',
-        mobile: '',
+        mobile: '9039734760',
       },
       {
         name: 'Rutvij Raut',
-        mobile: '',
+        mobile: '7058783620',
       },
       {
         name: 'Pawan Kumar',
-        mobile: '',
+        mobile: '9521208689',
       },
       {
         name: 'Sakshi Kumar',
-        mobile: '',
+        mobile: '8604803773',
       },
       // {
       //   name: 'Sahil Chopra',
@@ -193,7 +197,7 @@ const eventData = {
       },
       {
         name: 'Pranav Mishra',
-        mobile: '',
+        mobile: '7017971093',
       },
     ],
   },
@@ -236,37 +240,37 @@ const eventData = {
     eventHeads: [
       {
         name: 'Yogesh',
-        mobile: '',
+        mobile: '9996886396',
       },
       {
         name: 'Arpit Chhabra',
-        mobile: '',
+        mobile: '9950853333',
       },
       {
         name: 'Yashvant Gond',
-        mobile: '',
+        mobile: '7239924174',
       },
       {
         name: 'Karan Singh',
-        mobile: '',
+        mobile: '9599474147',
       },
       {
         name: 'Prasoon',
-        mobile: '',
+        mobile: '7073310155',
       },
     ],
     eventOrganisers: [
       {
         name: 'Varsha Beniwal',
-        mobile: '',
+        mobile: '8005885983',
       },
       {
         name: 'Rachit Gupta',
-        mobile: '',
+        mobile: '9821960113',
       },
       {
         name: 'Prince',
-        mobile: '',
+        mobile: '9891712014',
       },
       {
         name: 'Yogesh Kumar',
@@ -278,11 +282,11 @@ const eventData = {
       },
       {
         name: 'Kamal Garg',
-        mobile: '',
+        mobile: '7827081321',
       },
       {
         name: 'Divyansh Daushalya',
-        mobile: '',
+        mobile: '7587524281',
       },
     ],
   },
@@ -295,61 +299,61 @@ const eventData = {
     eventHeads: [
       {
         name: 'Gaurav Verma',
-        mobile: '',
+        mobile: '9956933649',
       },
       {
         name: 'Deepak Paliwal',
-        mobile: '',
+        mobile: '9559487913',
       },
       {
         name: 'Aditya Shankar Mishra',
-        mobile: '',
+        mobile: '9260970643',
       },
       {
         name: 'Suryadeepti',
-        mobile: '',
+        mobile: '7988952339',
       },
       {
         name: 'Anivesh',
-        mobile: '',
+        mobile: '9113791935',
       },
     ],
     eventOrganisers: [
       {
         name: 'Ashok Meena',
-        mobile: '',
+        mobile: '7665091882',
       },
       {
         name: 'Mohit Mochi',
-        mobile: '',
+        mobile: '8440823227',
       },
       {
         name: 'Vineet',
-        mobile: '',
+        mobile: '9370799949',
       },
       {
         name: 'Afroz',
-        mobile: '',
+        mobile: '7665182848',
       },
       {
         name: 'Amit Kumar',
-        mobile: '',
+        mobile: '8869847890',
       },
       {
         name: 'Deeksha',
-        mobile: '',
+        mobile: '9650212434',
       },
       {
         name: 'Aditi',
-        mobile: '',
+        mobile: '8839158059',
       },
       {
         name: 'Tamanna',
-        mobile: '',
+        mobile: '9337723804',
       },
       {
         name: 'Anshul Dubey',
-        mobile: '',
+        mobile: '9425774186',
       },
     ],
     subEvents: [
@@ -420,45 +424,45 @@ const eventData = {
     eventHeads: [
       {
         name: 'Devwrat Sahu',
-        mobile: '',
+        mobile: '9630569238',
       },
       {
         name: 'Saksham Gupta',
-        mobile: '',
+        mobile: '9617210303',
       },
       {
         name: 'Amit Kumar',
-        mobile: '',
+        mobile: '9717553810',
       },
       {
         name: 'Queen Saikia',
-        mobile: '',
+        mobile: '8638043243',
       },
       {
         name: 'Vishal Shivhare',
-        mobile: '',
+        mobile: '9229201332',
       },
     ],
     eventOrganisers: [
       {
         name: 'Achyuth',
-        mobile: '',
+        mobile: '7981012301',
       },
       {
         name: 'Akshay Khatri',
-        mobile: '',
+        mobile: '7792092440',
       },
       {
         name: 'Nymika',
-        mobile: '',
+        mobile: '6265816365',
       },
       {
         name: 'Mansi Meena',
-        mobile: '',
+        mobile: '7073431919',
       },
       {
         name: 'Venkatesh Vuyyala',
-        mobile: '',
+        mobile: '6303542721',
       },
       {
         name: 'Shivangi Sachdeva',
@@ -548,41 +552,41 @@ const eventData = {
     eventHeads: [
       {
         name: 'Anshita Sharma',
-        mobile: '',
+        mobile: '9559487913',
       },
       {
         name: 'Piyush Raikwar',
-        mobile: '',
+        mobile: '7507909929',
       },
       {
         name: 'Harshit',
-        mobile: '',
+        mobile: '7800255576',
       },
       {
         name: 'Ayush Saini',
-        mobile: '',
+        mobile: '7351092482',
       },
     ],
     eventOrganisers: [
       {
         name: 'Pushkar',
-        mobile: '',
+        mobile: '9407382599',
       },
       {
         name: 'Tushar Neogi',
-        mobile: '',
+        mobile: '8960458060',
       },
       {
         name: 'Vedant Tripathi',
-        mobile: '',
+        mobile: '9519779462',
       },
       {
         name: 'Vaishnavi',
-        mobile: '',
+        mobile: '9604734478',
       },
       {
         name: 'Bhanu Putta',
-        mobile: '',
+        mobile: '8978843077',
       },
     ],
     subEvents: [
@@ -703,37 +707,37 @@ const eventData = {
     eventHeads: [
       {
         name: 'Pragnya Tata',
-        mobile: '',
+        mobile: '9705073030',
       },
       {
         name: 'Ravuri Upendra',
-        mobile: '',
+        mobile: '9182839002',
       },
       {
         name: 'Pranay',
-        mobile: '',
+        mobile: '9963628847',
       },
     ],
     eventOrganisers: [
       {
         name: 'Jhanvi',
-        mobile: '',
+        mobile: '7989692269',
       },
       {
         name: 'Praveen',
-        mobile: '',
+        mobile: '8959328879',
       },
       {
         name: 'Ashray Gupta',
-        mobile: '',
+        mobile: '8989738932',
       },
       {
         name: 'Bipin Pathak',
-        mobile: '',
+        mobile: '9456431535',
       },
       {
         name: 'Pranay',
-        mobile: '',
+        mobile: '9381231209',
       },
     ],
     subEvents: [
@@ -804,29 +808,29 @@ const eventData = {
     eventHeads: [
       {
         name: 'Anuj Sharma',
-        mobile: '',
+        mobile: '8477892707',
       },
       {
         name: 'Simran Kureel',
-        mobile: '',
+        mobile: '7844862046',
       },
       {
         name: 'Shivam Gupta',
-        mobile: '',
+        mobile: '8462058173',
       },
       {
         name: 'Ashutosh Kumar',
-        mobile: '',
+        mobile: '7898931178',
       },
     ],
     eventOrganisers: [
       {
         name: 'Abhishek Pratap Singh',
-        mobile: '',
+        mobile: '7879560731',
       },
       {
         name: 'Anjali Bhagoria',
-        mobile: '',
+        mobile: '9977514199',
       },
       {
         name: 'Ashish Khatri',
@@ -834,7 +838,7 @@ const eventData = {
       },
       {
         name: 'Lumbini',
-        mobile: '',
+        mobile: '6303897455',
       },
       {
         name: 'Manish',
@@ -954,25 +958,25 @@ const eventData = {
     eventHeads: [
       {
         name: 'Jagadeesh Suggula',
-        mobile: '',
+        mobile: '9100819285',
       },
       {
         name: 'Ankita Kumari',
-        mobile: '',
+        mobile: '9755761191',
       },
     ],
     eventOrganisers: [
       {
         name: 'Anuj Bangad',
-        mobile: '',
+        mobile: '8982996384',
       },
       {
         name: 'Shivesh Tiwari',
-        mobile: '',
+        mobile: '7839361768',
       },
       {
         name: 'Himanshu Pandey',
-        mobile: '',
+        mobile: '9695669998',
       },
     ],
   },
@@ -986,15 +990,15 @@ const eventData = {
       },
       {
         name: 'Abhishek Garain',
-        mobile: '',
+        mobile: '9734793007',
       },
       {
         name: 'Vaibhav Jain',
-        mobile: '',
+        mobile: '7011398238',
       },
       {
         name: 'Ketan Gupta',
-        mobile: '',
+        mobile: '7649055418',
       },
     ],
     eventOrganisers: [
@@ -1004,23 +1008,23 @@ const eventData = {
       },
       {
         name: 'Nakul Shahdadpuri',
-        mobile: '',
+        mobile: '9618165908',
       },
       {
         name: 'Himanshu Ruhela',
-        mobile: '',
+        mobile: '8383872147',
       },
       {
         name: 'Aadit Agrawal',
-        mobile: '',
+        mobile: '8179675451',
       },
       {
         name: 'Madhvik Agrawal',
-        mobile: '',
+        mobile: '8826233587',
       },
       {
         name: 'Ishaan Kakkar',
-        mobile: '',
+        mobile: '8390331888',
       },
     ],
     subEvents: [
@@ -1050,8 +1054,8 @@ const eventData = {
         ],
         eventOrganisers: [
           {
-            name: 'Sahil Chopra',
-            mobile: '',
+            name: 'Sahil Jain',
+            mobile: '7340453012',
           },
           {
             name: 'Priya',
@@ -1059,11 +1063,11 @@ const eventData = {
           },
           {
             name: 'Saket Shrivastava',
-            mobile: '',
+            mobile: '7000876007',
           },
           {
             name: 'Dhruval Kushwaha',
-            mobile: '',
+            mobile: '7409204125',
           },
         ],
       },
@@ -1170,27 +1174,27 @@ const eventData = {
     eventOrganisers: [
       {
         name: 'Kapin Sangwan',
-        mobile: '',
+        mobile: '9053979129',
       },
       {
         name: 'Dushyant Pratap',
-        mobile: '',
+        mobile: '7455844278',
       },
       {
         name: 'Udit Singh',
-        mobile: '',
+        mobile: '9451372709',
       },
       {
         name: 'C. Dheena',
-        mobile: '',
+        mobile: '8712179445',
       },
       {
         name: 'Vidya Dubey',
-        mobile: '',
+        mobile: '8989163280',
       },
       {
         name: 'Jayant Gupta',
-        mobile: '',
+        mobile: '9521003983',
       },
     ],
     subEvents: [
