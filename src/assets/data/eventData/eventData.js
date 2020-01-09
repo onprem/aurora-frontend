@@ -898,7 +898,7 @@ const eventData = {
       {
         id: 22,
         name: 'Creative Writing (Hindi)',
-        shortDes: 'An english content writing contest',
+        shortDes: 'A Hindi content writing contest',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
         prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
