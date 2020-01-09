@@ -1175,25 +1175,19 @@ const eventData = {
           {
             headline: 'Selection',
             rules: [
-              'all teams attending and participating in the event must fill the google form that will be provided. outside teams/players are also allowed ',
+              'All teams attending and participating in the event must fill the google form that will be provided. Outside teams/players are also allowed ',
             ],
           },
           {
             headline: 'Event',
             rules: [
-              'Devices will be provided to play csgo with logged in accounts. u are allowed to bring ur own laptops,microphones,mousepads,keyboards,monitors, and mouse. no other performance alternating device shall be allowed. For personal devices - all the accounts must be under good standings.',
+              'Devices will be provided to play CS GO with logged in accounts. You are allowed to bring your own laptops, microphones, mousepads, keyboards, monitors, and mouse. No other performance alternating device shall be allowed. For personal devices - all the accounts must be under good standings.',
             ],
           },
           {
             headline: 'Insults and offensive behaviour',
             rules: [
-              'players are expected to support sportsmanship. Participants must not engage in harassment or hate speech towards the opposing teams in any form. any violation will result in direct',
-            ],
-          },
-          {
-            headline: 'Insults and offensive behaviour',
-            rules: [
-              'players are expected to support sportsmanship. Participants must not engage in harassment or hate speech towards the opponent teams in any form. any violation will result in direct disqualification',
+              'Players are expected to support sportsmanship. Participants must not engage in harassment or hate speech towards the opposing teams in any form. Any violation will result in direct disqualification',
             ],
           },
           {
@@ -1202,14 +1196,14 @@ const eventData = {
               'Each team must present 1 representative. He/ she is responsible for his/her team and will be responsible for choosing maps and all communication with referees must be done through the team captain.',
               'Maps will be decided through a veto system.',
               'The team side will be determined through a knife round',
-              'Any technical issue for example: a player drops or his/her mouse has an issue, the match will be paused immediately. after the resolve it shall be resumed where it was paused.',
-              'All visual enhancing softwares like nvidea freestyle are banned.',
+              'Any technical issue, for example: a player drops or his/her mouse has an issue, the match will be paused immediately. after the resolve it shall be resumed where it was paused.',
+              'All visual enhancing softwares like nvidia freestyle are banned.',
               'The HUD can be changed as long as no information is deleted or falsified which is available in the standard HUD. If you use a custom HUD, it has to be readable.',
               'Graphics drivers  Any modification or changing of the game using external graphics solutions or other 3rd party programs are strictly prohibited and may be punished under the cheating paragraph.',
               'Moving through clipped areas where the movement is not intended by the design of the map is strictly forbidden (any walls, ceilings, floors etc).',
               'The  bomb may  not be planted  in a location where  it cannot be defused. Planting the bomb in such a way that no one can hear the beeping sound or the planting sound is also forbidden.',
               'Pixel walking is forbidden. A player will be considered to be pixel walking if they sit or stand on invisible pixels on the map, where there is no visible edge.',
-              '2 total timeouts of 1 min each are allowed throughout the match',
+              '4 total timeouts of 1 min each are allowed throughout the match',
               'Default Terrorist and Counter Terrorist game models will be used.',
             ],
           },
@@ -1220,11 +1214,12 @@ const eventData = {
               'mp_freezetime 15',
               'mp_buytime 15',
               'mp_c4timer 35',
-              'mp_roundtime 2.00',
+              'mp_roundtime 1.55',
               'mp_maxmoney 16000',
-              'mp_solid_teammates 1 ',
+              'mp_solid_teammates 1',
+              'mp_round_restart_delay 5',
               'bot_quota "0"',
-              'First time to win 16 rounds wins. in case of a tie there will be overtime with starting cash of 10000$ and reset.',
+              'First team to win 16 rounds wins. In case of a tie there will be overtime with starting cash of 10000$ and reset.',
               'All programs which are not part of the original game, including custom-data and modifications, external fps benchmark softwares are not allowed.',
               'All external voice programs are allowed (e.g. Teamspeak, Ventrilo etc.).',
               {
