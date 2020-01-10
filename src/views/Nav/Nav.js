@@ -30,10 +30,10 @@ const Nav = () => {
       title: 'Events',
       path: '/events',
     },
-    // {
-    //   title: 'Pronites',
-    //   path: '/pronites',
-    // },
+    {
+      title: 'Pronites',
+      path: '/pronites',
+    },
     // {
     //   title: 'Accomodation',
     //   path: '/accomodation',
@@ -54,10 +54,10 @@ const Nav = () => {
     //   title: 'Team',
     //   path: '/team',
     // },
-    // {
-    //   title: 'Sponsors',
-    //   path: '/sponsors',
-    // },
+    {
+      title: 'Sponsors',
+      path: '/sponsors',
+    },
     {
       title: 'Contact Us',
       path: '/contact',

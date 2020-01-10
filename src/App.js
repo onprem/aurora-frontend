@@ -26,6 +26,11 @@ const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 const AdminDashboard = React.lazy(() => import('./views/AdminDashboard/AdminDashboard'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
 
+const Sponsors = React.lazy(() => import('./views/sponsors/Sponsors'));
+const Pronites = React.lazy(() => import('./views/pronite/Pronite'));
+
+const Alpha = React.lazy(() => import('./views/alpha/alphaView/LoginRegister'));
+
 function App() {
   const [authToken, setAuthToken] = useState();
   const client = useApolloClient(authToken);
@@ -77,8 +82,12 @@ function App() {
               <Route exact path="/contact">
                 <Contact />
               </Route>
+
               <Route exact path="/wastemanagement">
                 <WasteManagement />
+              </Route>
+              <Route exact path="/alpha">
+                <Alpha />
               </Route>
               <ProtectedRoute exact path="/dashboard">
                 <Dashboard />
@@ -88,6 +97,12 @@ function App() {
               </ProtectedRoute>
               <Route exact path="/logout">
                 <LogOut />
+              </Route>
+              <Route exact path="/sponsors">
+                <Sponsors />
+              </Route>
+              <Route exact path="/pronites">
+                <Pronites />
               </Route>
               <Route>
                 <NotFound />
