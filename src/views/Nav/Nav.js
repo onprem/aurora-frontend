@@ -35,6 +35,10 @@ const Nav = () => {
     //   path: '/pronites',
     // },
     {
+      title: 'Book Pronites',
+      path: '/getPasses',
+    },
+    {
       title: 'Accomodation',
       path: '/accomodation',
     },
@@ -50,6 +54,7 @@ const Nav = () => {
       title: 'LogOut',
       path: '/logout',
     },
+
     // {
     //   title: 'Team',
     //   path: '/team',
