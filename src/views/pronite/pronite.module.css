@@ -115,7 +115,7 @@
   font-size: 4em;
   text-align: left;
   margin: 0px;
-  margin-top: 1em;
+  margin-top: 0.75em;
   position: relative;
   z-index: 5;
   margin-left: -2.4em;
@@ -130,7 +130,7 @@
 }
 .pronite_p {
   text-align: justify;
-  font-size: 1.3em;
+  font-size: 1.15em;
 }
 .logoDark {
   width: 4em;
