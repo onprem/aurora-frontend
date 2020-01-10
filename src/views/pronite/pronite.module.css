@@ -19,7 +19,7 @@
   align-content: center;
   align-items: center;
   width: 80%;
-  height: 35em;
+  height: 38em;
 }
 .pronite_left_container {
   /* display: flex;
@@ -67,6 +67,7 @@
 }
 .pronite_img {
   width: 85%;
+  /* height: 95%; */
   border-radius: 1em;
 }
 .illusion_1 {
@@ -130,4 +131,104 @@
 .pronite_p {
   text-align: justify;
   font-size: 1.3em;
+}
+.logoDark {
+  width: 4em;
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  z-index: 1;
+}
+.button_parent_container {
+  width: 10em;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+.next_prev_button {
+  width: 4em;
+  height: 4em;
+  border-radius: 5em;
+  text-decoration: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  background: white;
+  box-shadow: 10px 10px 34px -10px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* font-size: 0.8em; */
+}
+.arrow_right,
+.arrow_left {
+  width: 2em;
+}
+.arrow_right {
+  transform: rotate(180deg);
+}
+@media (max-width: 1366px) {
+  .pronite_parent {
+    font-size: 16px;
+  }
+  .pronite_card {
+    height: 36em;
+  }
+}
+@media (max-width: 1000px) {
+  .pronite_parent {
+    font-size: 14px;
+  }
+  .pronite_card {
+    margin-top: 7em;
+    margin-bottom: 5em;
+    height: unset;
+    flex-wrap: wrap;
+  }
+  .pronite_left_container {
+    width: 80%;
+    height: 35em;
+  }
+  .pronite_right_container {
+    /* height: 35em; */
+    width: 80%;
+  }
+  .pronite_right_container {
+    padding-left: 0px;
+  }
+  .pronite_heading {
+    margin-left: 0px;
+    text-align: center;
+  }
+  .pronite_sub_heading {
+    text-align: center;
+  }
+  .logoDark {
+    width: 6em;
+  }
+}
+@media (max-width: 500px) {
+  .pronite_card {
+    width: 90%;
+  }
+  .pronite_left_container {
+    width: 100%;
+  }
+  .pronite_right_container {
+    width: 100%;
+  }
+  .pronite_parent {
+    font-size: 12px;
+  }
+  .pronite_img {
+    width: 90%;
+  }
 }
