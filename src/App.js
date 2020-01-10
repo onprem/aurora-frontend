@@ -24,6 +24,7 @@ const Contact = React.lazy(() => import('./views/contactUs/ContactUs'));
 const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 const AdminDashboard = React.lazy(() => import('./views/AdminDashboard/AdminDashboard'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
+const Alpha = React.lazy(() => import('./views/alpha/alphaView/LoginRegister'));
 
 function App() {
   const [authToken, setAuthToken] = useState();
@@ -75,6 +76,9 @@ function App() {
               </Route>
               <Route exact path="/contact">
                 <Contact />
+              </Route>
+              <Route exact path="/alpha">
+                <Alpha />
               </Route>
               <ProtectedRoute exact path="/dashboard">
                 <Dashboard />
