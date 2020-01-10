@@ -15,7 +15,12 @@ const support = [
   { title: 'contact us', path: '/contact' },
   { title: 'find us', path: '/contact' },
 ];
-const social = ['waste management'];
+const social = [
+  {
+    title: 'waste management',
+    path: 'wastemanagement',
+  },
+];
 
 const Footer = () => {
   return (
@@ -48,9 +53,9 @@ const Footer = () => {
           <ul className={style.footer_social_cause}>
             <h2 className={style.footer_heading}>Social Cause</h2>
             {social.map(soc => (
-              <li className={style.footer_social_li} key={soc}>
-                {soc}
-              </li>
+              <Link to={soc.path} key={soc.title}>
+                <li className={style.footer_social_li}>{soc.title}</li>
+              </Link>
             ))}
           </ul>
         </div>
