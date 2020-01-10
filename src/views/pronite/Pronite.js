@@ -45,7 +45,7 @@ const ProniteCard = ({ name }) => {
           percussive electronic music genres produced primarily for environments centered in
           dance-based entertainment. This year Aurora proudly announces its association with SUNBURN
           and organization of SUNBURN CAMPUS during Aurora 2020 on 14th Feb, 8:30 PM onwards in
-          Football Ground at ABV-IITM Gwalior
+          Football Ground at ABV-IIITM Gwalior
         </p>
       </div>
     </div>
