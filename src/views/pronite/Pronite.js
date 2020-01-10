@@ -39,12 +39,11 @@ const ProniteCard = ({ name }) => {
         <h1 className={style.pronite_heading}>THE MAGICAL</h1>
         <h2 className={style.pronite_sub_heading}>OLLY ESSE & ACEAXE</h2>
         <p className={style.pronite_p}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum
+          An electronic dance that amalgamates Music and Entertainment with a set of percussive
+          electronic music genres. This year Aurora proudly announces its association with SUNBURN
+          and organization of SUNBURN CAMPUS during Aurora 2020 on 14th Feb, 8:30 PM onwards in
+          Football Ground at ABV-IITM Gwalior. Co-powered by Skybags, Fastrack, Toyota, Zee5, Red
+          Chief, BOAT & Wildstone. Featuring Olly Esse ACEAXE.
         </p>
       </div>
     </div>
