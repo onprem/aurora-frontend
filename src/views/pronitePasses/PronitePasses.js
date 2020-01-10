@@ -10,7 +10,7 @@ import style from './pronitePasses.module.css';
 import Particles from '../../components/particles/Particle';
 import Social from '../../components/Social/Social';
 import Loader from '../../components/Loader/Loader';
-import { ReactComponent as Booking } from '../../assets/icons/booking.svg';
+import { ReactComponent as Booking } from '../../assets/icons/tag.svg';
 import { ReactComponent as LogoDark } from '../../assets/icons/auroraMono.svg';
 import { ReactComponent as Cross } from '../../assets/icons/cross.svg';
 import { ReactComponent as Plus } from '../../assets/icons/plus.svg';

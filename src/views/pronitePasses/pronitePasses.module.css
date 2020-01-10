@@ -54,7 +54,7 @@
 }
 .accomodation_book_button {
   width: 20em;
-  height: 3em;
+  height: 3.5em;
   border-radius: 4em;
   border: none;
   background: white;
@@ -70,7 +70,8 @@
   align-content: center;
 }
 .booking_button_svg {
-  width: 3em;
+  width: 1.5em;
+  margin: 1em;
 }
 .dark_logo {
   position: absolute;
