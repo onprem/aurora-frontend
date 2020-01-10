@@ -38,10 +38,7 @@ const Register = () => {
     email: '',
     events: '',
   });
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
+
   const [step, changeStep] = useState('1');
   const [passcode, changePasscode] = useState('');
   useEffect(() => {
@@ -129,23 +126,6 @@ const Register = () => {
       });
     }
   });
-  useEffect(() => {
-    let timeout;
-    function handleResize() {
-      clearTimeout(timeout);
-      if (dimensions)
-        timeout = setTimeout(() => {
-          setDimensions({
-            height: window.innerHeight,
-            width: window.innerWidth,
-          });
-        }, 500);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', null);
-    };
-  }, [dimensions]);
   const RenderRegister = (
     <div className={style.register_parent}>
       <h1 className={style.register_heading}>REGISTER</h1>
