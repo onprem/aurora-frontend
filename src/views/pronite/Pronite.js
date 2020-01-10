@@ -39,11 +39,13 @@ const ProniteCard = ({ name }) => {
         <h1 className={style.pronite_heading}>THE MAGICAL</h1>
         <h2 className={style.pronite_sub_heading}>OLLY ESSE & ACEAXE</h2>
         <p className={style.pronite_p}>
-          An electronic dance that amalgamates Music and Entertainment with a set of percussive
-          electronic music genres. This year Aurora proudly announces its association with SUNBURN
+          An electronic dance music Festival held internationally every year all across the globe
+          that amalgamates Music and Entertainment and organized by Percept, an Entertainment, Media
+          and Communications company of India. EDM Night (Electronic Dance Night) is a set of
+          percussive electronic music genres produced primarily for environments centered in
+          dance-based entertainment. This year Aurora proudly announces its association with SUNBURN
           and organization of SUNBURN CAMPUS during Aurora 2020 on 14th Feb, 8:30 PM onwards in
-          Football Ground at ABV-IITM Gwalior. Co-powered by Skybags, Fastrack, Toyota, Zee5, Red
-          Chief, BOAT & Wildstone. Featuring Olly Esse ACEAXE.
+          Football Ground at ABV-IITM Gwalior
         </p>
       </div>
     </div>
