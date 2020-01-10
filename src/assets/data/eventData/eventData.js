@@ -1024,8 +1024,16 @@ const eventData = {
         ],
         eventHeads: [
           {
-            name: 'Yashvant Gond',
+            name: 'Yashwant Gond',
             mobile: '+91-6261827960',
+          },
+          {
+            name: 'Mohit Aggarwal',
+            mobile: '+91-9131775648',
+          },
+          {
+            name: 'Vishal Jain',
+            mobile: '+91-9926159877',
           },
         ],
         eventOrganisers: [

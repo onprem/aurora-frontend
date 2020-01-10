@@ -25,6 +25,7 @@ const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 const AdminDashboard = React.lazy(() => import('./views/AdminDashboard/AdminDashboard'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
 const Accomodation = React.lazy(() => import('./views/accomodation/Accomodation'));
+const PronitePasses = React.lazy(() => import('./views/pronitePasses/PronitePasses'));
 
 function App() {
   const [authToken, setAuthToken] = useState();
@@ -79,6 +80,9 @@ function App() {
               </Route>
               <Route exact path="/accomodation">
                 <Accomodation />
+              </Route>
+              <Route exact path="/getPasses">
+                <PronitePasses />
               </Route>
               <ProtectedRoute exact path="/dashboard">
                 <Dashboard />
