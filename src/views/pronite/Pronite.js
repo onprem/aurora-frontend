@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import style from './pronite.module.css';
 
@@ -15,6 +15,19 @@ import { ReactComponent as Arrow } from '../../assets/icons/arrowLeft.svg';
 import Social from '../../components/Social/Social';
 
 const strokeCount = 35;
+
+const BookButton = () => {
+  const history = useHistory();
+  return (
+    <button
+      className={style.button_book_parent}
+      type="button"
+      onClick={() => history.push('/passes')}
+    >
+      GET PASSES NOW
+    </button>
+  );
+};
 
 const ProniteCard = ({ name }) => {
   return (
@@ -38,6 +51,7 @@ const ProniteCard = ({ name }) => {
       <div className={style.pronite_right_container}>
         <h1 className={style.pronite_heading}>THE MAGICAL</h1>
         <h2 className={style.pronite_sub_heading}>OLLY ESSE & ACEAXE</h2>
+
         <p className={style.pronite_p}>
           An electronic dance music Festival held internationally every year all across the globe
           that amalgamates Music and Entertainment and organized by Percept, an Entertainment, Media
@@ -47,6 +61,7 @@ const ProniteCard = ({ name }) => {
           and organization of SUNBURN CAMPUS during Aurora 2020 on 14th Feb, 8:30 PM onwards in
           Football Ground at ABV-IIITM Gwalior
         </p>
+        <BookButton />
       </div>
     </div>
   );
@@ -74,6 +89,7 @@ const Pronite = () => {
           <Logo className={style.logoDark} />
         </Link>
         <ProniteCard />
+
         {/* <RenderButtons /> */}
       </div>
       <Particles />
