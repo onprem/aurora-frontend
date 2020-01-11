@@ -81,7 +81,7 @@ function App() {
               <Route exact path="/accomodation">
                 <Accomodation />
               </Route>
-              <Route exact path="/getPasses">
+              <Route exact path="/passes">
                 <PronitePasses />
               </Route>
               <ProtectedRoute exact path="/dashboard">
