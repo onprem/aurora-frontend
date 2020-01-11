@@ -260,9 +260,10 @@ const Accomodation = () => {
         title: 'Are you sure?',
         html: `<ul>
           <li style="text-align:left; margin-bottom:10px">
-            Total payable amount is &#8377;${userArray.length * 349} + &#8377;${Math.floor(
+            Max payable amount is &#8377;${userArray.length * 349} + &#8377;${Math.floor(
           userArray.length * 349 * 2.42
-        ) / 100} (payment gateway charges)
+        ) /
+          100} (payment gateway charges). Real payable amount can be less than this amount based on the discounts applicable. Real payable amount cannot be more than max payable amount.
           </li>
           <li style="text-align:left; margin-bottom:10px">
             Payment is non-refundable under any circumstances whatsoever except for extreme cases. Contact our tech support team (<a style="text-decoration:underline" href="mailto:support@aurorafest.org">support@aurorafest.org</a>) for extreme case scenarios.
@@ -343,10 +344,7 @@ const Accomodation = () => {
         {addMemberPay || getOrderRes.loading || verifyRes.loading ? (
           <Loader fill="black" />
         ) : (
-          <>
-            Pay &#8377;&nbsp;
-            {userArray.length * 349}
-          </>
+          <>Pay for Passes</>
         )}
       </button>
     </div>
