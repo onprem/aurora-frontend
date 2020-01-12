@@ -27,40 +27,78 @@ import PUBLIC_USER from '../../graphQl/queries/publicUser';
 import GET_PRO_ORDER from '../../graphQl/mutations/generateProniteOrder';
 import VERIFY_PRO_ORDER from '../../graphQl/mutations/verifyProniteOrder';
 
+const RenderInclusions = () => {
+  return (
+    <ul className={style.accomodation_ul}>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Pricing: </span>
+        <span style={{ textDecoration: 'line-through' }}>&#8377;1200/-</span>
+        &nbsp;&nbsp;&#8377; 349/- per person (early bird price)
+      </li>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Offers</span>
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>
+            Pronites are bundled with accomodation (If you purchase accomodation you need not to
+            purchase pronite passes)
+          </li>
+          <li className={style.accomodation_li}>
+            If you participate in category A events (Parivesh, Corna, Mr. and Ms. Aurora, Dancing
+            Dyad, Beat the Beat, A-Capella, On-Spot Painting/Sketching, Open Mic, Morning Radio),
+            you get&nbsp;
+            <span style={{ fontWeight: 600, fontSize: '1em' }}>&#8377; 100 off on pronites.</span>
+          </li>
+          <li className={style.accomodation_li}>
+            If you participate in category B events (Synchro Funk, Raag, Acoustic Corner,
+            Graffathon, Silver Screen, Nukkad Natak, IPL-Auction, Quizzes, CS-GO, PUBG), you
+            get&nbsp;
+            <span style={{ fontWeight: 600, fontSize: '1em' }}>&#8377; 50 off on pronites.</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  );
+};
+
 const RenderTnC = () => {
   return (
     <ul className={style.accomodation_ul}>
       <li className={style.accomodation_li}>
-        No refunds on any type of purchased tickets and Pronite Passes are possible.
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Terms & Condition</span>
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>
+            No refunds on any type of purchased tickets and Pronite Passes are possible.
+          </li>
+          <li className={style.accomodation_li}>
+            Alcohol checks are mandatory for all and will be conducted at Entry points for venues.
+          </li>
+          <li className={style.accomodation_li}>
+            Any type of Alcohol, Drugs or Narcotic substances are strictly banned in the institute
+            and if found in possession of any person will result in strict actions.
+          </li>
+          <li className={style.accomodation_li}>
+            Involvement in any type of unethical activity, fights or disturbances in smooth conduct
+            of events will result in strict actions taken by Event Management Team.
+          </li>
+          <li className={style.accomodation_li}>Please carry a valid ID proof along with you.</li>
+          <li className={style.accomodation_li}>
+            Security procedures, including frisking, remain the right of the management.
+          </li>
+          <li className={style.accomodation_li}>
+            No dangerous or potentially hazardous objects including but not limited to weapons,
+            knives, guns, fireworks, helmets, laser devices, bottles, musical instruments will be
+            allowed in the venue and may be ejected with or without the owner from the venue.
+          </li>
+          <li className={style.accomodation_li}>
+            The sponsors/performers/organizers are not responsible for any injury or damage
+            occurring due to the event.
+          </li>
+          <li className={style.accomodation_li}>
+            People in an inebriated state will not be allowed entry under any circumstances.
+          </li>
+          <li className={style.accomodation_li}>Venue rules apply to all.</li>
+        </ul>
       </li>
-      <li className={style.accomodation_li}>
-        Alcohol checks are mandatory for all and will be conducted at Entry points for venues.
-      </li>
-      <li className={style.accomodation_li}>
-        Any type of Alcohol, Drugs or Narcotic substances are strictly banned in the institute and
-        if found in possession of any person will result in strict actions.
-      </li>
-      <li className={style.accomodation_li}>
-        Involvement in any type of unethical activity, fights or disturbances in smooth conduct of
-        events will result in strict actions taken by Event Management Team.
-      </li>
-      <li className={style.accomodation_li}>Please carry a valid ID proof along with you.</li>
-      <li className={style.accomodation_li}>
-        Security procedures, including frisking, remain the right of the management.
-      </li>
-      <li className={style.accomodation_li}>
-        No dangerous or potentially hazardous objects including but not limited to weapons, knives,
-        guns, fireworks, helmets, laser devices, bottles, musical instruments will be allowed in the
-        venue and may be ejected with or without the owner from the venue.
-      </li>
-      <li className={style.accomodation_li}>
-        The sponsors/performers/organizers are not responsible for any injury or damage occurring
-        due to the event.
-      </li>
-      <li className={style.accomodation_li}>
-        People in an inebriated state will not be allowed entry under any circumstances.
-      </li>
-      <li className={style.accomodation_li}>Venue rules apply to all.</li>
     </ul>
   );
 };
@@ -354,9 +392,8 @@ const Accomodation = () => {
       <div className={style.accomodation_parent}>
         <div className={style.accomodation_card_container}>
           <h1 className={style.accomodation_h1}>PRONITE PASSES</h1>
-          <div className={style.accomodation_terms_container}>
-            <h3 className={style.accomodation_h3}>Terms & Conditions for Pronite Passes:</h3>
-            <RenderTnC />
+          <div className={style.accomodation_terms_container} style={{ width: '96%' }}>
+            <RenderInclusions />
           </div>
           {!showBooking ? (
             authToken ? (
@@ -417,6 +454,9 @@ const Accomodation = () => {
           ) : (
             RenderShowBooking
           )}
+          <div className={style.accomodation_terms_container}>
+            <RenderTnC />
+          </div>
         </div>
         {!isMobile ? <Social className={style.accomodation_social} fill="black" /> : null}
       </div>

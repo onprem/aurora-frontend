@@ -31,6 +31,11 @@ const RenderInclusions = () => {
   return (
     <ul>
       <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Pricing: </span>
+        <span style={{ textDecoration: 'line-through' }}>&#8377;1800/-</span>
+        &nbsp;&nbsp;&#8377; 799/- per person (early bird price)
+      </li>
+      <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Inclusions</span>
         <ul className={style.accomodation_ul}>
           <li className={style.accomodation_li}>In-campus 4D/4N accommodation</li>
