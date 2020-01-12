@@ -31,37 +31,36 @@ const RenderTnC = () => {
   return (
     <ul className={style.accomodation_ul}>
       <li className={style.accomodation_li}>
-        Accomodation Policies
-        <ul className={style.accomodation_ul}>
-          <li className={style.accomodation_li}>
-            Accommodation charges are INR 799 per candidate. It includes accommodation for 4D/4N, 3
-            Pronites and Proshows.
-          </li>
-          <li className={style.accomodation_li}>
-            It does not include a food facility. Guest can purchase their meals from the cafeteria,
-            night cafeteria or hostel messes at subsidized rates.
-          </li>
-        </ul>
+        No refunds on any type of purchased tickets and Pronite Passes are possible.
       </li>
       <li className={style.accomodation_li}>
-        Check-In and Check-Out timings
-        <ul className={style.accomodation_ul}>
-          <li className={style.accomodation_li}>
-            Check-In - Anytime after 13th Feb. 2020, 7:00 PM
-          </li>
-          <li className={style.accomodation_li}>
-            Check-Out- on or before 17th Feb. 2020, 10:00 AM
-          </li>
-        </ul>
+        Alcohol checks are mandatory for all and will be conducted at Entry points for venues.
       </li>
       <li className={style.accomodation_li}>
-        Accommodation is provided on a shared basis inside campus hostels or International Visitors’
-        Hostel. Girls and boys will be accommodated separately. Number of guests in a room will be
-        decided by Aurora and will be allotted by the Aurora Hospitality team.
+        Any type of Alcohol, Drugs or Narcotic substances are strictly banned in the institute and
+        if found in possession of any person will result in strict actions.
       </li>
       <li className={style.accomodation_li}>
-        Participants must follow all the rules and regulations of the institute.
+        Involvement in any type of unethical activity, fights or disturbances in smooth conduct of
+        events will result in strict actions taken by Event Management Team.
       </li>
+      <li className={style.accomodation_li}>Please carry a valid ID proof along with you.</li>
+      <li className={style.accomodation_li}>
+        Security procedures, including frisking, remain the right of the management.
+      </li>
+      <li className={style.accomodation_li}>
+        No dangerous or potentially hazardous objects including but not limited to weapons, knives,
+        guns, fireworks, helmets, laser devices, bottles, musical instruments will be allowed in the
+        venue and may be ejected with or without the owner from the venue.
+      </li>
+      <li className={style.accomodation_li}>
+        The sponsors/performers/organizers are not responsible for any injury or damage occurring
+        due to the event.
+      </li>
+      <li className={style.accomodation_li}>
+        People in an inebriated state will not be allowed entry under any circumstances.
+      </li>
+      <li className={style.accomodation_li}>Venue rules apply to all.</li>
     </ul>
   );
 };
@@ -356,7 +355,7 @@ const Accomodation = () => {
         <div className={style.accomodation_card_container}>
           <h1 className={style.accomodation_h1}>PRONITE PASSES</h1>
           <div className={style.accomodation_terms_container}>
-            <h3 className={style.accomodation_h3}>Terms & Conditions :</h3>
+            <h3 className={style.accomodation_h3}>Terms & Conditions for Pronite Passes:</h3>
             <RenderTnC />
           </div>
           {!showBooking ? (
