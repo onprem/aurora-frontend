@@ -516,6 +516,7 @@ const eventData = {
           'Decisions of the judges are final and binding',
           'Judging Criteria: Accuracy of Notes, Rhythm, Selection of Composition, Emotion and overall impact.',
           'Time Limit : Elimination(3-5mins),Finals(5-7mins) (Tentative)',
+          'Background music is optional.',
           {
             headline: 'Maximum number of songs:',
             rules: ['One Song for elimination round.', 'Two songs for final round.'],

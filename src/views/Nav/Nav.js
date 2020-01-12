@@ -39,6 +39,14 @@ const Nav = () => {
       path: '/accomodation',
     },
     {
+      title: 'Pronites',
+      path: '/pronites',
+    },
+    // {
+    //   title: 'Accomodation',
+    //   path: '/accomodation',
+    // },
+    {
       title: 'Login/Register',
       path: '/login',
     },
@@ -50,15 +58,14 @@ const Nav = () => {
       title: 'LogOut',
       path: '/logout',
     },
-
     // {
     //   title: 'Team',
     //   path: '/team',
     // },
-    // {
-    //   title: 'Sponsors',
-    //   path: '/sponsors',
-    // },
+    {
+      title: 'Sponsors',
+      path: '/sponsors',
+    },
     {
       title: 'Contact Us',
       path: '/contact',
