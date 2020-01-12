@@ -8,8 +8,6 @@ import useMediaQuery from '../../utils/useMediaQuery';
 
 import Particles from '../../components/particles/Particle';
 
-import hero from '../../assets/images/aceaxe$tog.png';
-
 import proniteData from '../../assets/data/eventData/proniteData';
 
 import { ReactComponent as Logo } from '../../assets/icons/auroraMono.svg';
@@ -31,7 +29,7 @@ const BookButton = () => {
   );
 };
 
-const ProniteCard = ({ title, name, desc }) => {
+const ProniteCard = ({ title, name, desc, img }) => {
   return (
     <div className={style.pronite_card}>
       <div className={style.pronite_left_container}>
@@ -41,7 +39,7 @@ const ProniteCard = ({ title, name, desc }) => {
           ))}
         </div>
         <div className={style.pronite_img_container}>
-          <img className={style.pronite_img} alt={name} src={hero} />
+          <img className={style.pronite_img} alt={name} src={img} />
         </div>
         <div className={style.illusion_1}>
           <div className={style.illusion_1_cover} />
@@ -83,7 +81,7 @@ const Pronite = () => {
           <Logo className={style.logoDark} />
         </Link>
         {proniteData.map(nite => (
-          <ProniteCard title={nite.title} name={nite.name} desc={nite.desc} />
+          <ProniteCard title={nite.title} name={nite.name} desc={nite.desc} img={nite.img} />
         ))}
 
         {/* <RenderButtons /> */}

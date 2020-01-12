@@ -1,3 +1,5 @@
+import aceaxe from '../../images/aceaxe$tog.png';
+
 const proniteData = [
   {
     title: 'THE MAGICAL',
@@ -9,6 +11,7 @@ const proniteData = [
         dance-based entertainment. This year Aurora proudly announces its association with SUNBURN
         and organization of SUNBURN CAMPUS during Aurora 2020 on 14th Feb, 8:30 PM onwards in
         Football Ground at ABV-IIITM Gwalior`,
+    img: aceaxe,
   },
 ];
 export default proniteData;

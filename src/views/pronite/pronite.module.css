@@ -126,7 +126,7 @@
 }
 .pronite_p {
   text-align: justify;
-  font-size: 1.22em;
+  font-size: 1.17em;
 }
 .logoDark {
   width: 4em;
@@ -195,6 +195,18 @@
 .button_book_parent:hover {
   transform: scale(1.2);
 }
+@media (max-width: 1680px) {
+  .pronite_parent {
+    font-size: 15px;
+  }
+  .pronite_img {
+    width: 80%;
+  }
+  .illusion_2_cover,
+  .illusion_1_cover {
+    width: 80%;
+  }
+}
 @media (max-width: 1366px) {
   .pronite_parent {
     font-size: 16px;
@@ -205,8 +217,30 @@
   .pronite_p {
     font-size: 1.09em;
   }
+  .pronite_img {
+    width: 85%;
+  }
+  .illusion_2_cover,
+  .illusion_1_cover {
+    width: 85%;
+  }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1280px) {
+  .pronite_parent {
+    font-size: 14px;
+  }
+  .pronite_img {
+    width: 85%;
+  }
+  .illusion_2_cover,
+  .illusion_1_cover {
+    width: 85%;
+  }
+  .pronite_p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 1100px) {
   .pronite_parent {
     font-size: 14px;
   }
@@ -218,7 +252,7 @@
   }
   .pronite_left_container {
     width: 80%;
-    height: 35em;
+    height: 48em;
   }
   .pronite_right_container {
     /* height: 35em; */
@@ -247,6 +281,7 @@
   }
   .pronite_left_container {
     width: 100%;
+    height: 35em;
   }
   .pronite_right_container {
     width: 100%;
