@@ -89,6 +89,7 @@ function App() {
               </Route>
               <Route exact path="/passes">
                 <PronitePasses />
+              </Route>
               <Route exact path="/wastemanagement">
                 <WasteManagement />
               </Route>
