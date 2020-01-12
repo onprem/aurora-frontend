@@ -57,7 +57,7 @@ const RenderTnC = () => {
         </ul>
       </li>
       <li className={style.accomodation_li}>
-        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Documnets Required: </span>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Documents Required: </span>
         <ul className={style.accomodation_ul}>
           <li className={style.accomodation_li}>Any valid Govt photo ID</li>
           <li className={style.accomodation_li}>Print out of Email confirmation</li>
@@ -147,7 +147,7 @@ const RenderTnC = () => {
             against reasonable consent, sustained disruption of talks or other events, inappropriate
             physical contact, and unwelcome sexual attention. If you are being harassed, notice that
             someone else is being harassed, or have any other concerns, please contact a member of
-            the organizing committee immediately.Organizers will be happy to help participants
+            the organizing committee immediately. Organizers will be happy to help participants
             contact any local security or local law enforcement, provide escorts, or otherwise
             assist those experiencing harassment to feel safe for the duration of the festival. We
             value your attendance.
@@ -163,7 +163,7 @@ const RenderTnC = () => {
               href="mailto:info@aurorafest.org"
               style={{ fontWeight: 600, fontSize: '1.1em', textDecoration: 'underline' }}
             >
-              info@aurorafest.org
+              &nbsp;info@aurorafest.org &nbsp;
             </a>
             and we will be happy to assist you.
           </li>
@@ -464,7 +464,7 @@ const Accomodation = () => {
       <div className={style.accomodation_parent}>
         <div className={style.accomodation_card_container}>
           <h1 className={style.accomodation_h1}>ACCOMODATION</h1>
-          <div className={style.accomodation_terms_container}>
+          <div className={style.accomodation_terms_container} style={{ width: '96%' }}>
             <RenderInclusions />
           </div>
           {!showBooking ? (
