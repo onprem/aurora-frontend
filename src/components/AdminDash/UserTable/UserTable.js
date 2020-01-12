@@ -57,8 +57,8 @@ const TableWrapper = ({ children, options, handleChange }) => {
             onChange={handleChange}
             value={options.sortDir}
           >
-            <option value={-1}>Des</option>
-            <option value={1}>Asc</option>
+            <option value="-1">Des</option>
+            <option value="1">Asc</option>
           </select>
         </span>
       </div>
@@ -83,7 +83,7 @@ const UserTable = () => {
     filterBy: 'arId',
     pattern: '',
     sortBy: 'timeSt',
-    sortDir: -1,
+    sortDir: '-1',
   });
 
   const debouncedOptions = useDebounce(options, 500);
@@ -102,6 +102,7 @@ const UserTable = () => {
     variables: {
       limit,
       ...debouncedOptions,
+      sortDir: Number(debouncedOptions.sortDir),
     },
     onError: handleErrors,
     // onCompleted: () => setPage(pageN => pageN + 1),

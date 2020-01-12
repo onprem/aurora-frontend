@@ -33,7 +33,7 @@ const RenderInclusions = () => {
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Pricing: </span>
         <span style={{ textDecoration: 'line-through' }}>&#8377;1200/-</span>
-        &nbsp;&nbsp;&#8377; 349/- per person (early bird price)
+        &nbsp;&nbsp;&#8377; 349/- per person, for all 3 nights (Early Bird pricing)
       </li>
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Offers</span>
@@ -53,6 +53,11 @@ const RenderInclusions = () => {
             Graffathon, Silver Screen, Nukkad Natak, IPL-Auction, Quizzes, CS-GO, PUBG), you
             get&nbsp;
             <span style={{ fontWeight: 600, fontSize: '1em' }}>&#8377; 50 off on pronites.</span>
+          </li>
+          <li className={style.accomodation_li}>
+            A maximum discount of&nbsp;
+            <span style={{ fontWeight: 600, fontSize: '1em' }}>&#8377; 100 </span>
+            can be availed using event registrations.
           </li>
         </ul>
       </li>
@@ -295,8 +300,8 @@ const Accomodation = () => {
     if (!addMemberPay) {
       Swal.fire({
         title: 'Are you sure?',
-        html: `<ul>
-          <li style="text-align:left; margin-bottom:10px">
+        html: `<ul style="overflow-y: auto; max-height: 40vh">
+          <li style="text-align:left; margin-bottom:10px;">
             Max payable amount is &#8377;${userArray.length * 349} + &#8377;${Math.floor(
           userArray.length * 349 * 2.42
         ) /
@@ -310,7 +315,7 @@ const Accomodation = () => {
         showCancelButton: true,
         confirmButtonColor: 'white',
         cancelButtonColor: 'white',
-        cancelButtonText: '<span style="color:black; font-weight:600">Cancel</span>',
+        cancelButtonText: '<span style="color:black; font-weight:600">CANCEL</span>',
         confirmButtonText: '<span style="color:black; font-weight:600">PAY</span>',
       }).then(result => {
         if (result.value) getOrder({ variables: { userIds: userArray } });

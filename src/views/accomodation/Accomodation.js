@@ -33,7 +33,7 @@ const RenderInclusions = () => {
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Pricing: </span>
         <span style={{ textDecoration: 'line-through' }}>&#8377;1800/-</span>
-        &nbsp;&nbsp;&#8377; 799/- per person (early bird price)
+        &nbsp;&nbsp;&#8377; 799/- per person (Early Bird pricing)
       </li>
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Inclusions</span>
@@ -125,7 +125,7 @@ const RenderTnC = () => {
             In case of any discrepancies, decision taken by Aurora Hospitality Team will be final
           </li>
           <li className={style.accomodation_li}>
-            final You are not allowed to shift beddings to another room
+            You are not allowed to shift beddings to another room
           </li>
           <li className={style.accomodation_li}>
             No requests regarding change of allotted rooms will be entertained
@@ -370,7 +370,7 @@ const Accomodation = () => {
     if (!addMemberPay) {
       Swal.fire({
         title: 'Are you sure?',
-        html: `<ul>
+        html: `<ul style="overflow-y: auto; max-height: 40vh">
           <li style="text-align:left; margin-bottom:10px">
             Total payable amount is &#8377;${userArray.length * 799} + &#8377;${Math.floor(
           userArray.length * 799 * 2.42
@@ -384,7 +384,7 @@ const Accomodation = () => {
         showCancelButton: true,
         confirmButtonColor: 'white',
         cancelButtonColor: 'white',
-        cancelButtonText: '<span style="color:black; font-weight:600">Cancel</span>',
+        cancelButtonText: '<span style="color:black; font-weight:600">CANCEL</span>',
         confirmButtonText: '<span style="color:black; font-weight:600">PAY</span>',
       }).then(result => {
         if (result.value) getOrder({ variables: { userIds: userArray } });
