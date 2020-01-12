@@ -51,15 +51,28 @@ const Faq = () => {
         </div>
         <div className={style.about_para_container}>
           {FAQData.map((FAQ, index) => (
-            <p className={style.about_para}>
-              <strong>
-                {index + 1}
-                {'. '}
-                {FAQ.Question}
-              </strong>
-              <br />
-              <p className={style.answer}>{FAQ.Answer}</p>
-            </p>
+            <>
+              <p className={style.about_para}>
+                <strong>
+                  {FAQ.Section}
+                  {FAQ.Section ? <br /> : null}
+                  {index + 1}
+                  {'. '}
+                  {FAQ.Question}
+                </strong>
+                <br />
+              </p>
+              <p className={style.answer}>
+                {FAQ.Answer.map(answer => {
+                  return (
+                    <span>
+                      {answer}
+                      <br />
+                    </span>
+                  );
+                })}
+              </p>
+            </>
           ))}
         </div>
       </div>

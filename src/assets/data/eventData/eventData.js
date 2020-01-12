@@ -325,8 +325,8 @@ const eventData = {
         mobile: '',
       },
       {
-        name: 'Afroz',
-        mobile: '',
+        name: 'Afroz Quraishi',
+        mobile: '7665182848',
       },
       {
         name: 'Amit Kumar',
