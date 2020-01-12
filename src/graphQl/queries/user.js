@@ -7,6 +7,7 @@ export default gql`
       name
       email
       phone
+      pronite
       gender
       city
       displayPic

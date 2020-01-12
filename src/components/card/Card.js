@@ -27,7 +27,8 @@ const Card = ({ params, index }) => {
             className={style.card_button}
             style={{ color: `${params.color}` }}
           >
-            Know More &gt;
+            {useMediaQuery(`(max-width:500px)`) ? 'Register' : 'Register Now'}
+            &gt;
           </Link>
         </div>
       </div>
