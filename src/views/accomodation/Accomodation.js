@@ -27,40 +27,147 @@ import PUBLIC_USER from '../../graphQl/queries/publicUser';
 import GET_ACC_ORDER from '../../graphQl/mutations/generateAccOrder';
 import VERIFY_ACC_ORDER from '../../graphQl/mutations/verifyAccOrder';
 
+const RenderInclusions = () => {
+  return (
+    <ul>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Inclusions</span>
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>In-campus 4D/4N accommodation</li>
+          <li className={style.accomodation_li}>
+            Entry to all Pronites (Yes, you don’t need to buy Pronite Pass separately)
+          </li>
+          <li className={style.accomodation_li}>Entry to all Proshows</li>
+        </ul>
+      </li>
+    </ul>
+  );
+};
 const RenderTnC = () => {
   return (
-    <ul className={style.accomodation_ul}>
+    <ul>
       <li className={style.accomodation_li}>
-        Accomodation Policies
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Terms & Conditions</span>
         <ul className={style.accomodation_ul}>
           <li className={style.accomodation_li}>
-            Accommodation charges are INR 799 per candidate. It includes accommodation for 4D/4N, 3
-            Pronites and Proshows.
-          </li>
-          <li className={style.accomodation_li}>
-            It does not include a food facility. Guest can purchase their meals from the cafeteria,
-            night cafeteria or hostel messes at subsidized rates.
+            <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Registration Procedure: </span>
+            The payment procedure will be online. You can check the following link to register and
+            avail accommodation: https://aurorafest.org
           </li>
         </ul>
       </li>
       <li className={style.accomodation_li}>
-        Check-In and Check-Out timings
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Documnets Required: </span>
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>Any valid Govt photo ID</li>
+          <li className={style.accomodation_li}>Print out of Email confirmation</li>
+          <li className={style.accomodation_li}>Gate pass</li>
+          <li className={style.accomodation_li}>Valid College ID for participants</li>
+        </ul>
+        It is mandatory for all guest participants to carry college and government IDs. This is for
+        your own convenience. Moreover, you will be asked to produce your ID cards at the time of
+        allotment of rooms.
+      </li>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Accommodation Charges: </span>
+        Accommodation charges are INR 799 per candidate.
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>
+          It includes accommodation for 4N/4D, entry to all Pronites (3 nights) and Proshows.
+        </span>
+        <br />
+        **Early charges before 13th Feb. 2020, 7:00 PM and late charges after 17th Feb. 2020, 11:00
+        AM will be applicable. Accommodation will be provided on a first come first serve basis and
+        is subject to availability.
+      </li>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Check-In and Check-Out Timings:</span>
         <ul className={style.accomodation_ul}>
           <li className={style.accomodation_li}>
-            Check-In - Anytime after 13th Feb. 2020, 7:00 PM
+            Check-In - Anytime after 13th Feb, 2020, 7:00 PM
           </li>
           <li className={style.accomodation_li}>
-            Check-Out- on or before 17th Feb. 2020, 10:00 AM
+            Check Out - on or before 17th Feb, 2020,10:00 AM
           </li>
         </ul>
       </li>
       <li className={style.accomodation_li}>
-        Accommodation is provided on a shared basis inside campus hostels or International Visitors’
-        Hostel. Girls and boys will be accommodated separately. Number of guests in a room will be
-        decided by Aurora and will be allotted by the Aurora Hospitality team.
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Kind Of Accommodation: </span>
+        Accommodation will be provided on a shared basis inside campus hostels, quarters or
+        International Visitors’ Hostel. Girls and boys will be accommodated separately. Mattress,
+        Blanket & pillows will be provided. Number of guests in a room and other things will be
+        decided and allotted by the Aurora Management team at place.
       </li>
       <li className={style.accomodation_li}>
-        Participants must follow all the rules and regulations of the institute.
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Food Facilities: </span>
+        Guests can purchase their meals from the cafeteria, night cafeteria or hostel messes at
+        subsidized rates. You can also order food online. Various food stalls will also be available
+        in and around campus.
+        <br />
+        **Accommodation charges does not include any meals and can be purchased at your own expenses
+      </li>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Security Facilities: </span>
+        IIITM Gwalior campus has a vigilant and round-the-clock security service. There will be
+        additional security to avoid thefts and other mishaps. However, the Institute and the
+        management will not be responsible for any theft, loss of belongings and mishaps. Guests are
+        advised not to carry any valuable items unless absolutely necessary and will be solely
+        responsible for any loss of property.
+      </li>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>General Rules:</span>
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>
+            In case of any discrepancies, decision taken by Aurora Hospitality Team will be final
+          </li>
+          <li className={style.accomodation_li}>
+            final You are not allowed to shift beddings to another room
+          </li>
+          <li className={style.accomodation_li}>
+            No requests regarding change of allotted rooms will be entertained
+          </li>
+          <li className={style.accomodation_li}>
+            Participants are expected to abide by the rules and regulations of the Institute
+          </li>
+          <li className={style.accomodation_li}>
+            No kind of drugs, intoxications and weapons are allowed
+          </li>
+        </ul>
+      </li>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Code of Conduct: </span>
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>
+            If a participant engages in harassing behavior, the organizers may take any action they
+            deem appropriate. This includes warning the offender, expulsion from the venue with no
+            refund (if applicable), or reporting their behaviour to local law enforcement.
+            Harassment includes offensive verbal comments related to gender, gender identity and
+            expression, age, sexual orientation, disability, physical appearance, body size, race,
+            ethnicity, nationality, religion or political views, sexual images in public spaces,
+            deliberate intimidation, stalking, following, photography or audio/video recording
+            against reasonable consent, sustained disruption of talks or other events, inappropriate
+            physical contact, and unwelcome sexual attention. If you are being harassed, notice that
+            someone else is being harassed, or have any other concerns, please contact a member of
+            the organizing committee immediately.Organizers will be happy to help participants
+            contact any local security or local law enforcement, provide escorts, or otherwise
+            assist those experiencing harassment to feel safe for the duration of the festival. We
+            value your attendance.
+          </li>
+        </ul>
+      </li>
+      <li className={style.accomodation_li}>
+        <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Query not found?</span>
+        <ul className={style.accomodation_ul}>
+          <li className={style.accomodation_li}>
+            For more information or query, feel free to write at
+            <a
+              href="mailto:info@aurorafest.org"
+              style={{ fontWeight: 600, fontSize: '1.1em', textDecoration: 'underline' }}
+            >
+              info@aurorafest.org
+            </a>
+            and we will be happy to assist you.
+          </li>
+        </ul>
       </li>
     </ul>
   );
@@ -358,8 +465,7 @@ const Accomodation = () => {
         <div className={style.accomodation_card_container}>
           <h1 className={style.accomodation_h1}>ACCOMODATION</h1>
           <div className={style.accomodation_terms_container}>
-            <h3 className={style.accomodation_h3}>Terms & Conditions :</h3>
-            <RenderTnC />
+            <RenderInclusions />
           </div>
           {!showBooking ? (
             authToken ? (
@@ -420,6 +526,9 @@ const Accomodation = () => {
           ) : (
             RenderShowBooking
           )}
+          <div className={style.accomodation_terms_container}>
+            <RenderTnC />
+          </div>
         </div>
         {!isMobile ? <Social className={style.accomodation_social} fill="black" /> : null}
       </div>
