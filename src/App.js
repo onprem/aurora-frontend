@@ -21,11 +21,18 @@ const Verify = React.lazy(() => import('./views/Verify/Verify'));
 const NotFound = React.lazy(() => import('./views/NotFound/NotFound'));
 const EventDetails = React.lazy(() => import('./views/EventDetails/EventDetails'));
 const Contact = React.lazy(() => import('./views/contactUs/ContactUs'));
+const WasteManagement = React.lazy(() => import('./views/WasteManagement/WasteManagement'));
 const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 const AdminDashboard = React.lazy(() => import('./views/AdminDashboard/AdminDashboard'));
 const Faq = React.lazy(() => import('./views/FAQ/faq'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
 const Accomodation = React.lazy(() => import('./views/accomodation/Accomodation'));
+const PronitePasses = React.lazy(() => import('./views/pronitePasses/PronitePasses'));
+
+const Sponsors = React.lazy(() => import('./views/sponsors/Sponsors'));
+const Pronites = React.lazy(() => import('./views/pronite/Pronite'));
+
+const Alpha = React.lazy(() => import('./views/alpha/alphaView/LoginRegister'));
 
 function App() {
   const [authToken, setAuthToken] = useState();
@@ -81,6 +88,15 @@ function App() {
               <Route exact path="/accomodation">
                 <Accomodation />
               </Route>
+              <Route exact path="/passes">
+                <PronitePasses />
+              </Route>
+              <Route exact path="/wastemanagement">
+                <WasteManagement />
+              </Route>
+              <Route exact path="/alpha">
+                <Alpha />
+              </Route>
               <ProtectedRoute exact path="/dashboard">
                 <Dashboard />
               </ProtectedRoute>
@@ -89,6 +105,12 @@ function App() {
               </ProtectedRoute>
               <Route exact path="/logout">
                 <LogOut />
+              </Route>
+              <Route exact path="/sponsors">
+                <Sponsors />
+              </Route>
+              <Route exact path="/pronites">
+                <Pronites />
               </Route>
               <Route exact path="/faq">
                 <Faq />
