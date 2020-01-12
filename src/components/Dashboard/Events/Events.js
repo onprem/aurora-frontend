@@ -81,7 +81,7 @@ const PaidEvents = ({ teams, isDesktop }) => {
 };
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
-  const [toPay, setToPay] = useState([]);
+  const [toPay, setToPay] = useState(teams);
 
   const addToPayment = (team, event) => {
     // event.preventDefault();
