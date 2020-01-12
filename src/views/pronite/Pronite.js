@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import style from './pronite.module.css';
 
@@ -8,7 +8,7 @@ import useMediaQuery from '../../utils/useMediaQuery';
 
 import Particles from '../../components/particles/Particle';
 
-import hero from '../../assets/images/aceaxe$tog.png';
+import proniteData from '../../assets/data/eventData/proniteData';
 
 import { ReactComponent as Logo } from '../../assets/icons/auroraMono.svg';
 import { ReactComponent as Arrow } from '../../assets/icons/arrowLeft.svg';
@@ -16,7 +16,20 @@ import Social from '../../components/Social/Social';
 
 const strokeCount = 35;
 
-const ProniteCard = ({ name }) => {
+const BookButton = () => {
+  const history = useHistory();
+  return (
+    <button
+      className={style.button_book_parent}
+      type="button"
+      onClick={() => history.push('/passes')}
+    >
+      GET PASSES NOW
+    </button>
+  );
+};
+
+const ProniteCard = ({ title, name, desc, img }) => {
   return (
     <div className={style.pronite_card}>
       <div className={style.pronite_left_container}>
@@ -26,7 +39,7 @@ const ProniteCard = ({ name }) => {
           ))}
         </div>
         <div className={style.pronite_img_container}>
-          <img className={style.pronite_img} alt={name} src={hero} />
+          <img className={style.pronite_img} alt={name} src={img} />
         </div>
         <div className={style.illusion_1}>
           <div className={style.illusion_1_cover} />
@@ -36,17 +49,11 @@ const ProniteCard = ({ name }) => {
         </div>
       </div>
       <div className={style.pronite_right_container}>
-        <h1 className={style.pronite_heading}>THE MAGICAL</h1>
-        <h2 className={style.pronite_sub_heading}>OLLY ESSE & ACEAXE</h2>
-        <p className={style.pronite_p}>
-          An electronic dance music Festival held internationally every year all across the globe
-          that amalgamates Music and Entertainment and organized by Percept, an Entertainment, Media
-          and Communications company of India. EDM Night (Electronic Dance Night) is a set of
-          percussive electronic music genres produced primarily for environments centered in
-          dance-based entertainment. This year Aurora proudly announces its association with SUNBURN
-          and organization of SUNBURN CAMPUS during Aurora 2020 on 14th Feb, 8:30 PM onwards in
-          Football Ground at ABV-IIITM Gwalior
-        </p>
+        <h1 className={style.pronite_heading}>{title}</h1>
+        <h2 className={style.pronite_sub_heading}>{name}</h2>
+
+        <p className={style.pronite_p}>{desc}</p>
+        <BookButton />
       </div>
     </div>
   );
@@ -73,7 +80,10 @@ const Pronite = () => {
         <Link to="/">
           <Logo className={style.logoDark} />
         </Link>
-        <ProniteCard />
+        {proniteData.map(nite => (
+          <ProniteCard title={nite.title} name={nite.name} desc={nite.desc} img={nite.img} />
+        ))}
+
         {/* <RenderButtons /> */}
       </div>
       <Particles />
