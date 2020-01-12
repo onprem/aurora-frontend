@@ -35,10 +35,6 @@ const Nav = () => {
     //   path: '/pronites',
     // },
     {
-      title: 'Book Pronites',
-      path: '/getPasses',
-    },
-    {
       title: 'Accomodation',
       path: '/accomodation',
     },
