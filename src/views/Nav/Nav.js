@@ -30,6 +30,14 @@ const Nav = () => {
       title: 'Events',
       path: '/events',
     },
+    // {
+    //   title: 'Pronites',
+    //   path: '/pronites',
+    // },
+    {
+      title: 'Accomodation',
+      path: '/accomodation',
+    },
     {
       title: 'Pronites',
       path: '/pronites',

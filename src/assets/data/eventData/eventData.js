@@ -3,6 +3,7 @@ const eventData = {
     id: 1,
     name: 'Parivesh',
     singleEvent: true,
+    shortDes: 'The fashion show',
     description:
       'Parivesh the most glamorous event of the festival is ready to captivate the audience with its mesmerizing charm. Fashion is an art and Parivesh is the ultimate platform to express yourself. Boasting of a decade long legacy, the “gloss, glitz and glamour” is back with bigger and better stakes with Parivesh. Parivesh gives you the golden opportunity to emerge as a trendsetter in front of the big guns of trade and a huge ecstatic audience. The curtains would slowly draw apart to spell-bound everyone by the angelic beauty stunning the stage. If you have got the beguiling looks and the perfect vogue, Parivesh is just the event for you! This is a competition tailor made for all of you whoever aspires to be the next glamorous DIVA or HUNK. Come set the stage on fire with your charm and charisma at Aurora!!!',
     prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
@@ -27,53 +28,57 @@ const eventData = {
     eventHeads: [
       {
         name: 'Ayush Shrivastava',
-        mobile: '',
+        mobile: '8823055712',
       },
       {
         name: 'Harsh Titoria',
-        mobile: '',
+        mobile: '7088744873',
       },
       {
         name: 'Manish Mavi',
-        mobile: '',
+        mobile: '9599474147',
       },
       {
         name: 'Rini Pandey',
-        mobile: '',
+        mobile: '7217824335',
       },
       {
         name: 'Rushikesh Taksande',
-        mobile: '',
+        mobile: '8308109746',
       },
     ],
     eventOrganisers: [
       {
         name: 'Amit Singh',
-        mobile: '',
+        mobile: '6350354769',
       },
       {
         name: 'Ankit',
-        mobile: '',
+        mobile: '9024923695',
       },
       {
         name: 'Nikhil Pareek',
-        mobile: '',
+        mobile: '6376480117',
       },
       {
         name: 'Pooja Talreja',
-        mobile: '',
+        mobile: '7791862594',
       },
       {
         name: 'Prashant Dwivedi',
-        mobile: '',
+        mobile: '9415917512',
       },
       {
         name: 'Rashi',
-        mobile: '',
+        mobile: '7024205660',
       },
       {
         name: 'Shreya',
-        mobile: '',
+        mobile: '8989191677',
+      },
+      {
+        name: 'Aashish',
+        mobile: '7828678252',
       },
     ],
   },
@@ -81,6 +86,7 @@ const eventData = {
     id: 2,
     name: 'Corna',
     singleEvent: true,
+    shortDes: 'A battle of bands',
     description:
       'The Corna event will be one of the flagship events where multiple bands will compete amongst each other to prove their mettle on the stage while rocking and winning the audience with their stringing guitars and drums enthralling the audience. This will be a mega event in itself which will also form one of the pro-nights.',
     prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
@@ -133,11 +139,11 @@ const eventData = {
       },
       {
         name: 'Poorva Khandare',
-        mobile: '',
+        mobile: '7974441908',
       },
       {
         name: 'Saksham Arjani',
-        mobile: '',
+        mobile: '9799008203',
       },
       {
         name: 'Utkarsh Agrawal',
@@ -147,31 +153,31 @@ const eventData = {
     eventOrganisers: [
       {
         name: 'Vatsal Gupta',
-        mobile: '',
+        mobile: '7766817555',
       },
       {
         name: 'Shikhar Goswami',
-        mobile: '',
+        mobile: '8112274244',
       },
       {
         name: 'Madhuri Raparthi',
-        mobile: '',
+        mobile: '6265695165',
       },
       {
         name: 'Saurabh Prakash',
-        mobile: '',
+        mobile: '9039734760',
       },
       {
         name: 'Rutvij Raut',
-        mobile: '',
+        mobile: '7058783620',
       },
       {
         name: 'Pawan Kumar',
-        mobile: '',
+        mobile: '9521208689',
       },
       {
         name: 'Sakshi Kumar',
-        mobile: '',
+        mobile: '8604803773',
       },
       // {
       //   name: 'Sahil Chopra',
@@ -191,7 +197,7 @@ const eventData = {
       },
       {
         name: 'Pranav Mishra',
-        mobile: '',
+        mobile: '7017971093',
       },
     ],
   },
@@ -199,6 +205,7 @@ const eventData = {
     id: 3,
     name: 'Mr. and Ms. Aurora',
     singleEvent: true,
+    shortDes: 'a talent hunt to test your confidence, aptitude, IQ and your wits.',
     description:
       "If you have outrageous personality, better showcase your talent. Mr and Miss Aurora (MnM) is coming this Aurora 2019 to let you explore the hidden potential in yourself, compete with some of the toughest people around you and give you the chance to be the face of Aurora. MnM, a talent hunt to test your confidence, aptitude, IQ and your wits. If you think you have got the X-factor to woe the crowd with your personality, don't wait then. Show your mettle and walk away with your head held high, your prestige intact and of course with the coveted title. Explore your physical and mental capabilities through a series of resilient challenges. So this year again, Aurora'20 is coming with it's flagship event M&M to give the adrenaline rush you desire, and of course quintessentially our own Roadies.",
     prizeMoney: 'INR 30,000 + Goodies, Benefits and Sponsored Gifts',
@@ -233,37 +240,37 @@ const eventData = {
     eventHeads: [
       {
         name: 'Yogesh',
-        mobile: '',
+        mobile: '9996886396',
       },
       {
         name: 'Arpit Chhabra',
-        mobile: '',
+        mobile: '9950853333',
       },
       {
         name: 'Yashvant Gond',
-        mobile: '',
+        mobile: '7239924174',
       },
       {
         name: 'Karan Singh',
-        mobile: '',
+        mobile: '9599474147',
       },
       {
         name: 'Prasoon',
-        mobile: '',
+        mobile: '7073310155',
       },
     ],
     eventOrganisers: [
       {
         name: 'Varsha Beniwal',
-        mobile: '',
+        mobile: '8005885983',
       },
       {
         name: 'Rachit Gupta',
-        mobile: '',
+        mobile: '9821960113',
       },
       {
         name: 'Prince',
-        mobile: '',
+        mobile: '9891712014',
       },
       {
         name: 'Yogesh Kumar',
@@ -275,11 +282,11 @@ const eventData = {
       },
       {
         name: 'Kamal Garg',
-        mobile: '',
+        mobile: '7827081321',
       },
       {
         name: 'Divyansh Daushalya',
-        mobile: '',
+        mobile: '7587524281',
       },
     ],
   },
@@ -292,67 +299,68 @@ const eventData = {
     eventHeads: [
       {
         name: 'Gaurav Verma',
-        mobile: '',
+        mobile: '9956933649',
       },
       {
         name: 'Deepak Paliwal',
-        mobile: '',
+        mobile: '9559487913',
       },
       {
         name: 'Aditya Shankar Mishra',
-        mobile: '',
+        mobile: '9260970643',
       },
       {
         name: 'Suryadeepti',
-        mobile: '',
+        mobile: '7988952339',
       },
       {
         name: 'Anivesh',
-        mobile: '',
+        mobile: '9113791935',
       },
     ],
     eventOrganisers: [
       {
         name: 'Ashok Meena',
-        mobile: '',
+        mobile: '7665091882',
       },
       {
         name: 'Mohit Mochi',
-        mobile: '',
+        mobile: '8440823227',
       },
       {
         name: 'Vineet',
-        mobile: '',
+        mobile: '9370799949',
       },
       {
         name: 'Afroz',
-        mobile: '',
+        mobile: '7665182848',
       },
       {
         name: 'Amit Kumar',
-        mobile: '',
+        mobile: '8869847890',
       },
       {
         name: 'Deeksha',
-        mobile: '',
+        mobile: '9650212434',
       },
       {
         name: 'Aditi',
-        mobile: '',
+        mobile: '8839158059',
       },
       {
         name: 'Tamanna',
-        mobile: '',
+        mobile: '9337723804',
       },
       {
         name: 'Anshul Dubey',
-        mobile: '',
+        mobile: '9425774186',
       },
     ],
     subEvents: [
       {
         id: 4,
         name: 'Synchro Funk',
+        shortDes: 'A group dance event',
         description:
           'Dancing is a conversation that needs not be spoken but is implicitly understood. This event gives the opportunity for an enthusiastic expression of camaraderie and trust as groups dance to the rhythm tying them together as they vie for the top spot.',
         fees: 749,
@@ -370,6 +378,7 @@ const eventData = {
       {
         id: 5,
         name: 'Dancing Dyad​',
+        shortDes: 'A duet dance event',
         description:
           'Aurora brings you one of the best platforms to steal the spotlight and celebrate the true liberation of emotions. It’s an opportunity to showcase the magic in your footsteps through duet dance.',
         fees: 399,
@@ -387,6 +396,7 @@ const eventData = {
       {
         id: 6,
         name: 'Beat the Beat',
+        shortDes: 'An Individual dance event',
         description:
           'Paint the stage with talent as you put your best foot forward with moves that leave the audience stunned. This event glorifies the relationship of a dancer to the rhythm as they battle it out for the best of Face Off.',
         fees: 249,
@@ -414,45 +424,45 @@ const eventData = {
     eventHeads: [
       {
         name: 'Devwrat Sahu',
-        mobile: '',
+        mobile: '9630569238',
       },
       {
         name: 'Saksham Gupta',
-        mobile: '',
+        mobile: '9617210303',
       },
       {
         name: 'Amit Kumar',
-        mobile: '',
+        mobile: '9717553810',
       },
       {
         name: 'Queen Saikia',
-        mobile: '',
+        mobile: '8638043243',
       },
       {
         name: 'Vishal Shivhare',
-        mobile: '',
+        mobile: '9229201332',
       },
     ],
     eventOrganisers: [
       {
         name: 'Achyuth',
-        mobile: '',
+        mobile: '7981012301',
       },
       {
         name: 'Akshay Khatri',
-        mobile: '',
+        mobile: '7792092440',
       },
       {
         name: 'Nymika',
-        mobile: '',
+        mobile: '6265816365',
       },
       {
         name: 'Mansi Meena',
-        mobile: '',
+        mobile: '7073431919',
       },
       {
         name: 'Venkatesh Vuyyala',
-        mobile: '',
+        mobile: '6303542721',
       },
       {
         name: 'Shivangi Sachdeva',
@@ -463,6 +473,7 @@ const eventData = {
       {
         id: 7,
         name: 'Raag',
+        shortDes: 'It​ will be a dedicated event to appreciate singing with Instruments.',
         description:
           "There's something in the soft plink of a sitar, or the mellifluous notes of a flute, that the human voice cannot seem to match. Instrumentalists spend years perfecting their art, to achieve the thrilling pace at which they change notes. Bach, Miles Davis, Zakir Hussain, Yo Yo Ma, and L Subramaniam. These artists and many more have changed how most of us look and listen to music. This year, Aurora'20 gives you a chance for you to hear and create magic-harmonies. It​ will be a dedicated event to appreciate singing with Instruments.",
         fees: 249,
@@ -491,6 +502,8 @@ const eventData = {
       {
         id: 8,
         name: 'A-capella​',
+        shortDes:
+          'This event focuses on the various domains of FreeStyle Singing without instrumental accompaniment.',
         description:
           'A simple competition with simple rules and one of the most liked and attended event of all musical competitions of Aurora- A capella calls you on stage, and give you the freedom to perform.If you think that you can produce melodies without the help of any instruments, come and find out if you are really as good as you believe. It will focus on the various domains of FreeStyle Singing without instrumental accompaniment.',
         fees: 200,
@@ -514,6 +527,8 @@ const eventData = {
       {
         id: 9,
         name: 'Acoustic Corner',
+        shortDes:
+          'It is a purely instrumental music fiesta which will be aimed to enthuse the audience with raw music.',
         description:
           '"Music is the shorthand of emotion." — Leo Tolstoy. No matter where you are or what you do some Music will always refresh your mood. Aurora brings you the stage for putting your swift arms and skilful fingers to display before an encouraging and enthusiastic audience. It is a purely instrumental music fiesta which will be aimed to enthuse the audience with raw music.',
         fees: 200,
@@ -538,47 +553,48 @@ const eventData = {
     eventHeads: [
       {
         name: 'Anshita Sharma',
-        mobile: '',
+        mobile: '9559487913',
       },
       {
         name: 'Piyush Raikwar',
-        mobile: '',
+        mobile: '7507909929',
       },
       {
         name: 'Harshit',
-        mobile: '',
+        mobile: '7800255576',
       },
       {
         name: 'Ayush Saini',
-        mobile: '',
+        mobile: '7351092482',
       },
     ],
     eventOrganisers: [
       {
         name: 'Pushkar',
-        mobile: '',
+        mobile: '9407382599',
       },
       {
         name: 'Tushar Neogi',
-        mobile: '',
+        mobile: '8960458060',
       },
       {
         name: 'Vedant Tripathi',
-        mobile: '',
+        mobile: '9519779462',
       },
       {
         name: 'Vaishnavi',
-        mobile: '',
+        mobile: '9604734478',
       },
       {
         name: 'Bhanu Putta',
-        mobile: '',
+        mobile: '8978843077',
       },
     ],
     subEvents: [
       {
         id: 10,
         name: 'Graffathon',
+        shortDes: 'A wall painting competition',
         description:
           'This competition is open to all graffiti artists, who are able to submit examples of their creative artwork. Just pick up your spray cans and brushes and display your creativity on our walls.',
         prizeMoney: 'INR 12,000 + Goodies, Benefits and Sponsored Gifts',
@@ -616,6 +632,7 @@ const eventData = {
       {
         id: 12,
         name: 'On-spot Sketching',
+        shortDes: 'Contestants can make drawing of any subject that they want with lead pencil(s).',
         description:
           'This contest is open to all traditional artists that draw using lead pencils. The topic is BLACK & WHITE PENCIL DRAWING. Contestants can make drawing of any subject that they want with lead pencil(s). No color artwork will be accepted, only black/white/grayscale pencil artwork for this contest.',
         prizeMoney: 'INR 7,500 + Goodies, Benefits and Sponsored Gifts',
@@ -692,45 +709,46 @@ const eventData = {
     eventHeads: [
       {
         name: 'Pragnya Tata',
-        mobile: '',
+        mobile: '9705073030',
       },
       {
         name: 'Ravuri Upendra',
-        mobile: '',
+        mobile: '9182839002',
       },
       {
         name: 'Pranay',
-        mobile: '',
+        mobile: '9963628847',
       },
     ],
     eventOrganisers: [
       {
         name: 'Jhanvi',
-        mobile: '',
+        mobile: '7989692269',
       },
       {
         name: 'Praveen',
-        mobile: '',
+        mobile: '8959328879',
       },
       {
         name: 'Ashray Gupta',
-        mobile: '',
+        mobile: '8989738932',
       },
       {
         name: 'Bipin Pathak',
-        mobile: '',
+        mobile: '9456431535',
       },
       {
         name: 'Pranay',
-        mobile: '',
+        mobile: '9381231209',
       },
     ],
     subEvents: [
       {
         id: 16,
         name: 'Silverscreen',
+        shortDes: 'A short-movie making contest',
         description:
-          'The movie-making contest for several previous editions has been one of the premier events of the Aurora where students with interest and prowess in the movie-making domains come forwards with their short movies. This event will also bring out the talents of the participants or the students in domains like film editing, cinematography, etc.',
+          'The movie-making contest for several previous editions has been one of the premier events of the Aurora where students with interest and prowess in the movie-making domains come forward with their short movies. This event will also bring out the talents of the participants or the students in domains like film editing, cinematography, etc.',
         fees: 249,
         prizeMoney: 'INR 17,000 + Goodies, Benefits and Sponsored Gifts',
         rules: [
@@ -746,6 +764,7 @@ const eventData = {
       {
         id: 17,
         name: 'Panorama',
+        shortDes: 'A photography competetion',
         description:
           'The photography competition will be a one of a kind masterful event where the participants will be clicking snaps on various themes, including the three-day final show, and then finally those photographs will be judged on various trivial aspects of photography like exposure and light settings, etc.',
         fees: 0,
@@ -791,29 +810,29 @@ const eventData = {
     eventHeads: [
       {
         name: 'Anuj Sharma',
-        mobile: '',
+        mobile: '8477892707',
       },
       {
         name: 'Simran Kureel',
-        mobile: '',
+        mobile: '7844862046',
       },
       {
         name: 'Shivam Gupta',
-        mobile: '',
+        mobile: '8462058173',
       },
       {
         name: 'Ashutosh Kumar',
-        mobile: '',
+        mobile: '7898931178',
       },
     ],
     eventOrganisers: [
       {
         name: 'Abhishek Pratap Singh',
-        mobile: '',
+        mobile: '7879560731',
       },
       {
         name: 'Anjali Bhagoria',
-        mobile: '',
+        mobile: '9977514199',
       },
       {
         name: 'Ashish Khatri',
@@ -821,7 +840,7 @@ const eventData = {
       },
       {
         name: 'Lumbini',
-        mobile: '',
+        mobile: '6303897455',
       },
       {
         name: 'Manish',
@@ -849,6 +868,8 @@ const eventData = {
       {
         id: 20,
         name: 'Morning Radio',
+        shortDes:
+          ' Be an RJ, show off your voice and interaction skills, speak a lot and you have chance to win.',
         description:
           'If you’re spontaneous, confident & have a brilliant sense of humour, get set to be the next radio star. If you love music & stories, are fluent in Hindi & English, then you just could be the lucky one! This event gives you the chance to own your show with a live audience right by your side. Be an RJ, show off your voice and interaction skills, speak a lot and you have chance to win.',
         prizeMoney: 'INR 5,000 + Goodies, Benefits and Sponsored Gifts',
@@ -864,6 +885,7 @@ const eventData = {
       {
         id: 21,
         name: 'Creative Writing (English)',
+        shortDes: 'An english content writing contest',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
         prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
@@ -882,6 +904,7 @@ const eventData = {
       {
         id: 22,
         name: 'Creative Writing (Hindi)',
+        shortDes: 'A Hindi content writing contest',
         description:
           'Writing is an art through which you pen down your knowledge and perception about the given topic. Aurora’20 brings you content writing contest that allows you to express your unique and beautiful thoughts! We welcome everyone to show their brilliance in writing and leave every reader in awe. The content includes essay, poem, rap or anything creative Winner will be announced on our website and social media handles.',
         prizeMoney: 'INR 2,000 + Goodies, Benefits and Sponsored Gifts',
@@ -902,6 +925,7 @@ const eventData = {
   nukkad: {
     id: 23,
     name: 'Nukkad Natak',
+    shortDes: 'A street play contest',
     singleEvent: true,
     description:
       "Have you ever wanted to change the way systems and organizations work in our country? Have you thought to bring out CHANGE, REFORM, REVOLUTION? Have your mind ever started the journey of BADLAAV from AAGAZ to ANZAM? If yes, our event 'STREET-PLAY (Nukkad Natak Competition)' is the perfect opportunity. Here, we hit the streets, we sing, we dance, we act, we shout with minds full of thoughts of creating something new. 'The creation of something new is not accomplished by the intellect but by the play instinct.' -Carl Jung Well, it's time to create something new with your voice, action, acting and overall play. We have just one thing to say - BE THE CREATOR OF YOUR OWN WORLD!",
@@ -936,25 +960,25 @@ const eventData = {
     eventHeads: [
       {
         name: 'Jagadeesh Suggula',
-        mobile: '',
+        mobile: '9100819285',
       },
       {
         name: 'Ankita Kumari',
-        mobile: '',
+        mobile: '9755761191',
       },
     ],
     eventOrganisers: [
       {
         name: 'Anuj Bangad',
-        mobile: '',
+        mobile: '8982996384',
       },
       {
         name: 'Shivesh Tiwari',
-        mobile: '',
+        mobile: '7839361768',
       },
       {
         name: 'Himanshu Pandey',
-        mobile: '',
+        mobile: '9695669998',
       },
     ],
   },
@@ -968,15 +992,15 @@ const eventData = {
       },
       {
         name: 'Abhishek Garain',
-        mobile: '',
+        mobile: '9734793007',
       },
       {
         name: 'Vaibhav Jain',
-        mobile: '',
+        mobile: '7011398238',
       },
       {
         name: 'Ketan Gupta',
-        mobile: '',
+        mobile: '7649055418',
       },
     ],
     eventOrganisers: [
@@ -986,29 +1010,30 @@ const eventData = {
       },
       {
         name: 'Nakul Shahdadpuri',
-        mobile: '',
+        mobile: '9618165908',
       },
       {
         name: 'Himanshu Ruhela',
-        mobile: '',
+        mobile: '8383872147',
       },
       {
         name: 'Aadit Agrawal',
-        mobile: '',
+        mobile: '8179675451',
       },
       {
         name: 'Madhvik Agrawal',
-        mobile: '',
+        mobile: '8826233587',
       },
       {
         name: 'Ishaan Kakkar',
-        mobile: '',
+        mobile: '8390331888',
       },
     ],
     subEvents: [
       {
         id: 24,
         name: 'IPL Auction',
+        shortDes: 'Be an IPL franchise owner and show your smartness to form the best team',
         description:
           'This event is a live simulation of the IPL Auctions and gauges Contestants’ analytical and managerial skills in real-time. The event will consist of two rounds. The  Preliminary round will be a multiple-choice based quiz to select 8 teams for the  Main Round which would feature a live auction.',
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
@@ -1025,14 +1050,22 @@ const eventData = {
         ],
         eventHeads: [
           {
-            name: 'Yashvant Gond',
+            name: 'Yashwant Gond',
             mobile: '+91-6261827960',
+          },
+          {
+            name: 'Mohit Aggarwal',
+            mobile: '+91-9131775648',
+          },
+          {
+            name: 'Vishal Jain',
+            mobile: '+91-9926159877',
           },
         ],
         eventOrganisers: [
           {
-            name: 'Sahil Chopra',
-            mobile: '',
+            name: 'Sahil Jain',
+            mobile: '7340453012',
           },
           {
             name: 'Priya',
@@ -1040,17 +1073,18 @@ const eventData = {
           },
           {
             name: 'Saket Shrivastava',
-            mobile: '',
+            mobile: '7000876007',
           },
           {
             name: 'Dhruval Kushwaha',
-            mobile: '',
+            mobile: '7409204125',
           },
         ],
       },
       {
         id: 25,
         name: 'Aptitude Quiz',
+        shortDes: 'An ultimate test of your logical and intellectual skills',
         description:
           '"The best preparation for tomorrow is doing your best today." - H. Jackson Brown Jr. Ready to test your intellectual skills ? Come be a part of series of mind-boggling questions which will test your logical and analytical skills.',
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
@@ -1070,6 +1104,7 @@ const eventData = {
       {
         id: 26,
         name: 'BIT Quiz',
+        shortDes: 'A quiz to test your knowledge in IT and Business fields',
         description:
           "Do you have impulse? Do you have the knowledge? Do you wish to feel a rush of Adrenaline? Aurora'20 , IIITM Gwalior present it’s BIT Quiz competition. Lets' test your knowledge in the field of Business and the IT world.",
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
@@ -1096,6 +1131,7 @@ const eventData = {
       {
         id: 27,
         name: 'Cine-Binge Quiz',
+        shortDes: 'A quiz to test your knowledge of various Movies, Comics, and TV Series.',
         description:
           "Show off your binge watching skills in Cine Quiz which is going to be the next big thing during Aurora'20. This quiz will test your knowledge of Movies, Comics, and TV Series ranging from hollywood to bollywood. Let's see who conquers the throne.",
         prizeMoney: 'INR 6,000 + Goodies, Benefits and Sponsored Gifts',
@@ -1141,27 +1177,27 @@ const eventData = {
     eventOrganisers: [
       {
         name: 'Kapin Sangwan',
-        mobile: '',
+        mobile: '9053979129',
       },
       {
         name: 'Dushyant Pratap',
-        mobile: '',
+        mobile: '7455844278',
       },
       {
         name: 'Udit Singh',
-        mobile: '',
+        mobile: '9451372709',
       },
       {
         name: 'C. Dheena',
-        mobile: '',
+        mobile: '8712179445',
       },
       {
         name: 'Vidya Dubey',
-        mobile: '',
+        mobile: '8989163280',
       },
       {
         name: 'Jayant Gupta',
-        mobile: '',
+        mobile: '9521003983',
       },
     ],
     subEvents: [

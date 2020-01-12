@@ -7,9 +7,11 @@ export default gql`
       name
       email
       phone
+      pronite
       gender
       city
       displayPic
+      accommodation
       college
       teams {
         id

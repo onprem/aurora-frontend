@@ -1,10 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import config from '../../../config';
+
 import styles from './Profile.module.css';
 
 const Profile = ({ className, user }) => {
-  const dpBaseURL = 'https://storage.googleapis.com/aurora-dp/';
+  const dpBaseURL = config.gcsBucketUrl;
 
   return (
     <section className={classNames(styles.profileSection, className)}>

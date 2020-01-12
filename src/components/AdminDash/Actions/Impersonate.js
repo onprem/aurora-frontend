@@ -20,7 +20,7 @@ const Impersonate = ({ arId }) => {
   const handleImpersonate = data => {
     Swal.fire({
       title: `Login as ${arId}?`,
-      text: `Impersonation Token: ${data.impersonate}`,
+      html: `Impersonation Token: <br /><p style="font-family: monospace; text-align: justify">${data.impersonate}</p>`,
       showCancelButton: true,
       confirmButtonColor: 'white',
       cancelButtonColor: 'white',

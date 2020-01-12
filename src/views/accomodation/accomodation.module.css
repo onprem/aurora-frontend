@@ -1,0 +1,341 @@
+.accomodation_parent {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  font-size: 22px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+.accomodation_card_container {
+  margin-top: 5%;
+  margin-bottom: 3.5%;
+  width: 90%;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  background: black;
+  color: white;
+  border-radius: 0.8em;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.accomodation_h1 {
+  letter-spacing: 0.7em;
+  margin: 0px;
+  font-size: 2em;
+  margin-bottom: 2%;
+}
+.accomodation_terms_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-left: 4%;
+}
+.accomodation_h3 {
+  margin: 0px;
+  text-align: justify;
+  font-size: 1em;
+}
+.accomodation_p {
+  width: 90%;
+  text-align: justify;
+  font-size: 0.8em;
+}
+.accomodation_book_button {
+  width: 20em;
+  height: 3em;
+  border-radius: 4em;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9em;
+  padding: 0px;
+  margin: 0px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.booking_button_svg {
+  width: 3em;
+}
+.dark_logo {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+}
+.accomodation_show_parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+.divider_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 50%;
+  margin-bottom: 3%;
+}
+.accomodation_hr {
+  width: 30%;
+}
+.accomodation_cross {
+  width: 5%;
+}
+.accomodation_list_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.accomodation_list_heading,
+.accomodation_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3em;
+}
+.accomodation_list_heading_item,
+.accomodation_list_item,
+.accomodation_list_item_sr,
+.accomodation_list_heading_item_sr {
+  width: 25%;
+  text-align: center;
+  height: 100%;
+}
+.accomodation_list_item_sr,
+.accomodation_list_heading_item_sr {
+  width: 10%;
+}
+.text_right {
+  text-align: right;
+}
+.accomodation_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 95%;
+  margin-bottom: 3%;
+}
+.accomodation_input {
+  width: 15%;
+  height: 3em;
+  border-radius: 0.8em;
+  border: none;
+  padding-left: 1%;
+  margin-right: 2%;
+}
+.pay_and_add_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 15%;
+  border-radius: 3.5em;
+  background: white;
+  border: none;
+  font-size: 0.7em;
+  height: 3.5em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.input_plus {
+  width: 10%;
+  margin-left: 5%;
+}
+.list_hr {
+  width: 80%;
+}
+.list_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 40%;
+  background: white;
+  border-radius: 3em;
+  height: 50%;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.accomodation_list_cross {
+  width: 12%;
+  margin-left: 5%;
+}
+.arrow {
+  width: 7%;
+  margin-left: 10%;
+  transform: rotate(180deg);
+}
+.accomodation_social {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+}
+.alreadypaid_container {
+  width: 25em;
+  height: 3em;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.checkmark1 {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  /*margin: 10% auto;*/
+  cursor: pointer;
+  margin-left: 1em;
+  box-shadow: inset 0px 0px 0px white;
+  animation: fill1 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+.checkmark__circle1 {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  /* stroke: white; */
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+.accomodation_ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+.accomodation_li {
+  text-align: justify;
+  width: 90%;
+  margin-top: 0.5em;
+  font-size: 0.9em;
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill1 {
+  100% {
+    box-shadow: inset 0px 0px 0px 0px white;
+  }
+}
+@media (max-width: 1366px) {
+  .accomodation_parent {
+    font-size: 18px;
+  }
+  .dark_logo {
+    width: 60px;
+  }
+}
+@media (max-width: 1000px) {
+  .accomodation_parent {
+    font-size: 16px;
+  }
+  .accomodation_card_container {
+    margin-top: 10%;
+  }
+}
+@media (max-width: 700px) {
+  .accomodation_parent {
+    font-size: 14px;
+  }
+  .accomodation_card_container {
+    margin-top: 13%;
+  }
+  .accomodation_h1 {
+    letter-spacing: 0.5em;
+  }
+  .list_button {
+    width: 90%;
+    height: 70%;
+  }
+}
+@media (max-width: 500px) {
+  .accomodation_parent {
+    font-size: 16px;
+  }
+  .accomodation_h1 {
+    letter-spacing: 0.2em;
+    font-size: 1.5em;
+  }
+  .dark_logo {
+    width: 50px;
+  }
+  .accomodation_terms_container {
+    align-content: center;
+    align-items: center;
+    margin-left: 0px;
+    width: 100%;
+  }
+  .accomodation_card_container {
+    margin-top: 20%;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    width: 95%;
+  }
+  .accomodation_input {
+    width: 45%;
+    height: 3.5em;
+  }
+  .pay_and_add_button {
+    width: 40%;
+    height: 4em;
+    font-size: 0.9em;
+  }
+  .accomodation_list_heading_item,
+  .accomodation_list_item {
+    width: 28%;
+  }
+  .list_hr {
+    width: 95%;
+  }
+}
