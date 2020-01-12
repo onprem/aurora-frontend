@@ -77,7 +77,7 @@ const eventData = {
         mobile: '8989191677',
       },
       {
-        name: 'Aashish',
+        name: 'Aashish Khatri',
         mobile: '7828678252',
       },
     ],
@@ -207,7 +207,7 @@ const eventData = {
     singleEvent: true,
     shortDes: 'a talent hunt to test your confidence, aptitude, IQ and your wits.',
     description:
-      "If you have outrageous personality, better showcase your talent. Mr and Miss Aurora (MnM) is coming this Aurora 2019 to let you explore the hidden potential in yourself, compete with some of the toughest people around you and give you the chance to be the face of Aurora. MnM, a talent hunt to test your confidence, aptitude, IQ and your wits. If you think you have got the X-factor to woe the crowd with your personality, don't wait then. Show your mettle and walk away with your head held high, your prestige intact and of course with the coveted title. Explore your physical and mental capabilities through a series of resilient challenges. So this year again, Aurora'20 is coming with it's flagship event M&M to give the adrenaline rush you desire, and of course quintessentially our own Roadies.",
+      "If you have outrageous personality, better showcase your talent. Mr and Miss Aurora (MnM) is coming this Aurora 2020 to let you explore the hidden potential in yourself, compete with some of the toughest people around you and give you the chance to be the face of Aurora. MnM, a talent hunt to test your confidence, aptitude, IQ and your wits. If you think you have got the X-factor to woe the crowd with your personality, don't wait then. Show your mettle and walk away with your head held high, your prestige intact and of course with the coveted title. Explore your physical and mental capabilities through a series of resilient challenges. So this year again, Aurora'20 is coming with it's flagship event M&M to give the adrenaline rush you desire, and of course quintessentially our own Roadies.",
     prizeMoney: 'INR 30,000 + Goodies, Benefits and Sponsored Gifts',
     fees: 249,
     maxTeamSize: 1,
@@ -570,7 +570,7 @@ const eventData = {
     ],
     eventOrganisers: [
       {
-        name: 'Pushkar',
+        name: 'Pushkar Parapje',
         mobile: '9407382599',
       },
       {
@@ -589,14 +589,22 @@ const eventData = {
         name: 'Bhanu Putta',
         mobile: '8978843077',
       },
+      {
+        name: 'Vinay',
+        mobile: '8959487939',
+      },
+      {
+        name: 'Rishab Singla',
+        mobile: '8199028126',
+      },
     ],
     subEvents: [
       {
         id: 10,
         name: 'Graffathon',
-        shortDes: 'A wall painting competition',
+        shortDes: 'A wall spray-painting competition',
         description:
-          'This competition is open to all graffiti artists, who are able to submit examples of their creative artwork. Just pick up your spray cans and brushes and display your creativity on our walls.',
+          'This competition is open to all graffiti artists, who are able to submit examples of their creative artwork. Just pick up your spray cans and display your creativity on our walls.',
         prizeMoney: 'INR 12,000 + Goodies, Benefits and Sponsored Gifts',
         fees: 200,
         maxTeamSize: 4,
@@ -835,10 +843,6 @@ const eventData = {
         mobile: '9977514199',
       },
       {
-        name: 'Ashish Khatri',
-        mobile: '',
-      },
-      {
         name: 'Lumbini',
         mobile: '6303897455',
       },
@@ -896,7 +900,8 @@ const eventData = {
           'Plagiarism-free content only.',
           'English language writing only.',
           'Format for submission: pdf.',
-          'File to be submitted on our mail.',
+          'File to be submitted on our mail a-lit@aurorafest.org.',
+          'Last date of submission is 31st January, 2020',
           'Name of document: Creative_Writing_English_(name and surname of the applicant)',
           'You have to write your ​ name, age, city, college/school (if any), phone number and email​ in your entry.',
         ],
@@ -915,7 +920,8 @@ const eventData = {
           'Plagiarism-free content only.',
           'Hindi language writing only.',
           'Format for submission: pdf.',
-          'File to be submitted on our mail.',
+          'File to be submitted on our mail a-lit@aurorafest.org.',
+          'Last date of submission is 31st January, 2020',
           'Name of document: Creative_Writing_Hindi_(name and surname of the applicant)',
           'You have to write your ​ name, age, city, college/school (if any), phone number and email​ in your entry.',
         ],
