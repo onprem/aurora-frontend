@@ -64,6 +64,12 @@
   .about_para {
     font-size: 22px;
   }
+  .answer {
+    margin-top: -10px;
+    font-size: 20px;
+    padding-left: 25px;
+    text-align: left;
+  }
 }
 @media (max-width: 600px) {
   .about_logo_container {
@@ -82,6 +88,12 @@
   }
   .about_para {
     font-size: 18px;
+  }
+  .answer {
+    font-size: 16px;
+    padding-left: 25px;
+    padding-top: 15px;
+    text-align: left;
   }
 }
 .contact_ChealCaowa {

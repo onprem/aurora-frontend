@@ -85,11 +85,12 @@ const FAQData = [
     Answer: [`Only Pronite: INR 349(For all 3 Pronites), and must be made online.`],
   },
   {
-    Question: `What are the charges for the Pronites after I have registered for an event?`,
+    Question: `What are the charges for the Pronites after I have registered for an event or accommodation?`,
     Answer: [
-      ` After any event registration, the charges for all 3 Pronites: INR 249.
-    This is applicable only if you have registered for an event except Quiz, IPL Auction, Gaming, Best Waste, Naqaab, Online Events.
-    `,
+      `Pronites are bundled with accomodation (If you purchase accomodation you need not to purchase pronite passes)`,
+      `If you participate in category A events (Parivesh, Corna, Mr. and Ms. Aurora, Dancing Dyad, Beat the Beat, A-Capella, On-Spot Painting/Sketching, Open Mic, Morning Radio), you get ₹ 100 off on pronites.`,
+      `If you participate in category B events (Synchro Funk, Raag, Acoustic Corner, Graffathon, Silver Screen, Nukkad Natak, IPL-Auction, Quizzes, CS-GO, PUBG), you get ₹ 50 off on pronites.`,
+      `A maximum discount of ₹ 100 can be availed using event registrations.`,
     ],
   },
   {
@@ -149,7 +150,7 @@ const FAQData = [
   {
     Question: `When and where will the passes for the Concerts be distributed?`,
     Answer: [
-      `After online payment, unique QR code will be mailed, which will be used for entry for the pronites. Bands will be provided at the entry to the campus.`,
+      `After online payment, unique QR code will be mailed, which will be used for entry for the pronites. Wrist-bands will be provided at the entry to the campus.`,
     ],
   },
 ];
