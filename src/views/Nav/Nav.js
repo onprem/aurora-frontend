@@ -62,6 +62,10 @@ const Nav = () => {
       title: 'Contact Us',
       path: '/contact',
     },
+    {
+      title: 'FAQs',
+      path: '/faq',
+    },
   ];
 
   const pages = authToken
