@@ -36,7 +36,7 @@ const Register = () => {
     college: '',
     city: '',
     email: '',
-    events: '',
+    event: '1',
   });
 
   const [step, changeStep] = useState('1');
@@ -46,6 +46,9 @@ const Register = () => {
   }, []);
   const handleErrors = error => {
     if (error && error.graphQLErrors.length > 0) {
+      if (error.graphQLErrors[0].extensions.code === 'GO_HOME_KID') {
+        localStorage.removeItem('AlphaPasscode');
+      }
       const toast = getAlert();
       toast.fire({
         icon: 'error',
@@ -75,12 +78,12 @@ const Register = () => {
     onError: handleErrors,
     onCompleted: data => {
       setAuthToken(data.alphaSignup);
-      runEventRegister({ variables: { eventId: Number(inputs.events) } });
+      runEventRegister({ variables: { eventId: Number(inputs.event) } });
     },
   });
 
   const handleSubmit = () => {
-    if (inputs.email && inputs.city && inputs.college && inputs.events) {
+    if (inputs.email && inputs.city && inputs.college && inputs.event) {
       if (emailValidation(inputs.email)) {
         runRegister({ variables: { ...inputs, passcode } });
       } else {
@@ -99,7 +102,7 @@ const Register = () => {
         email: inputs.email ? inputs.email : undefined,
         city: inputs.city ? inputs.city : undefined,
         college: inputs.college ? inputs.college : undefined,
-        events: inputs.events ? inputs.events : undefined,
+        event: inputs.event ? inputs.event : undefined,
       });
       toast.fire({
         icon: 'error',
@@ -112,7 +115,7 @@ const Register = () => {
     if (!localStorage.getItem('AlphaPasscode')) {
       Swal.fire({
         title: 'Enter Alpha Passcode',
-        input: 'text',
+        input: 'password',
         showCancelButton: true,
         confirmButtonColor: 'white',
         cancelButtonColor: 'white',
