@@ -75,3 +75,113 @@
     margin-bottom: 2.5vh;
   }
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 80%;
+  height: 100%;
+}
+
+.single_line_input {
+  width: calc(100% - 10px);
+  border: 3px solid black;
+  font-weight: 600;
+  border-radius: 8px;
+  height: 5vh;
+  min-height: 30px;
+  margin-top: 40px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 26px;
+  padding-left: 10px;
+  min-width: 10px;
+}
+.single_line_input:focus,
+.form_submit:focus {
+  outline: none;
+}
+.single_line_input::placeholder {
+  font-size: 26px;
+  color: black;
+  font-weight: 600;
+}
+.single_line_input::-webkit-input-placeholder {
+  font-size: 26px;
+  color: black;
+  font-weight: 600;
+}
+.single_line_input::-moz-placeholder {
+  font-size: 26px;
+  color: black;
+  font-weight: 600;
+}
+.form_submit {
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 8px;
+  background: black;
+  color: white;
+  font-size: 32px;
+  height: 8vh;
+  min-height: 50px;
+  margin-top: 40px;
+  padding: 0px;
+  cursor: pointer;
+  letter-spacing: 8px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_heading {
+  text-align: left;
+  margin: 0px;
+  font-size: 28px;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+@media (max-width: 850px) {
+  .form {
+    width: 90%;
+    margin: 0px;
+  }
+  .single_line_input {
+    margin-top: 10px;
+    border: 2px solid black;
+  }
+  .form_submit {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 1366px) {
+  .contact_heading {
+    font-size: 22px;
+  }
+  .form_submit {
+    font-size: 23px;
+  }
+  .single_line_input::placeholder {
+    font-size: 18px;
+  }
+  .single_line_input::-webkit-input-placeholder {
+    font-size: 18px;
+  }
+  .single_line_input::-moz-placeholder {
+    font-size: 18px;
+  }
+  .single_line_input {
+    font-size: 18px;
+  }
+}
+.inValid {
+  border-color: var(--error);
+}
