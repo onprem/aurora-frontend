@@ -6,10 +6,11 @@ import style from './footer.module.css';
 import { ReactComponent as Logo } from '../../assets/icons/auroraCircle.svg';
 
 const sitemap = [
-  { title: 'home', path: '/' },
   { title: 'about', path: '/about' },
   { title: 'events', path: '/events' },
   { title: 'contact us', path: '/contact' },
+  { title: 'pronites', path: '/pronites' },
+  { title: 'sponsors', path: '/sponsors' },
 ];
 const support = [
   { title: 'contact us', path: '/contact' },
