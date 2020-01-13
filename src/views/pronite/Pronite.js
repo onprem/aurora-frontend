@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link, useHistory } from 'react-router-dom';
 
@@ -29,9 +29,9 @@ const BookButton = () => {
   );
 };
 
-const ProniteCard = ({ title, name, desc, img }) => {
+const ProniteCard = ({ title, name, desc, img, className }) => {
   return (
-    <div className={style.pronite_card}>
+    <div className={className}>
       <div className={style.pronite_left_container}>
         <div className={style.pronite_stroke_container}>
           {[...Array(strokeCount)].map(e => (
@@ -60,13 +60,13 @@ const ProniteCard = ({ title, name, desc, img }) => {
 };
 
 // eslint-disable-next-line no-unused-vars
-const RenderButtons = () => {
+const RenderButtons = ({ handleLeftClick, handleRightClick }) => {
   return (
     <div className={style.button_parent_container}>
-      <button className={style.next_prev_button} type="button">
+      <button className={style.next_prev_button} type="button" onClick={handleLeftClick}>
         <Arrow fill="black" className={style.arrow_left} />
       </button>
-      <button className={style.next_prev_button} type="button">
+      <button className={style.next_prev_button} type="button" onClick={handleRightClick}>
         <Arrow fill="black" className={style.arrow_right} />
       </button>
     </div>
@@ -74,17 +74,39 @@ const RenderButtons = () => {
 };
 
 const Pronite = () => {
+  const [activeCard, changeActiveCard] = useState(1);
+  const handleLeftClick = () => {
+    if (activeCard === 1) {
+      changeActiveCard(proniteData.length);
+    } else {
+      changeActiveCard(activeCard - 1);
+    }
+    // setTimeout(() => {}, 1500);
+  };
+  const handleRightClick = () => {
+    if (activeCard === proniteData.length) {
+      changeActiveCard(1);
+    } else {
+      changeActiveCard(activeCard + 1);
+    }
+    // setTimeout(() => {}, 1500);
+  };
   return (
     <>
       <div className={style.pronite_parent}>
         <Link to="/">
           <Logo className={style.logoDark} />
         </Link>
-        {proniteData.map(nite => (
-          <ProniteCard title={nite.title} name={nite.name} desc={nite.desc} img={nite.img} />
-        ))}
 
-        {/* <RenderButtons /> */}
+        <ProniteCard
+          title={proniteData[activeCard - 1].title}
+          name={proniteData[activeCard - 1].name}
+          desc={proniteData[activeCard - 1].desc}
+          img={proniteData[activeCard - 1].img}
+          className={style.pronite_card}
+        />
+
+        <RenderButtons handleLeftClick={handleLeftClick} handleRightClick={handleRightClick} />
       </div>
       <Particles />
       {useMediaQuery(`(max-width:1000px)`) ? null : <Social fill="black" />}
