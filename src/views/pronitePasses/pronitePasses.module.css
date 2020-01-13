@@ -222,7 +222,7 @@
   height: 35px;
   border-radius: 50%;
   display: block;
-  stroke-width: 2;
+  stroke-width: 5px;
   stroke: #fff;
   stroke-miterlimit: 10;
   /*margin: 10% auto;*/
@@ -234,7 +234,7 @@
 .checkmark__circle1 {
   stroke-dasharray: 166;
   stroke-dashoffset: 166;
-  stroke-width: 2;
+  stroke-width: 5px;
   stroke-miterlimit: 10;
   /* stroke: white; */
   fill: none;

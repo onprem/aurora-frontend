@@ -501,7 +501,7 @@ const eventData = {
       },
       {
         id: 8,
-        name: 'A-capella​',
+        name: 'A-Capella​',
         shortDes:
           'This event focuses on the various domains of FreeStyle Singing without instrumental accompaniment.',
         description:

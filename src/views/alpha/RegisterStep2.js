@@ -2,6 +2,7 @@
 import React from 'react';
 
 import style from '../../components/login/login.module.css';
+import eventList from '../../assets/data/eventData/eventList';
 
 import { ReactComponent as Arrow } from '../../assets/icons/arrowLeft.svg';
 import { ReactComponent as ArrowBack } from '../../assets/icons/arrow.svg';
@@ -81,22 +82,27 @@ const RegisterStep2 = ({ changeInputs, inputs, changeStep, submit, loading }) =>
         required
       />
 
-      <label className={style.login_label} htmlFor="events">
-        Event IDs
+      <label className={style.login_label} htmlFor="event">
+        Event
       </label>
-      <input
-        type="text"
+      <select
         className={
-          inputs.events === undefined
-            ? `${style.login_input} ${style.login_input_invalid}`
-            : style.login_input
+          inputs.city === undefined
+            ? `${style.evtSelect} ${style.login_input_invalid}`
+            : style.evtSelect
         }
-        placeholder=""
-        name="events"
-        value={inputs.events}
+        name="event"
         onChange={handleInput}
-        required
-      />
+        value={inputs.event}
+      >
+        {eventList.map(evt => {
+          return (
+            <option key={evt.id} value={evt.id}>
+              {evt.name}
+            </option>
+          );
+        })}
+      </select>
       <button
         type="submit"
         onClick={handleSubmit}

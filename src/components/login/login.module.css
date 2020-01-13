@@ -102,6 +102,14 @@
 .login_input_invalid {
   border-color: var(--error);
 }
+.evtSelect {
+  composes: login_input;
+  width: 83% !important;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 @media (max-width: 1366px) {
   .login_form {
     font-size: 18px;
