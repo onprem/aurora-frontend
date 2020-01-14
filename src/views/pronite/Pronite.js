@@ -85,7 +85,7 @@ const Pronite = () => {
       } else {
         changeActiveCard(activeCard - 1);
       }
-    }, 1450);
+    }, 1490);
   };
   const handleRightClick = () => {
     changeIsTransit(true);
@@ -96,7 +96,7 @@ const Pronite = () => {
       } else {
         changeActiveCard(activeCard + 1);
       }
-    }, 1450);
+    }, 1490);
   };
   return (
     <>
