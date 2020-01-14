@@ -32,7 +32,7 @@
   width: 80%;
   height: 38em;
   /* visibility: hidden; */
-  animation: moveCardIn 1.5s;
+  animation: moveCardOut 1.5s;
 }
 .pronite_card_active {
 }
@@ -76,7 +76,7 @@
   overflow: hidden;
   animation: moveImgRight 1.5s;
 }
-.pronite_img_container_Out {
+.pronite_img_container_out {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,7 +138,7 @@
   padding-left: 2em;
 }
 .pronite_heading {
-  font-size: 4em;
+  font-size: 3.9em;
   text-align: left;
   margin: 0px;
   margin-top: 0.5em;
@@ -284,6 +284,9 @@
   .pronite_card {
     height: 36em;
   }
+  .pronite_card_out {
+    height: 36em;
+  }
   .pronite_p {
     font-size: 1.09em;
   }
@@ -320,6 +323,12 @@
     height: unset;
     flex-wrap: wrap;
   }
+  .pronite_card_out {
+    margin-top: 7em;
+    margin-bottom: 5em;
+    height: unset;
+    flex-wrap: wrap;
+  }
   .pronite_left_container {
     width: 80%;
     height: 48em;
@@ -344,6 +353,9 @@
 }
 @media (max-width: 500px) {
   .pronite_card {
+    width: 90%;
+  }
+  .pronite_card_out {
     width: 90%;
   }
   .button_book_parent {

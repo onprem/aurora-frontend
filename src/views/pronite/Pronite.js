@@ -29,7 +29,7 @@ const BookButton = () => {
   );
 };
 
-const ProniteCard = ({ title, name, desc, img, className }) => {
+const ProniteCard = ({ title, name, desc, img, className, classNameImage }) => {
   return (
     <div className={className}>
       <div className={style.pronite_left_container}>
@@ -38,7 +38,7 @@ const ProniteCard = ({ title, name, desc, img, className }) => {
             <div className={style.pronite_vertical} key={e} />
           ))}
         </div>
-        <div className={style.pronite_img_container}>
+        <div className={classNameImage}>
           <img className={style.pronite_img} alt={name} src={img} />
         </div>
         <div className={style.illusion_1}>
@@ -75,21 +75,28 @@ const RenderButtons = ({ handleLeftClick, handleRightClick }) => {
 
 const Pronite = () => {
   const [activeCard, changeActiveCard] = useState(1);
+  const [isTransit, changeIsTransit] = useState(false);
   const handleLeftClick = () => {
-    if (activeCard === 1) {
-      changeActiveCard(proniteData.length);
-    } else {
-      changeActiveCard(activeCard - 1);
-    }
-    // setTimeout(() => {}, 1500);
+    changeIsTransit(true);
+    setTimeout(() => {
+      changeIsTransit(false);
+      if (activeCard === 1) {
+        changeActiveCard(proniteData.length);
+      } else {
+        changeActiveCard(activeCard - 1);
+      }
+    }, 1450);
   };
   const handleRightClick = () => {
-    if (activeCard === proniteData.length) {
-      changeActiveCard(1);
-    } else {
-      changeActiveCard(activeCard + 1);
-    }
-    // setTimeout(() => {}, 1500);
+    changeIsTransit(true);
+    setTimeout(() => {
+      changeIsTransit(false);
+      if (activeCard === proniteData.length) {
+        changeActiveCard(1);
+      } else {
+        changeActiveCard(activeCard + 1);
+      }
+    }, 1450);
   };
   return (
     <>
@@ -103,7 +110,8 @@ const Pronite = () => {
           name={proniteData[activeCard - 1].name}
           desc={proniteData[activeCard - 1].desc}
           img={proniteData[activeCard - 1].img}
-          className={style.pronite_card}
+          className={isTransit ? style.pronite_card_out : style.pronite_card}
+          classNameImage={isTransit ? style.pronite_img_container_out : style.pronite_img_container}
         />
 
         <RenderButtons handleLeftClick={handleLeftClick} handleRightClick={handleRightClick} />
