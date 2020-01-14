@@ -18,10 +18,7 @@ const proniteData = [
   {
     title: 'THE CLASSICAL',
     name: 'INDIAN OCEAN',
-    desc: `Meet the pioneers of Indian fusion music who have been captivating audiences for over 20 years from now and is one of the most popular and widely identified music bands in India.
-          A cult band in its own right, this band defies any limitations to their craft, the band challenges the mainstream space and produces the perfect amalgamation of contemporary rock, Indian classic jazz and folk music.
-          Their theme of music has been described by some music critics as "Indo-rock fusion with jazz-spiced rhythms that integrates shlokas, Sufism, environmentalism, mythology, activism and revolution".
-          They are also a part of the world's first Music Personalisation Initiative named DRP as one of the five Featured Artists. Two of their songs have featured in "Rolling Stone India" 2014 listing of the "25 Greatest Indian Rock Songs of the last 25 Years".`,
+    desc: `Meet the pioneers of Indian fusion music who have been captivating audiences for over 20 years from now and is one of the most popular and widely identified music bands in India.  Their theme of music has been described by some music critics as "Indo-rock fusion with jazz-spiced rhythms that integrates shlokas, Sufism, environmentalism, mythology, activism and revolution". They are also a part of the world's first Music Personalisation Initiative named DRP as one of the five Featured Artists. Two of their songs have featured in "Rolling Stone India" 2014 listing of the "25 Greatest Indian Rock Songs of the last 25 Years". This year Aurora presents INDIAN OCEAN as their headling band on 15th Feb.`,
     img: indianOcean,
   },
 ];

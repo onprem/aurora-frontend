@@ -34,8 +34,6 @@
   /* visibility: hidden; */
   animation: moveCardOut 1.5s;
 }
-.pronite_card_active {
-}
 .pronite_left_container {
   text-align: center;
   width: 50%;
@@ -167,7 +165,7 @@
 }
 .button_parent_container {
   width: 10em;
-  position: absolute;
+  position: fixed;
   bottom: 1em;
   right: 1em;
   display: flex;
@@ -177,8 +175,8 @@
   align-content: center;
 }
 .next_prev_button {
-  width: 4em;
-  height: 4em;
+  width: 5em;
+  height: 5em;
   border-radius: 5em;
   text-decoration: none;
   appearance: none;
@@ -213,13 +211,6 @@
   letter-spacing: 0.2em;
   font-weight: 600;
   align-self: center;
-  /* position: absolute;
-  bottom: 0.5em;
-  left: 50%;
-  margin-left: -10em;
-  z-index: 7; */
-  /* margin-top: 2em;
-  margin-bottom: 2em; */
   transition: transform 0.3s;
 }
 .button_book_parent:hover {
@@ -278,6 +269,10 @@
   }
 }
 @media (max-width: 1366px) {
+  .next_prev_button {
+    width: 4em;
+    height: 4em;
+  }
   .pronite_parent {
     font-size: 16px;
   }
