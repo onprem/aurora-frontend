@@ -24,6 +24,23 @@
   width: 90%;
   border-radius: 50%;
 }
+.changePhotoBtn {
+  display: none;
+}
+.edBtn {
+  position: absolute;
+  display: none;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  height: 5em;
+  width: 5em;
+  justify-content: center;
+  align-items: center;
+}
+.photoDiv:hover > .edBtn {
+  display: flex;
+}
 .nameDiv {
   display: flex;
   flex-direction: column;
