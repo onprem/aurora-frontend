@@ -30,6 +30,7 @@ const BookButton = () => {
 };
 
 const ProniteCard = ({ title, name, desc, img, className, classNameImage }) => {
+  const isMobile = useMediaQuery(`(max-width:500px)`);
   return (
     <div className={className}>
       <div className={style.pronite_left_container}>
@@ -51,9 +52,9 @@ const ProniteCard = ({ title, name, desc, img, className, classNameImage }) => {
       <div className={style.pronite_right_container}>
         <h1 className={style.pronite_heading}>{title}</h1>
         <h2 className={style.pronite_sub_heading}>{name}</h2>
-
+        {isMobile ? <BookButton /> : null}
         <p className={style.pronite_p}>{desc}</p>
-        <BookButton />
+        {!isMobile ? <BookButton /> : null}
       </div>
     </div>
   );
