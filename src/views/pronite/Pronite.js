@@ -59,7 +59,6 @@ const ProniteCard = ({ title, name, desc, img, className, classNameImage }) => {
   );
 };
 
-// eslint-disable-next-line no-unused-vars
 const RenderButtons = ({ handleLeftClick, handleRightClick }) => {
   return (
     <div className={style.button_parent_container}>
@@ -85,7 +84,7 @@ const Pronite = () => {
       } else {
         changeActiveCard(activeCard - 1);
       }
-    }, 1475);
+    }, 1450);
   };
   const handleRightClick = () => {
     changeIsTransit(true);
@@ -96,7 +95,7 @@ const Pronite = () => {
       } else {
         changeActiveCard(activeCard + 1);
       }
-    }, 1475);
+    }, 1450);
   };
   return (
     <>
