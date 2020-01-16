@@ -765,7 +765,7 @@ const eventData = {
           'Judging criteria includes content, editing, screenplay and overall impact of the video.',
           'Aurora reserves the right to use the video entries on social media (suitable credits will be given to the people responsible for the creation of the content).',
           'The Video must be shot in a resolution of 720p or greater. It can be shot on any device, a DSLR or a phone or a Point-and-Shoot camera.',
-          'The duration of the film should be between 5 min-15 min.',
+          'The duration of the film should be between 5 min - 20 min.',
         ],
         maxTeamSize: 4,
       },
