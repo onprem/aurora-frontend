@@ -418,11 +418,13 @@ const Accomodation = () => {
                       cy="26"
                       r="25"
                       fill="none"
+                      strokeWidth="5px"
                     />
                     <path
                       className={style.checkmark__check}
                       fill="none"
                       d="M14.1 27.2l7.1 7.2 16.7-16.8"
+                      strokeWidth="5px"
                     />
                   </svg>
                 </div>

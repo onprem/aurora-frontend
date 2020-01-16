@@ -109,11 +109,9 @@ const RegisterStep1 = ({ changeInputs, inputs, changeStep }) => {
         id={style.login_select}
         onChange={handleInput}
         value={inputs.gender}
-        defaultValue="male"
+        // defaultValue="male"
       >
-        <option value="male" selected>
-          Male
-        </option>
+        <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="others">Others</option>
       </select>

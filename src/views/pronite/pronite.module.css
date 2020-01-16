@@ -20,12 +20,25 @@
   align-items: center;
   width: 80%;
   height: 38em;
+  /* visibility: hidden; */
+  animation: moveCardIn 1.5s;
+}
+.pronite_card_out {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 80%;
+  height: 38em;
+  /* visibility: hidden; */
+  animation: moveCardOut 1.5s;
 }
 .pronite_left_container {
   text-align: center;
   width: 50%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .pronite_stroke_container {
   display: flex;
@@ -59,6 +72,21 @@
   top: -100%;
   z-index: 3;
   overflow: hidden;
+  animation: moveImgRight 1.5s;
+}
+.pronite_img_container_out {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -100%;
+  z-index: 3;
+  overflow: hidden;
+  animation: moveImgLeft 1.5s;
 }
 .pronite_img {
   width: 85%;
@@ -108,7 +136,7 @@
   padding-left: 2em;
 }
 .pronite_heading {
-  font-size: 4em;
+  font-size: 3.9em;
   text-align: left;
   margin: 0px;
   margin-top: 0.5em;
@@ -137,7 +165,7 @@
 }
 .button_parent_container {
   width: 10em;
-  position: absolute;
+  position: fixed;
   bottom: 1em;
   right: 1em;
   display: flex;
@@ -147,8 +175,8 @@
   align-content: center;
 }
 .next_prev_button {
-  width: 4em;
-  height: 4em;
+  width: 5em;
+  height: 5em;
   border-radius: 5em;
   text-decoration: none;
   appearance: none;
@@ -183,17 +211,50 @@
   letter-spacing: 0.2em;
   font-weight: 600;
   align-self: center;
-  /* position: absolute;
-  bottom: 0.5em;
-  left: 50%;
-  margin-left: -10em;
-  z-index: 7; */
-  /* margin-top: 2em;
-  margin-bottom: 2em; */
   transition: transform 0.3s;
 }
 .button_book_parent:hover {
   transform: scale(1.2);
+}
+@keyframes moveCardOut {
+  from {
+    clip-path: inset(0px 0px 0px 0%);
+  }
+  to {
+    clip-path: inset(0px 0px 0px 100%);
+  }
+}
+@keyframes moveCardIn {
+  from {
+    clip-path: inset(0px 100% 0px 0px);
+  }
+  to {
+    clip-path: inset(0px 0% 0px 0px);
+  }
+}
+@keyframes moveImgLeft {
+  from {
+    left: 0%;
+    transform: scale(1);
+    z-index: 8;
+  }
+  to {
+    left: 105%;
+    transform: scale(1.1);
+    z-index: 8;
+  }
+}
+@keyframes moveImgRight {
+  from {
+    left: 105%;
+    transform: scale(1.1);
+    z-index: 8;
+  }
+  to {
+    left: 0%;
+    transform: scale(1);
+    z-index: 8;
+  }
 }
 @media (max-width: 1680px) {
   .pronite_parent {
@@ -208,10 +269,17 @@
   }
 }
 @media (max-width: 1366px) {
+  .next_prev_button {
+    width: 4em;
+    height: 4em;
+  }
   .pronite_parent {
     font-size: 16px;
   }
   .pronite_card {
+    height: 36em;
+  }
+  .pronite_card_out {
     height: 36em;
   }
   .pronite_p {
@@ -250,6 +318,12 @@
     height: unset;
     flex-wrap: wrap;
   }
+  .pronite_card_out {
+    margin-top: 7em;
+    margin-bottom: 5em;
+    height: unset;
+    flex-wrap: wrap;
+  }
   .pronite_left_container {
     width: 80%;
     height: 48em;
@@ -274,6 +348,9 @@
 }
 @media (max-width: 500px) {
   .pronite_card {
+    width: 90%;
+  }
+  .pronite_card_out {
     width: 90%;
   }
   .button_book_parent {
