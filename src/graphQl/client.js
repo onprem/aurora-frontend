@@ -1,9 +1,10 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
+// import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { setContext } from 'apollo-link-context';
 import { ApolloLink } from 'apollo-link';
+import { createUploadLink } from 'apollo-upload-client';
 
 import getAlert from '../utils/getAlert';
 import config from '../config';
@@ -12,7 +13,8 @@ import config from '../config';
 const useApolloClient = authToken => {
   const uri = config.apiUrl;
 
-  const backendLink = new HttpLink({ uri });
+  // const backendLink = new HttpLink({ uri });
+  const uploadLink = createUploadLink({ uri });
 
   const authLink = setContext((_, { headers }) => {
     // return the headers to the context so httpLink can read them
@@ -42,7 +44,7 @@ const useApolloClient = authToken => {
   });
 
   return new ApolloClient({
-    link: ApolloLink.from([errLink, authLink, backendLink]),
+    link: ApolloLink.from([errLink, authLink, uploadLink]),
     cache: new InMemoryCache(),
   });
 };
