@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link, useHistory } from 'react-router-dom';
 
@@ -29,16 +29,17 @@ const BookButton = () => {
   );
 };
 
-const ProniteCard = ({ title, name, desc, img }) => {
+const ProniteCard = ({ title, name, desc, img, className, classNameImage }) => {
+  const isMobile = useMediaQuery(`(max-width:500px)`);
   return (
-    <div className={style.pronite_card}>
+    <div className={className}>
       <div className={style.pronite_left_container}>
         <div className={style.pronite_stroke_container}>
           {[...Array(strokeCount)].map(e => (
             <div className={style.pronite_vertical} key={e} />
           ))}
         </div>
-        <div className={style.pronite_img_container}>
+        <div className={classNameImage}>
           <img className={style.pronite_img} alt={name} src={img} />
         </div>
         <div className={style.illusion_1}>
@@ -51,22 +52,21 @@ const ProniteCard = ({ title, name, desc, img }) => {
       <div className={style.pronite_right_container}>
         <h1 className={style.pronite_heading}>{title}</h1>
         <h2 className={style.pronite_sub_heading}>{name}</h2>
-
+        {isMobile ? <BookButton /> : null}
         <p className={style.pronite_p}>{desc}</p>
-        <BookButton />
+        {!isMobile ? <BookButton /> : null}
       </div>
     </div>
   );
 };
 
-// eslint-disable-next-line no-unused-vars
-const RenderButtons = () => {
+const RenderButtons = ({ handleLeftClick, handleRightClick }) => {
   return (
     <div className={style.button_parent_container}>
-      <button className={style.next_prev_button} type="button">
+      <button className={style.next_prev_button} type="button" onClick={handleLeftClick}>
         <Arrow fill="black" className={style.arrow_left} />
       </button>
-      <button className={style.next_prev_button} type="button">
+      <button className={style.next_prev_button} type="button" onClick={handleRightClick}>
         <Arrow fill="black" className={style.arrow_right} />
       </button>
     </div>
@@ -74,17 +74,47 @@ const RenderButtons = () => {
 };
 
 const Pronite = () => {
+  const [activeCard, changeActiveCard] = useState(1);
+  const [isTransit, changeIsTransit] = useState(false);
+  const handleLeftClick = () => {
+    changeIsTransit(true);
+    setTimeout(() => {
+      changeIsTransit(false);
+      if (activeCard === 1) {
+        changeActiveCard(proniteData.length);
+      } else {
+        changeActiveCard(activeCard - 1);
+      }
+    }, 1450);
+  };
+  const handleRightClick = () => {
+    changeIsTransit(true);
+    setTimeout(() => {
+      changeIsTransit(false);
+      if (activeCard === proniteData.length) {
+        changeActiveCard(1);
+      } else {
+        changeActiveCard(activeCard + 1);
+      }
+    }, 1450);
+  };
   return (
     <>
       <div className={style.pronite_parent}>
         <Link to="/">
           <Logo className={style.logoDark} />
         </Link>
-        {proniteData.map(nite => (
-          <ProniteCard title={nite.title} name={nite.name} desc={nite.desc} img={nite.img} />
-        ))}
 
-        {/* <RenderButtons /> */}
+        <ProniteCard
+          title={proniteData[activeCard - 1].title}
+          name={proniteData[activeCard - 1].name}
+          desc={proniteData[activeCard - 1].desc}
+          img={proniteData[activeCard - 1].img}
+          className={isTransit ? style.pronite_card_out : style.pronite_card}
+          classNameImage={isTransit ? style.pronite_img_container_out : style.pronite_img_container}
+        />
+
+        <RenderButtons handleLeftClick={handleLeftClick} handleRightClick={handleRightClick} />
       </div>
       <Particles />
       {useMediaQuery(`(max-width:1000px)`) ? null : <Social fill="black" />}
