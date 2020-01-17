@@ -839,16 +839,16 @@ const eventData = {
         mobile: '7879560731',
       },
       {
-        name: 'Anjali Bhagoria',
-        mobile: '9977514199',
+        name: 'Anand Verma',
+        mobile: '8459367643',
       },
       {
         name: 'Lumbini',
         mobile: '6303897455',
       },
       {
-        name: 'Manish',
-        mobile: '',
+        name: 'Saurav Sikarwar',
+        mobile: '8982491902',
       },
     ],
     subEvents: [
@@ -881,9 +881,26 @@ const eventData = {
         maxTeamSize: 1,
         rules: [
           'There will be two rounds 1) Round 1: Participant has to present his/her own content 2) Round 2: Participant will be given an incident on spot',
-          'Time limit: 120 seconds for each round.',
-          'Participants will be judged on the basis of fluency, spontaneity, presentation, sense of humour, communication skills and interaction with the listeners.',
-          'Decision of the judges will be final.',
+          {
+            headline: 'Rules for Round 1',
+            rules: [
+              'It will be an online round.',
+              'It is free of cost.',
+              'Participant must make a video/audio of 4-5 min. (Video is preferable)',
+              'Make your content precise and use no vulgarity, e.g. prank call, interview etc..',
+              'File to be submitted on our mail a-lit@aurorafest.org.',
+              'Last date of submission is 31st January, 2020',
+              'You have to write your ​ name, age, city, college/school (if any), phone number in your entry.',
+            ],
+          },
+          {
+            headline: 'Rules for Round 2',
+            rules: [
+              'Time limit: 2-5 min.',
+              'Participants will be judged on the basis of fluency, spontaneity, presentation, sense of humour, communication skills and interaction with the listeners.',
+              'Decision of the judges will be final.',
+            ],
+          },
         ],
       },
       {
