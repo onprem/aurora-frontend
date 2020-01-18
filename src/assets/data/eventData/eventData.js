@@ -1,3 +1,5 @@
+import React from 'react';
+
 const eventData = {
   parivesh: {
     id: 1,
@@ -7,7 +9,12 @@ const eventData = {
     description:
       'Parivesh the most glamorous event of the festival is ready to captivate the audience with its mesmerizing charm. Fashion is an art and Parivesh is the ultimate platform to express yourself. Boasting of a decade long legacy, the “gloss, glitz and glamour” is back with bigger and better stakes with Parivesh. Parivesh gives you the golden opportunity to emerge as a trendsetter in front of the big guns of trade and a huge ecstatic audience. The curtains would slowly draw apart to spell-bound everyone by the angelic beauty stunning the stage. If you have got the beguiling looks and the perfect vogue, Parivesh is just the event for you! This is a competition tailor made for all of you whoever aspires to be the next glamorous DIVA or HUNK. Come set the stage on fire with your charm and charisma at Aurora!!!',
     prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
-    fees: 2500,
+    fees: (
+      <span>
+        <span style={{ textDecoration: 'line-through' }}>&#8377;3000</span>
+        &nbsp;&nbsp;&#8377;2500/- (early bird price)
+      </span>
+    ),
     maxTeamSize: 15,
     rules: [
       'Each team can showcase a maximum of three rounds.',

@@ -6,7 +6,7 @@ const proniteData = [
   {
     title: 'THE VIRTUOSO',
     name: 'MOHIT CHAUHAN',
-    desc: `An alluring and enthralling Bollywood playback singer and musician who creates magic in music and spellbound the audience through his voice is here! Get ready to witness the most engrossing, electrifying and bewitching performances of Mohit Chauhan only in the pronite of Aurora '20 on 16th February. So hurry, get your passes and make your night more enlivening.`,
+    desc: `When I say the names 'Nadaan Parinday', ‘Sadda Haq', ‘Tumse hi',  Kuch khaas hai ', ‘Pee loon', do they ring a bell? Of course ,they do ,some of them might even string your emotions and rekindle you with your cherished sweet memories.An alluring and enthralling Bollywood playback singer and musician who creates magic in music and spellbound the audience through his voice is here! Get ready to witness the most engrossing, electrifying and bewitching performances of Mohit Chauhan only in the pronite of Aurora '20 on 16th February. So hurry, get your passes and make your night more enlivening.`,
     img: mohitChauhan,
   },
   {

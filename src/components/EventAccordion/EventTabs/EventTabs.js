@@ -121,11 +121,15 @@ const EventTabs = ({ event }) => {
           </div>
           <div>
             <h3>Fee</h3>
-            <p>
-              &#8377;&nbsp;
-              {event.fees}
-              &nbsp;/-
-            </p>
+            {event.name === 'Parivesh' ? (
+              event.fees
+            ) : (
+              <p>
+                &#8377;&nbsp;
+                {event.fees}
+                &nbsp;/-
+              </p>
+            )}
           </div>
           <div className={styles.teamDiv}>
             <div>
