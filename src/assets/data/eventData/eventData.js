@@ -332,7 +332,6 @@ const eventData = {
         mobile: '9370799949',
       },
       {
-
         name: 'Afroz Quraishi',
         mobile: '7665182848',
       },
@@ -571,7 +570,7 @@ const eventData = {
     ],
     eventOrganisers: [
       {
-        name: 'Pushkar Parapje',
+        name: 'Pushkar Paranjpe',
         mobile: '9407382599',
       },
       {
