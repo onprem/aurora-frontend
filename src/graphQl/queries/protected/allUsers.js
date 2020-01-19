@@ -28,6 +28,14 @@ export default gql`
         displayPic
         college
         isVerified
+        ca {
+          isCA
+          caId
+          users {
+            id
+            name
+          }
+        }
         teams {
           id
           name

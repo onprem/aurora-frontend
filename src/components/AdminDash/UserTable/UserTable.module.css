@@ -103,4 +103,10 @@
   .userDivHeading {
     font-size: 1em;
   }
+  .userDivHeading > span {
+    flex-wrap: wrap;
+  }
+  .usrTxt {
+    width: 90%;
+  }
 }

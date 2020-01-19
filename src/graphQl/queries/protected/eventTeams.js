@@ -1,8 +1,26 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query EventTeams($eventId: Int, $limit: Int, $page: Int, $sortBy: String, $sortDir: Int) {
-    eventTeams(eventId: $eventId, limit: $limit, page: $page, sortBy: $sortBy, sortDir: $sortDir) {
+  query EventTeams(
+    $eventId: Int
+    $limit: Int
+    $page: Int
+    $filterBy: String
+    $pattern: String
+    $sortBy: String
+    $sortDir: Int
+    $paymentStatus: Boolean!
+  ) {
+    eventTeams(
+      eventId: $eventId
+      limit: $limit
+      page: $page
+      filterBy: $filterBy
+      pattern: $pattern
+      sortBy: $sortBy
+      sortDir: $sortDir
+      paymentStatus: $paymentStatus
+    ) {
       total
       teams {
         id

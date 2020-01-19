@@ -7,6 +7,7 @@ import getAlert from '../../../utils/getAlert';
 import Button from '../../Button/Button';
 import TeamItem from './TeamItem';
 import TeamModal from '../TeamModal/TeamModal';
+import useDebounce from '../../../utils/useDebounce';
 
 import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
 import EVT_TEAMS from '../../../graphQl/queries/protected/eventTeams';
@@ -18,6 +19,12 @@ const TableBody = ({ event, setTotal }) => {
   const [modalTeam, setModalTeam] = useState(null);
   const [page, setPage] = useState(0);
   const [limit] = useState(25);
+  const [options, setOptions] = useState({
+    filterBy: 'member',
+    pattern: '',
+    paymentStatus: 'paid',
+  });
+  const debouncedOptions = useDebounce(options, 500);
 
   const handleErrors = error => {
     if (error && error.graphQLErrors.length > 0) {
@@ -29,10 +36,12 @@ const TableBody = ({ event, setTotal }) => {
     }
   };
 
-  const { data, loading, fetchMore } = useQuery(EVT_TEAMS, {
+  const { data, loading, fetchMore, refetch } = useQuery(EVT_TEAMS, {
     variables: {
       eventId: event.id,
       limit,
+      ...debouncedOptions,
+      paymentStatus: debouncedOptions.paymentStatus === 'paid',
     },
     onError: handleErrors,
     // onCompleted: () => setPage(pageN => pageN + 1),
@@ -61,15 +70,57 @@ const TableBody = ({ event, setTotal }) => {
     if (data) setPage(Math.floor(data.eventTeams.teams.length / limit));
   }, [event, limit, data]);
 
+  useEffect(() => {
+    if (debouncedOptions.pattern !== '') {
+      console.log(debouncedOptions);
+      refetch();
+    }
+  }, [debouncedOptions, refetch]);
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setOptions(prev => {
+      return { ...prev, [name]: value };
+    });
+  };
+
   if (loading && page === 0)
     return (
       <>
         <div className={styles.teamDivHeading}>
-          <span className={styles.indexSpan}>#</span>
-          <span className={styles.idSpan}>TEAM-ID</span>
-          {event.isNameRequired && <span className={styles.nameSpan}>TEAM NAME</span>}
-          <span className={styles.usersSpan}>MEMBERS</span>
-          <span className={styles.paymentSpan}>PAYMENT</span>
+          <span>
+            <b>SEARCH: </b>
+            <select
+              className={styles.teamSelect}
+              name="filterBy"
+              onChange={handleChange}
+              value={options.filterBy}
+            >
+              <option value="member">Name</option>
+              <option value="memberId">AR-ID</option>
+              <option value="memberEmail">Email</option>
+              <option value="teamId">Team ID</option>
+            </select>
+            <input
+              className={styles.teamTxt}
+              type="text"
+              name="pattern"
+              placeholder="Search.."
+              onChange={handleChange}
+              value={options.pattern}
+            />
+          </span>
+          <span>
+            <select
+              className={styles.teamSelect}
+              name="paymentStatus"
+              onChange={handleChange}
+              value={options.paymentStatus}
+            >
+              <option value="paid">Paid</option>
+              <option value="unpaid">Unpaid</option>
+            </select>
+          </span>
         </div>
         <div className={styles.container} style={{ justifyContent: 'center' }}>
           <Loader fill="#000000" />
@@ -100,6 +151,41 @@ const TableBody = ({ event, setTotal }) => {
 
   return (
     <>
+      <div className={styles.teamDivHeading}>
+        <span>
+          <b>SEARCH: </b>
+          <select
+            className={styles.teamSelect}
+            name="filterBy"
+            onChange={handleChange}
+            value={options.filterBy}
+          >
+            <option value="member">Name</option>
+            <option value="memberId">AR-ID</option>
+            <option value="memberEmail">Email</option>
+            <option value="teamId">Team ID</option>
+          </select>
+          <input
+            className={styles.teamTxt}
+            type="text"
+            name="pattern"
+            placeholder="Search.."
+            onChange={handleChange}
+            value={options.pattern}
+          />
+        </span>
+        <span>
+          <select
+            className={styles.teamSelect}
+            name="paymentStatus"
+            onChange={handleChange}
+            value={options.paymentStatus}
+          >
+            <option value="paid">Paid</option>
+            <option value="unpaid">Unpaid</option>
+          </select>
+        </span>
+      </div>
       <div className={styles.teamDivHeading}>
         <span className={styles.indexSpan}>#</span>
         <span className={styles.idSpan}>TEAM-ID</span>

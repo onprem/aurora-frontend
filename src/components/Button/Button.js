@@ -22,10 +22,11 @@ const ButtonContent = ({ text, Icon, iconPosition }) => {
   return <>{text}</>;
 };
 
-const Button = ({ className, text, Icon, iconPosition, onClick, isLoading }) => {
+const Button = ({ className, text, Icon, iconPosition, onClick, isLoading, type }) => {
   return (
+    // eslint-disable-next-line react/button-has-type
     <button
-      type="button"
+      type={type}
       className={classNames(styles.Button, className)}
       onClick={onClick}
       disabled={isLoading}
@@ -40,6 +41,7 @@ const Button = ({ className, text, Icon, iconPosition, onClick, isLoading }) => 
 };
 
 Button.defaultProps = {
+  type: 'button',
   iconPosition: 'right',
   onClick: evt => {
     evt.preventDefault();
