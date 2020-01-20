@@ -1,0 +1,135 @@
+.profileSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.6em;
+  flex-wrap: wrap;
+}
+.leftDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.photoDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 50%;
+  width: 16vh;
+  height: 16vh;
+}
+.photoDiv > img {
+  width: 90%;
+  border-radius: 50%;
+}
+.changePhotoBtn {
+  display: none;
+}
+.edBtn {
+  position: absolute;
+  display: none;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  height: 5em;
+  width: 5em;
+  justify-content: center;
+  align-items: center;
+}
+.photoDiv:hover > .edBtn {
+  display: flex;
+}
+.nameDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2vw;
+}
+.nameDiv > span:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 2em;
+  margin-bottom: 2vh;
+}
+.rightDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.detailsDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.detailsDiv > div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.detailsDiv > div > span {
+  text-align: justify;
+}
+.detailsDiv > div > span:first-child {
+  /* width: 40%; */
+  text-align: right;
+  font-weight: 600;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@media only screen and (max-width: 800px) {
+  .accomodation_book_button {
+    background: red;
+    width: 8em;
+    height: 1.5em;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .nameDiv > span:first-child {
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+  }
+  .nameDiv > span:last-child {
+    font-size: 1.2em;
+    margin-bottom: 2.5vh;
+  }
+  .accomodation_book_button {
+    width: 10em;
+    height: 2em;
+  }
+}
+
+.booking_button_svg {
+  width: 1.2em;
+  margin-left: 1em;
+  margin-bottom: 0;
+}
+.accomodation_book_button {
+  width: 15em;
+  height: 2.5em;
+  border-radius: 4em;
+  border: none;
+  background: black;
+  cursor: pointer;
+  font-size: 0.9em;
+  padding: 0px;
+  margin-left: 30px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.book_pronite{
+  color: white;
+}
