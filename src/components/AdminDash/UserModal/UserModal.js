@@ -42,7 +42,7 @@ const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
               <b>VERIFIED:</b> {user.isVerified ? 'True' : 'False'}
             </span>
             <span>
-              <b>ACCOMODATION:</b> {user.accomodation ? 'True' : 'False'}
+              <b>ACCOMODATION:</b> {user.accommodation ? 'True' : 'False'}
             </span>
             <span>
               <b>PRONITE:</b> {user.pronite ? 'True' : 'False'}
