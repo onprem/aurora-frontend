@@ -7,6 +7,7 @@ import Button from '../../Button/Button';
 import PayButton from './PayButton/PayButton';
 import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
 import useMediaQuery from '../../../utils/useMediaQuery';
+import getAlert from '../../../utils/getAlert';
 
 import styles from './Events.module.css';
 
@@ -81,12 +82,24 @@ const PaidEvents = ({ teams, isDesktop }) => {
 };
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
-  const [toPay, setToPay] = useState(teams);
+  const [toPay, setToPay] = useState(teams.filter(team => team.event.name !== 'Corna'));
 
   const addToPayment = (team, event) => {
     // event.preventDefault();
-    if (event.target.checked) setToPay(toPay.concat([team]));
-    else setToPay(toPay.filter(elem => elem.id !== team.id));
+    if (event.target.checked) {
+      if (team.event.name === 'Corna') {
+        const toast = getAlert();
+        toast.fire({
+          icon: 'warning',
+          title:
+            'Due to heavy participation in Corna, registration for Corna is temporarily closed. Please contact to the Corna team for further assistance.',
+        });
+        // eslint-disable-next-line no-param-reassign
+        event.target.checked = false;
+      } else {
+        setToPay(toPay.concat([team]));
+      }
+    } else setToPay(toPay.filter(elem => elem.id !== team.id));
   };
 
   const teamList = teams.map((team, index) => {
@@ -128,7 +141,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
             type="checkbox"
             value={team.id}
             onClick={event => addToPayment(team, event)}
-            defaultChecked
+            defaultChecked={team.event.name !== 'Corna'}
           />
         </td>
         <td>{index + 1}</td>

@@ -13,6 +13,14 @@ export default gql`
       displayPic
       accommodation
       college
+      ca {
+        isCA
+        caId
+        users {
+          id
+          name
+        }
+      }
       teams {
         id
         name
