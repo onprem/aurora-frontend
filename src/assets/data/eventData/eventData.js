@@ -17,20 +17,59 @@ const eventData = {
     ),
     maxTeamSize: 15,
     rules: [
-      'Each team can showcase a maximum of three rounds.',
-      'Every team will be given 8:00- 10:00 minutes for each round (stage-in to stage-out).',
-      'On exceeding the time limit, negative points will be awarded.',
-      'Each team can have a maximum of 15 members.',
-      'The teams can even take help from choreographers, make-up artists or any other professionals. These, however, will not be considered as part of the team and will be under the sole responsibility of that team.',
-      'Every member of the team will be given a contest number based on which his/her judging will be done. So, if one loses it, he/she will not be given any points.',
-      'The teams are responsible for their music and sequence.',
-      'Music is to be submitted in a pen drive or a CD in a format compatible with Windows Media player (preferably in mp3 format). All music files must be submitted to the organizers at least 3 days before the event.',
-      'The lighting facility is to be availed. One person of the group can supervise the lighting; else it will be up to the lights group.',
-      'Formation of crossover teams is allowed among the students of different colleges only if they have a valid college ID of their present year.',
-      'Fire and animals in any form will not be allowed on stage or the ramp.',
-      'Vulgarity in any form will not be allowed in the competition. So, if the team feels that any stunt could be termed as vulgar, it would be best to speak of it to the organizer before performing it on the stage.',
-      'Organizers reserve the right to cancel any round and disqualify teams that do not adhere to the rules.',
-      'The decision of the judge will be considered the final one.',
+      {
+        headline: 'Rules',
+        rules: [
+          'Every team will be given 8:00- 10:00 minutes for each round (stage-in to stage-out).',
+          'On exceeding the time limit, negative points will be awarded.',
+          'Each team can have a maximum of 15 members.',
+          'The teams can even take help from choreographers, make-up artists or any other professionals. These, however, will not be considered as part of the team and will be under the sole responsibility of that team.',
+          'Every member of the team will be given a contest number based on which his/her judging will be done. So, if one loses it, he/she will not be given any points.',
+          'The teams are responsible for their music and sequence.',
+          'Music is to be submitted in a pen drive or a CD in a format compatible with Windows Media player (preferably in mp3 format). All music files must be submitted to the organizers at least 3 days before the event.',
+          'The lighting facility is to be availed. One person of the group can supervise the lighting; else it will be up to the lights group.',
+          'Formation of crossover teams is allowed among the students of different colleges only if they have a valid college ID of their present year.',
+          'Fire and animals in any form will not be allowed on stage or the ramp.',
+          'Vulgarity in any form will not be allowed in the competition. So, if the team feels that any stunt could be termed as vulgar, it would be best to speak of it to the organizer before performing it on the stage.',
+          'Organizers reserve the right to cancel any round and disqualify teams that do not adhere to the rules.',
+          'The decision of the judge will be considered the final one.',
+        ],
+      },
+      {
+        headline: 'Themes',
+        rules: [
+          'Theme selection is open for all the teams. Teams can perform on any theme of their choice.',
+        ],
+      },
+      {
+        headline: 'Judging Criteria',
+        rules: [
+          {
+            headline: 'Designers',
+            rules: [
+              `Theme Originality, Depiction of Theme, Designing, Use of Props and Accessories, Use of
+          fabrics, innovation in masks.`,
+            ],
+          },
+          {
+            headline: 'Models',
+            rules: ['Ramp walk, Stage Presence, Overall Appearance.'],
+          },
+          {
+            headline: 'Team',
+            rules: [
+              'Choreography, Music and Narration, Coordination, Overall Performance, Contrast of the theme.',
+            ],
+          },
+        ],
+      },
+      {
+        headline: 'Structure',
+        rules: [
+          `The competition comprises of a direct on-stage round. The round would be themed, wherein the
+        teams have to design their creations based on a common theme.`,
+        ],
+      },
     ],
     eventHeads: [
       {
