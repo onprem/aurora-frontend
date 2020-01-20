@@ -1005,7 +1005,7 @@ const eventData = {
       'Team Size: 12-20 (Including all music accompanists),',
       'Only a single and final round will lead to results.',
       'Stage specifications: Open-air ground stage with audience on all sides.',
-      'Time Limit: 10-15 minutes (including setup and clearance time i.e. empty stage to empty stage).',
+      'Time Limit: 20 minutes (including setup and clearance time i.e. empty stage to empty stage).',
       'The essence of the play should be brought out in Hindi or English or both. However, short snippets in other regional languages are allowed (max. 30 seconds).',
       'No electrical appliances (for example, amplifiers) shall be allowed during the performance, whether inside or outside the circle of performance. No plug points will be provided for this purpose.',
       'Teams will be penalised if they exceed the time limit.',

@@ -28,6 +28,8 @@ export default gql`
         displayPic
         college
         isVerified
+        accommodation
+        pronite
         ca {
           isCA
           caId
