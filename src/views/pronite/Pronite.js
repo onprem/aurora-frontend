@@ -78,24 +78,26 @@ const Pronite = () => {
   const [isTransit, changeIsTransit] = useState(false);
   const handleLeftClick = () => {
     changeIsTransit(true);
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       changeIsTransit(false);
       if (activeCard === 1) {
         changeActiveCard(proniteData.length);
       } else {
         changeActiveCard(activeCard - 1);
       }
+      clearTimeout(timeout);
     }, 1450);
   };
   const handleRightClick = () => {
     changeIsTransit(true);
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       changeIsTransit(false);
       if (activeCard === proniteData.length) {
         changeActiveCard(1);
       } else {
         changeActiveCard(activeCard + 1);
       }
+      clearTimeout(timeout);
     }, 1450);
   };
   return (

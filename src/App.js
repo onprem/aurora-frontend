@@ -12,6 +12,7 @@ import Loader from './components/Loader/Loader';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 import Nav from './views/Nav/Nav';
+import NotificationBar from './components/notificationBar/NotificationBar';
 
 const Home = React.lazy(() => import('./views/Home/Home'));
 const About = React.lazy(() => import('./views/about/About'));
@@ -60,6 +61,7 @@ function App() {
         <div className={styles.App}>
           <Suspense fallback={<Loader fill="#000000" />}>
             <Nav />
+            <NotificationBar />
             <Switch>
               <Route exact path="/">
                 <ParallaxProvider>
