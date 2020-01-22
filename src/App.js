@@ -25,6 +25,7 @@ const Contact = React.lazy(() => import('./views/contactUs/ContactUs'));
 const WasteManagement = React.lazy(() => import('./views/WasteManagement/WasteManagement'));
 const Dashboard = React.lazy(() => import('./views/Dashboard/Dashboard'));
 const AdminDashboard = React.lazy(() => import('./views/AdminDashboard/AdminDashboard'));
+const Faq = React.lazy(() => import('./views/FAQ/faq'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
 const Accomodation = React.lazy(() => import('./views/accomodation/Accomodation'));
 const PronitePasses = React.lazy(() => import('./views/pronitePasses/PronitePasses'));
@@ -116,6 +117,9 @@ function App() {
               </Route>
               <Route exact path="/pronites">
                 <Pronites />
+              </Route>
+              <Route exact path="/faq">
+                <Faq />
               </Route>
               <Route>
                 <NotFound />

@@ -86,7 +86,7 @@ const Pronite = () => {
         changeActiveCard(activeCard - 1);
       }
       clearTimeout(timeout);
-    }, 1450);
+    }, 950);
   };
   const handleRightClick = () => {
     changeIsTransit(true);
@@ -98,7 +98,7 @@ const Pronite = () => {
         changeActiveCard(activeCard + 1);
       }
       clearTimeout(timeout);
-    }, 1450);
+    }, 950);
   };
   return (
     <>

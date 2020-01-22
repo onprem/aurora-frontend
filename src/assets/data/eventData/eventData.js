@@ -1,3 +1,5 @@
+import React from 'react';
+
 const eventData = {
   parivesh: {
     id: 1,
@@ -7,23 +9,67 @@ const eventData = {
     description:
       'Parivesh the most glamorous event of the festival is ready to captivate the audience with its mesmerizing charm. Fashion is an art and Parivesh is the ultimate platform to express yourself. Boasting of a decade long legacy, the “gloss, glitz and glamour” is back with bigger and better stakes with Parivesh. Parivesh gives you the golden opportunity to emerge as a trendsetter in front of the big guns of trade and a huge ecstatic audience. The curtains would slowly draw apart to spell-bound everyone by the angelic beauty stunning the stage. If you have got the beguiling looks and the perfect vogue, Parivesh is just the event for you! This is a competition tailor made for all of you whoever aspires to be the next glamorous DIVA or HUNK. Come set the stage on fire with your charm and charisma at Aurora!!!',
     prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
-    fees: 2500,
+    fees: (
+      <span>
+        <span style={{ textDecoration: 'line-through' }}>&#8377;3000</span>
+        &nbsp;&nbsp;&#8377;2500/- (early bird price)
+      </span>
+    ),
     maxTeamSize: 15,
     rules: [
-      'Each team can showcase a maximum of three rounds.',
-      'Every team will be given 8:00- 10:00 minutes for each round (stage-in to stage-out).',
-      'On exceeding the time limit, negative points will be awarded.',
-      'Each team can have a maximum of 15 members.',
-      'The teams can even take help from choreographers, make-up artists or any other professionals. These, however, will not be considered as part of the team and will be under the sole responsibility of that team.',
-      'Every member of the team will be given a contest number based on which his/her judging will be done. So, if one loses it, he/she will not be given any points.',
-      'The teams are responsible for their music and sequence.',
-      'Music is to be submitted in a pen drive or a CD in a format compatible with Windows Media player (preferably in mp3 format). All music files must be submitted to the organizers at least 3 days before the event.',
-      'The lighting facility is to be availed. One person of the group can supervise the lighting; else it will be up to the lights group.',
-      'Formation of crossover teams is allowed among the students of different colleges only if they have a valid college ID of their present year.',
-      'Fire and animals in any form will not be allowed on stage or the ramp.',
-      'Vulgarity in any form will not be allowed in the competition. So, if the team feels that any stunt could be termed as vulgar, it would be best to speak of it to the organizer before performing it on the stage.',
-      'Organizers reserve the right to cancel any round and disqualify teams that do not adhere to the rules.',
-      'The decision of the judge will be considered the final one.',
+      {
+        headline: 'Rules',
+        rules: [
+          'Every team will be given 8:00- 10:00 minutes for each round (stage-in to stage-out).',
+          'On exceeding the time limit, negative points will be awarded.',
+          'Each team can have a maximum of 15 members.',
+          'The teams can even take help from choreographers, make-up artists or any other professionals. These, however, will not be considered as part of the team and will be under the sole responsibility of that team.',
+          'Every member of the team will be given a contest number based on which his/her judging will be done. So, if one loses it, he/she will not be given any points.',
+          'The teams are responsible for their music and sequence.',
+          'Music is to be submitted in a pen drive or a CD in a format compatible with Windows Media player (preferably in mp3 format). All music files must be submitted to the organizers at least 3 days before the event.',
+          'The lighting facility is to be availed. One person of the group can supervise the lighting; else it will be up to the lights group.',
+          'Formation of crossover teams is allowed among the students of different colleges only if they have a valid college ID of their present year.',
+          'Fire and animals in any form will not be allowed on stage or the ramp.',
+          'Vulgarity in any form will not be allowed in the competition. So, if the team feels that any stunt could be termed as vulgar, it would be best to speak of it to the organizer before performing it on the stage.',
+          'Organizers reserve the right to cancel any round and disqualify teams that do not adhere to the rules.',
+          'The decision of the judge will be considered the final one.',
+        ],
+      },
+      {
+        headline: 'Themes',
+        rules: [
+          'Theme selection is open for all the teams. Teams can perform on any theme of their choice.',
+        ],
+      },
+      {
+        headline: 'Judging Criteria',
+        rules: [
+          {
+            headline: 'Designers',
+            rules: [
+              `Theme Originality, Depiction of Theme, Designing, Use of Props and Accessories, Use of
+          fabrics, innovation in masks.`,
+            ],
+          },
+          {
+            headline: 'Models',
+            rules: ['Ramp walk, Stage Presence, Overall Appearance.'],
+          },
+          {
+            headline: 'Team',
+            rules: [
+              'Choreography, Music and Narration, Coordination, Overall Performance, Contrast of the theme.',
+            ],
+          },
+        ],
+      },
+      {
+        headline: 'Structure',
+        rules: [
+          `The competition comprises of a direct on-stage round. The round would be themed, wherein the
+        teams have to design their creations based on a common theme.`,
+        ],
+      },
     ],
     eventHeads: [
       {
@@ -332,7 +378,7 @@ const eventData = {
         mobile: '9370799949',
       },
       {
-        name: 'Afroz',
+        name: 'Afroz Quraishi',
         mobile: '7665182848',
       },
       {
@@ -570,7 +616,7 @@ const eventData = {
     ],
     eventOrganisers: [
       {
-        name: 'Pushkar Parapje',
+        name: 'Pushkar Paranjpe',
         mobile: '9407382599',
       },
       {
@@ -839,16 +885,16 @@ const eventData = {
         mobile: '7879560731',
       },
       {
-        name: 'Anjali Bhagoria',
-        mobile: '9977514199',
+        name: 'Anand Verma',
+        mobile: '8459367643',
       },
       {
         name: 'Lumbini',
         mobile: '6303897455',
       },
       {
-        name: 'Manish',
-        mobile: '',
+        name: 'Saurav Sikarwar',
+        mobile: '8982491902',
       },
     ],
     subEvents: [
@@ -881,9 +927,26 @@ const eventData = {
         maxTeamSize: 1,
         rules: [
           'There will be two rounds 1) Round 1: Participant has to present his/her own content 2) Round 2: Participant will be given an incident on spot',
-          'Time limit: 120 seconds for each round.',
-          'Participants will be judged on the basis of fluency, spontaneity, presentation, sense of humour, communication skills and interaction with the listeners.',
-          'Decision of the judges will be final.',
+          {
+            headline: 'Rules for Round 1',
+            rules: [
+              'It will be an online round.',
+              'It is free of cost.',
+              'Participant must make a video/audio of 4-5 min. (Video is preferable)',
+              'Make your content precise and use no vulgarity, e.g. prank call, interview etc..',
+              'File to be submitted on our mail a-lit@aurorafest.org.',
+              'Last date of submission is 31st January, 2020',
+              'You have to write your ​ name, age, city, college/school (if any), phone number in your entry.',
+            ],
+          },
+          {
+            headline: 'Rules for Round 2',
+            rules: [
+              'Time limit: 2-5 min.',
+              'Participants will be judged on the basis of fluency, spontaneity, presentation, sense of humour, communication skills and interaction with the listeners.',
+              'Decision of the judges will be final.',
+            ],
+          },
         ],
       },
       {
