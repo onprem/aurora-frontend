@@ -1,0 +1,101 @@
+.notification_parent {
+  width: 100vw;
+  background: red;
+  color: white;
+  font-size: 22px;
+  position: fixed;
+  top: 0px;
+  z-index: 3;
+  animation: IncomingNotif 0.5s;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.notification_parent_close {
+  width: 100vw;
+  background: red;
+  color: white;
+  font-size: 22px;
+  position: fixed;
+  top: -100px;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  transition: top 0.5s;
+}
+.notif_content {
+  font-size: 0.6em;
+  letter-spacing: 0.3em;
+  width: 95%;
+  animation: notifenter 1s;
+}
+.notif_content_leave {
+  font-size: 0.6em;
+  letter-spacing: 0.3em;
+  width: 95%;
+  animation: notifleave 1s;
+}
+
+.notif_close {
+  /* position: absolute;
+  right: 2em;
+  top: 0.5em; */
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 5%;
+}
+.cross {
+  fill: white;
+  width: 2em;
+}
+
+@keyframes IncomingNotif {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@keyframes notifenter {
+  from {
+    clip-path: inset(0px 100% 0px 0px);
+  }
+  to {
+    clip-path: inset(0px 0% 0px 0px);
+  }
+}
+@keyframes notifleave {
+  from {
+    clip-path: inset(0px 0px 0px 0%);
+  }
+  to {
+    clip-path: inset(0px 0px 0px 100%);
+  }
+}
+@media (max-width: 1366px) {
+  .notif_content,
+  .notif_content_leave {
+    font-size: 0.5em;
+    letter-spacing: 0.2em;
+  }
+}
+@media (max-width: 540px) {
+  /* .notif_content {
+    font-size: 0.4em;
+    letter-spacing: 0.1em;
+  } */
+  .cross {
+    width: 1.5em;
+  }
+  .notif_content,
+  .notif_content_leave {
+    width: 70%;
+  }
+  .notif_close {
+    width: 10%;
+  }
+}
