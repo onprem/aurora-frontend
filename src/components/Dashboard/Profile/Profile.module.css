@@ -92,3 +92,9 @@
     margin-bottom: 2.5vh;
   }
 }
+.EditIcon{
+  width: 1em;
+  height: 1em;
+  margin-left: 15px;
+  cursor: pointer;
+}
