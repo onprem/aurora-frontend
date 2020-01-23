@@ -1,13 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { ReactComponent as Booking } from '../../../assets/icons/tag.svg';
 import { ReactComponent as Acc } from '../../../assets/icons/booking.svg';
 
 import styles from './proAcc.module.css';
 
-const proAcc = ({ className, user }) => {
-  // const history = useHistory();
+const ProAcc = ({ className, user }) => {
+  const history = useHistory();
   return (
     <section className={classNames(styles.profileSection, className)}>
       <div className={styles.leftDiv}>
@@ -21,7 +21,7 @@ const proAcc = ({ className, user }) => {
                 <button
                   type="button"
                   className={styles.accomodation_book_button}
-                  // onClick={() => history.push('/passes')}
+                  onClick={() => history.push('/passes')}
                 >
                   <>
                     <div className={styles.book_pronite}>BOOK PRONITE</div>
@@ -44,7 +44,7 @@ const proAcc = ({ className, user }) => {
                 <button
                   type="button"
                   className={styles.accomodation_book_button}
-                  // onClick={() => history.push('/passes')}
+                  onClick={() => history.push('/accomodation')}
                 >
                   <>
                     <div className={styles.book_pronite}>BOOK ACCOMODATION</div>
@@ -60,4 +60,4 @@ const proAcc = ({ className, user }) => {
   );
 };
 
-export default proAcc;
+export default ProAcc;
