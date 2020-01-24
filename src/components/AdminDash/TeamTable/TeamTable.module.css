@@ -23,6 +23,18 @@
   composes: userDivHeading from '../UserTable/UserTable.module.css';
 }
 
+.teamDivHeading > span {
+  display: flex;
+  align-items: center;
+}
+
+.teamSelect {
+  composes: usrSelect from '../UserTable/UserTable.module.css';
+}
+.teamTxt {
+  composes: usrTxt from '../UserTable/UserTable.module.css';
+}
+
 .evtHead {
   /* margin: 0; */
   text-transform: uppercase;
@@ -85,5 +97,8 @@
   }
   .paymentSpan {
     width: auto;
+  }
+  .teamDivHeading > span {
+    flex-wrap: wrap;
   }
 }

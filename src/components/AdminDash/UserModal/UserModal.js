@@ -3,6 +3,7 @@ import React from 'react';
 
 import Modal from '../../Modal/Modal';
 import MakeAdmin from '../Actions/MakeAdmin';
+import MakeCA from '../Actions/MakeCA';
 import Impersonate from '../Actions/Impersonate';
 
 import styles from './UserModal.module.css';
@@ -41,10 +42,13 @@ const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
               <b>VERIFIED:</b> {user.isVerified ? 'True' : 'False'}
             </span>
             <span>
-              <b>ACCOMODATION:</b> {user.accomodation ? 'True' : 'False'}
+              <b>ACCOMODATION:</b> {user.accommodation ? 'True' : 'False'}
             </span>
             <span>
               <b>PRONITE:</b> {user.pronite ? 'True' : 'False'}
+            </span>
+            <span>
+              <b>CA:</b> {user.ca.isCA ? 'True' : 'False'}
             </span>
           </section>
           {isRoot && (
@@ -53,6 +57,9 @@ const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
               <section className={styles.modalSections}>
                 <span>
                   <MakeAdmin arId={user.id} />
+                </span>
+                <span>
+                  <MakeCA arId={user.id} />
                 </span>
                 <span>
                   <Impersonate arId={user.id} />

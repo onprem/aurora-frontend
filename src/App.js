@@ -12,6 +12,7 @@ import Loader from './components/Loader/Loader';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 import Nav from './views/Nav/Nav';
+import NotificationBar from './components/notificationBar/NotificationBar';
 
 const Home = React.lazy(() => import('./views/Home/Home'));
 const About = React.lazy(() => import('./views/about/About'));
@@ -28,6 +29,7 @@ const Faq = React.lazy(() => import('./views/FAQ/faq'));
 const LogOut = React.lazy(() => import('./components/LogOut/LogOut'));
 const Accomodation = React.lazy(() => import('./views/accomodation/Accomodation'));
 const PronitePasses = React.lazy(() => import('./views/pronitePasses/PronitePasses'));
+const CA = React.lazy(() => import('./views/CA/CA'));
 
 const Sponsors = React.lazy(() => import('./views/sponsors/Sponsors'));
 const Pronites = React.lazy(() => import('./views/pronite/Pronite'));
@@ -60,6 +62,7 @@ function App() {
         <div className={styles.App}>
           <Suspense fallback={<Loader fill="#000000" />}>
             <Nav />
+            <NotificationBar />
             <Switch>
               <Route exact path="/">
                 <ParallaxProvider>
@@ -99,6 +102,9 @@ function App() {
               </Route>
               <ProtectedRoute exact path="/dashboard">
                 <Dashboard />
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/ca">
+                <CA />
               </ProtectedRoute>
               <ProtectedRoute exact path="/admin">
                 <AdminDashboard />

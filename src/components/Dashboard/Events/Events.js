@@ -86,8 +86,9 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
 
   const addToPayment = (team, event) => {
     // event.preventDefault();
-    if (event.target.checked) setToPay(toPay.concat([team]));
-    else setToPay(toPay.filter(elem => elem.id !== team.id));
+    if (event.target.checked) {
+      setToPay(toPay.concat([team]));
+    } else setToPay(toPay.filter(elem => elem.id !== team.id));
   };
 
   const teamList = teams.map((team, index) => {

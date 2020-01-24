@@ -1,3 +1,5 @@
+import React from 'react';
+
 const eventData = {
   parivesh: {
     id: 1,
@@ -7,23 +9,67 @@ const eventData = {
     description:
       'Parivesh the most glamorous event of the festival is ready to captivate the audience with its mesmerizing charm. Fashion is an art and Parivesh is the ultimate platform to express yourself. Boasting of a decade long legacy, the “gloss, glitz and glamour” is back with bigger and better stakes with Parivesh. Parivesh gives you the golden opportunity to emerge as a trendsetter in front of the big guns of trade and a huge ecstatic audience. The curtains would slowly draw apart to spell-bound everyone by the angelic beauty stunning the stage. If you have got the beguiling looks and the perfect vogue, Parivesh is just the event for you! This is a competition tailor made for all of you whoever aspires to be the next glamorous DIVA or HUNK. Come set the stage on fire with your charm and charisma at Aurora!!!',
     prizeMoney: 'INR 1.2 Lakhs + Goodies, Benefits and Sponsored Gifts',
-    fees: 2500,
+    fees: (
+      <span>
+        <span style={{ textDecoration: 'line-through' }}>&#8377;3000</span>
+        &nbsp;&nbsp;&#8377;2500/- (early bird price)
+      </span>
+    ),
     maxTeamSize: 15,
     rules: [
-      'Each team can showcase a maximum of three rounds.',
-      'Every team will be given 8:00- 10:00 minutes for each round (stage-in to stage-out).',
-      'On exceeding the time limit, negative points will be awarded.',
-      'Each team can have a maximum of 15 members.',
-      'The teams can even take help from choreographers, make-up artists or any other professionals. These, however, will not be considered as part of the team and will be under the sole responsibility of that team.',
-      'Every member of the team will be given a contest number based on which his/her judging will be done. So, if one loses it, he/she will not be given any points.',
-      'The teams are responsible for their music and sequence.',
-      'Music is to be submitted in a pen drive or a CD in a format compatible with Windows Media player (preferably in mp3 format). All music files must be submitted to the organizers at least 3 days before the event.',
-      'The lighting facility is to be availed. One person of the group can supervise the lighting; else it will be up to the lights group.',
-      'Formation of crossover teams is allowed among the students of different colleges only if they have a valid college ID of their present year.',
-      'Fire and animals in any form will not be allowed on stage or the ramp.',
-      'Vulgarity in any form will not be allowed in the competition. So, if the team feels that any stunt could be termed as vulgar, it would be best to speak of it to the organizer before performing it on the stage.',
-      'Organizers reserve the right to cancel any round and disqualify teams that do not adhere to the rules.',
-      'The decision of the judge will be considered the final one.',
+      {
+        headline: 'Rules',
+        rules: [
+          'Every team will be given 8:00- 10:00 minutes for each round (stage-in to stage-out).',
+          'On exceeding the time limit, negative points will be awarded.',
+          'Each team can have a maximum of 15 members.',
+          'The teams can even take help from choreographers, make-up artists or any other professionals. These, however, will not be considered as part of the team and will be under the sole responsibility of that team.',
+          'Every member of the team will be given a contest number based on which his/her judging will be done. So, if one loses it, he/she will not be given any points.',
+          'The teams are responsible for their music and sequence.',
+          'Music is to be submitted in a pen drive or a CD in a format compatible with Windows Media player (preferably in mp3 format). All music files must be submitted to the organizers at least 3 days before the event.',
+          'The lighting facility is to be availed. One person of the group can supervise the lighting; else it will be up to the lights group.',
+          'Formation of crossover teams is allowed among the students of different colleges only if they have a valid college ID of their present year.',
+          'Fire and animals in any form will not be allowed on stage or the ramp.',
+          'Vulgarity in any form will not be allowed in the competition. So, if the team feels that any stunt could be termed as vulgar, it would be best to speak of it to the organizer before performing it on the stage.',
+          'Organizers reserve the right to cancel any round and disqualify teams that do not adhere to the rules.',
+          'The decision of the judge will be considered the final one.',
+        ],
+      },
+      {
+        headline: 'Themes',
+        rules: [
+          'Theme selection is open for all the teams. Teams can perform on any theme of their choice.',
+        ],
+      },
+      {
+        headline: 'Judging Criteria',
+        rules: [
+          {
+            headline: 'Designers',
+            rules: [
+              `Theme Originality, Depiction of Theme, Designing, Use of Props and Accessories, Use of
+          fabrics, innovation in masks.`,
+            ],
+          },
+          {
+            headline: 'Models',
+            rules: ['Ramp walk, Stage Presence, Overall Appearance.'],
+          },
+          {
+            headline: 'Team',
+            rules: [
+              'Choreography, Music and Narration, Coordination, Overall Performance, Contrast of the theme.',
+            ],
+          },
+        ],
+      },
+      {
+        headline: 'Structure',
+        rules: [
+          `The competition comprises of a direct on-stage round. The round would be themed, wherein the
+        teams have to design their creations based on a common theme.`,
+        ],
+      },
     ],
     eventHeads: [
       {
@@ -959,7 +1005,7 @@ const eventData = {
       'Team Size: 12-20 (Including all music accompanists),',
       'Only a single and final round will lead to results.',
       'Stage specifications: Open-air ground stage with audience on all sides.',
-      'Time Limit: 10-15 minutes (including setup and clearance time i.e. empty stage to empty stage).',
+      'Time Limit: 20 minutes (including setup and clearance time i.e. empty stage to empty stage).',
       'The essence of the play should be brought out in Hindi or English or both. However, short snippets in other regional languages are allowed (max. 30 seconds).',
       'No electrical appliances (for example, amplifiers) shall be allowed during the performance, whether inside or outside the circle of performance. No plug points will be provided for this purpose.',
       'Teams will be penalised if they exceed the time limit.',
