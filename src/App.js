@@ -106,7 +106,7 @@ function App() {
               <ProtectedRoute exact path="/ca">
                 <CA />
               </ProtectedRoute>
-              <ProtectedRoute exact path="/admin">
+              <ProtectedRoute path="/admin">
                 <AdminDashboard />
               </ProtectedRoute>
               <Route exact path="/logout">
