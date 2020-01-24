@@ -82,7 +82,7 @@ const PaidEvents = ({ teams, isDesktop }) => {
 };
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
-  const [toPay, setToPay] = useState([]);
+  const [toPay, setToPay] = useState(teams);
 
   const addToPayment = (team, event) => {
     // event.preventDefault();
@@ -129,7 +129,12 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
     return (
       <tr key={team.id}>
         <td>
-          <input type="checkbox" value={team.id} onClick={event => addToPayment(team, event)} />
+          <input
+            type="checkbox"
+            value={team.id}
+            onClick={event => addToPayment(team, event)}
+            defaultChecked
+          />
         </td>
         <td>{index + 1}</td>
         <td>
