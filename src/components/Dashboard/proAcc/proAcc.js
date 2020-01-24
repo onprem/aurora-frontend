@@ -13,10 +13,10 @@ const ProAcc = ({ className, user }) => {
       <div className={styles.leftDiv}>
         <div className={styles.detailsDiv}>
           <div>
-            <span>Pronites:</span>
+            {user.pronite && <span>Pronites:</span>}
             <span>
               {user.pronite ? (
-                'booked'
+                'Booked'
               ) : (
                 <button
                   type="button"
@@ -36,10 +36,10 @@ const ProAcc = ({ className, user }) => {
       <div className={styles.rightDiv}>
         <div className={styles.detailsDiv}>
           <div>
-            <span>Accommodation:</span>
+            {user.accommodation && <span>Accommodation:</span>}
             <span>
               {user.accommodation ? (
-                'booked'
+                'Booked'
               ) : (
                 <button
                   type="button"
