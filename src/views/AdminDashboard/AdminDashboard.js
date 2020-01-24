@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import UserTable from '../../components/AdminDash/UserTable/UserTable';
 import TeamTable from '../../components/AdminDash/TeamTable/TeamTable';
+import Stats from '../../components/AdminDash/Stats/Stats';
 import getAlert from '../../utils/getAlert';
 
 import ADMIN_META from '../../graphQl/queries/protected/adminMetadata';
@@ -53,6 +54,7 @@ const AdminDashboard = () => {
       <h1 className={styles.heading}>ADMIN DASHBOARD</h1>
       <Switch>
         <Route exact path="/admin">
+          {canViewUsers && <Stats />}
           {canViewEvents && <TeamTable events={events} />}
           {canViewUsers && <UserTable metaData={data.adminMetadata} />}
         </Route>
