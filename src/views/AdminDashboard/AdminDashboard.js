@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import { Switch, Route } from 'react-router-dom';
 
 import Loader from '../../components/Loader/Loader';
 import UserTable from '../../components/AdminDash/UserTable/UserTable';
@@ -45,13 +46,23 @@ const AdminDashboard = () => {
       </div>
     );
 
-  const { isRoot, events } = data.adminMetadata;
+  const { canViewUsers, canViewEvents, events } = data.adminMetadata;
 
   return (
     <div className={styles.adminDiv}>
       <h1 className={styles.heading}>ADMIN DASHBOARD</h1>
-      {isRoot && <UserTable />}
-      <TeamTable events={events} />
+      <Switch>
+        <Route exact path="/admin">
+          {canViewEvents && <TeamTable events={events} />}
+          {canViewUsers && <UserTable metaData={data.adminMetadata} />}
+        </Route>
+        <Route exact path="/admin/users">
+          {canViewUsers && <UserTable metaData={data.adminMetadata} />}
+        </Route>
+        <Route exact path="/admin/events">
+          {canViewEvents && <TeamTable events={events} />}
+        </Route>
+      </Switch>
     </div>
   );
 };

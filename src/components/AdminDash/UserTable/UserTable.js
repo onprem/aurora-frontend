@@ -74,11 +74,11 @@ const TableWrapper = ({ children, options, handleChange }) => {
   );
 };
 
-const UserTable = () => {
+const UserTable = ({ metaData }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalUser, setModalUser] = useState(null);
   const [page, setPage] = useState(0);
-  const [limit] = useState(5);
+  const [limit] = useState(15);
   const [options, setOptions] = useState({
     filterBy: 'arId',
     pattern: '',
@@ -133,7 +133,6 @@ const UserTable = () => {
 
   useEffect(() => {
     if (debouncedOptions.pattern !== '') {
-      console.log(debouncedOptions);
       refetch();
     }
   }, [debouncedOptions, refetch]);
@@ -178,7 +177,12 @@ const UserTable = () => {
           />
         )}
       </TableWrapper>
-      <UserModal user={modalUser} isOpen={isModalOpen} setIsOpen={setModalOpen} isRoot />
+      <UserModal
+        user={modalUser}
+        isOpen={isModalOpen}
+        setIsOpen={setModalOpen}
+        canEditUsers={metaData.canEditUsers}
+      />
     </>
   );
 };
