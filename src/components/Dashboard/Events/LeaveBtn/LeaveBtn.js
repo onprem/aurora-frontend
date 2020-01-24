@@ -9,7 +9,7 @@ import USER_QUERY from '../../../../graphQl/queries/user';
 
 import styles from '../PayButton/PayButton.module.css';
 
-const LeaveBtn = ({ teamId }) => {
+const LeaveBtn = ({ teamId, setToPay }) => {
   const handleSuccess = qData => {
     const toast = getAlert();
     toast.fire({
@@ -50,7 +50,10 @@ const LeaveBtn = ({ teamId }) => {
     <button
       type="button"
       className={styles.PayBtn}
-      onClick={() => leaveTeam({ variables: { teamId } })}
+      onClick={() => {
+        leaveTeam({ variables: { teamId } });
+        setToPay(teams => teams.filter(elem => elem.id !== teamId));
+      }}
       disabled={loading}
     >
       {loading ? <Loader height="1em" /> : <>LEAVE</>}
