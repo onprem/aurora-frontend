@@ -8,7 +8,7 @@ import Impersonate from '../Actions/Impersonate';
 
 import styles from './UserModal.module.css';
 
-const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
+const UserModal = ({ user, isOpen, setIsOpen, canEditUsers }) => {
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       {user && (
@@ -42,7 +42,7 @@ const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
               <b>VERIFIED:</b> {user.isVerified ? 'True' : 'False'}
             </span>
             <span>
-              <b>ACCOMODATION:</b> {user.accommodation ? 'True' : 'False'}
+              <b>ACCOMMODATION:</b> {user.accommodation ? 'True' : 'False'}
             </span>
             <span>
               <b>PRONITE:</b> {user.pronite ? 'True' : 'False'}
@@ -51,7 +51,26 @@ const UserModal = ({ user, isOpen, setIsOpen, isRoot }) => {
               <b>CA:</b> {user.ca.isCA ? 'True' : 'False'}
             </span>
           </section>
-          {isRoot && (
+          <h3 className={styles.modalHeadings}>EVENTS</h3>
+          {user.teams.map(t => (
+            <section className={styles.modalSections} key={t.id}>
+              <span>
+                <b>TEAM-ID:</b> {t.id}
+              </span>
+              {t.event.isNameRequired && (
+                <span>
+                  <b>NAME:</b> {t.name}
+                </span>
+              )}
+              <span>
+                <b>EVENT:</b> {t.event.name}
+              </span>
+              <span>
+                <b>STATUS:</b> {t.paymentStatus ? 'Paid' : 'Unpaid'}
+              </span>
+            </section>
+          ))}
+          {canEditUsers && (
             <>
               <h3 className={styles.modalHeadings}>ACTIONS</h3>
               <section className={styles.modalSections}>

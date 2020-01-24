@@ -51,8 +51,11 @@ const TableBody = ({ event, setTotal }) => {
   const fetchMoreTeams = () => {
     fetchMore({
       variables: {
+        eventId: event.id,
         limit,
         page,
+        ...debouncedOptions,
+        paymentStatus: debouncedOptions.paymentStatus === 'paid',
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev;

@@ -36,7 +36,7 @@ const Register = () => {
     college: '',
     city: '',
     email: '',
-    event: '1',
+    event: '0',
   });
 
   const [step, changeStep] = useState('1');
@@ -78,7 +78,8 @@ const Register = () => {
     onError: handleErrors,
     onCompleted: data => {
       setAuthToken(data.alphaSignup);
-      runEventRegister({ variables: { eventId: Number(inputs.event) } });
+      if (inputs.event !== '0') runEventRegister({ variables: { eventId: Number(inputs.event) } });
+      else history.push('/passes');
     },
   });
 
