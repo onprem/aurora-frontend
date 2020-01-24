@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { useHistory, Link } from 'react-router-dom';
-import { useMutation } from '@apollo/react-hooks';
-
-import getAlert from '../../../utils/getAlert';
-import Loader from '../../Loader/Loader';
 
 import eventData from '../../../assets/data/eventData/eventData';
 import Button from '../../Button/Button';
@@ -12,10 +8,8 @@ import PayButton from './PayButton/PayButton';
 import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
 import useMediaQuery from '../../../utils/useMediaQuery';
 
-import LEAVE_TEAM from '../../../graphQl/mutations/leaveTeam';
-import USER_QUERY from '../../../graphQl/queries/user';
-
 import styles from './Events.module.css';
+import LeaveBtn from './LeaveBtn/LeaveBtn';
 
 const PaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
@@ -88,44 +82,6 @@ const PaidEvents = ({ teams, isDesktop }) => {
 };
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
-  const [selectedTeam, selectTeam] = useState(0);
-  console.log(selectedTeam);
-  const [runLeaveTeam, { data, error, loading }] = useMutation(LEAVE_TEAM, {
-    update: cacheStore => {
-      const userData = cacheStore.readQuery({ query: USER_QUERY });
-      const newTeams = userData.user.teams.filter(team => team.id !== selectedTeam);
-      console.log(newTeams, userData.user.teams, selectedTeam);
-      cacheStore.writeQuery({
-        query: USER_QUERY,
-        data: {
-          user: {
-            ...userData.user,
-            teams: newTeams,
-          },
-        },
-      });
-    },
-  });
-
-  useEffect(() => {
-    if (data) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'success',
-        title: data.leaveTeam.message,
-      });
-    }
-  }, [data]);
-  useEffect(() => {
-    if (error && error.graphQLErrors.length > 0) {
-      const toast = getAlert();
-      toast.fire({
-        icon: 'error',
-        title: error.graphQLErrors[0].message,
-      });
-    }
-  }, [error]);
-
   const [toPay, setToPay] = useState([]);
 
   const addToPayment = (team, event) => {
@@ -164,15 +120,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
             {team.event.fee}
           </td>
           <td>
-            <button
-              type="button"
-              onClick={() => {
-                selectTeam(team.id);
-                runLeaveTeam({ variables: { teamId: team.id } });
-              }}
-            >
-              {loading ? <Loader fill="#000000" /> : <>LEAVE</>}
-            </button>
+            <LeaveBtn teamId={team.id} />
           </td>
         </tr>
       );
@@ -193,6 +141,9 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
         <td>
           &#8377;
           {team.event.fee}
+        </td>
+        <td>
+          <LeaveBtn teamId={team.id} />
         </td>
       </tr>
     );
