@@ -192,6 +192,9 @@
   cursor: pointer;
   /* font-size: 0.8em; */
 }
+.next_prev_button_mob {
+  box-shadow: 10px 10px 34px 2px rgba(0, 0, 0, 0.75);
+}
 .arrow_right,
 .arrow_left {
   width: 2em;
