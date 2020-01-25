@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+
+import { useHistory } from 'react-router-dom';
+
 import { Parallax } from 'react-scroll-parallax';
 import useMediaQuery from '../../utils/useMediaQuery';
 
@@ -13,10 +16,13 @@ import Spider from '../../components/teaserSpider/TeaserSpider';
 
 import { ReactComponent as AuroraCircleIcon } from '../../assets/icons/auroraCircle.svg';
 import { ReactComponent as AuroraTextIcon } from '../../assets/icons/auroraText.svg';
+import { ReactComponent as Ticket } from '../../assets/icons/ticketHome.svg';
+import { ReactComponent as Booking } from '../../assets/icons/booking.svg';
 
 import styles from './Home.module.css';
 
 const Home = () => {
+  const history = useHistory();
   const isDesktop = useMediaQuery('(min-width: 450px)');
   const bats = ['Bat1', 'Bat2', 'Bat3', 'Bat4', 'Bat5', 'Bat6', 'Bat7', 'Bat8', 'Bat9'].map(
     style => {
@@ -82,6 +88,22 @@ const Home = () => {
           <span>14-16</span>
           <span>FEB. 2020</span>
         </div>
+        <button
+          type="button"
+          className={styles.ticket_container}
+          onClick={() => history.push('/pronites')}
+        >
+          <h4 className={styles.ticket_heading}>BOOK PRONITES @ &#8377;349</h4>
+          <Ticket className={styles.ticket} fill="white" />
+        </button>
+        <button
+          type="button"
+          className={`${styles.ticket_container} ${styles.ticket_container_acc}`}
+          onClick={() => history.push('/accomodation')}
+        >
+          <h4 className={styles.ticket_heading}>BOOK ACCOMODATION @ &#8377;799</h4>
+          <Booking className={styles.ticket} fill="white" />
+        </button>
 
         <Graveyard isHauntedHouse />
         <Spider />

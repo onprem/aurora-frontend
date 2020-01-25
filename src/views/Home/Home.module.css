@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  font-size: 22px;
 }
 .Logo {
   margin-top: 15vh;
@@ -13,6 +14,42 @@
 }
 .Text {
   width: 55vh;
+}
+.ticket_container {
+  position: relative;
+  z-index: 2;
+  align-self: flex-end;
+  margin-right: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  appearance: none;
+  border: none;
+  background: inherit;
+  transition: transform 0.3s;
+  cursor: pointer;
+  animation: animateTicket 2s infinite;
+  background: black;
+  color: white;
+  border-radius: 3em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  margin-top: -20em;
+}
+.ticket_container_acc {
+  margin-top: 2em;
+}
+.ticket_container:active {
+  outline: none;
+}
+.ticket {
+  width: 2.5em;
+  margin-left: 1em;
+}
+.ticket_heading {
+  font-size: 1.3em;
 }
 .homeDate {
   position: relative;
@@ -104,6 +141,22 @@
   width: 50px;
 }
 
+@keyframes animateTicket {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
 @keyframes batAnimate1 {
   0% {
     transform: translate(0);
@@ -152,6 +205,43 @@
     margin-top: 55px;
     font-size: 1.6em;
     letter-spacing: 0.2em;
+  }
+  .ticket {
+    width: 2em;
+    margin-left: 0.5em;
+  }
+  .ticket_heading {
+    font-size: 1em;
+  }
+  .ticket_container {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .ticket_container {
+    margin-top: -5em;
+  }
+  .ticket_container_acc {
+    margin-top: 2em;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .ticket {
+    width: 1em;
+    margin-left: 0.5em;
+  }
+  .ticket_heading {
+    font-size: 0.8em;
+  }
+  .ticket_container {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 2em;
+  }
+  .ticket_container_acc {
+    margin-top: 1em;
   }
 }
 
