@@ -149,7 +149,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
           {team.event.fee}
         </td>
         <td>
-          <LeaveBtn teamId={team.id} />
+          <LeaveBtn teamId={team.id} setToPay={setToPay} />
         </td>
       </tr>
     );

@@ -88,7 +88,7 @@ function App() {
               <Route exact path="/contact">
                 <Contact />
               </Route>
-              <Route exact path="/accomodation">
+              <Route exact path={['/accomodation', '/accommodation']}>
                 <Accomodation />
               </Route>
               <Route exact path="/passes">
