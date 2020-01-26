@@ -5,6 +5,7 @@ import Particles from '../../components/particles/Particle';
 import Profile from '../../components/Dashboard/Profile/Profile';
 import Events from '../../components/Dashboard/Events/Events';
 import Invites from '../../components/Dashboard/Invites/Invites';
+import ProAcc from '../../components/Dashboard/proAcc/proAcc';
 import Loader from '../../components/Loader/Loader';
 import getAlert from '../../utils/getAlert';
 
@@ -42,6 +43,7 @@ const Dashboard = () => {
       <div className={styles.dashboardContainer}>
         <h1 className={styles.heading}>DASHBOARD</h1>
         <Profile className={`${styles.sections} ${styles.profileSection}`} user={data.user} />
+        <ProAcc className={`${styles.sections} ${styles.profileSection}`} user={data.user} />
         <Events className={styles.sections} teams={data.user.teams} />
         <Invites className={styles.sections} teamInvitations={data.user.teamInvitations} />
       </div>

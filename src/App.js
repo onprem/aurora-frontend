@@ -88,7 +88,7 @@ function App() {
               <Route exact path="/contact">
                 <Contact />
               </Route>
-              <Route exact path="/accomodation">
+              <Route exact path={['/accomodation', '/accommodation']}>
                 <Accomodation />
               </Route>
               <Route exact path="/passes">
@@ -106,7 +106,7 @@ function App() {
               <ProtectedRoute exact path="/ca">
                 <CA />
               </ProtectedRoute>
-              <ProtectedRoute exact path="/admin">
+              <ProtectedRoute path="/admin">
                 <AdminDashboard />
               </ProtectedRoute>
               <Route exact path="/logout">

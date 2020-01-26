@@ -87,7 +87,7 @@ const RegisterStep2 = ({ changeInputs, inputs, changeStep, submit, loading }) =>
       </label>
       <select
         className={
-          inputs.city === undefined
+          inputs.event === undefined
             ? `${style.evtSelect} ${style.login_input_invalid}`
             : style.evtSelect
         }
@@ -95,6 +95,9 @@ const RegisterStep2 = ({ changeInputs, inputs, changeStep, submit, loading }) =>
         onChange={handleInput}
         value={inputs.event}
       >
+        <option key="none" value="0">
+          None
+        </option>
         {eventList.map(evt => {
           return (
             <option key={evt.id} value={evt.id}>

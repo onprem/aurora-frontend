@@ -9,6 +9,7 @@ import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
 import useMediaQuery from '../../../utils/useMediaQuery';
 
 import styles from './Events.module.css';
+import LeaveBtn from './LeaveBtn/LeaveBtn';
 
 const PaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
@@ -119,6 +120,9 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
             &#8377;
             {team.event.fee}
           </td>
+          <td>
+            <LeaveBtn teamId={team.id} setToPay={setToPay} />
+          </td>
         </tr>
       );
     }
@@ -144,6 +148,9 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
           &#8377;
           {team.event.fee}
         </td>
+        <td>
+          <LeaveBtn teamId={team.id} setToPay={setToPay} />
+        </td>
       </tr>
     );
   });
@@ -167,6 +174,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
                   <th>Parent Event</th>
                   <th>Team ID</th>
                   <th>Fee</th>
+                  <th>Leave</th>
                 </tr>
               ) : (
                 <tr>
@@ -174,6 +182,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
                   <th>#</th>
                   <th>Event Name</th>
                   <th>Fee</th>
+                  <th>Leave</th>
                 </tr>
               )}
             </thead>

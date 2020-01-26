@@ -139,7 +139,7 @@ const PayButton = ({ toPay, setToPay }) => {
     });
   };
   return (
-    <button type="button" className={styles.PayBtn} onClick={placeOrder}>
+    <button type="button" className={styles.PayBtn} onClick={placeOrder} disabled={loading}>
       {loading ? (
         <Loader height="1em" />
       ) : (
