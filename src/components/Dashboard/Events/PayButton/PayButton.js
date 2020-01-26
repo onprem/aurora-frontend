@@ -39,6 +39,26 @@ const PayButton = ({ toPay, setToPay }) => {
 
   const [verifyOrder, verifyRes] = useMutation(VRFY_ORDER, {
     onCompleted: handleVrfySuccess,
+    update: (cacheStore, { data: newData }) => {
+      if (newData.generateEventOrder.order_id === '0') {
+        const usrData = cacheStore.readQuery({ query: USER_QUERY });
+
+        const newTeams = usrData.user.teams.map(team => {
+          if (toPay.some(payTeam => payTeam.id === team.id))
+            return {
+              ...team,
+              paymentStatus: true,
+            };
+          return team;
+        });
+        cacheStore.writeQuery({
+          query: USER_QUERY,
+          data: {
+            user: { ...usrData.user, teams: newTeams },
+          },
+        });
+      }
+    },
     onError: handleErrors,
   });
 
@@ -81,26 +101,6 @@ const PayButton = ({ toPay, setToPay }) => {
             contact: userRes.data.user.phone,
           },
           ...oData.generateEventOrder,
-        });
-      }
-    },
-    update: (cacheStore, { data: newData }) => {
-      if (newData.generateEventOrder.order_id === '0') {
-        const usrData = cacheStore.readQuery({ query: USER_QUERY });
-
-        const newTeams = usrData.user.teams.map(team => {
-          if (toPay.some(payTeam => payTeam.id === team.id))
-            return {
-              ...team,
-              paymentStatus: true,
-            };
-          return team;
-        });
-        cacheStore.writeQuery({
-          query: USER_QUERY,
-          data: {
-            user: { ...usrData.user, teams: newTeams },
-          },
         });
       }
     },

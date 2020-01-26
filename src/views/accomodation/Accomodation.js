@@ -320,6 +320,16 @@ const Accomodation = () => {
 
   const [verifyOrder, verifyRes] = useMutation(VERIFY_ACC_ORDER, {
     onCompleted: handleVrfySuccess,
+    update: cacheStore => {
+      const usrData = cacheStore.readQuery({ query: USER_QUERY });
+      usrData.user.accommodation = true;
+      cacheStore.writeQuery({
+        query: USER_QUERY,
+        data: {
+          user: { ...usrData.user },
+        },
+      });
+    },
     onError: handleErrors,
   });
 
@@ -351,16 +361,6 @@ const Accomodation = () => {
           contact: data.user.phone,
         },
         ...oData.generateAccOrder,
-      });
-    },
-    update: cacheStore => {
-      const usrData = cacheStore.readQuery({ query: USER_QUERY });
-      usrData.user.accommodation = true;
-      cacheStore.writeQuery({
-        query: USER_QUERY,
-        data: {
-          user: { ...usrData.user },
-        },
       });
     },
     onError: handleErrors,
