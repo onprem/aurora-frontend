@@ -9,3 +9,6 @@
   letter-spacing: 0.2em;
   cursor: pointer;
 }
+.payment_closed {
+  font-size: 1em;
+}

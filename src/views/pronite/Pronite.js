@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Link, useHistory } from 'react-router-dom';
 
@@ -61,12 +61,29 @@ const ProniteCard = ({ title, name, desc, img, className, classNameImage }) => {
 };
 
 const RenderButtons = ({ handleLeftClick, handleRightClick }) => {
+  const isMobile = useMediaQuery(`(max-width:500px)`);
   return (
     <div className={style.button_parent_container}>
-      <button className={style.next_prev_button} type="button" onClick={handleLeftClick}>
+      <button
+        className={
+          !isMobile
+            ? style.next_prev_button
+            : `${style.next_prev_button} ${style.next_prev_button_mob}`
+        }
+        type="button"
+        onClick={handleLeftClick}
+      >
         <Arrow fill="black" className={style.arrow_left} />
       </button>
-      <button className={style.next_prev_button} type="button" onClick={handleRightClick}>
+      <button
+        className={
+          !isMobile
+            ? style.next_prev_button
+            : `${style.next_prev_button} ${style.next_prev_button_mob}`
+        }
+        type="button"
+        onClick={handleRightClick}
+      >
         <Arrow fill="black" className={style.arrow_right} />
       </button>
     </div>
@@ -76,6 +93,11 @@ const RenderButtons = ({ handleLeftClick, handleRightClick }) => {
 const Pronite = () => {
   const [activeCard, changeActiveCard] = useState(1);
   const [isTransit, changeIsTransit] = useState(false);
+  let xDown = null;
+  let yDown = null;
+  const getTouches = evt => {
+    return evt.touches;
+  };
   const handleLeftClick = () => {
     changeIsTransit(true);
     const timeout = setTimeout(() => {
@@ -100,9 +122,49 @@ const Pronite = () => {
       clearTimeout(timeout);
     }, 950);
   };
+  const handleTouchStart = evt => {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+  };
+
+  const handleTouchMove = evt => {
+    if (!xDown || !yDown) {
+      return;
+    }
+
+    const xUp = evt.touches[0].clientX;
+    const yUp = evt.touches[0].clientY;
+
+    const xDiff = xDown - xUp;
+    const yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      if (xDiff > 5) handleRightClick();
+      else if (xDiff < -5) handleLeftClick();
+    }
+
+    xDown = null;
+    yDown = null;
+  };
+  const handleKey = e => {
+    if (e.keyCode === 37) handleLeftClick();
+    else if (e.keyCode === 39) handleRightClick();
+  };
+  useEffect(() => {
+    const touch = document.getElementById('touchId');
+    touch.addEventListener('touchstart', handleTouchStart);
+    touch.addEventListener('touchmove', handleTouchMove);
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      touch.removeEventListener('touchstart', handleTouchStart);
+      touch.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('keydown', handleKey);
+    };
+  });
   return (
     <>
-      <div className={style.pronite_parent}>
+      <div className={style.pronite_parent} id="touchId">
         <Link to="/">
           <Logo className={style.logoDark} />
         </Link>

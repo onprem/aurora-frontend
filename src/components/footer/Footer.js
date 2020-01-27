@@ -8,9 +8,9 @@ import { ReactComponent as Logo } from '../../assets/icons/auroraCircle.svg';
 const sitemap = [
   { title: 'about', path: '/about' },
   { title: 'events', path: '/events' },
-  { title: 'contact us', path: '/contact' },
   { title: 'pronites', path: '/pronites' },
   { title: 'sponsors', path: '/sponsors' },
+  { title: 'contact us', path: '/contact' },
 ];
 const support = [
   { title: 'contact us', path: '/contact' },

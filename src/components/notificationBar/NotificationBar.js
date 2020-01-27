@@ -14,15 +14,18 @@ const NotificationBar = () => {
     changeNotif(false);
   };
   useEffect(() => {
-    const interval = setInterval(() => {
-      changeTransit(false);
-      const timeout = setTimeout(() => {
-        if (activeNotif === notificationData.length) changeActiveNotif(1);
-        else changeActiveNotif(activeNotif + 1);
-        changeTransit(true);
-        clearTimeout(timeout);
-      }, 950);
-    }, 10000);
+    let interval;
+    if (notificationData.length > 1) {
+      interval = setInterval(() => {
+        changeTransit(false);
+        const timeout = setTimeout(() => {
+          if (activeNotif === notificationData.length) changeActiveNotif(1);
+          else changeActiveNotif(activeNotif + 1);
+          changeTransit(true);
+          clearTimeout(timeout);
+        }, 950);
+      }, 10000);
+    }
     return () => {
       clearInterval(interval);
     };
