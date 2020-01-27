@@ -11,6 +11,7 @@
   top: 0px;
   left: 0px;
   z-index: 1;
+  overflow: hidden;
 }
 .pronite_card {
   display: flex;
