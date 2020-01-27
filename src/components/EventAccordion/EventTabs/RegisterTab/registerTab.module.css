@@ -29,7 +29,9 @@
   font-weight: 600;
   /* height: 10%; */
 }
-
+.heavy_participation {
+  font-size: 1em;
+}
 .registerTab_rules_container {
   text-align: left;
   width: 100%;
