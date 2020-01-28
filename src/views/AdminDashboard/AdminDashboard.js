@@ -3,9 +3,13 @@ import { useQuery } from '@apollo/react-hooks';
 import { Switch, Route } from 'react-router-dom';
 
 import Loader from '../../components/Loader/Loader';
+import AdminNav from '../../components/AdminDash/AdminNav/AdminNav';
 import UserTable from '../../components/AdminDash/UserTable/UserTable';
 import TeamTable from '../../components/AdminDash/TeamTable/TeamTable';
 import Stats from '../../components/AdminDash/Stats/Stats';
+import ProniteTable from '../../components/AdminDash/Orders/ProniteTable';
+import EventTable from '../../components/AdminDash/Orders/EventTable';
+import AccTable from '../../components/AdminDash/Orders/AccTable';
 import getAlert from '../../utils/getAlert';
 
 import ADMIN_META from '../../graphQl/queries/protected/adminMetadata';
@@ -47,10 +51,18 @@ const AdminDashboard = () => {
       </div>
     );
 
-  const { canViewUsers, canViewEvents, events } = data.adminMetadata;
+  const {
+    canViewUsers,
+    canViewEvents,
+    canViewPronites,
+    canViewOrders,
+    canViewAcc,
+    events,
+  } = data.adminMetadata;
 
   return (
     <div className={styles.adminDiv}>
+      <AdminNav metaData={data.adminMetadata} />
       <h1 className={styles.heading}>ADMIN DASHBOARD</h1>
       <Switch>
         <Route exact path="/admin">
@@ -63,6 +75,15 @@ const AdminDashboard = () => {
         </Route>
         <Route exact path="/admin/events">
           {canViewEvents && <TeamTable events={events} />}
+        </Route>
+        <Route exact path="/admin/pronites">
+          {canViewPronites && <ProniteTable metaData={data.adminMetadata} />}
+        </Route>
+        <Route exact path="/admin/orders">
+          {canViewOrders && <EventTable metaData={data.adminMetadata} />}
+        </Route>
+        <Route exact path="/admin/acc">
+          {canViewAcc && <AccTable metaData={data.adminMetadata} />}
         </Route>
       </Switch>
     </div>

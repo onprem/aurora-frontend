@@ -1,0 +1,17 @@
+.adminNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 90%;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 1.2em;
+  margin-top: 2em;
+}
+
+@media only screen and (max-width: 500px) {
+  .adminNav {
+    width: 80%;
+  }
+}
