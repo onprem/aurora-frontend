@@ -9,6 +9,7 @@ import TeamTable from '../../components/AdminDash/TeamTable/TeamTable';
 import Stats from '../../components/AdminDash/Stats/Stats';
 import ProniteTable from '../../components/AdminDash/Orders/ProniteTable';
 import EventTable from '../../components/AdminDash/Orders/EventTable';
+import AccTable from '../../components/AdminDash/Orders/AccTable';
 import getAlert from '../../utils/getAlert';
 
 import ADMIN_META from '../../graphQl/queries/protected/adminMetadata';
@@ -55,6 +56,7 @@ const AdminDashboard = () => {
     canViewEvents,
     canViewPronites,
     canViewOrders,
+    canViewAcc,
     events,
   } = data.adminMetadata;
 
@@ -79,6 +81,9 @@ const AdminDashboard = () => {
         </Route>
         <Route exact path="/admin/orders">
           {canViewOrders && <EventTable metaData={data.adminMetadata} />}
+        </Route>
+        <Route exact path="/admin/acc">
+          {canViewAcc && <AccTable metaData={data.adminMetadata} />}
         </Route>
       </Switch>
     </div>
