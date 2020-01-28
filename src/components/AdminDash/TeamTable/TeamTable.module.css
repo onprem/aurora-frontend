@@ -26,6 +26,8 @@
 .teamDivHeading > span {
   display: flex;
   align-items: center;
+  justify-content: center;
+
 }
 
 .teamSelect {
@@ -89,11 +91,8 @@
   .idSpan {
     width: auto;
   }
-  .usersSpan {
-    display: none;
-  }
-  .nameSpan {
-    display: none;
+  .usersSpan, .nameSpan {
+    display: none !important;
   }
   .paymentSpan {
     width: auto;
