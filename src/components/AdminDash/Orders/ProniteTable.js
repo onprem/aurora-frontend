@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 
-import Loader from '../../../Loader/Loader';
-import getAlert from '../../../../utils/getAlert';
-import Button from '../../../Button/Button';
-import useDebounce from '../../../../utils/useDebounce';
-import OrderModal from '../OrderModal/OrderModal';
+import Loader from '../../Loader/Loader';
+import getAlert from '../../../utils/getAlert';
+import Button from '../../Button/Button';
+import useDebounce from '../../../utils/useDebounce';
+import OrderModal from './OrderModal/OrderModal';
 
-import PRO_ORDERS from '../../../../graphQl/queries/protected/proniteOrders';
-import { ReactComponent as PlusIcon } from '../../../../assets/icons/plus.svg';
+import PRO_ORDERS from '../../../graphQl/queries/protected/proniteOrders';
+import { ReactComponent as PlusIcon } from '../../../assets/icons/plus.svg';
 
 import styles from './Table.module.css';
 
@@ -225,7 +225,8 @@ const ProniteTable = ({ metaData }) => {
         order={modalOrder}
         isOpen={isModalOpen}
         setIsOpen={setModalOpen}
-        canEditPronites={metaData.canEditPronites}
+        canEditOrders={metaData.canEditPronites}
+        orderType="pro"
       />
     </>
   );
