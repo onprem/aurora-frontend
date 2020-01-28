@@ -39,8 +39,8 @@ const OrderModal = ({ order, isOpen, setIsOpen, canEditPronites }) => {
           </section>
           <h3 className={styles.modalHeadings}>USERS</h3>
           {order.users.map(u => (
-            <>
-              <section className={styles.modalSections} key={u.id}>
+            <React.Fragment key={u.id}>
+              <section className={styles.modalSections}>
                 <span>
                   <b>AR-ID:</b> {u.id}
                 </span>
@@ -54,7 +54,7 @@ const OrderModal = ({ order, isOpen, setIsOpen, canEditPronites }) => {
                   <b>PHONE:</b> {u.phone}
                 </span>
               </section>
-              <section className={styles.modalSections} key={u.email}>
+              <section className={styles.modalSections}>
                 <span>
                   <b>COLLEGE:</b> {u.college}
                 </span>
@@ -62,7 +62,7 @@ const OrderModal = ({ order, isOpen, setIsOpen, canEditPronites }) => {
                   <b>CITY:</b> {u.city}
                 </span>
               </section>
-            </>
+            </React.Fragment>
           ))}
           {canEditPronites && (
             <>

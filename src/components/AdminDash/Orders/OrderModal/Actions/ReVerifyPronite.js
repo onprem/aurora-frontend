@@ -21,7 +21,7 @@ const ReVerifyPronite = ({ orderId }) => {
       const toast = getAlert();
       toast.fire({
         icon: 'success',
-        title: oData.reVerifyPronite.message,
+        title: oData.reVerifyProniteOrder.message,
       });
     },
     onError: handleErrors,
