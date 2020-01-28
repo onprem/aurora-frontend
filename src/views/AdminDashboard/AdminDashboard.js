@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { Switch, Route } from 'react-router-dom';
 
 import Loader from '../../components/Loader/Loader';
+import AdminNav from '../../components/AdminDash/AdminNav/AdminNav';
 import UserTable from '../../components/AdminDash/UserTable/UserTable';
 import TeamTable from '../../components/AdminDash/TeamTable/TeamTable';
 import Stats from '../../components/AdminDash/Stats/Stats';
@@ -52,6 +53,7 @@ const AdminDashboard = () => {
 
   return (
     <div className={styles.adminDiv}>
+      <AdminNav metaData={data.adminMetadata} />
       <h1 className={styles.heading}>ADMIN DASHBOARD</h1>
       <Switch>
         <Route exact path="/admin">
