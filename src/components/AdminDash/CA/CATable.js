@@ -88,7 +88,7 @@ const CAItem = ({ ca, index, onClick }) => {
     >
       <span className={styles.indexSpan}>{index}</span>
       <span className={styles.nameSpan}>{ca.user.name}</span>
-      <span className={styles.collegeSpan}>{ca.user.id}</span>
+      <span className={styles.collegeSpan}>{ca.user.college}</span>
       <span className={styles.citySpan}>{ca.user.city}</span>
       <span className={styles.paidUsersSpan}>{ca.paidUsers.length}</span>
     </div>
