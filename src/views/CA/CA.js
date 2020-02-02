@@ -7,35 +7,65 @@ import Button from '../../components/Button/Button';
 import getAlert from '../../utils/getAlert';
 
 import USR_QUERY from '../../graphQl/queries/user';
+import CA_USER from '../../graphQl/queries/caUsers';
 import SET_CA from '../../graphQl/mutations/setCA';
 
 import styles from './CA.module.css';
 
 const CAWrapper = ({ user }) => {
+  const { data, loading } = useQuery(CA_USER);
+
+  if (loading) return <Loader fill="#000000" />;
+
   return (
     <>
       <div className={styles.caDiv}>
-        <h1>Referred Users</h1>
-        <table className={styles.caTable}>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>AR-ID</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {user.ca.users.map((u, i) => {
-              return (
-                <tr>
-                  <td>{i + 1}</td>
-                  <td>{u.id}</td>
-                  <td>{u.name}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <h1>{`Paid Referred Users (Total: ${data.caUsers.length})`}</h1>
+        <div className={styles.caTableScroll}>
+          <table className={styles.caTable}>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>AR-ID</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.caUsers.map((u, i) => {
+                return (
+                  <tr key={u.id}>
+                    <td>{i + 1}</td>
+                    <td>{u.id}</td>
+                    <td>{u.name}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <h1>{`All Referred Users (Total: ${user.ca.users.length})`}</h1>
+        <div className={styles.caTableScroll}>
+          <table className={styles.caTable}>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>AR-ID</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {user.ca.users.map((u, i) => {
+                return (
+                  <tr key={u.id}>
+                    <td>{i + 1}</td>
+                    <td>{u.id}</td>
+                    <td>{u.name}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
       <Particles />
     </>

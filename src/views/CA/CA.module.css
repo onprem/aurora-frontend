@@ -14,10 +14,18 @@
 }
 
 .caTable {
-  min-width: 80%;
+  min-width: 100%;
   font-size: 1.3em;
   background: white;
   border-collapse: collapse;
+}
+
+.caTableScroll {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  max-height: 45vh;
+  overflow-y: auto;
 }
 
 .caTable tbody tr:nth-child(odd) {
