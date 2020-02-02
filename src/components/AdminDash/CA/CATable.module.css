@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4em;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.userDiv {
+  display: flex;
+  width: calc(100% - 2.5em);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4em 1em;
+  border-bottom: solid 2px black;
+  cursor: pointer;
+}
+
+.usrHeading {
+  text-transform: uppercase;
+  font-size: 2.2em;
+  letter-spacing: 0.1em;
+}
+
+.userDivHeading {
+  composes: userDiv;
+  width: calc(80% - 2.5em);
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.userDivHeading > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.userDiv:focus {
+  /* border: solid 2px black;
+  border-top: none; */
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.usrSelect {
+  background: transparent;
+  border: solid 2px black;
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding: 0.1em 0.6em;
+  text-transform: uppercase;
+}
+
+.usrTxt {
+  border: solid 2px black;
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding: 0.1em 0.6em;
+}
+
+.moarBtn {
+  margin: 0.5em;
+}
+
+.indexSpan {
+  width: 5%;
+}
+
+.nameSpan {
+  width: 25%;
+}
+
+.collegeSpan {
+  width: 40%;
+}
+
+.citySpan {
+  width: 20%;
+}
+
+.paidUsersSpan {
+  width: 10%;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    font-size: 1em;
+  }
+  .usrHeading {
+    font-size: 1.2em;
+  }
+  .collegeSpan, .citySpan {
+    display: none !important;
+  }
+  .paidUsersSpan, .nameSpan {
+    width: auto;
+  }
+  .userDiv {
+    flex-wrap: wrap;
+  }
+  .userDivHeading {
+    font-size: 1em;
+  }
+  .userDivHeading > span {
+    flex-wrap: wrap;
+  }
+  .usrTxt {
+    width: 90%;
+  }
+}
