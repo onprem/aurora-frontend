@@ -10,6 +10,15 @@ import styles from './OrderModal.module.css';
 
 const OrderModal = ({ order, isOpen, setIsOpen, canEditOrders, orderType }) => {
   // orderType = 'evt' || 'acc' || 'pro'
+  const time = order
+    ? new Date(Number(order.timeSt) * 1000).toLocaleString('en-IN', {
+        day: 'numeric',
+        month: 'short',
+        hour: 'numeric',
+        minute: 'numeric',
+      })
+    : null;
+
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       {order && (
@@ -38,6 +47,9 @@ const OrderModal = ({ order, isOpen, setIsOpen, canEditOrders, orderType }) => {
             </span>
             <span>
               <b>EMAIL:</b> {order.paidBy.email}
+            </span>
+            <span>
+              <b>TIME:</b> {time}
             </span>
           </section>
           {(orderType === 'acc' || orderType === 'pro') && (
