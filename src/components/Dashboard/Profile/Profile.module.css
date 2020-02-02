@@ -52,6 +52,8 @@
   text-transform: uppercase;
   font-size: 2em;
   margin-bottom: 2vh;
+  display: flex;
+  align-items: center;
 }
 .rightDiv {
   display: flex;

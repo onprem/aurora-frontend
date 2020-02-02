@@ -39,6 +39,19 @@ const Register = () => {
     event: '0',
   });
 
+  useEffect(() => {
+    const clg = localStorage.getItem('alphaCollege');
+    const city = localStorage.getItem('alphaCity');
+
+    changeInputs(inp => {
+      return {
+        ...inp,
+        college: clg || '',
+        city: city || '',
+      };
+    });
+  }, []);
+
   const [step, changeStep] = useState('1');
   const [passcode, changePasscode] = useState('');
   useEffect(() => {
@@ -87,6 +100,8 @@ const Register = () => {
     if (inputs.email && inputs.city && inputs.college && inputs.event) {
       if (emailValidation(inputs.email)) {
         runRegister({ variables: { ...inputs, passcode } });
+        localStorage.setItem('alphaCollege', inputs.college);
+        localStorage.setItem('alphaCity', inputs.city);
       } else {
         const toast = getAlert();
         toast.fire({

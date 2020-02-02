@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import classNames from 'classnames';
 import { useMutation } from '@apollo/react-hooks';
+import { Link } from 'react-router-dom';
 import getAlert from '../../../utils/getAlert';
 
 import UPLOAD_PHOTO from '../../../graphQl/mutations/uploadPhoto';
 import { ReactComponent as EditIcon } from '../../../assets/icons/edit.svg';
+import { ReactComponent as StarIcon } from '../../../assets/icons/caStar.svg';
 
 import config from '../../../config';
 
@@ -65,7 +67,14 @@ const Profile = ({ className, user }) => {
           </button>
         </div>
         <div className={styles.nameDiv}>
-          <span>{user.name}</span>
+          <span>
+            {user.name}
+            {user.ca.isCA && (
+              <Link to="/ca">
+                <StarIcon height="0.8em" />
+              </Link>
+            )}
+          </span>
           <span>
             <b>AR-ID: </b>
             {user.id}

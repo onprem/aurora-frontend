@@ -66,6 +66,7 @@ const CAModal = ({ ca, isOpen, setIsOpen }) => {
           </section>
           <h3 className={styles.modalHeadings}>PAID USERS (TOTAL: {ca.paidUsers.length})</h3>
           {paidUsers}
+          <section className={styles.modalSections} style={{ minHeight: '3em' }} />
         </>
       )}
     </Modal>
