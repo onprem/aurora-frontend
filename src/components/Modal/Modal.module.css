@@ -19,11 +19,11 @@
   align-items: center;
   background: white;
   width: 80%;
-  padding: 4em;
+  padding: 3em 4em;
   font-size: 1.7em;
   transition: all 0.8s ease-out;
   overflow-y: auto;
-  max-height: 80vh;
+  max-height: calc(80vh - 3em);
 }
 
 .crossBtn {
