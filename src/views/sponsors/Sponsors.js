@@ -13,7 +13,7 @@ import { ReactComponent as LogoDark } from '../../assets/icons/auroraMono.svg';
 
 const SponsorCard = ({ img, name, title, url }) => {
   return (
-    <div className={style.sponsor_card_parent_container}>
+    <div className={`${style.sponsor_card_parent_container} ${style.titleSection}`}>
       <div className={style.sponsor_img_container}>
         <a href={url} target="_blank" rel="noopener noreferrer">
           <img className={style.sponsor_card_img} src={img} alt={name} />
@@ -41,6 +41,18 @@ const Sponsors = () => {
         </div>
         <div className={style.sponsor_section}>
           {sponsorData.sponsors.map(sponsor => (
+            <SponsorCard
+              img={sponsor.img}
+              key={sponsor.img}
+              name={sponsor.name}
+              title={sponsor.title}
+              url={sponsor.url}
+            />
+          ))}
+        </div>
+        <h2 className={style.sponsor_heading_h2}>SOCIAL MEDIA PARTNERS</h2>
+        <div className={style.sponsor_section}>
+          {sponsorData.socialMedia.map(sponsor => (
             <SponsorCard
               img={sponsor.img}
               key={sponsor.img}

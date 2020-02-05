@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: 'SkullAndVoid';
   src: local('SkullAndVoid'), url('../../assets/fonts/SkullAndVoid-Ywg2.ttf');
-}
+} */
 
 .sponsor_parent_container {
   display: flex;
@@ -40,6 +40,10 @@
   margin-top: 3em;
   margin-bottom: 3em;
 }
+.titleSection {
+  width: 13em;
+  height: 15em;
+}
 .sponsor_card_img {
   width: 100%;
 }
@@ -59,6 +63,11 @@
   /* font-family: 'SkullAndVoid'; */
   font-size: 4em;
   letter-spacing: 0.3em;
+  font-weight: 600;
+}
+.sponsor_heading_h2 {
+  font-size: 2em;
+  letter-spacing: 0.2em;
   font-weight: 600;
 }
 .logo {
@@ -105,6 +114,10 @@
     font-size: 3em;
     letter-spacing: 0.2em;
   }
+  .sponsor_heading_h2 {
+    font-size: 1.5em;
+    letter-spacing: 0.15em;
+  }
   .logo {
     width: 6em;
   }
@@ -113,6 +126,10 @@
     margin-right: 2em;
     width: 13em;
     height: 15em;
+  }
+  .titleSection {
+    width: 16em;
+    height: 18em;
   }
   .sponsor_heading {
     font-size: 1.2em;

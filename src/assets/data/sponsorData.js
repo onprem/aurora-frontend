@@ -1,14 +1,15 @@
 import cocaCola from '../images/sponsors/cocacola.png';
 import tribeVibe from '../images/sponsors/tribevibe.png';
+import blu from '../images/sponsors/blu-lounge.jpg';
 import yonoSbi from '../images/sponsors/yono-sbi.png';
 import eurofins from '../images/sponsors/eurofins.jpg';
 import inox from '../images/sponsors/inox.png';
 import pnb from '../images/sponsors/pnb.png';
 // import gwlSmartCity from '../images/sponsors/gwl-smart-city.jpg';
-// import yesBank from '../images/sponsors/yes-bank.png';
+import yesBank from '../images/sponsors/yes-bank.png';
 import dalmia from '../images/sponsors/dalmia.png';
 // import nagarNigam from '../images/sponsors/nagar-nigam.png';
-// import bigFM from '../images/sponsors/bigfm.png';
+import bigFM from '../images/sponsors/bigfm.png';
 // import lic from '../images/sponsors/lic.png';
 import atkt from '../images/sponsors/atkt.png';
 // import indusInd from '../images/sponsors/indusind.jpg';
@@ -17,6 +18,10 @@ import sehatOne from '../images/sponsors/sehatone.png';
 // import mpTourism from '../images/sponsors/mp-tourism.png';
 import sics from '../images/sponsors/sics.jpg';
 import boi from '../images/sponsors/boi.png';
+
+import gwaliorMP from '../images/sponsors/gwaliorMP.png';
+import cityVibes from '../images/sponsors/city-vibes.png';
+import punHub from '../images/sponsors/punhub.png';
 
 const titleSponsor = {
   img: cocaCola,
@@ -33,10 +38,28 @@ const sponsors = [
     url: 'http://tribevibe.live',
   },
   {
-    img: eurofins,
-    name: 'Eurofins Clinical Genetics',
-    title: 'HealthCare Partner',
-    url: 'https://www.eurofins.com',
+    img: blu,
+    name: 'Blu Lounge',
+    title: 'Flagship Event Sponsor - Corna',
+    url: 'https://www.facebook.com/bluloungegwalior',
+  },
+  {
+    img: yonoSbi,
+    name: 'YONO - SBI',
+    title: 'Flagship Event Sponsor - MnM',
+    url: 'https://www.sbi.co.in',
+  },
+  {
+    img: sics,
+    name: 'SICS',
+    title: 'Event Sponsor - StepUp',
+    url: 'http://sicsindia.com',
+  },
+  {
+    img: bigFM,
+    name: 'Big FM',
+    title: 'Event Sponsor - Morning Radio',
+    url: 'https://www.bigfmindia.com/',
   },
   {
     img: inox,
@@ -45,28 +68,10 @@ const sponsors = [
     url: 'https://www.inoxmovies.com',
   },
   {
-    img: sehatOne,
-    name: 'SehatOne',
+    img: eurofins,
+    name: 'Eurofins Clinical Genetics',
     title: 'HealthCare Partner',
-    url: 'https://sehatone.com',
-  },
-  {
-    img: yonoSbi,
-    name: 'YONO - SBI',
-    title: 'Flagship Event Sponsor: MnM',
-    url: 'https://www.sbi.co.in',
-  },
-  {
-    img: dalmia,
-    name: 'Dalmia Group',
-    title: 'Foundation Partner',
-    url: 'https://www.dalmiabharat.com',
-  },
-  {
-    img: boi,
-    name: 'BOI',
-    title: 'Banking Partner',
-    url: 'https://bankofindia.co.in',
+    url: 'https://www.eurofins.com',
   },
   {
     img: pnb,
@@ -75,10 +80,34 @@ const sponsors = [
     url: 'https://www.pnbindia.in',
   },
   {
-    img: sics,
-    name: 'SICS',
-    title: 'Event Sponsor: StepUp',
-    url: 'http://sicsindia.com',
+    img: sehatOne,
+    name: 'SehatOne',
+    title: 'HealthCare Partner',
+    url: 'https://sehatone.com',
+  },
+  {
+    img: yesBank,
+    name: 'Yes Bank',
+    title: 'Banking Partner',
+    url: 'https://www.yesbank.in/',
+  },
+  {
+    img: dalmia,
+    name: 'Dalmia Group',
+    title: 'Foundation Partner',
+    url: 'https://www.dalmiabharat.com',
+  },
+  {
+    img: bigFM,
+    name: 'Big FM',
+    title: 'Radio Partner',
+    url: 'https://www.bigfmindia.com/',
+  },
+  {
+    img: boi,
+    name: 'BOI',
+    title: 'Banking Partner',
+    url: 'https://bankofindia.co.in',
   },
   {
     img: atkt,
@@ -87,4 +116,25 @@ const sponsors = [
     url: 'https://atkt.in',
   },
 ];
-export default { titleSponsor, sponsors };
+
+const socialMedia = [
+  {
+    img: punHub,
+    name: 'PunHub',
+    title: 'Social Media Partner',
+    url: 'https://instagram.com/punhubinsta',
+  },
+  {
+    img: gwaliorMP,
+    name: 'GwaliorMPIndia',
+    title: 'Social Media Partner',
+    url: 'https://instagram.com/gwaliormpindia',
+  },
+  {
+    img: cityVibes,
+    name: 'The City Vibes Gwalior',
+    title: 'Social Media Partner',
+    url: 'https://instagram.com/gwaliorcity_vibes',
+  },
+];
+export default { titleSponsor, sponsors, socialMedia };
