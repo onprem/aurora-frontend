@@ -8,6 +8,12 @@
   z-index: 1;
 }
 
+.caLink {
+  background-color: white;
+  margin-top: 2em;
+  font-size: 1.3em;
+}
+
 .caForm {
   display: flex;
   flex-direction: row;

@@ -88,7 +88,7 @@ const Profile = ({ className, user }) => {
             <span>{user.phone}</span>
           </div>
           <div>
-            <span>College:</span>
+            <span>College / Organisation:</span>
             <span>{user.college}</span>
           </div>
           <div>

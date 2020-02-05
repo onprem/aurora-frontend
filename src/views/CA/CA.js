@@ -17,9 +17,15 @@ const CAWrapper = ({ user }) => {
 
   if (loading) return <Loader fill="#000000" />;
 
+  const link = `https://aurorafest.org/setca/${user.id}`;
+
   return (
     <>
       <div className={styles.caDiv}>
+        <section className={styles.caLink}>
+          <b>Your Referral link: &nbsp;</b>
+          <a href={link}>{link}</a>
+        </section>
         <h1>{`Paid Referred Users (Total: ${data.caUsers.length})`}</h1>
         <div className={styles.caTableScroll}>
           <table className={styles.caTable}>
