@@ -28,7 +28,7 @@ const RegisterStep2 = ({ changeInputs, inputs, changeStep, submit, loading }) =>
   return (
     <form className={style.login_form}>
       <label className={style.login_label} htmlFor="college">
-        College&apos;s Name
+        College / Organisation
       </label>
       <input
         type="text"
