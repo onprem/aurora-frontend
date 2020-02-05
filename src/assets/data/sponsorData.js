@@ -6,7 +6,7 @@ import eurofins from '../images/sponsors/eurofins.jpg';
 import inox from '../images/sponsors/inox.png';
 import pnb from '../images/sponsors/pnb.png';
 // import gwlSmartCity from '../images/sponsors/gwl-smart-city.jpg';
-import yesBank from '../images/sponsors/yes-bank.png';
+// import yesBank from '../images/sponsors/yes-bank.png';
 import dalmia from '../images/sponsors/dalmia.png';
 // import nagarNigam from '../images/sponsors/nagar-nigam.png';
 import bigFM from '../images/sponsors/bigfm.png';
@@ -68,12 +68,6 @@ const sponsors = [
     url: 'https://www.inoxmovies.com',
   },
   {
-    img: eurofins,
-    name: 'Eurofins Clinical Genetics',
-    title: 'HealthCare Partner',
-    url: 'https://www.eurofins.com',
-  },
-  {
     img: pnb,
     name: 'PNB',
     title: 'Banking Partner',
@@ -85,12 +79,12 @@ const sponsors = [
     title: 'HealthCare Partner',
     url: 'https://sehatone.com',
   },
-  {
-    img: yesBank,
-    name: 'Yes Bank',
-    title: 'Banking Partner',
-    url: 'https://www.yesbank.in/',
-  },
+  // {
+  //   img: yesBank,
+  //   name: 'Yes Bank',
+  //   title: 'Banking Partner',
+  //   url: 'https://www.yesbank.in/',
+  // },
   {
     img: dalmia,
     name: 'Dalmia Group',
@@ -108,6 +102,12 @@ const sponsors = [
     name: 'BOI',
     title: 'Banking Partner',
     url: 'https://bankofindia.co.in',
+  },
+  {
+    img: eurofins,
+    name: 'Eurofins Clinical Genetics',
+    title: 'Sponsor',
+    url: 'https://www.eurofins.com',
   },
   {
     img: atkt,

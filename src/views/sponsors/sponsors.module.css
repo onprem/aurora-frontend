@@ -40,9 +40,10 @@
   margin-top: 3em;
   margin-bottom: 3em;
 }
-.titleSection {
+.titleSection > .sponsor_card_parent_container {
   width: 13em;
-  height: 15em;
+  height: auto;
+  margin: 1em;
 }
 .sponsor_card_img {
   width: 100%;
@@ -78,6 +79,31 @@
   z-index: 2;
   cursor: pointer;
 }
+
+.head_section {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background-color: white;
+  margin-bottom: 0em;
+  margin-top: 3em;
+}
+.headSection {
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.headCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headHeading {
+  font-size: 1.2em;
+  margin: 0;
+}
 @media (max-width: 1366px) {
   .sponsor_parent_container {
     font-size: 20px;
@@ -110,7 +136,7 @@
     width: 100%;
   }
   .sponsor_heading_h1 {
-    margin-top: 3em;
+    margin-top: 1em;
     font-size: 3em;
     letter-spacing: 0.2em;
   }
@@ -125,13 +151,31 @@
     margin-left: 2em;
     margin-right: 2em;
     width: 13em;
-    height: 15em;
+    height: 17em;
   }
-  .titleSection {
-    width: 16em;
-    height: 18em;
+  .titleSection > .sponsor_card_parent_container {
+    width: 24em;
+    height: 30em;
   }
   .sponsor_heading {
+    font-size: 1.6em;
+  }
+  .sponsor_desc {
+    font-size: 1.4em;
+  }
+
+  .head_section {
+    width: 90%;
+    margin-bottom: 1.5em;
+    margin-top: 5em;
+  }
+  .headSection {
+    font-size: 1.2em;
+  }
+  .head_section > h3 {
+    font-size: 1.8em;
+  }
+  .headHeading {
     font-size: 1.2em;
   }
 }

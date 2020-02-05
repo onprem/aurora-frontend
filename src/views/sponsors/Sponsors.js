@@ -13,7 +13,7 @@ import { ReactComponent as LogoDark } from '../../assets/icons/auroraMono.svg';
 
 const SponsorCard = ({ img, name, title, url }) => {
   return (
-    <div className={`${style.sponsor_card_parent_container} ${style.titleSection}`}>
+    <div className={style.sponsor_card_parent_container}>
       <div className={style.sponsor_img_container}>
         <a href={url} target="_blank" rel="noopener noreferrer">
           <img className={style.sponsor_card_img} src={img} alt={name} />
@@ -25,12 +25,33 @@ const SponsorCard = ({ img, name, title, url }) => {
   );
 };
 
+const HeadCard = ({ name, phone, email }) => {
+  return (
+    <div className={style.headCard}>
+      <h4 className={style.headHeading}>{name}</h4>
+      <a href={`mailto:${email}`}>{email}</a>
+      <a href={`tel:${phone}`}>{phone}</a>
+    </div>
+  );
+};
+
 const Sponsors = () => {
   return (
     <>
       <div className={style.sponsor_parent_container}>
+        <div className={style.head_section}>
+          <h3>Marketing Heads</h3>
+          <section className={style.headSection}>
+            <HeadCard name="Pankaj Goyal" phone="+91-7404555444" email="pankaj@aurorafest.org" />
+            <HeadCard
+              name="Prakarsh Pathak"
+              phone="+91-8384806031"
+              email="prakarsh@aurorafest.org"
+            />
+          </section>
+        </div>
         <h1 className={style.sponsor_heading_h1}>SPONSORS</h1>
-        <div className={style.sponsor_section}>
+        <div className={`${style.sponsor_section} ${style.titleSection}`}>
           <SponsorCard
             img={sponsorData.titleSponsor.img}
             key={sponsorData.titleSponsor.img}
@@ -62,6 +83,7 @@ const Sponsors = () => {
             />
           ))}
         </div>
+        <div style={{ minHeight: '5em' }} />
         <Link to="/" className={style.logo}>
           <LogoDark />
         </Link>
