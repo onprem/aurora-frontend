@@ -56,10 +56,10 @@
   height: 90%;
 }
 .sponsor_heading_h1 {
-  font-family: 'SkullAndVoid';
+  /* font-family: 'SkullAndVoid'; */
   font-size: 4em;
-  letter-spacing: 0.5em;
-  font-weight: 400;
+  letter-spacing: 0.3em;
+  font-weight: 600;
 }
 .logo {
   width: 3.5em;
