@@ -923,7 +923,7 @@ const eventData = {
         description:
           'If you’re spontaneous, confident & have a brilliant sense of humour, get set to be the next radio star. If you love music & stories, are fluent in Hindi & English, then you just could be the lucky one! This event gives you the chance to own your show with a live audience right by your side. Be an RJ, show off your voice and interaction skills, speak a lot and you have chance to win.',
         prizeMoney: 'INR 5,000 + Goodies, Benefits and Sponsored Gifts',
-        fees: 200,
+        fees: 100,
         maxTeamSize: 1,
         rules: [
           'There will be two rounds 1) Round 1: Participant has to present his/her own content 2) Round 2: Participant will be given an incident on spot',
