@@ -1,4 +1,4 @@
 const notificationData = [
-  'Due to heavy demand, event registrations have been reopened up to 23:59, 6th February.',
+  'Deadline for event registration has been extended till 23:59, 8th February.',
 ];
 export default notificationData;
