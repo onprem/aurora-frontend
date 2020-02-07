@@ -1272,6 +1272,10 @@ const eventData = {
         name: 'Jayant Gupta',
         mobile: '9521003983',
       },
+      {
+        name: 'Deepika Azmeera',
+        mobile: '6265592810',
+      },
     ],
     subEvents: [
       {
@@ -1396,6 +1400,13 @@ const eventData = {
               'Each team is required to maintain four players in the team’s starting lineup. But can also include one extra player in the team it is the maximum number of members in the team.',
               'Each team should have a captian assigned who will be the point of contact with the officials.',
               'Teams can bring in a substitute player in between games, and not during the game.',
+            ],
+          },
+          {
+            headline: 'ROUNDS:',
+            rules: [
+              'Qualifiers will be held on 8th-9th February. Maps: Sanhok, Erangel',
+              'Finals will be held on 15th-16th February. Maps: 2*Erangel, Sanhok. The timing will be after 9PM.',
             ],
           },
         ],
