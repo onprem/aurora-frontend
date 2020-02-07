@@ -1004,9 +1004,9 @@ const eventData = {
       "Have you ever wanted to change the way systems and organizations work in our country? Have you thought to bring out CHANGE, REFORM, REVOLUTION? Have your mind ever started the journey of BADLAAV from AAGAZ to ANZAM? If yes, our event 'STREET-PLAY (Nukkad Natak Competition)' is the perfect opportunity. Here, we hit the streets, we sing, we dance, we act, we shout with minds full of thoughts of creating something new. 'The creation of something new is not accomplished by the intellect but by the play instinct.' -Carl Jung Well, it's time to create something new with your voice, action, acting and overall play. We have just one thing to say - BE THE CREATOR OF YOUR OWN WORLD!",
     prizeMoney: 'INR 25,000 + Goodies, Benefits and Sponsored Gifts',
     fees: 479,
-    maxTeamSize: 20,
+    maxTeamSize: 25,
     rules: [
-      'Team Size: 12-20 (Including all music accompanists),',
+      'Team Size: 12-25 (Including all music accompanists),',
       'Only a single and final round will lead to results.',
       'Stage specifications: Open-air ground stage with audience on all sides.',
       'Time Limit: 20 minutes (including setup and clearance time i.e. empty stage to empty stage).',
