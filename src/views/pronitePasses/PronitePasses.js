@@ -33,7 +33,7 @@ const RenderInclusions = () => {
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Pricing: </span>
         <span style={{ textDecoration: 'line-through' }}>&#8377;1200/-</span>
-        &nbsp;&nbsp;&#8377; 349/- per person, for all 3 nights (Early Bird pricing)
+        &nbsp;&nbsp;&#8377; 349/- per person, for all 3 nights (Phase-2 pricing)
       </li>
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Offers</span>
