@@ -12,7 +12,7 @@ const eventData = {
     fees: (
       <span>
         <span style={{ textDecoration: 'line-through' }}>&#8377;3000</span>
-        &nbsp;&nbsp;&#8377;2500/- (early bird price)
+        &nbsp;&nbsp;&#8377;2500/- (Phase-2 price)
       </span>
     ),
     maxTeamSize: 15,
