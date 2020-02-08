@@ -3,7 +3,7 @@ const isLocal = process.env.REACT_APP_ENV === 'local';
 
 const API_PROD_URL = 'https://api.aurorafest.org';
 const API_STG_URL = 'https://api.staging.aurorafest.org';
-const API_LOCAL = 'http://10.20.0.4:3001';
+const API_LOCAL = 'http://localhost:3001';
 
 const GCS_BASE_URL = 'https://storage.googleapis.com';
 
