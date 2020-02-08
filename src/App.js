@@ -36,6 +36,7 @@ const Sponsors = React.lazy(() => import('./views/sponsors/Sponsors'));
 const Pronites = React.lazy(() => import('./views/pronite/Pronite'));
 
 const Alpha = React.lazy(() => import('./views/alpha/alphaView/LoginRegister'));
+const Scan = React.lazy(() => import('./views/Scan/Scan'));
 
 function App() {
   const [authToken, setAuthToken] = useState();
@@ -124,6 +125,9 @@ function App() {
               </Route>
               <Route exact path="/setca/:id">
                 <SetCA />
+              </Route>
+              <Route exact path="/scan">
+                <Scan />
               </Route>
               <Route>
                 <NotFound />
