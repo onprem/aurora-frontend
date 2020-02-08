@@ -357,6 +357,10 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
   return authToken ? (
     userTeam ? (
       <div className={style.parent_registerTab}>{RenderAfterRegister}</div>
+    ) : eventId === 2 || eventId === 7 ? (
+      <div className={style.parent_registerTab}>
+        <h3>Event registration for this event is closed.</h3>
+      </div>
     ) : (
       <div className={style.parent_registerTab}>
         <button

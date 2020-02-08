@@ -11,6 +11,8 @@ import useMediaQuery from '../../../utils/useMediaQuery';
 import styles from './Events.module.css';
 import LeaveBtn from './LeaveBtn/LeaveBtn';
 
+import getAlert from '../../../utils/getAlert';
+
 const PaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
     const parentEvt = team.event.parentEvent;
@@ -82,15 +84,24 @@ const PaidEvents = ({ teams, isDesktop }) => {
 };
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
-  const [toPay, setToPay] = useState(teams);
-
+  const [toPay, setToPay] = useState(
+    teams.filter(team => team.event.id !== 2 && team.event.id !== 7)
+  );
   const addToPayment = (team, event) => {
     // event.preventDefault();
     if (event.target.checked) {
-      setToPay(toPay.concat([team]));
+      if (team.event.id !== 2 && team.event.id !== 7) setToPay(toPay.concat([team]));
+      else {
+        const toast = getAlert();
+        toast.fire({
+          icon: 'error',
+          title: 'Event registration for this event is closed',
+        });
+        // eslint-disable-next-line no-param-reassign
+        event.target.checked = false;
+      }
     } else setToPay(toPay.filter(elem => elem.id !== team.id));
   };
-
   const teamList = teams.map((team, index) => {
     const parentEvt = team.event.parentEvent;
     const parentEvtName = parentEvt
@@ -133,7 +144,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
             type="checkbox"
             value={team.id}
             onClick={event => addToPayment(team, event)}
-            defaultChecked
+            checked={team.event.id !== 2 && team.event.id !== 7}
           />
         </td>
         <td>{index + 1}</td>
