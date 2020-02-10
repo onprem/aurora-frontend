@@ -5,6 +5,7 @@ import yonoSbi from '../images/sponsors/yono-sbi.png';
 import eurofins from '../images/sponsors/eurofins.jpg';
 import inox from '../images/sponsors/inox.png';
 import pnb from '../images/sponsors/pnb.png';
+import lensFit from '../images/sponsors/lensfit.png';
 // import gwlSmartCity from '../images/sponsors/gwl-smart-city.jpg';
 // import yesBank from '../images/sponsors/yes-bank.png';
 import dalmia from '../images/sponsors/dalmia.png';
@@ -17,7 +18,11 @@ import atkt from '../images/sponsors/atkt.png';
 import sehatOne from '../images/sponsors/sehatone.png';
 // import mpTourism from '../images/sponsors/mp-tourism.png';
 import sics from '../images/sponsors/sics.jpg';
+import indiaKhabar from '../images/sponsors/india-khabar.jpeg';
 import boi from '../images/sponsors/boi.png';
+
+import jawedHabib from '../images/sponsors/jawed-habib.png';
+import nisha from '../images/sponsors/nisha-dance.jpg';
 
 import gwaliorMP from '../images/sponsors/gwaliorMP.png';
 import cityVibes from '../images/sponsors/city-vibes.png';
@@ -56,6 +61,12 @@ const sponsors = [
     url: 'http://sicsindia.com',
   },
   {
+    img: jawedHabib,
+    name: 'Jawed Habib',
+    title: 'Flagship Event Co-Sponsor - Parivesh',
+    url: 'http://jawedhabib.co.in/',
+  },
+  {
     img: bigFM,
     name: 'Big FM',
     title: 'Event Sponsor - Morning Radio',
@@ -72,6 +83,12 @@ const sponsors = [
     name: 'PNB',
     title: 'Banking Partner',
     url: 'https://www.pnbindia.in',
+  },
+  {
+    img: lensFit,
+    name: 'Lensfit',
+    title: 'Vision Partner',
+    url: 'https://www.lensfit.com/',
   },
   {
     img: sehatOne,
@@ -102,6 +119,18 @@ const sponsors = [
     name: 'BOI',
     title: 'Banking Partner',
     url: 'https://bankofindia.co.in',
+  },
+  {
+    img: indiaKhabar,
+    name: 'India Khabar',
+    title: 'Streaming Partner',
+    url: 'https://www.indiakhabar.in',
+  },
+  {
+    img: nisha,
+    name: 'Nisha Dance Academy',
+    title: 'Event Co-Sponsor - Step Up',
+    url: 'https://www.facebook.com/NDclasses/',
   },
   {
     img: eurofins,
