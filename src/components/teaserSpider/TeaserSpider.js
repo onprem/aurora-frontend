@@ -9,7 +9,7 @@ const TeaserSpider = () => {
     <div className={style.container}>
       <div className={style.web} />
       <a
-        href="https://www.youtube.com/watch?v=FiytSAfOPzk"
+        href="https://www.youtube.com/watch?v=BtaRnU7FXP4"
         // eslint-disable-next-line react/jsx-no-target-blank
         target="_blank"
         rel="noreferrer"

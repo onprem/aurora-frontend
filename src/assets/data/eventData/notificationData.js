@@ -1,4 +1,5 @@
 const notificationData = [
-  'Due to heavy demand, event registrations have been reopened up to 23:59, 6th February.',
+  'Deadline for some limited events has been extended till 23:59, 10th February.',
+  'Event registration for Raag and Corna has been closed.',
 ];
 export default notificationData;

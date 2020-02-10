@@ -33,7 +33,7 @@ const RenderInclusions = () => {
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Pricing: </span>
         <span style={{ textDecoration: 'line-through' }}>&#8377;1800/-</span>
-        &nbsp;&nbsp;&#8377; 799/- per person (Early Bird pricing)
+        &nbsp;&nbsp;&#8377; 799/- per person (Phase-2 pricing)
       </li>
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Inclusions</span>
@@ -104,9 +104,7 @@ const RenderTnC = () => {
       </li>
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Food Facilities: </span>
-        Guests can purchase their meals from the cafeteria, night cafeteria or hostel messes at
-        subsidized rates. You can also order food online. Various food stalls will also be available
-        in and around campus.
+        Guests can purchase their meals from various food stalls available in and around campus.
         <br />
         **Accommodation charges does not include any meals and can be purchased at your own expenses
       </li>

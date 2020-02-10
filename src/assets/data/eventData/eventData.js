@@ -12,7 +12,7 @@ const eventData = {
     fees: (
       <span>
         <span style={{ textDecoration: 'line-through' }}>&#8377;3000</span>
-        &nbsp;&nbsp;&#8377;2500/- (early bird price)
+        &nbsp;&nbsp;&#8377;2500/- (Phase-2 price)
       </span>
     ),
     maxTeamSize: 15,
@@ -923,7 +923,7 @@ const eventData = {
         description:
           'If you’re spontaneous, confident & have a brilliant sense of humour, get set to be the next radio star. If you love music & stories, are fluent in Hindi & English, then you just could be the lucky one! This event gives you the chance to own your show with a live audience right by your side. Be an RJ, show off your voice and interaction skills, speak a lot and you have chance to win.',
         prizeMoney: 'INR 5,000 + Goodies, Benefits and Sponsored Gifts',
-        fees: 200,
+        fees: 100,
         maxTeamSize: 1,
         rules: [
           'There will be two rounds 1) Round 1: Participant has to present his/her own content 2) Round 2: Participant will be given an incident on spot',
@@ -1004,9 +1004,9 @@ const eventData = {
       "Have you ever wanted to change the way systems and organizations work in our country? Have you thought to bring out CHANGE, REFORM, REVOLUTION? Have your mind ever started the journey of BADLAAV from AAGAZ to ANZAM? If yes, our event 'STREET-PLAY (Nukkad Natak Competition)' is the perfect opportunity. Here, we hit the streets, we sing, we dance, we act, we shout with minds full of thoughts of creating something new. 'The creation of something new is not accomplished by the intellect but by the play instinct.' -Carl Jung Well, it's time to create something new with your voice, action, acting and overall play. We have just one thing to say - BE THE CREATOR OF YOUR OWN WORLD!",
     prizeMoney: 'INR 25,000 + Goodies, Benefits and Sponsored Gifts',
     fees: 479,
-    maxTeamSize: 20,
+    maxTeamSize: 25,
     rules: [
-      'Team Size: 12-20 (Including all music accompanists),',
+      'Team Size: 12-25 (Including all music accompanists),',
       'Only a single and final round will lead to results.',
       'Stage specifications: Open-air ground stage with audience on all sides.',
       'Time Limit: 20 minutes (including setup and clearance time i.e. empty stage to empty stage).',
@@ -1272,6 +1272,10 @@ const eventData = {
         name: 'Jayant Gupta',
         mobile: '9521003983',
       },
+      {
+        name: 'Deepika Azmeera',
+        mobile: '6265592810',
+      },
     ],
     subEvents: [
       {
@@ -1396,6 +1400,13 @@ const eventData = {
               'Each team is required to maintain four players in the team’s starting lineup. But can also include one extra player in the team it is the maximum number of members in the team.',
               'Each team should have a captian assigned who will be the point of contact with the officials.',
               'Teams can bring in a substitute player in between games, and not during the game.',
+            ],
+          },
+          {
+            headline: 'ROUNDS:',
+            rules: [
+              'Qualifiers will be held on 8th-9th February. Maps: Sanhok, Erangel',
+              'Finals will be held on 15th-16th February. Maps: 2*Erangel, Sanhok. The timing will be after 9PM.',
             ],
           },
         ],
