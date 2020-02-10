@@ -104,9 +104,7 @@ const RenderTnC = () => {
       </li>
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Food Facilities: </span>
-        Guests can purchase their meals from the cafeteria, night cafeteria or hostel messes at
-        subsidized rates. You can also order food online. Various food stalls will also be available
-        in and around campus.
+        Guests can purchase their meals from various food stalls available in and around campus.
         <br />
         **Accommodation charges does not include any meals and can be purchased at your own expenses
       </li>
