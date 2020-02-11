@@ -85,13 +85,12 @@ const PaidEvents = ({ teams, isDesktop }) => {
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
   const [toPay, setToPay] = useState(
-    teams.filter(team => team.event.id !== 2 && team.event.id !== 7 && team.event.id !== 19)
+    teams.filter(team => team.event.id !== 7 && team.event.id !== 19)
   );
   const addToPayment = (team, event) => {
     // event.preventDefault();
     if (event.target.checked) {
-      if (team.event.id !== 2 && team.event.id !== 7 && team.event.id !== 19)
-        setToPay(toPay.concat([team]));
+      if (team.event.id !== 7 && team.event.id !== 19) setToPay(toPay.concat([team]));
       else {
         const toast = getAlert();
         toast.fire({
@@ -145,7 +144,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
             type="checkbox"
             value={team.id}
             onClick={event => addToPayment(team, event)}
-            checked={team.event.id !== 2 && team.event.id !== 7 && team.event.id !== 19}
+            checked={team.event.id !== 7 && team.event.id !== 19}
           />
         </td>
         <td>{index + 1}</td>
