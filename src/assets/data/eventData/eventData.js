@@ -926,7 +926,7 @@ const eventData = {
         fees: 100,
         maxTeamSize: 1,
         rules: [
-          'There will be two rounds 1) Round 1: Participant has to present his/her own content 2) Round 2: Participant will be given an incident on spot',
+          'There will be two rounds 1) Round 1: Participant has to present his/her own content 2) Round 2: Participant has to perform on spot',
           {
             headline: 'Rules for Round 1',
             rules: [
