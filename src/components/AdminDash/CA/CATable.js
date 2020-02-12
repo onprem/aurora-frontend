@@ -141,7 +141,7 @@ const CATable = ({ metaData }) => {
         return {
           allCA: {
             ...prev.allCA,
-            ca: prev.allCA.ca.concat(fetchMoreResult.allCA.ca),
+            caUsers: prev.allCA.caUsers.concat(fetchMoreResult.allCA.caUsers),
           },
         };
       },
@@ -149,7 +149,7 @@ const CATable = ({ metaData }) => {
   };
 
   useEffect(() => {
-    if (data) setPage(Math.floor(data.allCA.ca.length / limit));
+    if (data) setPage(Math.floor(data.allCA.caUsers.length / limit));
   }, [limit, data]);
 
   useEffect(() => {
@@ -177,9 +177,9 @@ const CATable = ({ metaData }) => {
     setModalOpen(true);
   };
 
-  const { ca, total } = data.allCA;
+  const { caUsers, total } = data.allCA;
 
-  const caItems = ca.map((c, index) => {
+  const caItems = caUsers.map((c, index) => {
     return <CAItem key={c.id} ca={c} index={index + 1} onClick={() => fireModal(c)} />;
   });
 
@@ -188,7 +188,7 @@ const CATable = ({ metaData }) => {
       <h2 className={styles.usrHeading}>{`Campus Ambassadors (TOTAL:${total})`}</h2>
       <TableWrapper options={options} handleChange={handleChange}>
         {caItems}
-        {ca.length < total && (
+        {caUsers.length < total && (
           <Button
             className={styles.moarBtn}
             onClick={fetchMoreCA}

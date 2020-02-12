@@ -18,7 +18,7 @@ export default gql`
       pattern: $pattern
     ) {
       total
-      ca {
+      caUsers {
         user {
           id
           name
@@ -45,31 +45,31 @@ export default gql`
               isVerified
               accommodation
               pronite
-              ca {
-                isCA
-                caId
-                users {
-                  id
-                  name
-                }
-              }
-              teams {
-                id
-                name
-                members {
-                  name
-                  id
-                }
-                event {
-                  id
-                  name
-                  fee
-                  parentEvent
-                  maxSize
-                  isNameRequired
-                }
-                paymentStatus
-              }
+              # ca {
+              #   isCA
+              #   caId
+              #   users {
+              #     id
+              #     name
+              #   }
+              # }
+              # teams {
+              #   id
+              #   name
+              #   members {
+              #     name
+              #     id
+              #   }
+              #   event {
+              #     id
+              #     name
+              #     fee
+              #     parentEvent
+              #     maxSize
+              #     isNameRequired
+              #   }
+              #   paymentStatus
+              # }
             }
           }
         }
@@ -86,31 +86,31 @@ export default gql`
           isVerified
           accommodation
           pronite
-          ca {
-            isCA
-            caId
-            users {
-              id
-              name
-            }
-          }
-          teams {
-            id
-            name
-            members {
-              name
-              id
-            }
-            event {
-              id
-              name
-              fee
-              parentEvent
-              maxSize
-              isNameRequired
-            }
-            paymentStatus
-          }
+          # ca {
+          #   isCA
+          #   caId
+          #   users {
+          #     id
+          #     name
+          #   }
+          # }
+          # teams {
+          #   id
+          #   name
+          #   members {
+          #     name
+          #     id
+          #   }
+          #   event {
+          #     id
+          #     name
+          #     fee
+          #     parentEvent
+          #     maxSize
+          #     isNameRequired
+          #   }
+          #   paymentStatus
+          # }
         }
       }
     }
