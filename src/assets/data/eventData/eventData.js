@@ -1006,7 +1006,7 @@ const eventData = {
     fees: 479,
     maxTeamSize: 25,
     rules: [
-      'Team Size: 12-25 (Including all music accompanists),',
+      'Team Size: 7-25 (Including all music accompanists),',
       'Only a single and final round will lead to results.',
       'Stage specifications: Open-air ground stage with audience on all sides.',
       'Time Limit: 20 minutes (including setup and clearance time i.e. empty stage to empty stage).',
