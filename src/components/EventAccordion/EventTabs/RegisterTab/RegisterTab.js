@@ -29,6 +29,10 @@ import { ReactComponent as Tick } from '../../../../assets/icons/tick.svg';
 import { ReactComponent as Edit } from '../../../../assets/icons/edit.svg';
 import { ReactComponent as Cross } from '../../../../assets/icons/cut.svg';
 
+import config from '../../../../config';
+
+const { closedEvents } = config;
+
 const RegisterTab = ({ eventId, teamMaxSize }) => {
   const location = useLocation();
   const { authToken } = useAuth();
@@ -357,7 +361,7 @@ const RegisterTab = ({ eventId, teamMaxSize }) => {
   return authToken ? (
     userTeam ? (
       <div className={style.parent_registerTab}>{RenderAfterRegister}</div>
-    ) : eventId === 2 || eventId === 7 || eventId === 19 ? (
+    ) : closedEvents.some(eId => eId === eventId) ? (
       <div className={style.parent_registerTab}>
         <h3>Event registration for this event is closed.</h3>
       </div>

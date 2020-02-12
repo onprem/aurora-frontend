@@ -12,9 +12,12 @@ if (isProd) apiUrl = API_PROD_URL;
 else if (isLocal) apiUrl = API_LOCAL;
 else apiUrl = API_STG_URL;
 
+const closedEvents = localStorage.getItem('open') === 'yes' ? [] : [2, 7, 19];
+
 const config = {
   apiUrl: `${apiUrl}/api/graphql`,
   gcsBucketUrl: `${GCS_BASE_URL}/${isProd ? 'aurora-dp/' : 'aurora-stg-dp/'}`,
+  closedEvents,
 };
 
 export default config;
