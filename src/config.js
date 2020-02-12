@@ -12,7 +12,7 @@ if (isProd) apiUrl = API_PROD_URL;
 else if (isLocal) apiUrl = API_LOCAL;
 else apiUrl = API_STG_URL;
 
-const closedEvents = localStorage.getItem('open') === 'yes' ? [] : [2, 7, 19];
+const closedEvents = localStorage.getItem('open') === 'yes' ? [] : [2, 5, 6, 7, 19, 29];
 
 const config = {
   apiUrl: `${apiUrl}/api/graphql`,
