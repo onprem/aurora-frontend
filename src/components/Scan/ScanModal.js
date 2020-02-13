@@ -23,7 +23,7 @@ const User = ({ arId }) => {
 
   if (loading || !arId) return <h2>Loading...</h2>;
 
-  const { userDetails: user } = data;
+  const { user, isBandIssued, bandType, issuedBandType } = data.userDetails;
   console.log(data);
 
   return (
@@ -88,9 +88,15 @@ const User = ({ arId }) => {
       <h3 className={styles.modalHeadings}>ACTIONS</h3>
       <section className={styles.modalSections}>
         <span>
-          <b>BAND TYPE:</b> {user.bandType}
+          <b>BAND TYPE:</b> {bandType}
         </span>
-        <span>{user.isBandIssued ? <b>BAND ISSUED</b> : <IssueBand arId={user.id} />}</span>
+        <span>
+          {isBandIssued ? (
+            <b>BAND ISSUED: {issuedBandType}</b>
+          ) : (
+            <>{bandType !== 'none' && <IssueBand arId={user.id} />}</>
+          )}
+        </span>
       </section>
       <div style={{ padding: '25px', minHeight: '10px', height: '10px' }} />
     </>
