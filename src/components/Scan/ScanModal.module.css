@@ -1,0 +1,33 @@
+.modalHeadings {
+  margin: 1em;
+  font-size: 1.2em;
+  border-bottom: solid 4px black;
+}
+
+.modalSections {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+}
+.modalSections > span {
+  text-align: left;
+}
+.qrDiv {
+  width: 40%;
+}
+
+@media only screen and (max-width: 500px) {
+  .modalHeadings {
+    font-size: 1em;
+  }
+  .modalSections {
+    flex-direction: column;
+  }
+  .qrDiv {
+    width: 80%;
+  }
+}
