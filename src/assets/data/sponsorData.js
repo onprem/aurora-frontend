@@ -20,6 +20,7 @@ import sehatOne from '../images/sponsors/sehatone.png';
 import sics from '../images/sponsors/sics.jpg';
 import indiaKhabar from '../images/sponsors/india-khabar.jpeg';
 import boi from '../images/sponsors/boi.png';
+import clarks from '../images/sponsors/clarks.jpg';
 
 import jawedHabib from '../images/sponsors/jawed-habib.png';
 import nisha from '../images/sponsors/nisha-dance.jpg';
@@ -119,6 +120,12 @@ const sponsors = [
     name: 'BOI',
     title: 'Banking Partner',
     url: 'https://bankofindia.co.in',
+  },
+  {
+    img: clarks,
+    name: 'Clarks',
+    title: 'Stay Partner',
+    url: 'https://www.facebook.com/officialclarksinnsuitesgwalior/',
   },
   {
     img: indiaKhabar,
