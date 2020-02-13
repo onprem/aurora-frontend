@@ -71,6 +71,10 @@ const Nav = () => {
       path: '/contact',
     },
     {
+      title: 'Schedule',
+      path: '/schedule',
+    },
+    {
       title: 'FAQs',
       path: '/faq',
     },
