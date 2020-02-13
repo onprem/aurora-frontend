@@ -92,7 +92,7 @@ const User = ({ arId }) => {
         </span>
         <span>{user.isBandIssued ? <b>BAND ISSUED</b> : <IssueBand arId={user.id} />}</span>
       </section>
-      <div style={{ padding: '25px' }} />
+      <div style={{ padding: '25px', minHeight: '10px', height: '10px' }} />
     </>
   );
 };
