@@ -1,4 +1,4 @@
-const isLocal = false;
+const isLocal = true;
 module.exports = {
   client: {
     service: {
