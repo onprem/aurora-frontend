@@ -91,21 +91,24 @@ const ScheduleTabs = () => {
           className={classNames(styles.tabBtn, { [styles.active]: activeTab === 0 })}
           onClick={() => setActiveTab(0)}
         >
-          DAY-1 (14-02-2020)
+          FRI
+          <span> (14-02-2020)</span>
         </button>
         <button
           type="button"
           className={classNames(styles.tabBtn, { [styles.active]: activeTab === 1 })}
           onClick={() => setActiveTab(1)}
         >
-          DAY-2 (15-02-2020)
+          SAT
+          <span> (15-02-2020)</span>
         </button>
         <button
           type="button"
           className={classNames(styles.tabBtn, { [styles.active]: activeTab === 2 })}
           onClick={() => setActiveTab(2)}
         >
-          DAY-3 (16-02-2020)
+          SUN
+          <span> (16-02-2020)</span>
         </button>
       </section>
       <section className={styles.tabBodys}>
