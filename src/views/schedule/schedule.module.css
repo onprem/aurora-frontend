@@ -1,3 +1,4 @@
+
 .tabContainer {
   display: flex;
   flex-direction: column;
@@ -91,9 +92,7 @@
 }
 
 @media only screen and (max-width: 1366px) {
-  /* .tabBtn {
-    font-size: 1em;
-  } */
+
   .tabBtn {
     font-size: 1em;
     height: 40px;
