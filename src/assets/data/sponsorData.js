@@ -21,6 +21,7 @@ import sics from '../images/sponsors/sics.jpg';
 import indiaKhabar from '../images/sponsors/india-khabar.jpeg';
 import boi from '../images/sponsors/boi.png';
 import clarks from '../images/sponsors/clarks.jpg';
+import fastrack from '../images/sponsors/fastrack.png';
 
 import jawedHabib from '../images/sponsors/jawed-habib.png';
 import nisha from '../images/sponsors/nisha-dance.jpg';
@@ -60,6 +61,12 @@ const sponsors = [
     name: 'SICS',
     title: 'Event Sponsor - StepUp',
     url: 'http://sicsindia.com',
+  },
+  {
+    img: fastrack,
+    name: 'Fastrack',
+    title: 'Title Sponsor - Parivesh',
+    url: 'https://www.fastrack.in/',
   },
   {
     img: jawedHabib,

@@ -20,7 +20,6 @@ import { ReactComponent as AuroraCircleIcon } from '../../assets/icons/auroraCir
 import { ReactComponent as AuroraTextIcon } from '../../assets/icons/auroraText.svg';
 import { ReactComponent as Ticket } from '../../assets/icons/ticketHome.svg';
 import { ReactComponent as Booking } from '../../assets/icons/booking.svg';
-import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
 import { ReactComponent as Schedule } from '../../assets/icons/leaveTeam.svg';
 
 import styles from './Home.module.css';
@@ -92,12 +91,6 @@ const Home = () => {
           <span>14-16</span>
           <span>FEB. 2020</span>
         </div>
-        <button type="button" className={`${styles.ticket_container}`}>
-          <h4 className={styles.ticket_heading}>
-            Helpline Number :<a href="tel:+91 9479343477">+91-9479343477</a>
-          </h4>
-          <Phone className={styles.ticket} fill="white" />
-        </button>
         <button
           type="button"
           className={styles.ticket_container}
