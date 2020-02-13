@@ -116,4 +116,24 @@
   .teamDiv > div {
     width: 80%;
   }
+  .tabBtn span{
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .tabBtn span{
+    display:none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .schedule_header h4{
+    font-size: 13px;
+  }
+  .schedule_header h2{
+    font-size: 23px;
+  }
+  .tabContainer{
+    width: 100%;
+  }
 }
