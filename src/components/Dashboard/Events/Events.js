@@ -12,6 +12,9 @@ import styles from './Events.module.css';
 import LeaveBtn from './LeaveBtn/LeaveBtn';
 
 import getAlert from '../../../utils/getAlert';
+import config from '../../../config';
+
+const { closedEvents } = config;
 
 const PaidEvents = ({ teams, isDesktop }) => {
   const teamList = teams.map((team, index) => {
@@ -85,13 +88,12 @@ const PaidEvents = ({ teams, isDesktop }) => {
 
 const UnPaidEvents = ({ teams, isDesktop }) => {
   const [toPay, setToPay] = useState(
-    teams.filter(team => team.event.id !== 2 && team.event.id !== 7 && team.event.id !== 19)
+    teams.filter(team => !closedEvents.some(eId => eId === team.event.id))
   );
   const addToPayment = (team, event) => {
     // event.preventDefault();
     if (event.target.checked) {
-      if (team.event.id !== 2 && team.event.id !== 7 && team.event.id !== 19)
-        setToPay(toPay.concat([team]));
+      if (!closedEvents.some(eId => eId === team.event.id)) setToPay(toPay.concat([team]));
       else {
         const toast = getAlert();
         toast.fire({
@@ -145,7 +147,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
             type="checkbox"
             value={team.id}
             onClick={event => addToPayment(team, event)}
-            checked={team.event.id !== 2 && team.event.id !== 7 && team.event.id !== 19}
+            checked={!closedEvents.some(eId => eId === team.event.id)}
           />
         </td>
         <td>{index + 1}</td>
