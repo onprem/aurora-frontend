@@ -126,35 +126,47 @@ const ScheduleTabs = () => {
           </div>
           <div>{day1Schedule}</div>
         </div>
-        <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 1 })}>
-          <div className={styles.schedule_header}>
-            <div>
-              <h2 style={{ textDecoration: 'underline' }}>Event</h2>
-            </div>
-            <div>
-              <h2 style={{ textDecoration: 'underline' }}>Time</h2>
-            </div>
-            <div>
-              <h2 style={{ textDecoration: 'underline' }}>Venue</h2>
-            </div>
-          </div>
-          <div>{day2Schedule}</div>
-        </div>
-        <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 2 })}>
-          <div className={styles.schedule_header}>
-            <div>
-              <h2 style={{ textDecoration: 'underline' }}>Event</h2>
-            </div>
-            <div>
-              <h2 style={{ textDecoration: 'underline' }}>Time</h2>
-            </div>
-            <div>
-              <h2 style={{ textDecoration: 'underline' }}>Venue</h2>
-            </div>
-          </div>
-          <div>{day3Schedule}</div>
-        </div>
       </section>
+      {activeTab === 1 ? (
+        <section className={styles.tabBodys}>
+          <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 1 })}>
+            <div className={styles.schedule_header}>
+              <div>
+                <h2 style={{ textDecoration: 'underline' }}>Event</h2>
+              </div>
+              <div>
+                <h2 style={{ textDecoration: 'underline' }}>Time</h2>
+              </div>
+              <div>
+                <h2 style={{ textDecoration: 'underline' }}>Venue</h2>
+              </div>
+            </div>
+            <div>{day2Schedule}</div>
+          </div>
+        </section>
+      ) : (
+        ''
+      )}
+      {activeTab === 2 ? (
+        <section className={styles.tabBodys}>
+          <div className={classNames(styles.tabContent, { [styles.active]: activeTab === 2 })}>
+            <div className={styles.schedule_header}>
+              <div>
+                <h2 style={{ textDecoration: 'underline' }}>Event</h2>
+              </div>
+              <div>
+                <h2 style={{ textDecoration: 'underline' }}>Time</h2>
+              </div>
+              <div>
+                <h2 style={{ textDecoration: 'underline' }}>Venue</h2>
+              </div>
+            </div>
+            <div>{day3Schedule}</div>
+          </div>
+        </section>
+      ) : (
+        ''
+      )}
     </div>
   );
 };
