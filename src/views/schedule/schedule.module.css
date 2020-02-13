@@ -133,4 +133,7 @@
   .schedule_header h2{
     font-size: 23px;
   }
+  .tabContainer{
+    width: 100%;
+  }
 }
