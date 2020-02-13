@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ReactQR from 'react-qr-reader';
 import { useQuery } from '@apollo/react-hooks';
 
+import getAlert from '../../utils/getAlert';
 import Modal from '../Modal/Modal';
 import IssueBand from './IssueBand';
 // import UserModal from '../../components/AdminDash/UserModal/UserModal';
@@ -13,17 +14,28 @@ import styles from './ScanModal.module.css';
 
 // const UserModal
 
-const User = ({ arId }) => {
+const User = ({ arId, setIsOpen }) => {
   // const [modalOpen, setModalOpen] = useState(false);
+  const handleErrors = error => {
+    if (error && error.graphQLErrors.length > 0) {
+      const toast = getAlert();
+      toast.fire({
+        icon: 'error',
+        title: error.graphQLErrors[0].message,
+      });
+    }
+    setIsOpen(false);
+  };
 
   const { data, loading } = useQuery(USER, {
     variables: { arId: arId.toUpperCase() },
-    onError: console.log,
+    onError: handleErrors,
+    fetchPolicy: 'no-cache',
   });
 
-  if (loading || !arId) return <h2>Loading...</h2>;
+  if (loading || !arId || !data) return <h2>Loading...</h2>;
 
-  const { userDetails: user } = data;
+  const { user, isBandIssued, bandType, issuedBandType } = data.userDetails;
   console.log(data);
 
   return (
@@ -88,9 +100,15 @@ const User = ({ arId }) => {
       <h3 className={styles.modalHeadings}>ACTIONS</h3>
       <section className={styles.modalSections}>
         <span>
-          <b>BAND TYPE:</b> {user.bandType}
+          <b>BAND TYPE:</b> {bandType}
         </span>
-        <span>{user.isBandIssued ? <b>BAND ISSUED</b> : <IssueBand arId={user.id} />}</span>
+        <span>
+          {isBandIssued ? (
+            <b>BAND ISSUED: {issuedBandType}</b>
+          ) : (
+            <>{bandType !== 'none' && <IssueBand arId={user.id} />}</>
+          )}
+        </span>
       </section>
       <div style={{ padding: '25px', minHeight: '10px', height: '10px' }} />
     </>
@@ -112,7 +130,7 @@ const ScanModal = ({ isOpen, setIsOpen }) => {
   return (
     <Modal isOpen={isOpen} setIsOpen={handleOpen}>
       {arId ? (
-        <User arId={arId} />
+        <User arId={arId} setIsOpen={setIsOpen} />
       ) : (
         <div className={styles.qrDiv}>
           {isOpen && (
