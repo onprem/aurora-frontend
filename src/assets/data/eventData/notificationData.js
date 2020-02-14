@@ -1,5 +1,5 @@
 const notificationData = [
-  'Schedule has been uploaded, please check from navbar',
+  'Schedule has been uploaded!',
   'Collect your bands soon, gate will be closed at 6:00 pm',
 ];
 export default notificationData;
