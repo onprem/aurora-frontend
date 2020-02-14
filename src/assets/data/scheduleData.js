@@ -17,7 +17,7 @@ const scheduleData = {
   },
   day2: {
     details: [
-      { event: 'Eumelia (Prelims)', time: '09:00-14:00', venue: 'Auditorium' },
+      { event: 'Eumelia', time: '09:00-14:00', venue: 'Auditorium' },
       {
         event: 'Mr. and Ms. Aurora (Task-1)',
         time: '10:00-13:00',
@@ -37,12 +37,12 @@ const scheduleData = {
       { event: 'Corna (Finals)', time: '16:00-18:30', venue: 'Football Ground' },
       { event: 'Pronite (Indian Ocean)', time: '20:30-22:00', venue: 'Football Ground' },
       { event: 'Kabeela Band', time: '22:00-00:00', venue: 'Football Ground' },
-      { event: 'Bonfire', time: '00:00-02:00', venue: 'Football Ground' },
+      { event: 'Movie and Poker Night', time: '00:00-02:00', venue: 'Football Ground' },
     ],
   },
   day3: {
     details: [
-      { event: 'Eumelia (Finals)', time: '09:00-11:30', venue: 'Auditorium' },
+      { event: 'Eumelia (Finals)', time: '09:00-12:30', venue: 'Auditorium' },
       {
         event: 'Mr. and Ms. Aurora (Finals)',
         time: '10:00-13:00',
@@ -59,7 +59,6 @@ const scheduleData = {
       { event: 'Step-Up (Finals)', time: '15:00-18:00', venue: 'Football Ground' },
       { event: 'PDC', time: '18:00-20:00', venue: 'Auditorium' },
       { event: 'Pronite (Mohit Chauhan)', time: '20:30-22:00', venue: 'Football Ground' },
-      { event: 'Bonfire', time: '22:00-00:00', venue: 'Football Ground' },
     ],
   },
 };
