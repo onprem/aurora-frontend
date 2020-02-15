@@ -96,7 +96,7 @@ const Home = () => {
           className={styles.ticket_container}
           onClick={() => history.push('/pronites')}
         >
-          <h4 className={styles.ticket_heading}>BOOK ALL 3 PRONITES @ &#8377;349</h4>
+          <h4 className={styles.ticket_heading}>BOOK ALL 3 PRONITES @ &#8377;499</h4>
           <Ticket className={styles.ticket} fill="white" />
         </button>
         <button
