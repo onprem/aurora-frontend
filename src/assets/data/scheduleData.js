@@ -34,7 +34,7 @@ const scheduleData = {
         venue: 'Near Convention Center',
       },
       { event: 'Cine binge Quiz', time: '14:30-16:00', venue: 'B-Block (011)' },
-      { event: 'Corna (Finals)', time: '16:00-18:30', venue: 'Football Ground' },
+      { event: 'Corna (Finals)', time: '14:00-16:30', venue: 'Football Ground' },
       { event: 'Pronite (Indian Ocean)', time: '20:30-22:00', venue: 'Football Ground' },
       { event: 'Kabeela Band', time: '22:00-00:00', venue: 'Football Ground' },
       { event: 'Movie and Poker Night', time: '00:00-02:00', venue: 'Football Ground' },
