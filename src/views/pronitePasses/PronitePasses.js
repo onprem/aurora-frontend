@@ -33,7 +33,7 @@ const RenderInclusions = () => {
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Pricing: </span>
         <span style={{ textDecoration: 'line-through' }}>&#8377;1200/-</span>
-        &nbsp;&nbsp;&#8377; 349/- per person, for all 3 nights (Phase-2 pricing)
+        &nbsp;&nbsp;&#8377; 499/- per person, for all 3 nights (Phase-3 pricing)
       </li>
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Offers</span>
@@ -42,7 +42,7 @@ const RenderInclusions = () => {
             Pronites are bundled with accomodation (If you purchase accomodation you need not to
             purchase pronite passes)
           </li>
-          <li className={style.accomodation_li}>
+          {/* <li className={style.accomodation_li}>
             If you participate in category A events (Parivesh, Corna, Mr. and Ms. Aurora, Dancing
             Dyad, Beat the Beat, A-Capella, On-Spot Painting/Sketching, Open Mic, Morning Radio),
             you get&nbsp;
@@ -58,7 +58,7 @@ const RenderInclusions = () => {
             A maximum discount of&nbsp;
             <span style={{ fontWeight: 600, fontSize: '1em' }}>&#8377; 100 </span>
             can be availed using event registrations.
-          </li>
+          </li> */}
         </ul>
       </li>
     </ul>
@@ -302,8 +302,8 @@ const Accomodation = () => {
         title: 'Are you sure?',
         html: `<ul style="overflow-y: auto; max-height: 40vh">
           <li style="text-align:left; margin-bottom:10px;">
-            Max payable amount is &#8377;${userArray.length * 349} + &#8377;${Math.floor(
-          userArray.length * 349 * 2.42
+            Max payable amount is &#8377;${userArray.length * 499} + &#8377;${Math.floor(
+          userArray.length * 499 * 2.42
         ) /
           100} (payment gateway charges). Real payable amount can be less than this amount based on the discounts applicable. Real payable amount cannot be more than max payable amount.
           </li>
