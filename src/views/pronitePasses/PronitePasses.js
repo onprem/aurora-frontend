@@ -378,9 +378,10 @@ const Accomodation = () => {
         </button>
       </form>
       <button
+        disabled
         className={style.pay_and_add_button}
         type="button"
-        disabled={addMemberPay || getOrderRes.loading || verifyRes.loading}
+        // disabled={addMemberPay || getOrderRes.loading || verifyRes.loading}
         onClick={placeOrder}
       >
         {addMemberPay || getOrderRes.loading || verifyRes.loading ? (
