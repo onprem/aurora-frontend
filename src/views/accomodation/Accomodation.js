@@ -33,7 +33,7 @@ const RenderInclusions = () => {
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Pricing: </span>
         <span style={{ textDecoration: 'line-through' }}>&#8377;1800/-</span>
-        &nbsp;&nbsp;&#8377; 799/- per person (Phase-2 pricing)
+        &nbsp;&nbsp;&#8377; 1599/- per person (Phase-2 pricing)
       </li>
       <li className={style.accomodation_li}>
         <span style={{ fontWeight: 600, fontSize: '1.1em' }}>Inclusions</span>
@@ -370,8 +370,8 @@ const Accomodation = () => {
         title: 'Are you sure?',
         html: `<ul style="overflow-y: auto; max-height: 40vh">
           <li style="text-align:left; margin-bottom:10px">
-            Total payable amount is &#8377;${userArray.length * 799} + &#8377;${Math.floor(
-          userArray.length * 799 * 2.42
+            Total payable amount is &#8377;${userArray.length * 1599} + &#8377;${Math.floor(
+          userArray.length * 1599 * 2.42
         ) / 100} (payment gateway charges)
           </li>
           <li style="text-align:left; margin-bottom:10px">
