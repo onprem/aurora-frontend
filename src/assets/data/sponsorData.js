@@ -29,6 +29,7 @@ import nisha from '../images/sponsors/nisha-dance.jpg';
 import gwaliorMP from '../images/sponsors/gwaliorMP.png';
 import cityVibes from '../images/sponsors/city-vibes.png';
 import punHub from '../images/sponsors/punhub.png';
+import ogenie from '../images/sponsors/o-genie.jpg';
 
 const titleSponsor = {
   img: cocaCola,
@@ -157,6 +158,12 @@ const sponsors = [
     name: 'ATKT',
     title: 'Sponsor',
     url: 'https://atkt.in',
+  },
+  {
+    img: ogenie,
+    name: 'O Genie',
+    title: 'Sponsor',
+    url: 'https://ogenie.app/',
   },
 ];
 
