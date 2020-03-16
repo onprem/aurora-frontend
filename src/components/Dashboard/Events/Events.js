@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { saveAs } from 'file-saver';
 import classNames from 'classnames';
 import { useHistory, Link } from 'react-router-dom';
 
@@ -16,7 +18,19 @@ import config from '../../../config';
 
 const { closedEvents } = config;
 
-const PaidEvents = ({ teams, isDesktop }) => {
+const PaidEvents = ({ teams, isDesktop, user }) => {
+  const [certi, setCerti] = useState({ eventName: '', id: '', name: '' });
+  const handleCertis = eventName => {
+    setCerti({ eventName, id: user.id, name: user.name });
+    axios
+      .post('http://localhost:4000/create-pdf', certi)
+      .then(() => axios.get('http://localhost:4000/fetch-pdf', { responseType: 'blob' }))
+      .then(res => {
+        const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+
+        saveAs(pdfBlob, 'newPdf.pdf');
+      });
+  };
   const teamList = teams.map((team, index) => {
     const parentEvt = team.event.parentEvent;
     const parentEvtName = parentEvt
@@ -38,6 +52,9 @@ const PaidEvents = ({ teams, isDesktop }) => {
           </td>
           <td>{parentEvtName}</td>
           <td>{team.id}</td>
+          <button type="button" onClick={() => handleCertis(team.event.name)}>
+            download
+          </button>
         </tr>
       );
     }
@@ -215,7 +232,7 @@ const UnPaidEvents = ({ teams, isDesktop }) => {
   );
 };
 
-const Events = ({ className, teams }) => {
+const Events = ({ className, teams, user }) => {
   const history = useHistory();
   const isDesktop = useMediaQuery('(min-width: 500px)');
 
@@ -227,7 +244,7 @@ const Events = ({ className, teams }) => {
       <h2>Registered Events</h2>
       {paidTeams && (
         <div className={styles.paidDiv}>
-          <PaidEvents teams={paidTeams} isDesktop={isDesktop} />
+          <PaidEvents teams={paidTeams} isDesktop={isDesktop} user={user} />
         </div>
       )}
       {unPaidTeams && (

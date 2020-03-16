@@ -44,7 +44,7 @@ const Dashboard = () => {
         <h1 className={styles.heading}>DASHBOARD</h1>
         <Profile className={`${styles.sections} ${styles.profileSection}`} user={data.user} />
         <ProAcc className={`${styles.sections} ${styles.profileSection}`} user={data.user} />
-        <Events className={styles.sections} teams={data.user.teams} />
+        <Events className={styles.sections} teams={data.user.teams} user={data.user} />
         <Invites className={styles.sections} teamInvitations={data.user.teamInvitations} />
       </div>
       <Particles minHeight="140vh" />
