@@ -12,6 +12,7 @@ import useMediaQuery from '../../../utils/useMediaQuery';
 
 import styles from './Events.module.css';
 import LeaveBtn from './LeaveBtn/LeaveBtn';
+import Loader from '../../Loader/Loader';
 
 import getAlert from '../../../utils/getAlert';
 import config from '../../../config';
@@ -20,15 +21,25 @@ const { closedEvents } = config;
 
 const PaidEvents = ({ teams, isDesktop, user }) => {
   const [certi, setCerti] = useState({ eventName: '', id: '', name: '' });
+  const [loading, setLoading] = useState(false);
   const handleCertis = eventName => {
+    setLoading(true);
     setCerti({ eventName, id: user.id, name: user.name });
     axios
-      .post('http://localhost:4000/create-pdf', certi)
+      .post('http://localhost:3000/create-pdf', certi)
       .then(() => axios.get('http://localhost:4000/fetch-pdf', { responseType: 'blob' }))
       .then(res => {
+        setLoading(false);
         const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
-
         saveAs(pdfBlob, 'newPdf.pdf');
+      })
+      .catch(() => {
+        const toast = getAlert();
+        toast.fire({
+          icon: 'error',
+          title: 'Some error occurred, check your connection and please try again',
+        });
+        setLoading(false);
       });
   };
   const teamList = teams.map((team, index) => {
@@ -52,9 +63,15 @@ const PaidEvents = ({ teams, isDesktop, user }) => {
           </td>
           <td>{parentEvtName}</td>
           <td>{team.id}</td>
-          <button type="button" onClick={() => handleCertis(team.event.name)}>
-            download
-          </button>
+          <td>
+            <button
+              type="button"
+              onClick={() => handleCertis(team.event.name)}
+              className={styles.certi_button}
+            >
+              {loading ? <Loader /> : 'Download Certificate'}
+            </button>
+          </td>
         </tr>
       );
     }
